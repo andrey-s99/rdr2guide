@@ -1,0 +1,44 @@
+{
+  "dataVersion": "1.0.1",
+  "game": "Red Dead Redemption 2 (сюжетный режим)",
+  "language": "ru",
+  "generatedAt": "2026-10-24",
+  "notesRu": "Названия на русском — близкий перевод, могут отличаться от официальной локализации; английское название — оригинал. Поле dataConfidence: high — совпадает в нескольких источниках, medium — источники расходятся, low — один источник.",
+  "sources": [
+    "https://www.rdr2.org/guides/trapper-crafting-materials-guide/",
+    "https://www.rdr2.org/guides/trapper-crafting-materials-guide/2/",
+    "https://rankedboost.com/red-dead-redemption-2/trapper/",
+    "https://www.rdr2.org/guides/red-dead-redemption-2-all-outfits-guide/3/",
+    "https://www.rdr2.org/guides/pearson-crafting-guide/",
+    "https://rankedboost.com/red-dead-redemption-2/camp/",
+    "https://reddeadredemption2.wiki.fextralife.com/Camps",
+    "https://www.accelerated-ideas.com/news/red-dead-redemption-2-trinkets-and-talisman-guide.aspx",
+    "https://gamewith.net/red-dead-redemption2/article/show/1375",
+    "https://www.rdr2.org/guides/red-dead-redemption-2-legendary-animals-guide/",
+    "https://www.rdr2.org/guides/camp-upgrades-guide/",
+    "https://www.rdr2.org/guides/red-dead-redemption-2-trapper-locations-guide/",
+    "https://www.rdr2.org/guides/legendary-giaguaro-panther-guide/",
+    "https://www.gtabase.com/red-dead-redemption-2/animals/legendary-tatanka-bison",
+    "https://vandal.elespanol.com/en/red-dead-redemption/trappers-in-red-dead-redemption-2.html",
+    "https://reddead.fandom.com/wiki/Valuables_in_Redemption_2",
+    "https://reddead.fandom.com/wiki/Raven_Claw_Talisman"
+  ],
+  "globalMapLinks": [
+    {
+      "labelRu": "Интерактивная карта RDR2 (GTABase)",
+      "url": "https://www.gtabase.com/red-dead-redemption-2/map-locations/"
+    },
+    {
+      "labelRu": "Карта RDR2 (RDR2.org)",
+      "url": "https://www.rdr2.org/guides/map/"
+    },
+    {
+      "labelRu": "Где искать всех животных (RDR2.org)",
+      "url": "https://www.rdr2.org/guides/all-animal-locations-guide/"
+    },
+    {
+      "labelRu": "Все легендарные животные (RDR2.org)",
+      "url": "https://www.rdr2.org/guides/red-dead-redemption-2-legendary-animals-guide/"
+    }
+  ]
+}

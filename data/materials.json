@@ -1,0 +1,1102 @@
+[
+  {
+    "id": "perfect_alligator",
+    "nameRu": "Идеальная кожа аллигатора",
+    "nameEn": "Perfect Alligator Skin",
+    "kind": "skin",
+    "quality": "perfect",
+    "animalId": "alligator",
+    "consumedOnCraft": true,
+    "sourceRu": "Идеальное убийство (без лишних попаданий) 3★ животного подходящим оружием."
+  },
+  {
+    "id": "perfect_armadillo",
+    "nameRu": "Идеальная кожа броненосца",
+    "nameEn": "Perfect Armadillo Skin",
+    "kind": "skin",
+    "quality": "perfect",
+    "animalId": "armadillo",
+    "consumedOnCraft": true,
+    "sourceRu": "Идеальное убийство (без лишних попаданий) 3★ животного подходящим оружием."
+  },
+  {
+    "id": "perfect_badger",
+    "nameRu": "Идеальная шкура барсука",
+    "nameEn": "Perfect Badger Pelt",
+    "kind": "skin",
+    "quality": "perfect",
+    "animalId": "badger",
+    "consumedOnCraft": true,
+    "sourceRu": "Идеальное убийство (без лишних попаданий) 3★ животного подходящим оружием."
+  },
+  {
+    "id": "perfect_bear",
+    "nameRu": "Идеальная шкура гризли",
+    "nameEn": "Perfect Grizzly Bear Pelt",
+    "kind": "skin",
+    "quality": "perfect",
+    "animalId": "bear",
+    "consumedOnCraft": true,
+    "sourceRu": "Идеальное убийство (без лишних попаданий) 3★ животного подходящим оружием."
+  },
+  {
+    "id": "perfect_black_bear",
+    "nameRu": "Идеальная шкура чёрного медведя",
+    "nameEn": "Perfect Black Bear Pelt",
+    "kind": "skin",
+    "quality": "perfect",
+    "animalId": "black_bear",
+    "consumedOnCraft": true,
+    "sourceRu": "Идеальное убийство (без лишних попаданий) 3★ животного подходящим оружием."
+  },
+  {
+    "id": "perfect_beaver",
+    "nameRu": "Идеальная шкура бобра",
+    "nameEn": "Perfect Beaver Pelt",
+    "kind": "skin",
+    "quality": "perfect",
+    "animalId": "beaver",
+    "consumedOnCraft": true,
+    "sourceRu": "Идеальное убийство (без лишних попаданий) 3★ животного подходящим оружием."
+  },
+  {
+    "id": "perfect_bison",
+    "nameRu": "Идеальная шкура бизона",
+    "nameEn": "Perfect Bison Pelt",
+    "kind": "skin",
+    "quality": "perfect",
+    "animalId": "bison",
+    "consumedOnCraft": true,
+    "sourceRu": "Идеальное убийство (без лишних попаданий) 3★ животного подходящим оружием."
+  },
+  {
+    "id": "perfect_boar",
+    "nameRu": "Идеальная шкура кабана",
+    "nameEn": "Perfect Boar Pelt",
+    "kind": "skin",
+    "quality": "perfect",
+    "animalId": "boar",
+    "consumedOnCraft": true,
+    "sourceRu": "Идеальное убийство (без лишних попаданий) 3★ животного подходящим оружием."
+  },
+  {
+    "id": "perfect_buck",
+    "nameRu": "Идеальная шкура оленя-самца",
+    "nameEn": "Perfect Buck Pelt",
+    "kind": "skin",
+    "quality": "perfect",
+    "animalId": "buck",
+    "consumedOnCraft": true,
+    "sourceRu": "Идеальное убийство (без лишних попаданий) 3★ животного подходящим оружием."
+  },
+  {
+    "id": "perfect_bull",
+    "nameRu": "Идеальная шкура быка",
+    "nameEn": "Perfect Bull Hide",
+    "kind": "skin",
+    "quality": "perfect",
+    "animalId": "bull",
+    "consumedOnCraft": true,
+    "sourceRu": "Идеальное убийство (без лишних попаданий) 3★ животного подходящим оружием."
+  },
+  {
+    "id": "perfect_collared_peccary",
+    "nameRu": "Идеальная шкура пекари",
+    "nameEn": "Perfect Collared Peccary Pelt",
+    "kind": "skin",
+    "quality": "perfect",
+    "animalId": "collared_peccary",
+    "consumedOnCraft": true,
+    "sourceRu": "Идеальное убийство (без лишних попаданий) 3★ животного подходящим оружием."
+  },
+  {
+    "id": "perfect_cougar",
+    "nameRu": "Идеальная шкура пумы",
+    "nameEn": "Perfect Cougar Pelt",
+    "kind": "skin",
+    "quality": "perfect",
+    "animalId": "cougar",
+    "consumedOnCraft": true,
+    "sourceRu": "Идеальное убийство (без лишних попаданий) 3★ животного подходящим оружием."
+  },
+  {
+    "id": "perfect_cow",
+    "nameRu": "Идеальная шкура коровы",
+    "nameEn": "Perfect Cow Hide",
+    "kind": "skin",
+    "quality": "perfect",
+    "animalId": "cow",
+    "consumedOnCraft": true,
+    "sourceRu": "Идеальное убийство (без лишних попаданий) 3★ животного подходящим оружием."
+  },
+  {
+    "id": "perfect_coyote",
+    "nameRu": "Идеальная шкура койота",
+    "nameEn": "Perfect Coyote Pelt",
+    "kind": "skin",
+    "quality": "perfect",
+    "animalId": "coyote",
+    "consumedOnCraft": true,
+    "sourceRu": "Идеальное убийство (без лишних попаданий) 3★ животного подходящим оружием."
+  },
+  {
+    "id": "perfect_deer",
+    "nameRu": "Идеальная шкура оленихи",
+    "nameEn": "Perfect Deer Pelt",
+    "kind": "skin",
+    "quality": "perfect",
+    "animalId": "deer",
+    "consumedOnCraft": true,
+    "sourceRu": "Идеальное убийство (без лишних попаданий) 3★ животного подходящим оружием."
+  },
+  {
+    "id": "perfect_elk",
+    "nameRu": "Идеальная шкура вапити",
+    "nameEn": "Perfect Elk Pelt",
+    "kind": "skin",
+    "quality": "perfect",
+    "animalId": "elk",
+    "consumedOnCraft": true,
+    "sourceRu": "Идеальное убийство (без лишних попаданий) 3★ животного подходящим оружием."
+  },
+  {
+    "id": "perfect_fox",
+    "nameRu": "Идеальная шкура лисы",
+    "nameEn": "Perfect Fox Pelt",
+    "kind": "skin",
+    "quality": "perfect",
+    "animalId": "fox",
+    "consumedOnCraft": true,
+    "sourceRu": "Идеальное убийство (без лишних попаданий) 3★ животного подходящим оружием."
+  },
+  {
+    "id": "perfect_gila_monster",
+    "nameRu": "Идеальная кожа ядозуба",
+    "nameEn": "Perfect Gila Monster Skin",
+    "kind": "skin",
+    "quality": "perfect",
+    "animalId": "gila_monster",
+    "consumedOnCraft": true,
+    "sourceRu": "Идеальное убийство (без лишних попаданий) 3★ животного подходящим оружием."
+  },
+  {
+    "id": "perfect_goat",
+    "nameRu": "Идеальная шкура козы",
+    "nameEn": "Perfect Goat Hide",
+    "kind": "skin",
+    "quality": "perfect",
+    "animalId": "goat",
+    "consumedOnCraft": true,
+    "sourceRu": "Идеальное убийство (без лишних попаданий) 3★ животного подходящим оружием."
+  },
+  {
+    "id": "perfect_iguana",
+    "nameRu": "Идеальная кожа игуаны",
+    "nameEn": "Perfect Iguana Skin",
+    "kind": "skin",
+    "quality": "perfect",
+    "animalId": "iguana",
+    "consumedOnCraft": true,
+    "sourceRu": "Идеальное убийство (без лишних попаданий) 3★ животного подходящим оружием."
+  },
+  {
+    "id": "perfect_moose",
+    "nameRu": "Идеальная шкура лося",
+    "nameEn": "Perfect Moose Pelt",
+    "kind": "skin",
+    "quality": "perfect",
+    "animalId": "moose",
+    "consumedOnCraft": true,
+    "sourceRu": "Идеальное убийство (без лишних попаданий) 3★ животного подходящим оружием."
+  },
+  {
+    "id": "perfect_muskrat",
+    "nameRu": "Идеальная шкура ондатры",
+    "nameEn": "Perfect Muskrat Pelt",
+    "kind": "skin",
+    "quality": "perfect",
+    "animalId": "muskrat",
+    "consumedOnCraft": true,
+    "sourceRu": "Идеальное убийство (без лишних попаданий) 3★ животного подходящим оружием."
+  },
+  {
+    "id": "perfect_opossum",
+    "nameRu": "Идеальная шкура опоссума",
+    "nameEn": "Perfect Opossum Pelt",
+    "kind": "skin",
+    "quality": "perfect",
+    "animalId": "opossum",
+    "consumedOnCraft": true,
+    "sourceRu": "Идеальное убийство (без лишних попаданий) 3★ животного подходящим оружием."
+  },
+  {
+    "id": "perfect_ox",
+    "nameRu": "Идеальная шкура вола",
+    "nameEn": "Perfect Ox Hide",
+    "kind": "skin",
+    "quality": "perfect",
+    "animalId": "ox",
+    "consumedOnCraft": true,
+    "sourceRu": "Идеальное убийство (без лишних попаданий) 3★ животного подходящим оружием."
+  },
+  {
+    "id": "perfect_panther",
+    "nameRu": "Идеальная шкура пантеры",
+    "nameEn": "Perfect Panther Pelt",
+    "kind": "skin",
+    "quality": "perfect",
+    "animalId": "panther",
+    "consumedOnCraft": true,
+    "sourceRu": "Идеальное убийство (без лишних попаданий) 3★ животного подходящим оружием."
+  },
+  {
+    "id": "perfect_pig",
+    "nameRu": "Идеальная шкура свиньи",
+    "nameEn": "Perfect Pig Hide",
+    "kind": "skin",
+    "quality": "perfect",
+    "animalId": "pig",
+    "consumedOnCraft": true,
+    "sourceRu": "Идеальное убийство (без лишних попаданий) 3★ животного подходящим оружием."
+  },
+  {
+    "id": "perfect_pronghorn",
+    "nameRu": "Идеальная шкура вилорога",
+    "nameEn": "Perfect Pronghorn Hide",
+    "kind": "skin",
+    "quality": "perfect",
+    "animalId": "pronghorn",
+    "consumedOnCraft": true,
+    "sourceRu": "Идеальное убийство (без лишних попаданий) 3★ животного подходящим оружием."
+  },
+  {
+    "id": "perfect_rabbit",
+    "nameRu": "Идеальная шкура кролика",
+    "nameEn": "Perfect Rabbit Pelt",
+    "kind": "skin",
+    "quality": "perfect",
+    "animalId": "rabbit",
+    "consumedOnCraft": true,
+    "sourceRu": "Идеальное убийство (без лишних попаданий) 3★ животного подходящим оружием."
+  },
+  {
+    "id": "perfect_raccoon",
+    "nameRu": "Идеальная шкура енота",
+    "nameEn": "Perfect Raccoon Pelt",
+    "kind": "skin",
+    "quality": "perfect",
+    "animalId": "raccoon",
+    "consumedOnCraft": true,
+    "sourceRu": "Идеальное убийство (без лишних попаданий) 3★ животного подходящим оружием."
+  },
+  {
+    "id": "perfect_ram",
+    "nameRu": "Идеальная шкура толсторога",
+    "nameEn": "Perfect Bighorn Ram Hide",
+    "kind": "skin",
+    "quality": "perfect",
+    "animalId": "ram",
+    "consumedOnCraft": true,
+    "sourceRu": "Идеальное убийство (без лишних попаданий) 3★ животного подходящим оружием."
+  },
+  {
+    "id": "perfect_rat",
+    "nameRu": "Идеальная шкура крысы",
+    "nameEn": "Perfect Rat Pelt",
+    "kind": "skin",
+    "quality": "perfect",
+    "animalId": "rat",
+    "consumedOnCraft": true,
+    "sourceRu": "Идеальное убийство (без лишних попаданий) 3★ животного подходящим оружием."
+  },
+  {
+    "id": "perfect_sheep",
+    "nameRu": "Идеальная шкура овцы",
+    "nameEn": "Perfect Sheep Hide",
+    "kind": "skin",
+    "quality": "perfect",
+    "animalId": "sheep",
+    "consumedOnCraft": true,
+    "sourceRu": "Идеальное убийство (без лишних попаданий) 3★ животного подходящим оружием."
+  },
+  {
+    "id": "perfect_skunk",
+    "nameRu": "Идеальная шкура скунса",
+    "nameEn": "Perfect Skunk Pelt",
+    "kind": "skin",
+    "quality": "perfect",
+    "animalId": "skunk",
+    "consumedOnCraft": true,
+    "sourceRu": "Идеальное убийство (без лишних попаданий) 3★ животного подходящим оружием."
+  },
+  {
+    "id": "perfect_snake",
+    "nameRu": "Идеальная кожа змеи",
+    "nameEn": "Perfect Snake Skin",
+    "kind": "skin",
+    "quality": "perfect",
+    "animalId": "snake",
+    "consumedOnCraft": true,
+    "sourceRu": "Идеальное убийство (без лишних попаданий) 3★ животного подходящим оружием."
+  },
+  {
+    "id": "perfect_squirrel",
+    "nameRu": "Идеальная шкура белки",
+    "nameEn": "Perfect Squirrel Pelt",
+    "kind": "skin",
+    "quality": "perfect",
+    "animalId": "squirrel",
+    "consumedOnCraft": true,
+    "sourceRu": "Идеальное убийство (без лишних попаданий) 3★ животного подходящим оружием."
+  },
+  {
+    "id": "perfect_wolf",
+    "nameRu": "Идеальная шкура волка",
+    "nameEn": "Perfect Wolf Pelt",
+    "kind": "skin",
+    "quality": "perfect",
+    "animalId": "wolf",
+    "consumedOnCraft": true,
+    "sourceRu": "Идеальное убийство (без лишних попаданий) 3★ животного подходящим оружием."
+  },
+  {
+    "id": "feather_robin",
+    "nameRu": "Перо дрозда",
+    "nameEn": "Robin Feather",
+    "kind": "feather",
+    "quality": "any",
+    "animalId": "robin",
+    "consumedOnCraft": true,
+    "sourceRu": "Снимается с птицы любого качества."
+  },
+  {
+    "id": "feather_oriole",
+    "nameRu": "Перо иволги",
+    "nameEn": "Oriole Feather",
+    "kind": "feather",
+    "quality": "any",
+    "animalId": "oriole",
+    "consumedOnCraft": true,
+    "sourceRu": "Снимается с птицы любого качества."
+  },
+  {
+    "id": "feather_raven",
+    "nameRu": "Перо ворона",
+    "nameEn": "Raven Feather",
+    "kind": "feather",
+    "quality": "any",
+    "animalId": "raven",
+    "consumedOnCraft": true,
+    "sourceRu": "Снимается с птицы любого качества."
+  },
+  {
+    "id": "feather_woodpecker",
+    "nameRu": "Перо дятла",
+    "nameEn": "Woodpecker Feather",
+    "kind": "feather",
+    "quality": "any",
+    "animalId": "woodpecker",
+    "consumedOnCraft": true,
+    "sourceRu": "Снимается с птицы любого качества."
+  },
+  {
+    "id": "feather_chicken",
+    "nameRu": "Перо курицы",
+    "nameEn": "Chicken Feather",
+    "kind": "feather",
+    "quality": "any",
+    "animalId": "chicken",
+    "consumedOnCraft": true,
+    "sourceRu": "Снимается с птицы любого качества."
+  },
+  {
+    "id": "feather_goose",
+    "nameRu": "Перо гуся",
+    "nameEn": "Goose Feather",
+    "kind": "feather",
+    "quality": "any",
+    "animalId": "goose",
+    "consumedOnCraft": true,
+    "sourceRu": "Снимается с птицы любого качества."
+  },
+  {
+    "id": "feather_hawk",
+    "nameRu": "Перо ястреба",
+    "nameEn": "Hawk Feather",
+    "kind": "feather",
+    "quality": "any",
+    "animalId": "hawk",
+    "consumedOnCraft": true,
+    "sourceRu": "Снимается с птицы любого качества."
+  },
+  {
+    "id": "feather_quail",
+    "nameRu": "Перо перепела",
+    "nameEn": "Quail Feather",
+    "kind": "feather",
+    "quality": "any",
+    "animalId": "quail",
+    "consumedOnCraft": true,
+    "sourceRu": "Снимается с птицы любого качества."
+  },
+  {
+    "id": "feather_pheasant",
+    "nameRu": "Перо фазана",
+    "nameEn": "Pheasant Feather",
+    "kind": "feather",
+    "quality": "any",
+    "animalId": "pheasant",
+    "consumedOnCraft": true,
+    "sourceRu": "Снимается с птицы любого качества."
+  },
+  {
+    "id": "feather_owl",
+    "nameRu": "Перо совы",
+    "nameEn": "Owl Feather",
+    "kind": "feather",
+    "quality": "any",
+    "animalId": "owl",
+    "consumedOnCraft": true,
+    "sourceRu": "Снимается с птицы любого качества."
+  },
+  {
+    "id": "feather_turkey",
+    "nameRu": "Перо индейки",
+    "nameEn": "Turkey Feather",
+    "kind": "feather",
+    "quality": "any",
+    "animalId": "turkey",
+    "consumedOnCraft": true,
+    "sourceRu": "Снимается с птицы любого качества."
+  },
+  {
+    "id": "feather_eagle",
+    "nameRu": "Перо орла",
+    "nameEn": "Eagle Feather",
+    "kind": "feather",
+    "quality": "any",
+    "animalId": "eagle",
+    "consumedOnCraft": true,
+    "sourceRu": "Снимается с птицы любого качества."
+  },
+  {
+    "id": "feather_cardinal",
+    "nameRu": "Перо кардинала",
+    "nameEn": "Cardinal Feather",
+    "kind": "feather",
+    "quality": "any",
+    "animalId": "cardinal",
+    "consumedOnCraft": true,
+    "sourceRu": "Снимается с птицы любого качества."
+  },
+  {
+    "id": "feather_rooster",
+    "nameRu": "Перо петуха",
+    "nameEn": "Rooster Feather",
+    "kind": "feather",
+    "quality": "any",
+    "animalId": "rooster",
+    "consumedOnCraft": true,
+    "sourceRu": "Снимается с птицы любого качества."
+  },
+  {
+    "id": "feather_songbird",
+    "nameRu": "Перо певчей птицы",
+    "nameEn": "Songbird Feather",
+    "kind": "feather",
+    "quality": "any",
+    "animalId": "songbird",
+    "consumedOnCraft": true,
+    "sourceRu": "Снимается с птицы любого качества."
+  },
+  {
+    "id": "feather_sparrow",
+    "nameRu": "Перо воробья",
+    "nameEn": "Sparrow Feather",
+    "kind": "feather",
+    "quality": "any",
+    "animalId": "sparrow",
+    "consumedOnCraft": true,
+    "sourceRu": "Снимается с птицы любого качества."
+  },
+  {
+    "id": "feather_cedar_waxwing",
+    "nameRu": "Перо свиристеля",
+    "nameEn": "Cedar Waxwing Feather",
+    "kind": "feather",
+    "quality": "any",
+    "animalId": "cedar_waxwing",
+    "consumedOnCraft": true,
+    "sourceRu": "Снимается с птицы любого качества."
+  },
+  {
+    "id": "feather_blue_jay",
+    "nameRu": "Перо голубой сойки",
+    "nameEn": "Blue Jay Feather",
+    "kind": "feather",
+    "quality": "any",
+    "animalId": "blue_jay",
+    "consumedOnCraft": true,
+    "sourceRu": "Снимается с птицы любого качества."
+  },
+  {
+    "id": "feather_duck",
+    "nameRu": "Перо утки",
+    "nameEn": "Duck Feather",
+    "kind": "feather",
+    "quality": "any",
+    "animalId": "duck",
+    "consumedOnCraft": true,
+    "sourceRu": "Снимается с птицы любого качества."
+  },
+  {
+    "id": "feather_pigeon",
+    "nameRu": "Перо голубя",
+    "nameEn": "Pigeon Feather",
+    "kind": "feather",
+    "quality": "any",
+    "animalId": "pigeon",
+    "consumedOnCraft": true,
+    "sourceRu": "Снимается с птицы любого качества."
+  },
+  {
+    "id": "feather_crow",
+    "nameRu": "Перо вороны",
+    "nameEn": "Crow Feather",
+    "kind": "feather",
+    "quality": "any",
+    "animalId": "crow",
+    "consumedOnCraft": true,
+    "sourceRu": "Снимается с птицы любого качества."
+  },
+  {
+    "id": "feather_vulture",
+    "nameRu": "Перо грифа",
+    "nameEn": "Vulture Feather",
+    "kind": "feather",
+    "quality": "any",
+    "animalId": "vulture",
+    "consumedOnCraft": true,
+    "sourceRu": "Снимается с птицы любого качества."
+  },
+  {
+    "id": "feather_seagull",
+    "nameRu": "Перо чайки",
+    "nameEn": "Seagull Feather",
+    "kind": "feather",
+    "quality": "any",
+    "animalId": "seagull",
+    "consumedOnCraft": true,
+    "sourceRu": "Снимается с птицы любого качества."
+  },
+  {
+    "id": "feather_loon",
+    "nameRu": "Перо гагары",
+    "nameEn": "Loon Feather",
+    "kind": "feather",
+    "quality": "any",
+    "animalId": "loon",
+    "consumedOnCraft": true,
+    "sourceRu": "Снимается с птицы любого качества."
+  },
+  {
+    "id": "feather_condor",
+    "nameRu": "Перо кондора",
+    "nameEn": "Condor Feather",
+    "kind": "feather",
+    "quality": "any",
+    "animalId": "condor",
+    "consumedOnCraft": true,
+    "sourceRu": "Снимается с птицы любого качества."
+  },
+  {
+    "id": "carcass_ram",
+    "nameRu": "Идеальная туша толсторога",
+    "nameEn": "Perfect Ram Carcass",
+    "kind": "carcass",
+    "quality": "perfect",
+    "animalId": "ram",
+    "consumedOnCraft": true,
+    "sourceRu": "Идеальное убийство 3★ животного; тушу не свежевать, а везти на лошади и отдать Пирсону целиком."
+  },
+  {
+    "id": "carcass_pronghorn",
+    "nameRu": "Идеальная туша вилорога",
+    "nameEn": "Perfect Pronghorn Carcass",
+    "kind": "carcass",
+    "quality": "perfect",
+    "animalId": "pronghorn",
+    "consumedOnCraft": true,
+    "sourceRu": "Идеальное убийство 3★ животного; тушу не свежевать, а везти на лошади и отдать Пирсону целиком."
+  },
+  {
+    "id": "carcass_wolf",
+    "nameRu": "Идеальная туша волка",
+    "nameEn": "Perfect Wolf Carcass",
+    "kind": "carcass",
+    "quality": "perfect",
+    "animalId": "wolf",
+    "consumedOnCraft": true,
+    "sourceRu": "Идеальное убийство 3★ животного; тушу не свежевать, а везти на лошади и отдать Пирсону целиком."
+  },
+  {
+    "id": "carcass_buck",
+    "nameRu": "Идеальная туша оленя-самца",
+    "nameEn": "Perfect Buck Carcass",
+    "kind": "carcass",
+    "quality": "perfect",
+    "animalId": "buck",
+    "consumedOnCraft": true,
+    "sourceRu": "Идеальное убийство 3★ животного; тушу не свежевать, а везти на лошади и отдать Пирсону целиком."
+  },
+  {
+    "id": "antler_moose",
+    "nameRu": "Рога лося",
+    "nameEn": "Moose Antler",
+    "kind": "antler",
+    "quality": "any",
+    "animalId": "moose",
+    "consumedOnCraft": true,
+    "sourceRu": "Снимаются с самца любого качества."
+  },
+  {
+    "id": "antler_elk",
+    "nameRu": "Рога вапити",
+    "nameEn": "Elk Antler",
+    "kind": "antler",
+    "quality": "any",
+    "animalId": "elk",
+    "consumedOnCraft": true,
+    "sourceRu": "Снимаются с самца любого качества."
+  },
+  {
+    "id": "antler_buck",
+    "nameRu": "Рога оленя-самца",
+    "nameEn": "Buck Antlers",
+    "kind": "antler",
+    "quality": "any",
+    "animalId": "buck",
+    "consumedOnCraft": true,
+    "sourceRu": "Снимаются с самца любого качества."
+  },
+  {
+    "id": "legendary_bear_pelt",
+    "nameRu": "Шкура легендарного медведя",
+    "nameEn": "Legendary Bear Pelt",
+    "kind": "legendary_pelt",
+    "quality": "legendary",
+    "animalId": "leg_bear",
+    "consumedOnCraft": false,
+    "sourceRu": "Снимается с легендарного зверя. Продайте Охотнику один раз — это откроет ВСЕ его вещи из этого зверя. Если шкура потерялась, Охотник всё равно получит её сам (без оплаты)."
+  },
+  {
+    "id": "legendary_bear_claw",
+    "nameRu": "Коготь легендарного медведя",
+    "nameEn": "Legendary Bear Claw",
+    "kind": "legendary_part",
+    "quality": "legendary",
+    "animalId": "leg_bear",
+    "consumedOnCraft": true,
+    "sourceRu": "Снимается с легендарного зверя вместе со шкурой. Если не забрали — автоматически попадает к скупщику."
+  },
+  {
+    "id": "legendary_beaver_pelt",
+    "nameRu": "Шкура легендарного бобра",
+    "nameEn": "Legendary Beaver Pelt",
+    "kind": "legendary_pelt",
+    "quality": "legendary",
+    "animalId": "leg_beaver",
+    "consumedOnCraft": false,
+    "sourceRu": "Снимается с легендарного зверя. Продайте Охотнику один раз — это откроет ВСЕ его вещи из этого зверя. Если шкура потерялась, Охотник всё равно получит её сам (без оплаты)."
+  },
+  {
+    "id": "legendary_beaver_tooth",
+    "nameRu": "Зуб легендарного бобра",
+    "nameEn": "Legendary Beaver Tooth",
+    "kind": "legendary_part",
+    "quality": "legendary",
+    "animalId": "leg_beaver",
+    "consumedOnCraft": true,
+    "sourceRu": "Снимается с легендарного зверя вместе со шкурой. Если не забрали — автоматически попадает к скупщику."
+  },
+  {
+    "id": "legendary_ram_pelt",
+    "nameRu": "Шкура легендарного толсторога",
+    "nameEn": "Legendary Ram Hide",
+    "kind": "legendary_pelt",
+    "quality": "legendary",
+    "animalId": "leg_ram",
+    "consumedOnCraft": false,
+    "sourceRu": "Снимается с легендарного зверя. Продайте Охотнику один раз — это откроет ВСЕ его вещи из этого зверя. Если шкура потерялась, Охотник всё равно получит её сам (без оплаты)."
+  },
+  {
+    "id": "legendary_ram_horn",
+    "nameRu": "Рог легендарного толсторога",
+    "nameEn": "Legendary Ram Horn",
+    "kind": "legendary_part",
+    "quality": "legendary",
+    "animalId": "leg_ram",
+    "consumedOnCraft": true,
+    "sourceRu": "Снимается с легендарного зверя вместе со шкурой. Если не забрали — автоматически попадает к скупщику."
+  },
+  {
+    "id": "legendary_boar_pelt",
+    "nameRu": "Шкура легендарного кабана",
+    "nameEn": "Legendary Boar Pelt",
+    "kind": "legendary_pelt",
+    "quality": "legendary",
+    "animalId": "leg_boar",
+    "consumedOnCraft": false,
+    "sourceRu": "Снимается с легендарного зверя. Продайте Охотнику один раз — это откроет ВСЕ его вещи из этого зверя. Если шкура потерялась, Охотник всё равно получит её сам (без оплаты)."
+  },
+  {
+    "id": "legendary_boar_tusk",
+    "nameRu": "Клык легендарного кабана",
+    "nameEn": "Legendary Boar Tusk",
+    "kind": "legendary_part",
+    "quality": "legendary",
+    "animalId": "leg_boar",
+    "consumedOnCraft": true,
+    "sourceRu": "Снимается с легендарного зверя вместе со шкурой. Если не забрали — автоматически попадает к скупщику."
+  },
+  {
+    "id": "legendary_buck_pelt",
+    "nameRu": "Шкура легендарного оленя",
+    "nameEn": "Legendary Buck Pelt",
+    "kind": "legendary_pelt",
+    "quality": "legendary",
+    "animalId": "leg_buck",
+    "consumedOnCraft": false,
+    "sourceRu": "Снимается с легендарного зверя. Продайте Охотнику один раз — это откроет ВСЕ его вещи из этого зверя. Если шкура потерялась, Охотник всё равно получит её сам (без оплаты)."
+  },
+  {
+    "id": "legendary_buck_antler",
+    "nameRu": "Рог легендарного оленя",
+    "nameEn": "Legendary Buck Antler",
+    "kind": "legendary_part",
+    "quality": "legendary",
+    "animalId": "leg_buck",
+    "consumedOnCraft": true,
+    "sourceRu": "Снимается с легендарного зверя вместе со шкурой. Если не забрали — автоматически попадает к скупщику."
+  },
+  {
+    "id": "legendary_bullgator_pelt",
+    "nameRu": "Кожа легендарного аллигатора",
+    "nameEn": "Legendary Alligator Skin",
+    "kind": "legendary_pelt",
+    "quality": "legendary",
+    "animalId": "leg_bullgator",
+    "consumedOnCraft": false,
+    "sourceRu": "Снимается с легендарного зверя. Продайте Охотнику один раз — это откроет ВСЕ его вещи из этого зверя. Если шкура потерялась, Охотник всё равно получит её сам (без оплаты)."
+  },
+  {
+    "id": "legendary_bullgator_tooth",
+    "nameRu": "Зуб легендарного аллигатора",
+    "nameEn": "Legendary Alligator Tooth",
+    "kind": "legendary_part",
+    "quality": "legendary",
+    "animalId": "leg_bullgator",
+    "consumedOnCraft": true,
+    "sourceRu": "Снимается с легендарного зверя вместе со шкурой. Если не забрали — автоматически попадает к скупщику."
+  },
+  {
+    "id": "legendary_cougar_pelt",
+    "nameRu": "Шкура легендарной пумы",
+    "nameEn": "Legendary Cougar Pelt",
+    "kind": "legendary_pelt",
+    "quality": "legendary",
+    "animalId": "leg_cougar",
+    "consumedOnCraft": false,
+    "sourceRu": "Снимается с легендарного зверя. Продайте Охотнику один раз — это откроет ВСЕ его вещи из этого зверя. Если шкура потерялась, Охотник всё равно получит её сам (без оплаты)."
+  },
+  {
+    "id": "legendary_cougar_fang",
+    "nameRu": "Клык легендарной пумы",
+    "nameEn": "Legendary Cougar Fang",
+    "kind": "legendary_part",
+    "quality": "legendary",
+    "animalId": "leg_cougar",
+    "consumedOnCraft": true,
+    "sourceRu": "Снимается с легендарного зверя вместе со шкурой. Если не забрали — автоматически попадает к скупщику."
+  },
+  {
+    "id": "legendary_coyote_pelt",
+    "nameRu": "Шкура легендарного койота",
+    "nameEn": "Legendary Coyote Pelt",
+    "kind": "legendary_pelt",
+    "quality": "legendary",
+    "animalId": "leg_coyote",
+    "consumedOnCraft": false,
+    "sourceRu": "Снимается с легендарного зверя. Продайте Охотнику один раз — это откроет ВСЕ его вещи из этого зверя. Если шкура потерялась, Охотник всё равно получит её сам (без оплаты)."
+  },
+  {
+    "id": "legendary_coyote_fang",
+    "nameRu": "Клык легендарного койота",
+    "nameEn": "Legendary Coyote Fang",
+    "kind": "legendary_part",
+    "quality": "legendary",
+    "animalId": "leg_coyote",
+    "consumedOnCraft": true,
+    "sourceRu": "Снимается с легендарного зверя вместе со шкурой. Если не забрали — автоматически попадает к скупщику."
+  },
+  {
+    "id": "legendary_elk_pelt",
+    "nameRu": "Шкура легендарного вапити",
+    "nameEn": "Legendary Elk Pelt",
+    "kind": "legendary_pelt",
+    "quality": "legendary",
+    "animalId": "leg_elk",
+    "consumedOnCraft": false,
+    "sourceRu": "Снимается с легендарного зверя. Продайте Охотнику один раз — это откроет ВСЕ его вещи из этого зверя. Если шкура потерялась, Охотник всё равно получит её сам (без оплаты)."
+  },
+  {
+    "id": "legendary_elk_antler",
+    "nameRu": "Рог легендарного вапити",
+    "nameEn": "Legendary Elk Antler",
+    "kind": "legendary_part",
+    "quality": "legendary",
+    "animalId": "leg_elk",
+    "consumedOnCraft": true,
+    "sourceRu": "Снимается с легендарного зверя вместе со шкурой. Если не забрали — автоматически попадает к скупщику."
+  },
+  {
+    "id": "legendary_fox_pelt",
+    "nameRu": "Шкура легендарной лисы",
+    "nameEn": "Legendary Fox Pelt",
+    "kind": "legendary_pelt",
+    "quality": "legendary",
+    "animalId": "leg_fox",
+    "consumedOnCraft": false,
+    "sourceRu": "Снимается с легендарного зверя. Продайте Охотнику один раз — это откроет ВСЕ его вещи из этого зверя. Если шкура потерялась, Охотник всё равно получит её сам (без оплаты)."
+  },
+  {
+    "id": "legendary_fox_claw",
+    "nameRu": "Коготь легендарной лисы",
+    "nameEn": "Legendary Fox Claw",
+    "kind": "legendary_part",
+    "quality": "legendary",
+    "animalId": "leg_fox",
+    "consumedOnCraft": true,
+    "sourceRu": "Снимается с легендарного зверя вместе со шкурой. Если не забрали — автоматически попадает к скупщику."
+  },
+  {
+    "id": "legendary_panther_pelt",
+    "nameRu": "Шкура легендарной пантеры",
+    "nameEn": "Legendary Panther Pelt",
+    "kind": "legendary_pelt",
+    "quality": "legendary",
+    "animalId": "leg_panther",
+    "consumedOnCraft": false,
+    "sourceRu": "Снимается с легендарного зверя. Продайте Охотнику один раз — это откроет ВСЕ его вещи из этого зверя. Если шкура потерялась, Охотник всё равно получит её сам (без оплаты)."
+  },
+  {
+    "id": "legendary_panther_eye",
+    "nameRu": "Глаз легендарной пантеры",
+    "nameEn": "Legendary Panther Eye",
+    "kind": "legendary_part",
+    "quality": "legendary",
+    "animalId": "leg_panther",
+    "consumedOnCraft": true,
+    "sourceRu": "Снимается с легендарного зверя вместе со шкурой. Если не забрали — автоматически попадает к скупщику."
+  },
+  {
+    "id": "legendary_moose_pelt",
+    "nameRu": "Шкура легендарного лося",
+    "nameEn": "Legendary Moose Pelt",
+    "kind": "legendary_pelt",
+    "quality": "legendary",
+    "animalId": "leg_moose",
+    "consumedOnCraft": false,
+    "sourceRu": "Снимается с легендарного зверя. Продайте Охотнику один раз — это откроет ВСЕ его вещи из этого зверя. Если шкура потерялась, Охотник всё равно получит её сам (без оплаты)."
+  },
+  {
+    "id": "legendary_moose_antler",
+    "nameRu": "Рог легендарного лося",
+    "nameEn": "Legendary Moose Antler",
+    "kind": "legendary_part",
+    "quality": "legendary",
+    "animalId": "leg_moose",
+    "consumedOnCraft": true,
+    "sourceRu": "Снимается с легендарного зверя вместе со шкурой. Если не забрали — автоматически попадает к скупщику."
+  },
+  {
+    "id": "legendary_pronghorn_pelt",
+    "nameRu": "Шкура легендарного вилорога",
+    "nameEn": "Legendary Pronghorn Hide",
+    "kind": "legendary_pelt",
+    "quality": "legendary",
+    "animalId": "leg_pronghorn",
+    "consumedOnCraft": false,
+    "sourceRu": "Снимается с легендарного зверя. Продайте Охотнику один раз — это откроет ВСЕ его вещи из этого зверя. Если шкура потерялась, Охотник всё равно получит её сам (без оплаты)."
+  },
+  {
+    "id": "legendary_pronghorn_horn",
+    "nameRu": "Рог легендарного вилорога",
+    "nameEn": "Legendary Pronghorn Horn",
+    "kind": "legendary_part",
+    "quality": "legendary",
+    "animalId": "leg_pronghorn",
+    "consumedOnCraft": true,
+    "sourceRu": "Снимается с легендарного зверя вместе со шкурой. Если не забрали — автоматически попадает к скупщику."
+  },
+  {
+    "id": "legendary_tatanka_bison_pelt",
+    "nameRu": "Шкура легендарного бизона Татанка",
+    "nameEn": "Legendary Tatanka Bison Pelt",
+    "kind": "legendary_pelt",
+    "quality": "legendary",
+    "animalId": "leg_tatanka_bison",
+    "consumedOnCraft": false,
+    "sourceRu": "Снимается с легендарного зверя. Продайте Охотнику один раз — это откроет ВСЕ его вещи из этого зверя. Если шкура потерялась, Охотник всё равно получит её сам (без оплаты)."
+  },
+  {
+    "id": "legendary_tatanka_bison_horn",
+    "nameRu": "Рог легендарного бизона Татанка",
+    "nameEn": "Legendary Tatanka Bison Horn",
+    "kind": "legendary_part",
+    "quality": "legendary",
+    "animalId": "leg_tatanka_bison",
+    "consumedOnCraft": true,
+    "sourceRu": "Снимается с легендарного зверя вместе со шкурой. Если не забрали — автоматически попадает к скупщику."
+  },
+  {
+    "id": "legendary_wolf_pelt",
+    "nameRu": "Шкура легендарного волка",
+    "nameEn": "Legendary Wolf Pelt",
+    "kind": "legendary_pelt",
+    "quality": "legendary",
+    "animalId": "leg_wolf",
+    "consumedOnCraft": false,
+    "sourceRu": "Снимается с легендарного зверя. Продайте Охотнику один раз — это откроет ВСЕ его вещи из этого зверя. Если шкура потерялась, Охотник всё равно получит её сам (без оплаты)."
+  },
+  {
+    "id": "legendary_wolf_heart",
+    "nameRu": "Сердце легендарного волка",
+    "nameEn": "Legendary Wolf Heart",
+    "kind": "legendary_part",
+    "quality": "legendary",
+    "animalId": "leg_wolf",
+    "consumedOnCraft": true,
+    "sourceRu": "Снимается с легендарного зверя вместе со шкурой. Если не забрали — автоматически попадает к скупщику."
+  },
+  {
+    "id": "legendary_white_bison_pelt",
+    "nameRu": "Шкура легендарного белого бизона",
+    "nameEn": "Legendary White Bison Pelt",
+    "kind": "legendary_pelt",
+    "quality": "legendary",
+    "animalId": "leg_white_bison",
+    "consumedOnCraft": false,
+    "sourceRu": "Снимается с легендарного зверя. Продайте Охотнику один раз — это откроет ВСЕ его вещи из этого зверя. Если шкура потерялась, Охотник всё равно получит её сам (без оплаты)."
+  },
+  {
+    "id": "legendary_white_bison_horn",
+    "nameRu": "Рог легендарного белого бизона",
+    "nameEn": "Legendary Bison Horn",
+    "kind": "legendary_part",
+    "quality": "legendary",
+    "animalId": "leg_white_bison",
+    "consumedOnCraft": true,
+    "sourceRu": "Снимается с легендарного зверя вместе со шкурой. Если не забрали — автоматически попадает к скупщику."
+  },
+  {
+    "id": "vintage_handcuffs",
+    "nameRu": "Наручники времён Гражданской войны",
+    "nameEn": "Vintage Civil War Handcuffs",
+    "kind": "special",
+    "quality": "any",
+    "animalId": null,
+    "consumedOnCraft": true,
+    "sourceRu": "Награда от Финеаса Рэмсботтома за первый полностью собранный набор сигаретных карточек (задание «Курение и другие увлечения»)."
+  },
+  {
+    "id": "gold_jointed_bracelet",
+    "nameRu": "Золотой браслет-цепочка",
+    "nameEn": "Gold Jointed Bracelet",
+    "kind": "special",
+    "quality": "any",
+    "animalId": null,
+    "consumedOnCraft": true,
+    "sourceRu": "Ценность: попадается при обыске домов, тайников и ограблениях. Не продавайте скупщику, если нужен талисман."
+  },
+  {
+    "id": "silver_chain_bracelet",
+    "nameRu": "Серебряный браслет-цепочка",
+    "nameEn": "Silver Chain Bracelet",
+    "kind": "special",
+    "quality": "any",
+    "animalId": null,
+    "consumedOnCraft": true,
+    "sourceRu": "Ценность: попадается при обыске домов, тайников и ограблениях."
+  },
+  {
+    "id": "quartz_chunk",
+    "nameRu": "Кусок кварца",
+    "nameEn": "Quartz Chunk",
+    "kind": "special",
+    "quality": "any",
+    "animalId": null,
+    "consumedOnCraft": true,
+    "sourceRu": "Награда от Деборы Макгиннесс за письмо с местом первой найденной кости динозавра (задание «Испытание веры»). Не продавайте и не жертвуйте — второй не будет."
+  },
+  {
+    "id": "gold_earring",
+    "nameRu": "Золотая серьга",
+    "nameEn": "Gold Earring",
+    "kind": "special",
+    "quality": "any",
+    "animalId": null,
+    "consumedOnCraft": true,
+    "sourceRu": "Ценность: попадается при обыске домов, тайников и ограблениях."
+  },
+  {
+    "id": "cobalt_petrified_wood",
+    "nameRu": "Кобальтовое окаменелое дерево",
+    "nameEn": "Cobalt Petrified Wood",
+    "kind": "special",
+    "quality": "any",
+    "animalId": null,
+    "consumedOnCraft": true,
+    "sourceRu": "На телеге северо-западнее озера Изабелла (Амбарино)."
+  },
+  {
+    "id": "abalone_shell_fragment",
+    "nameRu": "Обломок раковины морского ушка",
+    "nameEn": "Abalone Shell Fragment",
+    "kind": "special",
+    "quality": "any",
+    "animalId": null,
+    "consumedOnCraft": true,
+    "sourceRu": "Единственный экземпляр: заколоченный жёлтый дом в северной части Роудса (недалеко от мясника) — на верстаке в южной комнате. Не продавайте скупщику, если нужен талисман."
+  },
+  {
+    "id": "silver_earring",
+    "nameRu": "Серебряная серьга",
+    "nameEn": "Silver Earring",
+    "kind": "special",
+    "quality": "any",
+    "animalId": null,
+    "consumedOnCraft": true,
+    "sourceRu": "Ценность: попадается при обыске домов, тайников и ограблениях."
+  },
+  {
+    "id": "old_brass_compass",
+    "nameRu": "Старый латунный компас",
+    "nameEn": "Old Brass Compass",
+    "kind": "special",
+    "quality": "any",
+    "animalId": null,
+    "consumedOnCraft": true,
+    "sourceRu": "На столе в хижине Фрэнсиса Синклера — после отправки всех 10 мест резьбы по камню (задание «Геология для начинающих»)."
+  },
+  {
+    "id": "lions_paw",
+    "nameRu": "Львиная лапа",
+    "nameEn": "Lion's Paw",
+    "kind": "special",
+    "quality": "any",
+    "animalId": null,
+    "consumedOnCraft": true,
+    "sourceRu": "Забрать со льва (освежевать нельзя, только трофей) в задании незнакомца «Он, конечно, британец» (часть IV), у Эмеральд-Ранч."
+  }
+]

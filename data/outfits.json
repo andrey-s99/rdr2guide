@@ -1,0 +1,189 @@
+[
+  {
+    "id": "bear_hunter",
+    "nameRu": "Охотник на медведей",
+    "nameEn": "The Bear Hunter",
+    "itemIds": [
+      "legendary_bear_head_hat",
+      "legendary_bear_coat",
+      "boar_riding_gloves",
+      "legendary_bear_roper"
+    ]
+  },
+  {
+    "id": "mountain_man",
+    "nameRu": "Горец",
+    "nameEn": "The Mountain Man",
+    "itemIds": [
+      "grenadier_hat",
+      "ram_shotgun_coat",
+      "country_vest",
+      "elk_riding_gloves"
+    ]
+  },
+  {
+    "id": "marauder",
+    "nameRu": "Мародёр",
+    "nameEn": "The Marauder",
+    "itemIds": [
+      "muskrat_cavalry_hat",
+      "principal_vest",
+      "snake_skin_cavalry_gloves",
+      "bull_fringed_shotgun_chaps"
+    ]
+  },
+  {
+    "id": "rattler",
+    "nameRu": "Гремучник",
+    "nameEn": "The Rattler",
+    "itemIds": [
+      "ram_sombrero",
+      "outdoorsmen_vest",
+      "iguana_range_gloves",
+      "javelina_half_chaps"
+    ]
+  },
+  {
+    "id": "trophy_buck",
+    "nameRu": "Трофейный олень",
+    "nameEn": "The Trophy Buck",
+    "itemIds": [
+      "raccoon_mountain_hat",
+      "legendary_buck_vest",
+      "legendary_buck_fox_range_gloves",
+      "legendary_fox_moccasins"
+    ]
+  },
+  {
+    "id": "dreamcatcher",
+    "nameRu": "Ловец снов",
+    "nameEn": "The Dreamcatcher",
+    "itemIds": [
+      "legendary_beaver_flop_hat",
+      "legendary_bison_vest",
+      "legendary_beaver_cavalry_gloves",
+      "legendary_boar_bison_fowlers",
+      "legendary_bison_batwing_chaps"
+    ]
+  },
+  {
+    "id": "beast_of_prey",
+    "nameRu": "Хищник",
+    "nameEn": "The Beast of Prey",
+    "itemIds": [
+      "legendary_cougar_flop_hat",
+      "legendary_cougar_wolf_vest",
+      "legendary_cougar_riding_gloves",
+      "bull_fowler_boots",
+      "legendary_wolf_batwing_chaps"
+    ]
+  },
+  {
+    "id": "huntsman",
+    "nameRu": "Егерь",
+    "nameEn": "The Huntsman",
+    "itemIds": [
+      "legendary_coyote_mountain_hat",
+      "legendary_pronghorn_coat",
+      "legendary_pronghorn_range_gloves",
+      "workmans_pride_boots",
+      "legendary_coyote_half_chaps"
+    ]
+  },
+  {
+    "id": "death_roll",
+    "nameRu": "Смертельный кувырок",
+    "nameEn": "The Death Roll",
+    "itemIds": [
+      "legendary_alligator_gamblers_hat",
+      "legendary_panther_cloak",
+      "legendary_alligator_vest",
+      "legendary_panther_range_gloves",
+      "legendary_alligator_fowlers"
+    ]
+  },
+  {
+    "id": "stalker",
+    "nameRu": "Следопыт",
+    "nameEn": "The Stalker",
+    "itemIds": [
+      "legendary_ram_hat",
+      "legendary_moose_hunting_jacket",
+      "legendary_ram_rifleman_gloves",
+      "legendary_moose_moccasins",
+      "legendary_ram_batwing_chaps"
+    ]
+  },
+  {
+    "id": "ghost_bison",
+    "nameRu": "Призрачный бизон",
+    "nameEn": "The Ghost Bison",
+    "itemIds": [
+      "legendary_white_bison_hat",
+      "legendary_white_bison_coat",
+      "legendary_elk_range_gloves",
+      "legendary_elk_moccasins",
+      "legendary_elk_half_chaps"
+    ]
+  },
+  {
+    "id": "wrangler",
+    "nameRu": "Объездчик",
+    "nameEn": "The Wrangler",
+    "itemIds": [
+      "goat_flop_hat",
+      "trappers_cloak",
+      "no_mans_vest",
+      "moose_range_gloves",
+      "two_toned_moccasins"
+    ]
+  },
+  {
+    "id": "bronco_buster",
+    "nameRu": "Укротитель мустангов",
+    "nameEn": "The Bronco Buster",
+    "itemIds": [
+      "elk_flop_hat",
+      "coyote_scout_jacket",
+      "huntsman_vest",
+      "pigskin_rifleman_gloves",
+      "boar_fringed_shotgun_chaps"
+    ]
+  },
+  {
+    "id": "bounty_hunter",
+    "nameRu": "Охотник за головами",
+    "nameEn": "The Bounty Hunter",
+    "itemIds": [
+      "plantation_slouch_hat",
+      "beaver_hunting_jacket",
+      "sheepskin_vest",
+      "buck_riding_gloves",
+      "pronghorn_half_chaps"
+    ]
+  },
+  {
+    "id": "desperado",
+    "nameRu": "Отчаянный",
+    "nameEn": "The Desperado",
+    "itemIds": [
+      "beaver_drifter_hat",
+      "wolf_coat",
+      "billy_vest",
+      "winter_cavalry_gloves",
+      "boar_bull_fowler_boots"
+    ]
+  },
+  {
+    "id": "night_wrangler",
+    "nameRu": "Ночной объездчик",
+    "nameEn": "The Night Wrangler",
+    "itemIds": [
+      "coyote_gamblers_hat",
+      "cougar_cutaway_coat",
+      "wilderness_vest",
+      "badger_rifleman_gloves",
+      "moose_half_chaps"
+    ]
+  }
+]

@@ -1,0 +1,27 @@
+[
+  {
+    "id": "ambarino",
+    "nameRu": "Амбарино",
+    "nameEn": "Ambarino"
+  },
+  {
+    "id": "new_hanover",
+    "nameRu": "Нью-Ганновер",
+    "nameEn": "New Hanover"
+  },
+  {
+    "id": "lemoyne",
+    "nameRu": "Лемойн",
+    "nameEn": "Lemoyne"
+  },
+  {
+    "id": "west_elizabeth",
+    "nameRu": "Западная Элизабет",
+    "nameEn": "West Elizabeth"
+  },
+  {
+    "id": "new_austin",
+    "nameRu": "Нью-Остин",
+    "nameEn": "New Austin"
+  }
+]

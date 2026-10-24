@@ -1,0 +1,74 @@
+[
+  {
+    "id": "hat",
+    "nameRu": "Шляпы",
+    "vendorId": "trapper",
+    "icon": "hat"
+  },
+  {
+    "id": "coat",
+    "nameRu": "Куртки и пальто",
+    "vendorId": "trapper",
+    "icon": "coat"
+  },
+  {
+    "id": "vest",
+    "nameRu": "Жилеты",
+    "vendorId": "trapper",
+    "icon": "vest"
+  },
+  {
+    "id": "gloves",
+    "nameRu": "Перчатки",
+    "vendorId": "trapper",
+    "icon": "gloves"
+  },
+  {
+    "id": "boots",
+    "nameRu": "Обувь",
+    "vendorId": "trapper",
+    "icon": "boots"
+  },
+  {
+    "id": "chaps",
+    "nameRu": "Чапсы",
+    "vendorId": "trapper",
+    "icon": "chaps"
+  },
+  {
+    "id": "hat_accessory",
+    "nameRu": "Украшения для шляп",
+    "vendorId": "trapper",
+    "icon": "feather"
+  },
+  {
+    "id": "saddle",
+    "nameRu": "Сёдла",
+    "vendorId": "trapper",
+    "icon": "saddle"
+  },
+  {
+    "id": "satchel",
+    "nameRu": "Сумки",
+    "vendorId": "pearson",
+    "icon": "satchel"
+  },
+  {
+    "id": "camp",
+    "nameRu": "Украшения лагеря",
+    "vendorId": "pearson",
+    "icon": "camp"
+  },
+  {
+    "id": "trinket",
+    "nameRu": "Безделушки",
+    "vendorId": "fence",
+    "icon": "trinket"
+  },
+  {
+    "id": "talisman",
+    "nameRu": "Талисманы",
+    "vendorId": "fence",
+    "icon": "talisman"
+  }
+]

@@ -1,0 +1,4054 @@
+[
+  {
+    "id": "badger_mountain_hat",
+    "vendorId": "trapper",
+    "category": "hat",
+    "nameRu": "Горная шапка из барсука",
+    "nameEn": "Badger Mountain Hat",
+    "price": 26,
+    "recipe": [
+      {
+        "materialId": "perfect_badger",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "bear_grenadier_hat",
+    "vendorId": "trapper",
+    "category": "hat",
+    "nameRu": "Гренадерская шапка из медведя",
+    "nameEn": "Bear Grenadier Hat",
+    "price": 24,
+    "recipe": [
+      {
+        "materialId": "perfect_black_bear",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "beaver_drifter_hat",
+    "vendorId": "trapper",
+    "category": "hat",
+    "nameRu": "Шляпа бродяги из бобра",
+    "nameEn": "Beaver Drifter Hat",
+    "price": 20,
+    "recipe": [
+      {
+        "materialId": "perfect_beaver",
+        "qty": 2
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "desperado"
+    ]
+  },
+  {
+    "id": "beaver_mountain_hat",
+    "vendorId": "trapper",
+    "category": "hat",
+    "nameRu": "Горная шапка из бобра",
+    "nameEn": "Beaver Mountain Hat",
+    "price": 28,
+    "recipe": [
+      {
+        "materialId": "perfect_beaver",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "bison_gamblers_hat",
+    "vendorId": "trapper",
+    "category": "hat",
+    "nameRu": "Шляпа игрока из бизона",
+    "nameEn": "Bison Gambler's Hat",
+    "price": 18,
+    "recipe": [
+      {
+        "materialId": "perfect_bison",
+        "qty": 1
+      },
+      {
+        "materialId": "feather_robin",
+        "qty": 4
+      },
+      {
+        "materialId": "feather_oriole",
+        "qty": 4
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "coyote_gamblers_hat",
+    "vendorId": "trapper",
+    "category": "hat",
+    "nameRu": "Шляпа игрока из койота",
+    "nameEn": "Coyote Gambler's Hat",
+    "price": 16,
+    "recipe": [
+      {
+        "materialId": "perfect_coyote",
+        "qty": 2
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "night_wrangler"
+    ]
+  },
+  {
+    "id": "deer_cavalry_hat",
+    "vendorId": "trapper",
+    "category": "hat",
+    "nameRu": "Кавалерийская шляпа из оленя",
+    "nameEn": "Deer Cavalry Hat",
+    "price": 20,
+    "recipe": [
+      {
+        "materialId": "perfect_deer",
+        "qty": 1
+      },
+      {
+        "materialId": "feather_raven",
+        "qty": 10
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "elk_flop_hat",
+    "vendorId": "trapper",
+    "category": "hat",
+    "nameRu": "Мягкая шляпа из вапити",
+    "nameEn": "Elk Flop Hat",
+    "price": 12,
+    "recipe": [
+      {
+        "materialId": "perfect_elk",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "bronco_buster"
+    ]
+  },
+  {
+    "id": "fox_mountain_hat",
+    "vendorId": "trapper",
+    "category": "hat",
+    "nameRu": "Горная шапка из лисы",
+    "nameEn": "Fox Mountain Hat",
+    "price": 30,
+    "recipe": [
+      {
+        "materialId": "perfect_fox",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "gila_monster_gamblers_hat",
+    "vendorId": "trapper",
+    "category": "hat",
+    "nameRu": "Шляпа игрока из ядозуба",
+    "nameEn": "Gila Monster Gambler's Hat",
+    "price": 16,
+    "recipe": [
+      {
+        "materialId": "perfect_elk",
+        "qty": 1
+      },
+      {
+        "materialId": "perfect_gila_monster",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "goat_flop_hat",
+    "vendorId": "trapper",
+    "category": "hat",
+    "nameRu": "Мягкая шляпа из козы",
+    "nameEn": "Goat Flop Hat",
+    "price": 12,
+    "recipe": [
+      {
+        "materialId": "perfect_pronghorn",
+        "qty": 1
+      },
+      {
+        "materialId": "perfect_goat",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "wrangler"
+    ]
+  },
+  {
+    "id": "grenadier_hat",
+    "vendorId": "trapper",
+    "category": "hat",
+    "nameRu": "Гренадерская шапка",
+    "nameEn": "Grenadier Hat",
+    "price": 24,
+    "recipe": [
+      {
+        "materialId": "perfect_muskrat",
+        "qty": 1
+      },
+      {
+        "materialId": "perfect_beaver",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "mountain_man"
+    ]
+  },
+  {
+    "id": "iguana_big_valley_hat",
+    "vendorId": "trapper",
+    "category": "hat",
+    "nameRu": "Шляпа «Биг-Вэлли» из игуаны",
+    "nameEn": "Iguana Big Valley Hat",
+    "price": 14,
+    "recipe": [
+      {
+        "materialId": "perfect_cow",
+        "qty": 1
+      },
+      {
+        "materialId": "perfect_iguana",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "legendary_alligator_gamblers_hat",
+    "vendorId": "trapper",
+    "category": "hat",
+    "nameRu": "Шляпа игрока из легендарного аллигатора",
+    "nameEn": "Legendary Alligator Gambler's Hat",
+    "price": 22,
+    "recipe": [
+      {
+        "materialId": "legendary_bullgator_pelt",
+        "qty": 1
+      },
+      {
+        "materialId": "perfect_snake",
+        "qty": 2
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "Сначала продайте Охотнику шкуру соответствующего легендарного зверя.",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "death_roll"
+    ]
+  },
+  {
+    "id": "legendary_bear_head_hat",
+    "vendorId": "trapper",
+    "category": "hat",
+    "nameRu": "Шапка из головы легендарного медведя",
+    "nameEn": "Legendary Bear Head Hat",
+    "price": 40,
+    "recipe": [
+      {
+        "materialId": "legendary_bear_pelt",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "Сначала продайте Охотнику шкуру соответствующего легендарного зверя.",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "bear_hunter"
+    ]
+  },
+  {
+    "id": "legendary_beaver_flop_hat",
+    "vendorId": "trapper",
+    "category": "hat",
+    "nameRu": "Мягкая шляпа из легендарного бобра",
+    "nameEn": "Legendary Beaver Flop Hat",
+    "price": 22,
+    "recipe": [
+      {
+        "materialId": "legendary_beaver_pelt",
+        "qty": 1
+      },
+      {
+        "materialId": "legendary_boar_pelt",
+        "qty": 1
+      },
+      {
+        "materialId": "feather_cardinal",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "Сначала продайте Охотнику шкуру соответствующего легендарного зверя.",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "dreamcatcher"
+    ]
+  },
+  {
+    "id": "legendary_cougar_flop_hat",
+    "vendorId": "trapper",
+    "category": "hat",
+    "nameRu": "Мягкая шляпа из легендарной пумы",
+    "nameEn": "Legendary Cougar Flop Hat",
+    "price": 19,
+    "recipe": [
+      {
+        "materialId": "legendary_cougar_pelt",
+        "qty": 1
+      },
+      {
+        "materialId": "feather_turkey",
+        "qty": 2
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "Сначала продайте Охотнику шкуру соответствующего легендарного зверя.",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "beast_of_prey"
+    ]
+  },
+  {
+    "id": "legendary_coyote_mountain_hat",
+    "vendorId": "trapper",
+    "category": "hat",
+    "nameRu": "Горная шапка из легендарного койота",
+    "nameEn": "Legendary Coyote Mountain Hat",
+    "price": 23,
+    "recipe": [
+      {
+        "materialId": "legendary_coyote_pelt",
+        "qty": 1
+      },
+      {
+        "materialId": "feather_eagle",
+        "qty": 2
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "Сначала продайте Охотнику шкуру соответствующего легендарного зверя.",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "huntsman"
+    ]
+  },
+  {
+    "id": "legendary_ram_hat",
+    "vendorId": "trapper",
+    "category": "hat",
+    "nameRu": "Шляпа из легендарного толсторога",
+    "nameEn": "Legendary Ram Hat",
+    "price": 17,
+    "recipe": [
+      {
+        "materialId": "legendary_ram_pelt",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "Сначала продайте Охотнику шкуру соответствующего легендарного зверя.",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "stalker"
+    ]
+  },
+  {
+    "id": "legendary_white_bison_hat",
+    "vendorId": "trapper",
+    "category": "hat",
+    "nameRu": "Шляпа из легендарного белого бизона",
+    "nameEn": "Legendary White Bison Hat",
+    "price": 45,
+    "recipe": [
+      {
+        "materialId": "legendary_white_bison_pelt",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "Сначала продайте Охотнику шкуру соответствующего легендарного зверя.",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "ghost_bison"
+    ]
+  },
+  {
+    "id": "muskrat_cavalry_hat",
+    "vendorId": "trapper",
+    "category": "hat",
+    "nameRu": "Кавалерийская шляпа из ондатры",
+    "nameEn": "Muskrat Cavalry Hat",
+    "price": 15,
+    "recipe": [
+      {
+        "materialId": "perfect_rabbit",
+        "qty": 4
+      },
+      {
+        "materialId": "perfect_muskrat",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "marauder"
+    ]
+  },
+  {
+    "id": "plantation_slouch_hat",
+    "vendorId": "trapper",
+    "category": "hat",
+    "nameRu": "Плантаторская шляпа",
+    "nameEn": "Plantation Slouch Hat",
+    "price": 15,
+    "recipe": [
+      {
+        "materialId": "perfect_bison",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "bounty_hunter"
+    ]
+  },
+  {
+    "id": "pronghorn_flop_hat",
+    "vendorId": "trapper",
+    "category": "hat",
+    "nameRu": "Мягкая шляпа из вилорога",
+    "nameEn": "Pronghorn Flop Hat",
+    "price": 12,
+    "recipe": [
+      {
+        "materialId": "perfect_pronghorn",
+        "qty": 1
+      },
+      {
+        "materialId": "perfect_opossum",
+        "qty": 4
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "raccoon_mountain_hat",
+    "vendorId": "trapper",
+    "category": "hat",
+    "nameRu": "Горная шапка из енота",
+    "nameEn": "Raccoon Mountain Hat",
+    "price": 21,
+    "recipe": [
+      {
+        "materialId": "perfect_raccoon",
+        "qty": 1
+      },
+      {
+        "materialId": "perfect_beaver",
+        "qty": 1
+      },
+      {
+        "materialId": "feather_hawk",
+        "qty": 2
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "trophy_buck"
+    ]
+  },
+  {
+    "id": "ram_sombrero",
+    "vendorId": "trapper",
+    "category": "hat",
+    "nameRu": "Сомбреро из толсторога",
+    "nameEn": "Ram Sombrero",
+    "price": 10,
+    "recipe": [
+      {
+        "materialId": "perfect_ram",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "rattler"
+    ]
+  },
+  {
+    "id": "rat_flat_cap",
+    "vendorId": "trapper",
+    "category": "hat",
+    "nameRu": "Кепка из крысы",
+    "nameEn": "Rat Flat Cap",
+    "price": 12,
+    "recipe": [
+      {
+        "materialId": "perfect_rat",
+        "qty": 10
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "rat_infantry_hardee_hat",
+    "vendorId": "trapper",
+    "category": "hat",
+    "nameRu": "Пехотная шляпа из крысы",
+    "nameEn": "Rat Infantry Hardee Hat",
+    "price": 17,
+    "recipe": [
+      {
+        "materialId": "perfect_goat",
+        "qty": 1
+      },
+      {
+        "materialId": "perfect_rat",
+        "qty": 6
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "skunk_mountain_hat",
+    "vendorId": "trapper",
+    "category": "hat",
+    "nameRu": "Горная шапка из скунса",
+    "nameEn": "Skunk Mountain Hat",
+    "price": 23,
+    "recipe": [
+      {
+        "materialId": "perfect_skunk",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "snake_bulldogger_hat",
+    "vendorId": "trapper",
+    "category": "hat",
+    "nameRu": "Шляпа бульдоггера из змеи",
+    "nameEn": "Snake Bulldogger Hat",
+    "price": 23,
+    "recipe": [
+      {
+        "materialId": "perfect_sheep",
+        "qty": 1
+      },
+      {
+        "materialId": "perfect_snake",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "squirrel_flat_cap",
+    "vendorId": "trapper",
+    "category": "hat",
+    "nameRu": "Кепка из белки",
+    "nameEn": "Squirrel Flat Cap",
+    "price": 16,
+    "recipe": [
+      {
+        "materialId": "perfect_squirrel",
+        "qty": 6
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "beaver_hunting_jacket",
+    "vendorId": "trapper",
+    "category": "coat",
+    "nameRu": "Охотничья куртка из бобра",
+    "nameEn": "Beaver Hunting Jacket",
+    "price": 21,
+    "recipe": [
+      {
+        "materialId": "perfect_cow",
+        "qty": 1
+      },
+      {
+        "materialId": "perfect_beaver",
+        "qty": 2
+      }
+    ],
+    "dataConfidence": "medium",
+    "dataNoteRu": "В списках крафта Охотника — 2 шкуры бобра; в одном гайде по костюму «Охотник за головами» указана 1. Взято 2 (большинство источников).",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "bounty_hunter"
+    ]
+  },
+  {
+    "id": "cougar_cutaway_coat",
+    "vendorId": "trapper",
+    "category": "coat",
+    "nameRu": "Сюртук из пумы",
+    "nameEn": "Cougar Cutaway Coat",
+    "price": 39,
+    "recipe": [
+      {
+        "materialId": "perfect_cougar",
+        "qty": 2
+      },
+      {
+        "materialId": "perfect_black_bear",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "night_wrangler"
+    ]
+  },
+  {
+    "id": "coyote_scout_jacket",
+    "vendorId": "trapper",
+    "category": "coat",
+    "nameRu": "Куртка разведчика из койота",
+    "nameEn": "Coyote Scout Jacket",
+    "price": 20,
+    "recipe": [
+      {
+        "materialId": "perfect_ox",
+        "qty": 1
+      },
+      {
+        "materialId": "perfect_coyote",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "bronco_buster"
+    ]
+  },
+  {
+    "id": "legendary_bear_coat",
+    "vendorId": "trapper",
+    "category": "coat",
+    "nameRu": "Пальто из легендарного медведя",
+    "nameEn": "Legendary Bear Coat",
+    "price": 28,
+    "recipe": [
+      {
+        "materialId": "legendary_bear_pelt",
+        "qty": 1
+      },
+      {
+        "materialId": "perfect_bison",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "Сначала продайте Охотнику шкуру соответствующего легендарного зверя.",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "bear_hunter"
+    ]
+  },
+  {
+    "id": "legendary_moose_hunting_jacket",
+    "vendorId": "trapper",
+    "category": "coat",
+    "nameRu": "Охотничья куртка из легендарного лося",
+    "nameEn": "Legendary Moose Hunting Jacket",
+    "price": 24,
+    "recipe": [
+      {
+        "materialId": "legendary_moose_pelt",
+        "qty": 1
+      },
+      {
+        "materialId": "perfect_wolf",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "Сначала продайте Охотнику шкуру соответствующего легендарного зверя.",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "stalker"
+    ]
+  },
+  {
+    "id": "legendary_panther_cloak",
+    "vendorId": "trapper",
+    "category": "coat",
+    "nameRu": "Накидка из легендарной пантеры",
+    "nameEn": "Legendary Panther Cloak",
+    "price": 45,
+    "recipe": [
+      {
+        "materialId": "legendary_panther_pelt",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "Сначала продайте Охотнику шкуру соответствующего легендарного зверя.",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "death_roll"
+    ]
+  },
+  {
+    "id": "legendary_pronghorn_coat",
+    "vendorId": "trapper",
+    "category": "coat",
+    "nameRu": "Пальто из легендарного вилорога",
+    "nameEn": "Legendary Pronghorn Coat",
+    "price": 35,
+    "recipe": [
+      {
+        "materialId": "legendary_pronghorn_pelt",
+        "qty": 1
+      },
+      {
+        "materialId": "perfect_moose",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "Сначала продайте Охотнику шкуру соответствующего легендарного зверя.",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "huntsman"
+    ]
+  },
+  {
+    "id": "legendary_white_bison_coat",
+    "vendorId": "trapper",
+    "category": "coat",
+    "nameRu": "Пальто из легендарного белого бизона",
+    "nameEn": "Legendary White Bison Coat",
+    "price": 29,
+    "recipe": [
+      {
+        "materialId": "legendary_white_bison_pelt",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "Сначала продайте Охотнику шкуру соответствующего легендарного зверя.",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "ghost_bison"
+    ]
+  },
+  {
+    "id": "ram_shotgun_coat",
+    "vendorId": "trapper",
+    "category": "coat",
+    "nameRu": "Пальто «Шотган» из толсторога",
+    "nameEn": "Ram Shotgun Coat",
+    "price": 45,
+    "recipe": [
+      {
+        "materialId": "perfect_ram",
+        "qty": 2
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "mountain_man"
+    ]
+  },
+  {
+    "id": "trappers_cloak",
+    "vendorId": "trapper",
+    "category": "coat",
+    "nameRu": "Накидка траппера",
+    "nameEn": "Trapper's Cloak",
+    "price": 32,
+    "recipe": [
+      {
+        "materialId": "perfect_sheep",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "wrangler"
+    ]
+  },
+  {
+    "id": "wolf_coat",
+    "vendorId": "trapper",
+    "category": "coat",
+    "nameRu": "Пальто из волка",
+    "nameEn": "Wolf Coat",
+    "price": 25,
+    "recipe": [
+      {
+        "materialId": "perfect_ram",
+        "qty": 1
+      },
+      {
+        "materialId": "perfect_wolf",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "desperado"
+    ]
+  },
+  {
+    "id": "billy_vest",
+    "vendorId": "trapper",
+    "category": "vest",
+    "nameRu": "Жилет «Билли»",
+    "nameEn": "Billy Vest",
+    "price": 32,
+    "recipe": [
+      {
+        "materialId": "perfect_armadillo",
+        "qty": 2
+      },
+      {
+        "materialId": "perfect_goat",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "medium",
+    "dataNoteRu": "В списках крафта — 2 кожи броненосца; в гайде по костюму «Отчаянный» указана 1. Взято 2.",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "desperado"
+    ]
+  },
+  {
+    "id": "country_vest",
+    "vendorId": "trapper",
+    "category": "vest",
+    "nameRu": "Деревенский жилет",
+    "nameEn": "Country Vest",
+    "price": 25,
+    "recipe": [
+      {
+        "materialId": "perfect_buck",
+        "qty": 1
+      },
+      {
+        "materialId": "perfect_beaver",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "mountain_man"
+    ]
+  },
+  {
+    "id": "hinterland_vest",
+    "vendorId": "trapper",
+    "category": "vest",
+    "nameRu": "Жилет «Глушь»",
+    "nameEn": "Hinterland Vest",
+    "price": 21,
+    "recipe": [
+      {
+        "materialId": "perfect_ram",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "huntsman_vest",
+    "vendorId": "trapper",
+    "category": "vest",
+    "nameRu": "Жилет егеря",
+    "nameEn": "Huntsman Vest",
+    "price": 25,
+    "recipe": [
+      {
+        "materialId": "perfect_sheep",
+        "qty": 1
+      },
+      {
+        "materialId": "perfect_deer",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "bronco_buster"
+    ]
+  },
+  {
+    "id": "legendary_alligator_vest",
+    "vendorId": "trapper",
+    "category": "vest",
+    "nameRu": "Жилет из легендарного аллигатора",
+    "nameEn": "Legendary Alligator Vest",
+    "price": 35,
+    "recipe": [
+      {
+        "materialId": "legendary_bullgator_pelt",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "Сначала продайте Охотнику шкуру соответствующего легендарного зверя.",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "death_roll"
+    ]
+  },
+  {
+    "id": "legendary_bison_vest",
+    "vendorId": "trapper",
+    "category": "vest",
+    "nameRu": "Жилет из легендарного бизона Татанка",
+    "nameEn": "Legendary Bison Vest",
+    "price": 30,
+    "recipe": [
+      {
+        "materialId": "legendary_tatanka_bison_pelt",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "Сначала продайте Охотнику шкуру соответствующего легендарного зверя.",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "dreamcatcher"
+    ]
+  },
+  {
+    "id": "legendary_buck_vest",
+    "vendorId": "trapper",
+    "category": "vest",
+    "nameRu": "Жилет из легендарного оленя",
+    "nameEn": "Legendary Buck Vest",
+    "price": 26,
+    "recipe": [
+      {
+        "materialId": "legendary_buck_pelt",
+        "qty": 1
+      },
+      {
+        "materialId": "perfect_ram",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "Сначала продайте Охотнику шкуру соответствующего легендарного зверя.",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "trophy_buck"
+    ]
+  },
+  {
+    "id": "legendary_cougar_wolf_vest",
+    "vendorId": "trapper",
+    "category": "vest",
+    "nameRu": "Жилет из легендарных пумы и волка",
+    "nameEn": "Legendary Cougar/Wolf Vest",
+    "price": 42,
+    "recipe": [
+      {
+        "materialId": "legendary_cougar_pelt",
+        "qty": 1
+      },
+      {
+        "materialId": "legendary_wolf_pelt",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "Сначала продайте Охотнику шкуру соответствующего легендарного зверя.",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "beast_of_prey"
+    ]
+  },
+  {
+    "id": "no_mans_vest",
+    "vendorId": "trapper",
+    "category": "vest",
+    "nameRu": "Жилет «Ничей»",
+    "nameEn": "No-Man's Vest",
+    "price": 27,
+    "recipe": [
+      {
+        "materialId": "perfect_panther",
+        "qty": 1
+      },
+      {
+        "materialId": "perfect_goat",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "wrangler"
+    ]
+  },
+  {
+    "id": "outdoorsmen_vest",
+    "vendorId": "trapper",
+    "category": "vest",
+    "nameRu": "Жилет путешественника",
+    "nameEn": "Outdoorsmen Vest",
+    "price": 22,
+    "recipe": [
+      {
+        "materialId": "perfect_pronghorn",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "rattler"
+    ]
+  },
+  {
+    "id": "principal_vest",
+    "vendorId": "trapper",
+    "category": "vest",
+    "nameRu": "Жилет «Принципал»",
+    "nameEn": "Principal Vest",
+    "price": 18,
+    "recipe": [
+      {
+        "materialId": "perfect_cow",
+        "qty": 1
+      },
+      {
+        "materialId": "perfect_deer",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "marauder"
+    ]
+  },
+  {
+    "id": "rugged_wrangler_vest",
+    "vendorId": "trapper",
+    "category": "vest",
+    "nameRu": "Грубый жилет ковбоя",
+    "nameEn": "Rugged Wrangler Vest",
+    "price": 23,
+    "recipe": [
+      {
+        "materialId": "perfect_pig",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "rustic_vest",
+    "vendorId": "trapper",
+    "category": "vest",
+    "nameRu": "Простой жилет",
+    "nameEn": "Rustic Vest",
+    "price": 23,
+    "recipe": [
+      {
+        "materialId": "perfect_cougar",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "sheepskin_vest",
+    "vendorId": "trapper",
+    "category": "vest",
+    "nameRu": "Жилет из овчины",
+    "nameEn": "Sheepskin Vest",
+    "price": 20,
+    "recipe": [
+      {
+        "materialId": "perfect_sheep",
+        "qty": 2
+      }
+    ],
+    "dataConfidence": "medium",
+    "dataNoteRu": "Большинство источников — 2 шкуры овцы, один гайд — 1. Взято 2.",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "bounty_hunter"
+    ]
+  },
+  {
+    "id": "wilderness_vest",
+    "vendorId": "trapper",
+    "category": "vest",
+    "nameRu": "Жилет «Дикие края»",
+    "nameEn": "Wilderness Vest",
+    "price": 28,
+    "recipe": [
+      {
+        "materialId": "perfect_wolf",
+        "qty": 1
+      },
+      {
+        "materialId": "perfect_panther",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "night_wrangler"
+    ]
+  },
+  {
+    "id": "badger_rifleman_gloves",
+    "vendorId": "trapper",
+    "category": "gloves",
+    "nameRu": "Стрелковые перчатки из барсука",
+    "nameEn": "Badger Rifleman Gloves",
+    "price": 10,
+    "recipe": [
+      {
+        "materialId": "perfect_badger",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "night_wrangler"
+    ]
+  },
+  {
+    "id": "boar_riding_gloves",
+    "vendorId": "trapper",
+    "category": "gloves",
+    "nameRu": "Перчатки для верховой езды из кабана",
+    "nameEn": "Boar Riding Gloves",
+    "price": 15,
+    "recipe": [
+      {
+        "materialId": "perfect_boar",
+        "qty": 1
+      },
+      {
+        "materialId": "perfect_rabbit",
+        "qty": 2
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "bear_hunter"
+    ]
+  },
+  {
+    "id": "buck_riding_gloves",
+    "vendorId": "trapper",
+    "category": "gloves",
+    "nameRu": "Перчатки для верховой езды из оленя",
+    "nameEn": "Buck Riding Gloves",
+    "price": 5,
+    "recipe": [
+      {
+        "materialId": "perfect_buck",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "bounty_hunter"
+    ]
+  },
+  {
+    "id": "elk_riding_gloves",
+    "vendorId": "trapper",
+    "category": "gloves",
+    "nameRu": "Перчатки для верховой езды из вапити",
+    "nameEn": "Elk Riding Gloves",
+    "price": 12,
+    "recipe": [
+      {
+        "materialId": "perfect_elk",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "mountain_man"
+    ]
+  },
+  {
+    "id": "iguana_range_gloves",
+    "vendorId": "trapper",
+    "category": "gloves",
+    "nameRu": "Перчатки скотовода из игуаны",
+    "nameEn": "Iguana Range Gloves",
+    "price": 27,
+    "recipe": [
+      {
+        "materialId": "perfect_collared_peccary",
+        "qty": 1
+      },
+      {
+        "materialId": "perfect_iguana",
+        "qty": 2
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "rattler"
+    ]
+  },
+  {
+    "id": "legendary_beaver_cavalry_gloves",
+    "vendorId": "trapper",
+    "category": "gloves",
+    "nameRu": "Кавалерийские перчатки из легендарного бобра",
+    "nameEn": "Legendary Beaver Cavalry Gloves",
+    "price": 18,
+    "recipe": [
+      {
+        "materialId": "legendary_beaver_pelt",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "Сначала продайте Охотнику шкуру соответствующего легендарного зверя.",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "dreamcatcher"
+    ]
+  },
+  {
+    "id": "legendary_buck_fox_range_gloves",
+    "vendorId": "trapper",
+    "category": "gloves",
+    "nameRu": "Перчатки скотовода из легендарных оленя и лисы",
+    "nameEn": "Legendary Buck & Fox Range Gloves",
+    "price": 28,
+    "recipe": [
+      {
+        "materialId": "legendary_buck_pelt",
+        "qty": 1
+      },
+      {
+        "materialId": "legendary_fox_pelt",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "Сначала продайте Охотнику шкуру соответствующего легендарного зверя.",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "trophy_buck"
+    ]
+  },
+  {
+    "id": "legendary_cougar_riding_gloves",
+    "vendorId": "trapper",
+    "category": "gloves",
+    "nameRu": "Перчатки для верховой езды из легендарной пумы",
+    "nameEn": "Legendary Cougar Riding Gloves",
+    "price": 20,
+    "recipe": [
+      {
+        "materialId": "legendary_cougar_pelt",
+        "qty": 1
+      },
+      {
+        "materialId": "perfect_boar",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "Сначала продайте Охотнику шкуру соответствующего легендарного зверя.",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "beast_of_prey"
+    ]
+  },
+  {
+    "id": "legendary_elk_range_gloves",
+    "vendorId": "trapper",
+    "category": "gloves",
+    "nameRu": "Перчатки скотовода из легендарного вапити",
+    "nameEn": "Legendary Elk Range Gloves",
+    "price": 13,
+    "recipe": [
+      {
+        "materialId": "legendary_elk_pelt",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "Сначала продайте Охотнику шкуру соответствующего легендарного зверя.",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "ghost_bison"
+    ]
+  },
+  {
+    "id": "legendary_panther_range_gloves",
+    "vendorId": "trapper",
+    "category": "gloves",
+    "nameRu": "Перчатки скотовода из легендарной пантеры",
+    "nameEn": "Legendary Panther Range Gloves",
+    "price": 30,
+    "recipe": [
+      {
+        "materialId": "legendary_panther_pelt",
+        "qty": 1
+      },
+      {
+        "materialId": "perfect_gila_monster",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "medium",
+    "dataNoteRu": "В списках крафта Охотника — 1 кожа ядозуба; в двух гайдах по костюму «Смертельный кувырок» указано 2. Взята 1.",
+    "requirementRu": "Сначала продайте Охотнику шкуру соответствующего легендарного зверя.",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "death_roll"
+    ]
+  },
+  {
+    "id": "legendary_pronghorn_range_gloves",
+    "vendorId": "trapper",
+    "category": "gloves",
+    "nameRu": "Перчатки скотовода из легендарного вилорога",
+    "nameEn": "Legendary Pronghorn Range Gloves",
+    "price": 17,
+    "recipe": [
+      {
+        "materialId": "legendary_pronghorn_pelt",
+        "qty": 1
+      },
+      {
+        "materialId": "perfect_muskrat",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "Сначала продайте Охотнику шкуру соответствующего легендарного зверя.",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "huntsman"
+    ]
+  },
+  {
+    "id": "legendary_ram_rifleman_gloves",
+    "vendorId": "trapper",
+    "category": "gloves",
+    "nameRu": "Стрелковые перчатки из легендарного толсторога",
+    "nameEn": "Legendary Ram Rifleman Gloves",
+    "price": 12,
+    "recipe": [
+      {
+        "materialId": "legendary_ram_pelt",
+        "qty": 1
+      },
+      {
+        "materialId": "perfect_boar",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "Сначала продайте Охотнику шкуру соответствующего легендарного зверя.",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "stalker"
+    ]
+  },
+  {
+    "id": "moose_range_gloves",
+    "vendorId": "trapper",
+    "category": "gloves",
+    "nameRu": "Перчатки скотовода из лося",
+    "nameEn": "Moose Range Gloves",
+    "price": 22,
+    "recipe": [
+      {
+        "materialId": "perfect_moose",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "wrangler"
+    ]
+  },
+  {
+    "id": "pigskin_rifleman_gloves",
+    "vendorId": "trapper",
+    "category": "gloves",
+    "nameRu": "Стрелковые перчатки из свиной кожи",
+    "nameEn": "Pigskin Rifleman Gloves",
+    "price": 8,
+    "recipe": [
+      {
+        "materialId": "perfect_pig",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "bronco_buster"
+    ]
+  },
+  {
+    "id": "snake_skin_cavalry_gloves",
+    "vendorId": "trapper",
+    "category": "gloves",
+    "nameRu": "Кавалерийские перчатки из змеиной кожи",
+    "nameEn": "Snake Skin Cavalry Gloves",
+    "price": 26,
+    "recipe": [
+      {
+        "materialId": "perfect_boar",
+        "qty": 1
+      },
+      {
+        "materialId": "perfect_snake",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "marauder"
+    ]
+  },
+  {
+    "id": "winter_cavalry_gloves",
+    "vendorId": "trapper",
+    "category": "gloves",
+    "nameRu": "Зимние кавалерийские перчатки",
+    "nameEn": "Winter Cavalry Gloves",
+    "price": 25,
+    "recipe": [
+      {
+        "materialId": "perfect_rabbit",
+        "qty": 1
+      },
+      {
+        "materialId": "perfect_muskrat",
+        "qty": 2
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "desperado"
+    ]
+  },
+  {
+    "id": "boar_bull_fowler_boots",
+    "vendorId": "trapper",
+    "category": "boots",
+    "nameRu": "Сапоги-фаулеры из кабана и вола",
+    "nameEn": "Boar & Bull Fowler Boots",
+    "price": 31,
+    "recipe": [
+      {
+        "materialId": "perfect_ox",
+        "qty": 1
+      },
+      {
+        "materialId": "perfect_boar",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "desperado"
+    ]
+  },
+  {
+    "id": "bull_fowler_boots",
+    "vendorId": "trapper",
+    "category": "boots",
+    "nameRu": "Сапоги-фаулеры из быка",
+    "nameEn": "Bull Fowler Boots",
+    "price": 29,
+    "recipe": [
+      {
+        "materialId": "perfect_boar",
+        "qty": 1
+      },
+      {
+        "materialId": "perfect_bull",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "medium",
+    "dataNoteRu": "Большинство источников — 1 шкура быка, один гайд — 2. Взята 1.",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "beast_of_prey"
+    ]
+  },
+  {
+    "id": "javelina_moccasins",
+    "vendorId": "trapper",
+    "category": "boots",
+    "nameRu": "Мокасины из пекари",
+    "nameEn": "Javelina Moccasins",
+    "price": 33,
+    "recipe": [
+      {
+        "materialId": "perfect_collared_peccary",
+        "qty": 2
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "legendary_alligator_fowlers",
+    "vendorId": "trapper",
+    "category": "boots",
+    "nameRu": "Фаулеры из легендарного аллигатора",
+    "nameEn": "Legendary Alligator Fowlers",
+    "price": 35,
+    "recipe": [
+      {
+        "materialId": "legendary_bullgator_pelt",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "Сначала продайте Охотнику шкуру соответствующего легендарного зверя.",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "death_roll"
+    ]
+  },
+  {
+    "id": "legendary_bear_roper",
+    "vendorId": "trapper",
+    "category": "boots",
+    "nameRu": "Сапоги-роперы из легендарного медведя",
+    "nameEn": "Legendary Bear Roper",
+    "price": 34,
+    "recipe": [
+      {
+        "materialId": "legendary_bear_pelt",
+        "qty": 1
+      },
+      {
+        "materialId": "perfect_bull",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "Сначала продайте Охотнику шкуру соответствующего легендарного зверя.",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "bear_hunter"
+    ]
+  },
+  {
+    "id": "legendary_boar_bison_fowlers",
+    "vendorId": "trapper",
+    "category": "boots",
+    "nameRu": "Фаулеры из легендарных кабана и бизона",
+    "nameEn": "Legendary Boar & Bison Fowlers",
+    "price": 37,
+    "recipe": [
+      {
+        "materialId": "legendary_boar_pelt",
+        "qty": 1
+      },
+      {
+        "materialId": "legendary_tatanka_bison_pelt",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "Сначала продайте Охотнику шкуру соответствующего легендарного зверя.",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "dreamcatcher"
+    ]
+  },
+  {
+    "id": "legendary_elk_moccasins",
+    "vendorId": "trapper",
+    "category": "boots",
+    "nameRu": "Мокасины из легендарного вапити",
+    "nameEn": "Legendary Elk Moccasins",
+    "price": 30,
+    "recipe": [
+      {
+        "materialId": "legendary_elk_pelt",
+        "qty": 1
+      },
+      {
+        "materialId": "perfect_goat",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "Сначала продайте Охотнику шкуру соответствующего легендарного зверя.",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "ghost_bison"
+    ]
+  },
+  {
+    "id": "legendary_fox_moccasins",
+    "vendorId": "trapper",
+    "category": "boots",
+    "nameRu": "Мокасины из легендарной лисы",
+    "nameEn": "Legendary Fox Moccasins",
+    "price": 40,
+    "recipe": [
+      {
+        "materialId": "perfect_elk",
+        "qty": 1
+      },
+      {
+        "materialId": "legendary_fox_pelt",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "medium",
+    "dataNoteRu": "В списках крафта — шкура легендарной лисы + идеальная шкура вапити; в одном гайде по костюму вместо легендарной указана идеальная шкура лисы. Взята легендарная.",
+    "requirementRu": "Сначала продайте Охотнику шкуру соответствующего легендарного зверя.",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "trophy_buck"
+    ]
+  },
+  {
+    "id": "legendary_moose_moccasins",
+    "vendorId": "trapper",
+    "category": "boots",
+    "nameRu": "Мокасины из легендарного лося",
+    "nameEn": "Legendary Moose Moccasins",
+    "price": 22,
+    "recipe": [
+      {
+        "materialId": "legendary_moose_pelt",
+        "qty": 1
+      },
+      {
+        "materialId": "perfect_cow",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "Сначала продайте Охотнику шкуру соответствующего легендарного зверя.",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "stalker"
+    ]
+  },
+  {
+    "id": "moccasins",
+    "vendorId": "trapper",
+    "category": "boots",
+    "nameRu": "Мокасины",
+    "nameEn": "Moccasins",
+    "price": 17,
+    "recipe": [
+      {
+        "materialId": "perfect_buck",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "skunk_trapper_boots",
+    "vendorId": "trapper",
+    "category": "boots",
+    "nameRu": "Сапоги траппера из скунса",
+    "nameEn": "Skunk Trapper Boots",
+    "price": 39,
+    "recipe": [
+      {
+        "materialId": "perfect_skunk",
+        "qty": 2
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "two_toned_moccasins",
+    "vendorId": "trapper",
+    "category": "boots",
+    "nameRu": "Двухцветные мокасины",
+    "nameEn": "Two Toned Moccasins",
+    "price": 15,
+    "recipe": [
+      {
+        "materialId": "perfect_buck",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "wrangler"
+    ]
+  },
+  {
+    "id": "workmans_pride_boots",
+    "vendorId": "trapper",
+    "category": "boots",
+    "nameRu": "Рабочие сапоги «Гордость»",
+    "nameEn": "Workman's Pride Boots",
+    "price": 28,
+    "recipe": [
+      {
+        "materialId": "perfect_cow",
+        "qty": 1
+      },
+      {
+        "materialId": "perfect_goat",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "huntsman"
+    ]
+  },
+  {
+    "id": "batwing_chaps",
+    "vendorId": "trapper",
+    "category": "chaps",
+    "nameRu": "Чапсы «Летучая мышь»",
+    "nameEn": "Batwing Chaps",
+    "price": 12,
+    "recipe": [
+      {
+        "materialId": "perfect_deer",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "bear_batwing_chaps",
+    "vendorId": "trapper",
+    "category": "chaps",
+    "nameRu": "Чапсы «Летучая мышь» из гризли",
+    "nameEn": "Bear Batwing Chaps",
+    "price": 27,
+    "recipe": [
+      {
+        "materialId": "perfect_bear",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "bear_fringed_shotgun_chaps",
+    "vendorId": "trapper",
+    "category": "chaps",
+    "nameRu": "Чапсы с бахромой из медведя",
+    "nameEn": "Bear Fringed Shotgun Chaps",
+    "price": 38,
+    "recipe": [
+      {
+        "materialId": "perfect_black_bear",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "boar_fringed_shotgun_chaps",
+    "vendorId": "trapper",
+    "category": "chaps",
+    "nameRu": "Чапсы с бахромой из кабана",
+    "nameEn": "Boar Fringed Shotgun Chaps",
+    "price": 25,
+    "recipe": [
+      {
+        "materialId": "perfect_boar",
+        "qty": 2
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "bronco_buster"
+    ]
+  },
+  {
+    "id": "bull_fringed_shotgun_chaps",
+    "vendorId": "trapper",
+    "category": "chaps",
+    "nameRu": "Чапсы с бахромой из быка",
+    "nameEn": "Bull Fringed Shotgun Chaps",
+    "price": 18,
+    "recipe": [
+      {
+        "materialId": "perfect_bull",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "marauder"
+    ]
+  },
+  {
+    "id": "deer_pelt_half_chaps",
+    "vendorId": "trapper",
+    "category": "chaps",
+    "nameRu": "Получапсы из оленьей шкуры",
+    "nameEn": "Deer Pelt Half Chaps",
+    "price": 9,
+    "recipe": [
+      {
+        "materialId": "perfect_deer",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "elk_fringed_shotgun_chaps",
+    "vendorId": "trapper",
+    "category": "chaps",
+    "nameRu": "Чапсы с бахромой из вапити",
+    "nameEn": "Elk Fringed Shotgun Chaps",
+    "price": 21,
+    "recipe": [
+      {
+        "materialId": "perfect_elk",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "javelina_half_chaps",
+    "vendorId": "trapper",
+    "category": "chaps",
+    "nameRu": "Получапсы из пекари",
+    "nameEn": "Javelina Half Chaps",
+    "price": 18,
+    "recipe": [
+      {
+        "materialId": "perfect_collared_peccary",
+        "qty": 1
+      },
+      {
+        "materialId": "perfect_snake",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "rattler"
+    ]
+  },
+  {
+    "id": "legendary_bison_batwing_chaps",
+    "vendorId": "trapper",
+    "category": "chaps",
+    "nameRu": "Чапсы «Летучая мышь» из легендарного бизона Татанка",
+    "nameEn": "Legendary Bison Batwing Chaps",
+    "price": 32,
+    "recipe": [
+      {
+        "materialId": "legendary_tatanka_bison_pelt",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "medium",
+    "dataNoteRu": "Цена: в списках крафта $32, в гайде по костюму $30.",
+    "requirementRu": "Сначала продайте Охотнику шкуру соответствующего легендарного зверя.",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "dreamcatcher"
+    ]
+  },
+  {
+    "id": "legendary_coyote_half_chaps",
+    "vendorId": "trapper",
+    "category": "chaps",
+    "nameRu": "Получапсы из легендарного койота",
+    "nameEn": "Legendary Coyote Half Chaps",
+    "price": 20,
+    "recipe": [
+      {
+        "materialId": "legendary_coyote_pelt",
+        "qty": 1
+      },
+      {
+        "materialId": "perfect_fox",
+        "qty": 2
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "Сначала продайте Охотнику шкуру соответствующего легендарного зверя.",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "huntsman"
+    ]
+  },
+  {
+    "id": "legendary_elk_half_chaps",
+    "vendorId": "trapper",
+    "category": "chaps",
+    "nameRu": "Получапсы из легендарного вапити",
+    "nameEn": "Legendary Elk Half Chaps",
+    "price": 16,
+    "recipe": [
+      {
+        "materialId": "legendary_elk_pelt",
+        "qty": 1
+      },
+      {
+        "materialId": "perfect_sheep",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "Сначала продайте Охотнику шкуру соответствующего легендарного зверя.",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "ghost_bison"
+    ]
+  },
+  {
+    "id": "legendary_ram_batwing_chaps",
+    "vendorId": "trapper",
+    "category": "chaps",
+    "nameRu": "Чапсы «Летучая мышь» из легендарного толсторога",
+    "nameEn": "Legendary Ram Batwing Chaps",
+    "price": 33,
+    "recipe": [
+      {
+        "materialId": "legendary_ram_pelt",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "Сначала продайте Охотнику шкуру соответствующего легендарного зверя.",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "stalker"
+    ]
+  },
+  {
+    "id": "legendary_wolf_batwing_chaps",
+    "vendorId": "trapper",
+    "category": "chaps",
+    "nameRu": "Чапсы «Летучая мышь» из легендарного волка",
+    "nameEn": "Legendary Wolf Batwing Chaps",
+    "price": 34,
+    "recipe": [
+      {
+        "materialId": "legendary_wolf_pelt",
+        "qty": 1
+      },
+      {
+        "materialId": "perfect_goat",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "Сначала продайте Охотнику шкуру соответствующего легендарного зверя.",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "beast_of_prey"
+    ]
+  },
+  {
+    "id": "moose_batwing_chaps",
+    "vendorId": "trapper",
+    "category": "chaps",
+    "nameRu": "Чапсы «Летучая мышь» из лося",
+    "nameEn": "Moose Batwing Chaps",
+    "price": 10,
+    "recipe": [
+      {
+        "materialId": "perfect_moose",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "moose_half_chaps",
+    "vendorId": "trapper",
+    "category": "chaps",
+    "nameRu": "Получапсы из лося",
+    "nameEn": "Moose Half Chaps",
+    "price": 10,
+    "recipe": [
+      {
+        "materialId": "perfect_moose",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "night_wrangler"
+    ]
+  },
+  {
+    "id": "muskrat_half_chaps",
+    "vendorId": "trapper",
+    "category": "chaps",
+    "nameRu": "Получапсы из ондатры",
+    "nameEn": "Muskrat Half Chaps",
+    "price": 5,
+    "recipe": [
+      {
+        "materialId": "perfect_muskrat",
+        "qty": 2
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "ox_fringed_shotgun_chaps",
+    "vendorId": "trapper",
+    "category": "chaps",
+    "nameRu": "Чапсы с бахромой из вола",
+    "nameEn": "Ox Fringed Shotgun Chaps",
+    "price": 15,
+    "recipe": [
+      {
+        "materialId": "perfect_ox",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "pronghorn_half_chaps",
+    "vendorId": "trapper",
+    "category": "chaps",
+    "nameRu": "Получапсы из вилорога",
+    "nameEn": "Pronghorn Half Chaps",
+    "price": 7,
+    "recipe": [
+      {
+        "materialId": "perfect_pronghorn",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": [
+      "bounty_hunter"
+    ]
+  },
+  {
+    "id": "sheep_batwing_chaps",
+    "vendorId": "trapper",
+    "category": "chaps",
+    "nameRu": "Чапсы «Летучая мышь» из овцы",
+    "nameEn": "Sheep Batwing Chaps",
+    "price": 35,
+    "recipe": [
+      {
+        "materialId": "perfect_sheep",
+        "qty": 2
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "glorious_accessory",
+    "vendorId": "trapper",
+    "category": "hat_accessory",
+    "nameRu": "Украшение «Великолепное»",
+    "nameEn": "Glorious Accessory",
+    "price": 10,
+    "recipe": [
+      {
+        "materialId": "feather_oriole",
+        "qty": 1
+      },
+      {
+        "materialId": "feather_woodpecker",
+        "qty": 4
+      }
+    ],
+    "dataConfidence": "medium",
+    "dataNoteRu": "Большинство источников — 4 пера дятла, один (Vandal) — 3. Взято 4.",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "homestead_accessory",
+    "vendorId": "trapper",
+    "category": "hat_accessory",
+    "nameRu": "Украшение «Усадьба»",
+    "nameEn": "Homestead Accessory",
+    "price": 10,
+    "recipe": [
+      {
+        "materialId": "feather_chicken",
+        "qty": 1
+      },
+      {
+        "materialId": "feather_goose",
+        "qty": 2
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "huntsman_accessory",
+    "vendorId": "trapper",
+    "category": "hat_accessory",
+    "nameRu": "Украшение «Егерь»",
+    "nameEn": "Huntsman Accessory",
+    "price": 10,
+    "recipe": [
+      {
+        "materialId": "perfect_boar",
+        "qty": 1
+      },
+      {
+        "materialId": "feather_hawk",
+        "qty": 1
+      },
+      {
+        "materialId": "feather_quail",
+        "qty": 2
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "judicious_accessory",
+    "vendorId": "trapper",
+    "category": "hat_accessory",
+    "nameRu": "Украшение «Рассудительное»",
+    "nameEn": "Judicious Accessory",
+    "price": 10,
+    "recipe": [
+      {
+        "materialId": "feather_pheasant",
+        "qty": 1
+      },
+      {
+        "materialId": "feather_owl",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "majestic_accessory",
+    "vendorId": "trapper",
+    "category": "hat_accessory",
+    "nameRu": "Украшение «Величественное»",
+    "nameEn": "Majestic Accessory",
+    "price": 15,
+    "recipe": [
+      {
+        "materialId": "feather_rooster",
+        "qty": 4
+      },
+      {
+        "materialId": "feather_woodpecker",
+        "qty": 2
+      },
+      {
+        "materialId": "feather_songbird",
+        "qty": 2
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "native_accessory",
+    "vendorId": "trapper",
+    "category": "hat_accessory",
+    "nameRu": "Украшение «Туземное»",
+    "nameEn": "Native Accessory",
+    "price": 10,
+    "recipe": [
+      {
+        "materialId": "feather_pheasant",
+        "qty": 1
+      },
+      {
+        "materialId": "feather_sparrow",
+        "qty": 4
+      },
+      {
+        "materialId": "feather_robin",
+        "qty": 3
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "pilgrim_accessory",
+    "vendorId": "trapper",
+    "category": "hat_accessory",
+    "nameRu": "Украшение «Пилигрим»",
+    "nameEn": "Pilgrim Accessory",
+    "price": 11,
+    "recipe": [
+      {
+        "materialId": "feather_turkey",
+        "qty": 1
+      },
+      {
+        "materialId": "feather_cedar_waxwing",
+        "qty": 2
+      },
+      {
+        "materialId": "feather_blue_jay",
+        "qty": 3
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "pioneer_accessory",
+    "vendorId": "trapper",
+    "category": "hat_accessory",
+    "nameRu": "Украшение «Первопроходец»",
+    "nameEn": "Pioneer Accessory",
+    "price": 11,
+    "recipe": [
+      {
+        "materialId": "feather_turkey",
+        "qty": 3
+      },
+      {
+        "materialId": "feather_duck",
+        "qty": 3
+      },
+      {
+        "materialId": "feather_chicken",
+        "qty": 3
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "pursuer_accessory",
+    "vendorId": "trapper",
+    "category": "hat_accessory",
+    "nameRu": "Украшение «Преследователь»",
+    "nameEn": "Pursuer Accessory",
+    "price": 13,
+    "recipe": [
+      {
+        "materialId": "feather_eagle",
+        "qty": 2
+      },
+      {
+        "materialId": "feather_pigeon",
+        "qty": 2
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "rococo_accessory",
+    "vendorId": "trapper",
+    "category": "hat_accessory",
+    "nameRu": "Украшение «Рококо»",
+    "nameEn": "Rococo Accessory",
+    "price": 15,
+    "recipe": [
+      {
+        "materialId": "feather_crow",
+        "qty": 2
+      },
+      {
+        "materialId": "feather_cardinal",
+        "qty": 2
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "scavenger_accessory",
+    "vendorId": "trapper",
+    "category": "hat_accessory",
+    "nameRu": "Украшение «Падальщик»",
+    "nameEn": "Scavenger Accessory",
+    "price": 11,
+    "recipe": [
+      {
+        "materialId": "feather_vulture",
+        "qty": 1
+      },
+      {
+        "materialId": "feather_seagull",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "stalker_accessory",
+    "vendorId": "trapper",
+    "category": "hat_accessory",
+    "nameRu": "Украшение «Следопыт»",
+    "nameEn": "Stalker Accessory",
+    "price": 13,
+    "recipe": [
+      {
+        "materialId": "feather_loon",
+        "qty": 2
+      },
+      {
+        "materialId": "feather_condor",
+        "qty": 1
+      },
+      {
+        "materialId": "feather_raven",
+        "qty": 3
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "alligator_ranch_cutter_saddle",
+    "vendorId": "trapper",
+    "category": "saddle",
+    "nameRu": "Седло «Ранч-каттер» из аллигатора",
+    "nameEn": "Alligator Ranch Cutter Saddle",
+    "price": 107,
+    "recipe": [
+      {
+        "materialId": "perfect_alligator",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "bear_dakota_saddle",
+    "vendorId": "trapper",
+    "category": "saddle",
+    "nameRu": "Седло «Дакота» из гризли",
+    "nameEn": "Bear Dakota Saddle",
+    "price": 98,
+    "recipe": [
+      {
+        "materialId": "perfect_bear",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "beaver_roping_saddle",
+    "vendorId": "trapper",
+    "category": "saddle",
+    "nameRu": "Седло для ловли арканом из бобра",
+    "nameEn": "Beaver Roping Saddle",
+    "price": 96,
+    "recipe": [
+      {
+        "materialId": "perfect_beaver",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "boar_mother_hubbard_saddle",
+    "vendorId": "trapper",
+    "category": "saddle",
+    "nameRu": "Седло «Мать Хаббард» из кабана",
+    "nameEn": "Boar Mother Hubbard Saddle",
+    "price": 90,
+    "recipe": [
+      {
+        "materialId": "perfect_boar",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "cougar_mcclelland_saddle",
+    "vendorId": "trapper",
+    "category": "saddle",
+    "nameRu": "Седло Макклеллана из пумы",
+    "nameEn": "Cougar McClelland Saddle",
+    "price": 110,
+    "recipe": [
+      {
+        "materialId": "perfect_cougar",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "panther_trail_saddle",
+    "vendorId": "trapper",
+    "category": "saddle",
+    "nameRu": "Походное седло из пантеры",
+    "nameEn": "Panther Trail Saddle",
+    "price": 102,
+    "recipe": [
+      {
+        "materialId": "perfect_panther",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "rattlesnake_vaquero_saddle",
+    "vendorId": "trapper",
+    "category": "saddle",
+    "nameRu": "Седло вакеро из гремучей змеи",
+    "nameEn": "Rattlesnake Vaquero Saddle",
+    "price": 120,
+    "recipe": [
+      {
+        "materialId": "perfect_snake",
+        "qty": 10
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "",
+    "effectRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "valuables_satchel",
+    "vendorId": "pearson",
+    "category": "satchel",
+    "nameRu": "Сумка для ценностей",
+    "nameEn": "Valuables Satchel",
+    "price": null,
+    "recipe": [
+      {
+        "materialId": "perfect_deer",
+        "qty": 1
+      },
+      {
+        "materialId": "perfect_beaver",
+        "qty": 1
+      },
+      {
+        "materialId": "perfect_rabbit",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "Инструменты для обработки кожи + пожертвовать $50 в ящик лагеря.",
+    "effectRu": "Увеличивает вместимость ценностей.",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "materials_satchel",
+    "vendorId": "pearson",
+    "category": "satchel",
+    "nameRu": "Сумка для материалов",
+    "nameEn": "Materials Satchel",
+    "price": null,
+    "recipe": [
+      {
+        "materialId": "perfect_deer",
+        "qty": 1
+      },
+      {
+        "materialId": "perfect_boar",
+        "qty": 1
+      },
+      {
+        "materialId": "perfect_iguana",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "Инструменты для обработки кожи + изготовить 3 рецепта у костра разведчика.",
+    "effectRu": "Увеличивает вместимость материалов (в основном несъедобных).",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "provisions_satchel",
+    "vendorId": "pearson",
+    "category": "satchel",
+    "nameRu": "Сумка для провизии",
+    "nameEn": "Provisions Satchel",
+    "price": null,
+    "recipe": [
+      {
+        "materialId": "perfect_deer",
+        "qty": 1
+      },
+      {
+        "materialId": "perfect_bison",
+        "qty": 1
+      },
+      {
+        "materialId": "perfect_raccoon",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "Инструменты для обработки кожи + дважды улучшить фургон Пирсона (провизия) в журнале лагеря.",
+    "effectRu": "Увеличивает вместимость провизии.",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "kit_satchel",
+    "vendorId": "pearson",
+    "category": "satchel",
+    "nameRu": "Сумка для снаряжения",
+    "nameEn": "Kit Satchel",
+    "price": null,
+    "recipe": [
+      {
+        "materialId": "perfect_deer",
+        "qty": 1
+      },
+      {
+        "materialId": "perfect_elk",
+        "qty": 1
+      },
+      {
+        "materialId": "perfect_panther",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "Инструменты для обработки кожи + пожертвовать 3 ценности в ящик лагеря.",
+    "effectRu": "Увеличивает вместимость снаряжения (наборов).",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "ingredients_satchel",
+    "vendorId": "pearson",
+    "category": "satchel",
+    "nameRu": "Сумка для ингредиентов",
+    "nameEn": "Ingredients Satchel",
+    "price": null,
+    "recipe": [
+      {
+        "materialId": "perfect_deer",
+        "qty": 1
+      },
+      {
+        "materialId": "perfect_badger",
+        "qty": 1
+      },
+      {
+        "materialId": "perfect_squirrel",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "medium",
+    "dataNoteRu": "Один источник указывает «идеальная тушка белки» вместо шкуры.",
+    "requirementRu": "Инструменты для обработки кожи + сдать Пирсону 5 туш животных.",
+    "effectRu": "Увеличивает вместимость съедобных ингредиентов.",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "tonics_satchel",
+    "vendorId": "pearson",
+    "category": "satchel",
+    "nameRu": "Сумка для тоников",
+    "nameEn": "Tonics Satchel",
+    "price": null,
+    "recipe": [
+      {
+        "materialId": "perfect_deer",
+        "qty": 1
+      },
+      {
+        "materialId": "perfect_buck",
+        "qty": 1
+      },
+      {
+        "materialId": "perfect_elk",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "Инструменты для обработки кожи + дважды улучшить фургон Штрауса (медицина) в журнале лагеря.",
+    "effectRu": "Увеличивает вместимость тоников.",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "legend_of_the_east_satchel",
+    "vendorId": "pearson",
+    "category": "satchel",
+    "nameRu": "Сумка «Легенда Востока»",
+    "nameEn": "Legend of the East Satchel",
+    "price": null,
+    "recipe": [
+      {
+        "materialId": "perfect_deer",
+        "qty": 1
+      },
+      {
+        "materialId": "perfect_cougar",
+        "qty": 1
+      },
+      {
+        "materialId": "perfect_wolf",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "requirementRu": "Инструменты для обработки кожи + изготовить все 6 остальных сумок.",
+    "effectRu": "Значительно увеличивает вместимость всех типов предметов.",
+    "prerequisiteItemIds": [
+      "valuables_satchel",
+      "materials_satchel",
+      "provisions_satchel",
+      "kit_satchel",
+      "ingredients_satchel",
+      "tonics_satchel"
+    ],
+    "campSpotRu": "",
+    "outfitIds": []
+  },
+  {
+    "id": "alligator_skull",
+    "vendorId": "pearson",
+    "category": "camp",
+    "nameRu": "Череп аллигатора",
+    "nameEn": "Alligator Skull",
+    "price": null,
+    "recipe": [
+      {
+        "materialId": "perfect_alligator",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "campSpotRu": "Палатка Артура",
+    "requirementRu": "",
+    "effectRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "big_horn_ram_skull",
+    "vendorId": "pearson",
+    "category": "camp",
+    "nameRu": "Череп толсторога",
+    "nameEn": "Big Horn Ram Skull",
+    "price": null,
+    "recipe": [
+      {
+        "materialId": "carcass_ram",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "campSpotRu": "Палатка Артура",
+    "requirementRu": "",
+    "effectRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "cougar_pelt_covered_chest",
+    "vendorId": "pearson",
+    "category": "camp",
+    "nameRu": "Сундук, обтянутый шкурой пумы",
+    "nameEn": "Cougar Pelt Covered Chest",
+    "price": null,
+    "recipe": [
+      {
+        "materialId": "perfect_cougar",
+        "qty": 2
+      }
+    ],
+    "dataConfidence": "medium",
+    "dataNoteRu": "Большинство источников — 2 шкуры пумы, один (Fextralife) — 1.",
+    "campSpotRu": "Палатка Артура",
+    "requirementRu": "",
+    "effectRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "boar_skin_table_cover",
+    "vendorId": "pearson",
+    "category": "camp",
+    "nameRu": "Скатерть из шкуры кабана",
+    "nameEn": "Boar Skin Table Cover",
+    "price": null,
+    "recipe": [
+      {
+        "materialId": "perfect_boar",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "medium",
+    "dataNoteRu": "Один источник (Fextralife) называет предмет «Скатерть из медвежьей шкуры» (шкура медведя). Взят кабан (большинство источников).",
+    "campSpotRu": "Палатка Артура",
+    "requirementRu": "",
+    "effectRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "ox_hide_rug",
+    "vendorId": "pearson",
+    "category": "camp",
+    "nameRu": "Ковёр из шкуры вола",
+    "nameEn": "Ox Hide Rug",
+    "price": null,
+    "recipe": [
+      {
+        "materialId": "perfect_ox",
+        "qty": 2
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "campSpotRu": "Палатка Артура",
+    "requirementRu": "",
+    "effectRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "boar_skin_rug",
+    "vendorId": "pearson",
+    "category": "camp",
+    "nameRu": "Ковёр из шкур кабана",
+    "nameEn": "Boar Skin Rug",
+    "price": null,
+    "recipe": [
+      {
+        "materialId": "perfect_boar",
+        "qty": 4
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "campSpotRu": "Палатка Джона",
+    "requirementRu": "",
+    "effectRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "pronghorn_leather_table_tops",
+    "vendorId": "pearson",
+    "category": "camp",
+    "nameRu": "Кожаные столешницы из вилорога",
+    "nameEn": "Pronghorn Leather Table Tops",
+    "price": null,
+    "recipe": [
+      {
+        "materialId": "perfect_pronghorn",
+        "qty": 2
+      }
+    ],
+    "dataConfidence": "medium",
+    "dataNoteRu": "Большинство источников — 2 шкуры вилорога, один (Fextralife) — 1.",
+    "campSpotRu": "Столы лагеря",
+    "requirementRu": "",
+    "effectRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "pronghorn_skull",
+    "vendorId": "pearson",
+    "category": "camp",
+    "nameRu": "Череп вилорога",
+    "nameEn": "Pronghorn Skull",
+    "price": null,
+    "recipe": [
+      {
+        "materialId": "carcass_pronghorn",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "campSpotRu": "Фургон Пирсона",
+    "requirementRu": "",
+    "effectRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "moose_antlers",
+    "vendorId": "pearson",
+    "category": "camp",
+    "nameRu": "Лосиные рога",
+    "nameEn": "Moose Antlers",
+    "price": null,
+    "recipe": [
+      {
+        "materialId": "antler_moose",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "campSpotRu": "Главный костёр",
+    "requirementRu": "",
+    "effectRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "wolf_skull",
+    "vendorId": "pearson",
+    "category": "camp",
+    "nameRu": "Череп волка",
+    "nameEn": "Wolf Skull",
+    "price": null,
+    "recipe": [
+      {
+        "materialId": "carcass_wolf",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "campSpotRu": "Главный костёр",
+    "requirementRu": "",
+    "effectRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "snake_skin_banjo_head",
+    "vendorId": "pearson",
+    "category": "camp",
+    "nameRu": "Мембрана банджо из змеиной кожи",
+    "nameEn": "Snake Skin Banjo Head",
+    "price": null,
+    "recipe": [
+      {
+        "materialId": "perfect_snake",
+        "qty": 2
+      }
+    ],
+    "dataConfidence": "medium",
+    "dataNoteRu": "Большинство источников — 2 кожи змеи, один (Fextralife) — 1.",
+    "campSpotRu": "Главный костёр",
+    "requirementRu": "",
+    "effectRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "campfire_seat_cover",
+    "vendorId": "pearson",
+    "category": "camp",
+    "nameRu": "Покрывало для сидений у костра",
+    "nameEn": "Campfire Seat Cover",
+    "price": null,
+    "recipe": [
+      {
+        "materialId": "perfect_beaver",
+        "qty": 1
+      },
+      {
+        "materialId": "perfect_muskrat",
+        "qty": 1
+      },
+      {
+        "materialId": "perfect_fox",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "campSpotRu": "Главный костёр",
+    "requirementRu": "",
+    "effectRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "campfire_log_seat_cover",
+    "vendorId": "pearson",
+    "category": "camp",
+    "nameRu": "Покрывало для брёвен у костра",
+    "nameEn": "Campfire Log Seat Cover",
+    "price": null,
+    "recipe": [
+      {
+        "materialId": "perfect_wolf",
+        "qty": 2
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "campSpotRu": "Главный костёр",
+    "requirementRu": "",
+    "effectRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "cow_hide_ground_cover",
+    "vendorId": "pearson",
+    "category": "camp",
+    "nameRu": "Подстилка из коровьей шкуры под навесом",
+    "nameEn": "Lean-to Cow Hide Ground Cover",
+    "price": null,
+    "recipe": [
+      {
+        "materialId": "perfect_cow",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "campSpotRu": "Главный костёр",
+    "requirementRu": "",
+    "effectRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "scout_fire_ground_cover",
+    "vendorId": "pearson",
+    "category": "camp",
+    "nameRu": "Подстилка у костра разведчика",
+    "nameEn": "Scout Fire Ground Cover",
+    "price": null,
+    "recipe": [
+      {
+        "materialId": "perfect_goat",
+        "qty": 2
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "campSpotRu": "Костёр разведчика",
+    "requirementRu": "",
+    "effectRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "elk_antlers",
+    "vendorId": "pearson",
+    "category": "camp",
+    "nameRu": "Рога вапити",
+    "nameEn": "Elk Antlers",
+    "price": null,
+    "recipe": [
+      {
+        "materialId": "antler_elk",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "campSpotRu": "Костёр разведчика",
+    "requirementRu": "",
+    "effectRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "hanging_bones",
+    "vendorId": "pearson",
+    "category": "camp",
+    "nameRu": "Подвесные кости",
+    "nameEn": "Hanging Bones",
+    "price": null,
+    "recipe": [
+      {
+        "materialId": "antler_buck",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "campSpotRu": "Костёр разведчика",
+    "requirementRu": "",
+    "effectRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "buck_skull",
+    "vendorId": "pearson",
+    "category": "camp",
+    "nameRu": "Череп оленя",
+    "nameEn": "Buck Skull",
+    "price": null,
+    "recipe": [
+      {
+        "materialId": "carcass_buck",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "medium",
+    "dataNoteRu": "Есть не во всех источниках (например, в гайде RDR2.org по улучшениям лагеря есть, в списке Fextralife — нет). Если у Пирсона такого нет — отметьте как изготовленное.",
+    "campSpotRu": "Въезд в лагерь",
+    "requirementRu": "",
+    "effectRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "fur_horse_blankets",
+    "vendorId": "pearson",
+    "category": "camp",
+    "nameRu": "Меховые попоны для лошадей",
+    "nameEn": "Fur Horse Blankets",
+    "price": null,
+    "recipe": [
+      {
+        "materialId": "perfect_coyote",
+        "qty": 2
+      },
+      {
+        "materialId": "perfect_bison",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "medium",
+    "dataNoteRu": "Есть в двух источниках (гайд RDR2.org по улучшениям лагеря и PrimeWikis), но отсутствует в большинстве списков крафта Пирсона. Если у Пирсона такого нет — отметьте как изготовленное, чтобы не мешало сводке.",
+    "campSpotRu": "Коновязь",
+    "requirementRu": "",
+    "effectRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "beaver_tooth_trinket",
+    "vendorId": "fence",
+    "category": "trinket",
+    "nameRu": "Безделушка из зуба бобра",
+    "nameEn": "Beaver Tooth Trinket",
+    "price": null,
+    "recipe": [
+      {
+        "materialId": "legendary_beaver_tooth",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "effectRu": "Оружие изнашивается на 10% медленнее.",
+    "requirementRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "buck_antler_trinket",
+    "vendorId": "fence",
+    "category": "trinket",
+    "nameRu": "Безделушка из рога оленя",
+    "nameEn": "Buck Antler Trinket",
+    "price": null,
+    "recipe": [
+      {
+        "materialId": "legendary_buck_antler",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "effectRu": "Части животных при свежевании — лучшего качества.",
+    "requirementRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "cougar_fang_trinket",
+    "vendorId": "fence",
+    "category": "trinket",
+    "nameRu": "Безделушка из клыка пумы",
+    "nameEn": "Cougar Fang Trinket",
+    "price": null,
+    "recipe": [
+      {
+        "materialId": "legendary_cougar_fang",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "effectRu": "+10% к опыту выносливости.",
+    "requirementRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "coyote_fang_trinket",
+    "vendorId": "fence",
+    "category": "trinket",
+    "nameRu": "Безделушка из клыка койота",
+    "nameEn": "Coyote Fang Trinket",
+    "price": null,
+    "recipe": [
+      {
+        "materialId": "legendary_coyote_fang",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "effectRu": "+10% к опыту «Меткого глаза».",
+    "requirementRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "elk_antler_trinket",
+    "vendorId": "fence",
+    "category": "trinket",
+    "nameRu": "Безделушка из рога вапити",
+    "nameEn": "Elk Antler Trinket",
+    "price": null,
+    "recipe": [
+      {
+        "materialId": "legendary_elk_antler",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "effectRu": "+10% к деньгам при обыске.",
+    "requirementRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "fox_claw_trinket",
+    "vendorId": "fence",
+    "category": "trinket",
+    "nameRu": "Безделушка из когтя лисы",
+    "nameEn": "Fox Claw Trinket",
+    "price": null,
+    "recipe": [
+      {
+        "materialId": "legendary_fox_claw",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "effectRu": "«Орлиный глаз» действует на 5 секунд дольше.",
+    "requirementRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "lions_paw_trinket",
+    "vendorId": "fence",
+    "category": "trinket",
+    "nameRu": "Безделушка «Львиная лапа»",
+    "nameEn": "Lion's Paw Trinket",
+    "price": null,
+    "recipe": [
+      {
+        "materialId": "lions_paw",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "effectRu": "+10% к опыту выносливости.",
+    "requirementRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "moose_antler_trinket",
+    "vendorId": "fence",
+    "category": "trinket",
+    "nameRu": "Безделушка из рога лося",
+    "nameEn": "Moose Antler Trinket",
+    "price": null,
+    "recipe": [
+      {
+        "materialId": "legendary_moose_antler",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "effectRu": "+10% к опыту здоровья.",
+    "requirementRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "panther_eye_trinket",
+    "vendorId": "fence",
+    "category": "trinket",
+    "nameRu": "Безделушка «Глаз пантеры»",
+    "nameEn": "Panther's Eye Trinket",
+    "price": null,
+    "recipe": [
+      {
+        "materialId": "legendary_panther_eye",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "effectRu": "Шкала «Меткого глаза» расходуется на 10% медленнее в течение 3 секунд.",
+    "requirementRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "pronghorn_horn_trinket",
+    "vendorId": "fence",
+    "category": "trinket",
+    "nameRu": "Безделушка из рога вилорога",
+    "nameEn": "Pronghorn Horn Trinket",
+    "price": null,
+    "recipe": [
+      {
+        "materialId": "legendary_pronghorn_horn",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "effectRu": "Туши на лошади не портятся.",
+    "requirementRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "ram_horn_trinket",
+    "vendorId": "fence",
+    "category": "trinket",
+    "nameRu": "Безделушка из рога толсторога",
+    "nameEn": "Ram Horn Trinket",
+    "price": null,
+    "recipe": [
+      {
+        "materialId": "legendary_ram_horn",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "effectRu": "Двойной сбор орегано, ползучего тимьяна и дикой мяты.",
+    "requirementRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "wolf_heart_trinket",
+    "vendorId": "fence",
+    "category": "trinket",
+    "nameRu": "Безделушка «Сердце волка»",
+    "nameEn": "Wolf Heart Trinket",
+    "price": null,
+    "recipe": [
+      {
+        "materialId": "legendary_wolf_heart",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "effectRu": "Вдвое выше стойкость к алкоголю.",
+    "requirementRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "tatanka_bison_horn_trinket",
+    "vendorId": "fence",
+    "category": "trinket",
+    "nameRu": "Безделушка из рога бизона Татанка",
+    "nameEn": "Tatanka Bison Horn Trinket",
+    "price": null,
+    "recipe": [
+      {
+        "materialId": "legendary_tatanka_bison_horn",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "effectRu": "Получаемый урон в ближнем бою −10%.",
+    "requirementRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "alligator_tooth_talisman",
+    "vendorId": "fence",
+    "category": "talisman",
+    "nameRu": "Талисман из зуба аллигатора",
+    "nameEn": "Alligator Tooth Talisman",
+    "price": null,
+    "recipe": [
+      {
+        "materialId": "vintage_handcuffs",
+        "qty": 1
+      },
+      {
+        "materialId": "gold_jointed_bracelet",
+        "qty": 1
+      },
+      {
+        "materialId": "legendary_bullgator_tooth",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "effectRu": "Ядро «Меткого глаза» истощается на 10% медленнее.",
+    "requirementRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "bear_claw_talisman",
+    "vendorId": "fence",
+    "category": "talisman",
+    "nameRu": "Талисман из когтя медведя",
+    "nameEn": "Bear Claw Talisman",
+    "price": null,
+    "recipe": [
+      {
+        "materialId": "silver_chain_bracelet",
+        "qty": 1
+      },
+      {
+        "materialId": "quartz_chunk",
+        "qty": 1
+      },
+      {
+        "materialId": "legendary_bear_claw",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "effectRu": "Ядро здоровья истощается на 10% медленнее.",
+    "requirementRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "boar_tusk_talisman",
+    "vendorId": "fence",
+    "category": "talisman",
+    "nameRu": "Талисман из клыка кабана",
+    "nameEn": "Boar Tusk Talisman",
+    "price": null,
+    "recipe": [
+      {
+        "materialId": "gold_earring",
+        "qty": 1
+      },
+      {
+        "materialId": "cobalt_petrified_wood",
+        "qty": 1
+      },
+      {
+        "materialId": "legendary_boar_tusk",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "effectRu": "Ядра здоровья и выносливости лошади истощаются на 10% медленнее.",
+    "requirementRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "bison_horn_talisman",
+    "vendorId": "fence",
+    "category": "talisman",
+    "nameRu": "Талисман из рога бизона",
+    "nameEn": "Bison Horn Talisman",
+    "price": null,
+    "recipe": [
+      {
+        "materialId": "abalone_shell_fragment",
+        "qty": 1
+      },
+      {
+        "materialId": "silver_earring",
+        "qty": 1
+      },
+      {
+        "materialId": "legendary_white_bison_horn",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "effectRu": "Ядро выносливости истощается на 10% медленнее.",
+    "requirementRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  },
+  {
+    "id": "raven_claw_talisman",
+    "vendorId": "fence",
+    "category": "talisman",
+    "nameRu": "Талисман из когтя ворона",
+    "nameEn": "Raven Claw Talisman",
+    "price": null,
+    "recipe": [
+      {
+        "materialId": "old_brass_compass",
+        "qty": 1
+      }
+    ],
+    "dataConfidence": "high",
+    "dataNoteRu": "",
+    "effectRu": "Оружие изнашивается на 20% медленнее.",
+    "requirementRu": "",
+    "campSpotRu": "",
+    "prerequisiteItemIds": [],
+    "outfitIds": []
+  }
+]

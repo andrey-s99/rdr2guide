@@ -1,0 +1,1978 @@
+[
+  {
+    "id": "alligator",
+    "type": "regular",
+    "nameRu": "Аллигатор",
+    "nameEn": "Alligator",
+    "size": "large",
+    "regions": [
+      "lemoyne"
+    ],
+    "habitatRu": "Болота вокруг Сен-Дени (Бэйю-Нва), берега рек и протоки Лемойна.",
+    "perfectKillRu": "Отравленные стрелы или мощная винтовка; можно улучшенные патроны, чтобы не портить шкуру.",
+    "behaviorRu": "Подстерегает у воды и нападает, если подойти близко.",
+    "danger": "dangerous",
+    "availability": "story",
+    "availabilityNoteRu": "",
+    "links": [
+      {
+        "labelRu": "Карта ареала и советы (RankedBoost)",
+        "url": "https://rankedboost.com/red-dead-redemption-2/alligator/"
+      },
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Alligator+location+map+perfect+pelt"
+      }
+    ]
+  },
+  {
+    "id": "armadillo",
+    "type": "regular",
+    "nameRu": "Броненосец",
+    "nameEn": "Armadillo",
+    "size": "small",
+    "regions": [
+      "new_austin"
+    ],
+    "habitatRu": "Повсеместно в Нью-Остине, юго-запад карты.",
+    "perfectKillRu": "Варминт-винтовка (патроны .22) или лук со стрелами для мелкой дичи",
+    "behaviorRu": "Пугливый, держится у кустарников.",
+    "danger": "safe",
+    "availability": "epilogue",
+    "availabilityNoteRu": "Нью-Остин доступен только в эпилоге (до этого вас там разыскивают).",
+    "links": [
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Armadillo+location+map+perfect+pelt"
+      }
+    ]
+  },
+  {
+    "id": "badger",
+    "type": "regular",
+    "nameRu": "Барсук",
+    "nameEn": "Badger",
+    "size": "small",
+    "regions": [
+      "lemoyne",
+      "west_elizabeth"
+    ],
+    "habitatRu": "Лемойн — от северных окраин до Роудса и окрестностей Сен-Дени. Гарантированный 3★ барсук — на камнях за лавкой Охотника у станции Риггс.",
+    "perfectKillRu": "Варминт-винтовка (патроны .22) или лук со стрелами для мелкой дичи",
+    "behaviorRu": "Хищник: приманка для хищников выманивает. Часто активен в сумерках и ночью.",
+    "danger": "safe",
+    "availability": "story",
+    "availabilityNoteRu": "",
+    "links": [
+      {
+        "labelRu": "Карта ареала и советы (RankedBoost)",
+        "url": "https://rankedboost.com/red-dead-redemption-2/badger/"
+      },
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Badger+location+map+perfect+pelt"
+      }
+    ]
+  },
+  {
+    "id": "bear",
+    "type": "regular",
+    "nameRu": "Медведь гризли",
+    "nameEn": "Grizzly Bear",
+    "size": "large",
+    "regions": [
+      "ambarino",
+      "west_elizabeth"
+    ],
+    "habitatRu": "Горы и леса Амбарино (Гризлис), лесистые склоны Западной Элизабет.",
+    "perfectKillRu": "Мощная винтовка (Rolling Block/Springfield) с экспресс-патронами или отравленные стрелы; убивать с одного-двух выстрелов в голову.",
+    "behaviorRu": "Очень агрессивен, нападает первым.",
+    "danger": "dangerous",
+    "availability": "story",
+    "availabilityNoteRu": "",
+    "links": [
+      {
+        "labelRu": "Карта ареала и советы (RankedBoost)",
+        "url": "https://rankedboost.com/red-dead-redemption-2/bear/"
+      },
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Grizzly+Bear+location+map+perfect+pelt"
+      }
+    ]
+  },
+  {
+    "id": "black_bear",
+    "type": "regular",
+    "nameRu": "Чёрный медведь",
+    "nameEn": "Black Bear",
+    "size": "large",
+    "regions": [
+      "west_elizabeth",
+      "new_hanover"
+    ],
+    "habitatRu": "Лес в Биг-Вэлли (Западная Элизабет), леса к северу от Аннсбурга. Помогает сильная приманка для хищников.",
+    "perfectKillRu": "Отравленные или улучшенные стрелы, винтовка; цельтесь, чтобы убить одним выстрелом.",
+    "behaviorRu": "Агрессивен при сближении.",
+    "danger": "dangerous",
+    "availability": "story",
+    "availabilityNoteRu": "",
+    "links": [
+      {
+        "labelRu": "Карта ареала и советы (RankedBoost)",
+        "url": "https://rankedboost.com/red-dead-redemption-2/bear/"
+      },
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Black+Bear+location+map+perfect+pelt"
+      }
+    ]
+  },
+  {
+    "id": "beaver",
+    "type": "regular",
+    "nameRu": "Бобр",
+    "nameEn": "Beaver",
+    "size": "medium",
+    "regions": [
+      "new_hanover",
+      "west_elizabeth",
+      "lemoyne"
+    ],
+    "habitatRu": "Берега рек: около букв «E» и «R» в надписи NEW HANOVER (река Камасса, Бутчер-Крик), озеро Ованжила в Западной Элизабет.",
+    "perfectKillRu": "Лук с обычными стрелами, магазинная винтовка или винтовка (варминт-винтовка тоже даёт чистое убийство).",
+    "behaviorRu": "Держится у воды, ныряет при опасности.",
+    "danger": "safe",
+    "availability": "story",
+    "availabilityNoteRu": "",
+    "links": [
+      {
+        "labelRu": "Карта ареала и советы (RankedBoost)",
+        "url": "https://rankedboost.com/red-dead-redemption-2/beaver/"
+      },
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Beaver+location+map+perfect+pelt"
+      }
+    ]
+  },
+  {
+    "id": "bison",
+    "type": "regular",
+    "nameRu": "Бизон",
+    "nameEn": "Bison",
+    "size": "large",
+    "regions": [
+      "west_elizabeth",
+      "new_hanover"
+    ],
+    "habitatRu": "Западнее Блэкуотера (Великие равнины), пойма Хартлендс к юго-западу от Аннсбурга.",
+    "perfectKillRu": "Отравленные стрелы или мощная винтовка/снайперская винтовка, выстрел в голову",
+    "behaviorRu": "Стадный. Очень живучий — только выстрел в голову.",
+    "danger": "safe",
+    "availability": "story",
+    "availabilityNoteRu": "",
+    "links": [
+      {
+        "labelRu": "Карта ареала и советы (RankedBoost)",
+        "url": "https://rankedboost.com/red-dead-redemption-2/bison/"
+      },
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Bison+location+map+perfect+pelt"
+      }
+    ]
+  },
+  {
+    "id": "boar",
+    "type": "regular",
+    "nameRu": "Кабан",
+    "nameEn": "Boar",
+    "size": "medium",
+    "regions": [
+      "lemoyne"
+    ],
+    "habitatRu": "Леса по всему Лемойну, особенно вокруг Блуотер-Марш и к югу от Роудса.",
+    "perfectKillRu": "Лук с обычными или отравленными стрелами, винтовка",
+    "behaviorRu": "Агрессивен при сближении.",
+    "danger": "aggressive",
+    "availability": "story",
+    "availabilityNoteRu": "",
+    "links": [
+      {
+        "labelRu": "Карта ареала и советы (RankedBoost)",
+        "url": "https://rankedboost.com/red-dead-redemption-2/boar/"
+      },
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Boar+location+map+perfect+pelt"
+      }
+    ]
+  },
+  {
+    "id": "buck",
+    "type": "regular",
+    "nameRu": "Олень (самец)",
+    "nameEn": "Buck",
+    "size": "medium",
+    "regions": [
+      "lemoyne",
+      "new_hanover",
+      "ambarino"
+    ],
+    "habitatRu": "Лемойн; север Нью-Ганновера у границы с Амбарино. Очень распространён.",
+    "perfectKillRu": "Лук с обычными или отравленными стрелами, винтовка",
+    "behaviorRu": "Пуглив, лучше приманка для травоядных и подход против ветра.",
+    "danger": "safe",
+    "availability": "story",
+    "availabilityNoteRu": "",
+    "links": [
+      {
+        "labelRu": "Карта ареала и советы (RankedBoost)",
+        "url": "https://rankedboost.com/red-dead-redemption-2/buck/"
+      },
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Buck+location+map+perfect+pelt"
+      }
+    ]
+  },
+  {
+    "id": "bull",
+    "type": "regular",
+    "nameRu": "Бык",
+    "nameEn": "Bull",
+    "size": "large",
+    "regions": [
+      "lemoyne",
+      "new_hanover",
+      "west_elizabeth"
+    ],
+    "habitatRu": "Фермы: к северу от Сен-Дени у Лаграса; чуть севернее буквы «H» в NEW HANOVER; чуть севернее буквы «E» в WEST ELIZABETH.",
+    "perfectKillRu": "Отравленные или улучшенные стрелы, винтовка.",
+    "behaviorRu": "Может атаковать. Скот на фермах — владелец может напасть, лучше ночью.",
+    "danger": "aggressive",
+    "availability": "story",
+    "availabilityNoteRu": "",
+    "links": [
+      {
+        "labelRu": "Карта ареала и советы (RankedBoost)",
+        "url": "https://rankedboost.com/red-dead-redemption-2/bull/"
+      },
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Bull+location+map+perfect+pelt"
+      }
+    ]
+  },
+  {
+    "id": "collared_peccary",
+    "type": "regular",
+    "nameRu": "Ошейниковый пекари (джавелина)",
+    "nameEn": "Collared Peccary",
+    "size": "medium",
+    "regions": [
+      "new_austin"
+    ],
+    "habitatRu": "Нью-Остин: за железной дорогой к востоку от Бенедикт-Пойнт.",
+    "perfectKillRu": "Отравленные стрелы или винтовка.",
+    "behaviorRu": "Агрессивен при сближении.",
+    "danger": "aggressive",
+    "availability": "epilogue",
+    "availabilityNoteRu": "Нью-Остин доступен только в эпилоге.",
+    "links": [
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Collared+Peccary+location+map+perfect+pelt"
+      }
+    ]
+  },
+  {
+    "id": "cougar",
+    "type": "regular",
+    "nameRu": "Пума",
+    "nameEn": "Cougar",
+    "size": "large",
+    "regions": [
+      "west_elizabeth",
+      "new_austin"
+    ],
+    "habitatRu": "Южнее Блэкуотера у реки; западная окраина Западной Элизабет у края карты; в эпилоге — южнее Тамблвида над берегом реки.",
+    "perfectKillRu": "Лук с обычными или отравленными стрелами, винтовка.",
+    "behaviorRu": "Очень опасна, нападает из засады.",
+    "danger": "dangerous",
+    "availability": "story",
+    "availabilityNoteRu": "",
+    "links": [
+      {
+        "labelRu": "Карта ареала и советы (RankedBoost)",
+        "url": "https://rankedboost.com/red-dead-redemption-2/cougar-mountain-lion/"
+      },
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Cougar+location+map+perfect+pelt"
+      }
+    ]
+  },
+  {
+    "id": "cow",
+    "type": "regular",
+    "nameRu": "Корова",
+    "nameEn": "Cow",
+    "size": "large",
+    "regions": [
+      "lemoyne",
+      "new_hanover"
+    ],
+    "habitatRu": "Фермы к северу от Сен-Дени у побережья; ранчо Пэйнтед-Скай над рекой Дакота (в загоне 2 коровы).",
+    "perfectKillRu": "Отравленные стрелы или винтовка.",
+    "behaviorRu": "Скот на фермах — владелец может напасть, лучше ночью.",
+    "danger": "safe",
+    "availability": "story",
+    "availabilityNoteRu": "",
+    "links": [
+      {
+        "labelRu": "Карта ареала и советы (RankedBoost)",
+        "url": "https://rankedboost.com/red-dead-redemption-2/cow-cattle/"
+      },
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Cow+location+map+perfect+pelt"
+      }
+    ]
+  },
+  {
+    "id": "coyote",
+    "type": "regular",
+    "nameRu": "Койот",
+    "nameEn": "Coyote",
+    "size": "medium",
+    "regions": [
+      "new_hanover",
+      "lemoyne"
+    ],
+    "habitatRu": "Восток Нью-Ганновера — от южнее Ван-Хорна до севернее Аннсбурга; окрестности Роудса.",
+    "perfectKillRu": "Лук с обычными или отравленными стрелами, магазинная винтовка (repeater), винтовка",
+    "behaviorRu": "Пуглив, иногда в стаях.",
+    "danger": "safe",
+    "availability": "story",
+    "availabilityNoteRu": "",
+    "links": [
+      {
+        "labelRu": "Карта ареала и советы (RankedBoost)",
+        "url": "https://rankedboost.com/red-dead-redemption-2/coyote/"
+      },
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Coyote+location+map+perfect+pelt"
+      }
+    ]
+  },
+  {
+    "id": "deer",
+    "type": "regular",
+    "nameRu": "Олень (самка)",
+    "nameEn": "Deer",
+    "size": "medium",
+    "regions": [
+      "lemoyne",
+      "ambarino",
+      "new_hanover"
+    ],
+    "habitatRu": "Леса Лемойна и восточного Амбарино. Лучшее место — открытые луга между Роудсом и Болгер-Глейд.",
+    "perfectKillRu": "Лук с обычными или отравленными стрелами, винтовка",
+    "behaviorRu": "Пуглива.",
+    "danger": "safe",
+    "availability": "story",
+    "availabilityNoteRu": "",
+    "links": [
+      {
+        "labelRu": "Карта ареала и советы (RankedBoost)",
+        "url": "https://rankedboost.com/red-dead-redemption-2/deer/"
+      },
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Deer+location+map+perfect+pelt"
+      }
+    ]
+  },
+  {
+    "id": "elk",
+    "type": "regular",
+    "nameRu": "Вапити",
+    "nameEn": "Elk",
+    "size": "large",
+    "regions": [
+      "ambarino",
+      "new_hanover"
+    ],
+    "habitatRu": "Холодные районы: Амбарино, к северу от Аннсбурга.",
+    "perfectKillRu": "Отравленные стрелы или мощная винтовка/снайперская винтовка, выстрел в голову",
+    "behaviorRu": "Пуглив, стадный.",
+    "danger": "safe",
+    "availability": "story",
+    "availabilityNoteRu": "",
+    "links": [
+      {
+        "labelRu": "Карта ареала и советы (RankedBoost)",
+        "url": "https://rankedboost.com/red-dead-redemption-2/elk/"
+      },
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Elk+location+map+perfect+pelt"
+      }
+    ]
+  },
+  {
+    "id": "fox",
+    "type": "regular",
+    "nameRu": "Лиса",
+    "nameEn": "Fox",
+    "size": "medium",
+    "regions": [
+      "ambarino",
+      "lemoyne",
+      "new_hanover"
+    ],
+    "habitatRu": "Леса Амбарино и Лемойна. Постоянное место — у букв «BER» в CUMBERLAND FOREST.",
+    "perfectKillRu": "Лук с обычными или отравленными стрелами, магазинная винтовка (repeater), винтовка",
+    "behaviorRu": "Пуглива.",
+    "danger": "safe",
+    "availability": "story",
+    "availabilityNoteRu": "",
+    "links": [
+      {
+        "labelRu": "Карта ареала и советы (RankedBoost)",
+        "url": "https://rankedboost.com/red-dead-redemption-2/fox/"
+      },
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Fox+location+map+perfect+pelt"
+      }
+    ]
+  },
+  {
+    "id": "gila_monster",
+    "type": "regular",
+    "nameRu": "Ядозуб",
+    "nameEn": "Gila Monster",
+    "size": "small",
+    "regions": [
+      "new_austin"
+    ],
+    "habitatRu": "Нью-Остин, около букв «A», «S», «T» в надписи NEW AUSTIN.",
+    "perfectKillRu": "Варминт-винтовка (патроны .22) или лук со стрелами для мелкой дичи",
+    "behaviorRu": "Ядовит.",
+    "danger": "aggressive",
+    "availability": "epilogue",
+    "availabilityNoteRu": "Нью-Остин доступен только в эпилоге.",
+    "links": [
+      {
+        "labelRu": "Карта ареала и советы (RankedBoost)",
+        "url": "https://rankedboost.com/red-dead-redemption-2/gila-monster/"
+      },
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Gila+Monster+location+map+perfect+pelt"
+      }
+    ]
+  },
+  {
+    "id": "goat",
+    "type": "regular",
+    "nameRu": "Коза",
+    "nameEn": "Goat",
+    "size": "medium",
+    "regions": [
+      "lemoyne",
+      "new_hanover"
+    ],
+    "habitatRu": "Чуть севернее Сен-Дени у побережья; ранчо Ларнед-Сод под буквой «H» в NEW HANOVER (всегда есть 3★ коза, лучше ночью).",
+    "perfectKillRu": "Лук с обычными или отравленными стрелами, винтовка",
+    "behaviorRu": "Домашняя: владелец может напасть.",
+    "danger": "safe",
+    "availability": "story",
+    "availabilityNoteRu": "",
+    "links": [
+      {
+        "labelRu": "Карта ареала и советы (RankedBoost)",
+        "url": "https://rankedboost.com/red-dead-redemption-2/goat/"
+      },
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Goat+location+map+perfect+pelt"
+      }
+    ]
+  },
+  {
+    "id": "iguana",
+    "type": "regular",
+    "nameRu": "Игуана",
+    "nameEn": "Iguana",
+    "size": "small",
+    "regions": [
+      "new_hanover",
+      "new_austin"
+    ],
+    "habitatRu": "До эпилога — только северная часть острова у восточного берега озера Флэт-Айрон (2–3 игуаны). В эпилоге — часто в Нью-Остине.",
+    "perfectKillRu": "Варминт-винтовка (патроны .22) или лук со стрелами для мелкой дичи",
+    "behaviorRu": "Пуглива.",
+    "danger": "safe",
+    "availability": "story",
+    "availabilityNoteRu": "",
+    "links": [
+      {
+        "labelRu": "Карта ареала и советы (RankedBoost)",
+        "url": "https://rankedboost.com/red-dead-redemption-2/iguana/"
+      },
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Iguana+location+map+perfect+pelt"
+      }
+    ]
+  },
+  {
+    "id": "moose",
+    "type": "regular",
+    "nameRu": "Лось",
+    "nameEn": "Moose",
+    "size": "large",
+    "regions": [
+      "ambarino",
+      "new_hanover",
+      "west_elizabeth"
+    ],
+    "habitatRu": "Между буквами «I» и «N» в AMBARINO; к северу от Аннсбурга у края карты; озеро Кэрн, окрестности Колтера. В эпилоге — Тол-Триз.",
+    "perfectKillRu": "Отравленные или улучшенные стрелы, винтовка; ружьё с пулевыми патронами.",
+    "behaviorRu": "Редок до эпилога: используйте сильную приманку для травоядных.",
+    "danger": "safe",
+    "availability": "story",
+    "availabilityNoteRu": "",
+    "links": [
+      {
+        "labelRu": "Карта ареала и советы (RankedBoost)",
+        "url": "https://rankedboost.com/red-dead-redemption-2/moose/"
+      },
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Moose+location+map+perfect+pelt"
+      }
+    ]
+  },
+  {
+    "id": "muskrat",
+    "type": "regular",
+    "nameRu": "Ондатра",
+    "nameEn": "Muskrat",
+    "size": "small",
+    "regions": [
+      "lemoyne",
+      "new_hanover",
+      "west_elizabeth"
+    ],
+    "habitatRu": "Пересыхающие ручьи: Дьюберри-Крик (севернее «E» в LEMOYNE), к северу от Аннсбурга, западнее и южнее Строберри.",
+    "perfectKillRu": "Варминт-винтовка (патроны .22) или лук со стрелами для мелкой дичи",
+    "behaviorRu": "Держится у воды.",
+    "danger": "safe",
+    "availability": "story",
+    "availabilityNoteRu": "",
+    "links": [
+      {
+        "labelRu": "Карта ареала и советы (RankedBoost)",
+        "url": "https://rankedboost.com/red-dead-redemption-2/muskrat/"
+      },
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Muskrat+location+map+perfect+pelt"
+      }
+    ]
+  },
+  {
+    "id": "opossum",
+    "type": "regular",
+    "nameRu": "Опоссум",
+    "nameEn": "Opossum",
+    "size": "small",
+    "regions": [
+      "new_hanover",
+      "west_elizabeth"
+    ],
+    "habitatRu": "К северу от Аннсбурга; северные берега озера Флэт-Айрон; около буквы «W» в WEST ELIZABETH.",
+    "perfectKillRu": "Варминт-винтовка (патроны .22) или лук со стрелами для мелкой дичи",
+    "behaviorRu": "Чаще ночью.",
+    "danger": "safe",
+    "availability": "story",
+    "availabilityNoteRu": "",
+    "links": [
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Opossum+location+map+perfect+pelt"
+      }
+    ]
+  },
+  {
+    "id": "ox",
+    "type": "regular",
+    "nameRu": "Вол",
+    "nameEn": "Ox",
+    "size": "large",
+    "regions": [
+      "new_hanover",
+      "lemoyne"
+    ],
+    "habitatRu": "Хижина-ранчо к северо-западу от Ван-Хорна (восточнее Бутчер-Крик) — там всегда вол 2★ или 3★; к северу от Брейтуэйт-Мэнор; севернее и восточнее Роудса.",
+    "perfectKillRu": "Отравленные стрелы или винтовка.",
+    "behaviorRu": "Скот на ранчо — владелец может напасть.",
+    "danger": "safe",
+    "availability": "story",
+    "availabilityNoteRu": "",
+    "links": [
+      {
+        "labelRu": "Карта ареала и советы (RankedBoost)",
+        "url": "https://rankedboost.com/red-dead-redemption-2/ox/"
+      },
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Ox+location+map+perfect+pelt"
+      }
+    ]
+  },
+  {
+    "id": "panther",
+    "type": "regular",
+    "nameRu": "Пантера",
+    "nameEn": "Panther",
+    "size": "large",
+    "regions": [
+      "lemoyne"
+    ],
+    "habitatRu": "Южнее Роудса у реки, юго-восточнее Брейтуэйт-Мэнор (лес у Олд-Харрис-Фен); к северу от Сен-Дени, над буквами «N» и «E» в LEMOYNE.",
+    "perfectKillRu": "Лук с обычными или отравленными стрелами, винтовка.",
+    "behaviorRu": "Очень опасна, нападает внезапно. Чаще появляется ночью — сохраняйтесь перед охотой.",
+    "danger": "dangerous",
+    "availability": "story",
+    "availabilityNoteRu": "",
+    "links": [
+      {
+        "labelRu": "Карта ареала и советы (RankedBoost)",
+        "url": "https://rankedboost.com/red-dead-redemption-2/panther/"
+      },
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Panther+location+map+perfect+pelt"
+      }
+    ]
+  },
+  {
+    "id": "pig",
+    "type": "regular",
+    "nameRu": "Свинья",
+    "nameEn": "Pig",
+    "size": "medium",
+    "regions": [
+      "lemoyne",
+      "new_hanover"
+    ],
+    "habitatRu": "Фермы восточнее Сен-Дени; к северу от озера Флэт-Айрон, под первой «N» в NEW HANOVER. Подойдёт свинья любой породы.",
+    "perfectKillRu": "Лук с обычными или отравленными стрелами, магазинная винтовка (repeater), винтовка",
+    "behaviorRu": "Домашняя: владелец может напасть.",
+    "danger": "safe",
+    "availability": "story",
+    "availabilityNoteRu": "",
+    "links": [
+      {
+        "labelRu": "Карта ареала и советы (RankedBoost)",
+        "url": "https://rankedboost.com/red-dead-redemption-2/pig/"
+      },
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Pig+location+map+perfect+pelt"
+      }
+    ]
+  },
+  {
+    "id": "pronghorn",
+    "type": "regular",
+    "nameRu": "Вилорог",
+    "nameEn": "Pronghorn",
+    "size": "medium",
+    "regions": [
+      "new_hanover",
+      "west_elizabeth"
+    ],
+    "habitatRu": "Около слова «NEW» в NEW HANOVER и южнее, к озеру Флэт-Айрон; запад Западной Элизабет за ранчо Хэнгинг-Дог, над буквой «W» в WEST ELIZABETH.",
+    "perfectKillRu": "Лук с обычными или отравленными стрелами, винтовка",
+    "behaviorRu": "Пуглив, стадный.",
+    "danger": "safe",
+    "availability": "story",
+    "availabilityNoteRu": "",
+    "links": [
+      {
+        "labelRu": "Карта ареала и советы (RankedBoost)",
+        "url": "https://rankedboost.com/red-dead-redemption-2/pronghorn/"
+      },
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Pronghorn+location+map+perfect+pelt"
+      }
+    ]
+  },
+  {
+    "id": "rabbit",
+    "type": "regular",
+    "nameRu": "Кролик",
+    "nameEn": "Rabbit",
+    "size": "small",
+    "regions": [
+      "new_hanover",
+      "west_elizabeth",
+      "lemoyne"
+    ],
+    "habitatRu": "Окрестности Валентайна, Строберри, Роудса, Сен-Дени, часто у дорог.",
+    "perfectKillRu": "Варминт-винтовка (патроны .22) или лук со стрелами для мелкой дичи",
+    "behaviorRu": "Пуглив.",
+    "danger": "safe",
+    "availability": "story",
+    "availabilityNoteRu": "",
+    "links": [
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Rabbit+location+map+perfect+pelt"
+      }
+    ]
+  },
+  {
+    "id": "raccoon",
+    "type": "regular",
+    "nameRu": "Енот",
+    "nameEn": "Raccoon",
+    "size": "small",
+    "regions": [
+      "lemoyne",
+      "new_hanover",
+      "west_elizabeth"
+    ],
+    "habitatRu": "Лемойн, Нью-Ганновер, Западная Элизабет — у воды и лесов.",
+    "perfectKillRu": "Варминт-винтовка (патроны .22) или лук со стрелами для мелкой дичи",
+    "behaviorRu": "Чаще ночью.",
+    "danger": "safe",
+    "availability": "story",
+    "availabilityNoteRu": "",
+    "links": [
+      {
+        "labelRu": "Карта ареала и советы (RankedBoost)",
+        "url": "https://rankedboost.com/red-dead-redemption-2/raccoon/"
+      },
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Raccoon+location+map+perfect+pelt"
+      }
+    ]
+  },
+  {
+    "id": "ram",
+    "type": "regular",
+    "nameRu": "Толсторог (баран)",
+    "nameEn": "Bighorn Ram",
+    "size": "medium",
+    "regions": [
+      "ambarino",
+      "west_elizabeth"
+    ],
+    "habitatRu": "Горы Амбарино и Западной Элизабет; открытая площадка у железной дороги южнее пруда Кэттейл (над надписью Cumberland Falls).",
+    "perfectKillRu": "Лук с обычными или отравленными стрелами, винтовка",
+    "behaviorRu": "Держится на склонах.",
+    "danger": "safe",
+    "availability": "story",
+    "availabilityNoteRu": "",
+    "links": [
+      {
+        "labelRu": "Карта ареала и советы (RankedBoost)",
+        "url": "https://rankedboost.com/red-dead-redemption-2/ram/"
+      },
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Bighorn+Ram+location+map+perfect+pelt"
+      }
+    ]
+  },
+  {
+    "id": "rat",
+    "type": "regular",
+    "nameRu": "Крыса",
+    "nameEn": "Rat",
+    "size": "small",
+    "regions": [
+      "lemoyne",
+      "west_elizabeth"
+    ],
+    "habitatRu": "Лучше всего — доки Сен-Дени; также Западная Элизабет и север Лемойна. Помогает приманка.",
+    "perfectKillRu": "Лук со стрелами для мелкой дичи (или варминт-винтовка)",
+    "behaviorRu": "Мелкая и быстрая, нужен точный выстрел.",
+    "danger": "safe",
+    "availability": "story",
+    "availabilityNoteRu": "",
+    "links": [
+      {
+        "labelRu": "Карта ареала и советы (RankedBoost)",
+        "url": "https://rankedboost.com/red-dead-redemption-2/rat/"
+      },
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Rat+location+map+perfect+pelt"
+      }
+    ]
+  },
+  {
+    "id": "sheep",
+    "type": "regular",
+    "nameRu": "Овца",
+    "nameEn": "Sheep",
+    "size": "medium",
+    "regions": [
+      "ambarino",
+      "west_elizabeth",
+      "new_austin"
+    ],
+    "habitatRu": "Амбарино и север Западной Элизабет у западного края карты (часто вместе с толсторогами); в эпилоге — окрестности Тамблвида.",
+    "perfectKillRu": "Лук с обычными или отравленными стрелами, винтовка",
+    "behaviorRu": "Стадная.",
+    "danger": "safe",
+    "availability": "story",
+    "availabilityNoteRu": "",
+    "links": [
+      {
+        "labelRu": "Карта ареала и советы (RankedBoost)",
+        "url": "https://rankedboost.com/red-dead-redemption-2/sheep/"
+      },
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Sheep+location+map+perfect+pelt"
+      }
+    ]
+  },
+  {
+    "id": "skunk",
+    "type": "regular",
+    "nameRu": "Скунс",
+    "nameEn": "Skunk",
+    "size": "small",
+    "regions": [
+      "lemoyne",
+      "new_hanover",
+      "west_elizabeth"
+    ],
+    "habitatRu": "Весь Лемойн; восток Нью-Ганновера; западная окраина Западной Элизабет.",
+    "perfectKillRu": "Варминт-винтовка (патроны .22) или лук со стрелами для мелкой дичи",
+    "behaviorRu": "Брызгает при сближении. Чаще ночью.",
+    "danger": "aggressive",
+    "availability": "story",
+    "availabilityNoteRu": "",
+    "links": [
+      {
+        "labelRu": "Карта ареала и советы (RankedBoost)",
+        "url": "https://rankedboost.com/red-dead-redemption-2/skunk/"
+      },
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Skunk+location+map+perfect+pelt"
+      }
+    ]
+  },
+  {
+    "id": "snake",
+    "type": "regular",
+    "nameRu": "Змея",
+    "nameEn": "Snake",
+    "size": "small",
+    "regions": [
+      "lemoyne",
+      "new_hanover"
+    ],
+    "habitatRu": "Дорога из Сен-Дени к Ван-Хорну и Аннсбургу (помогает приманка для хищников); водяные змеи в болотах у Лаграса.",
+    "perfectKillRu": "Лук со стрелами для мелкой дичи, только в голову.",
+    "behaviorRu": "Ядовита.",
+    "danger": "aggressive",
+    "availability": "story",
+    "availabilityNoteRu": "",
+    "links": [
+      {
+        "labelRu": "Карта ареала и советы (RankedBoost)",
+        "url": "https://rankedboost.com/red-dead-redemption-2/snake/"
+      },
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Snake+location+map+perfect+pelt"
+      }
+    ]
+  },
+  {
+    "id": "squirrel",
+    "type": "regular",
+    "nameRu": "Белка",
+    "nameEn": "Squirrel",
+    "size": "small",
+    "regions": [
+      "ambarino",
+      "west_elizabeth",
+      "new_hanover"
+    ],
+    "habitatRu": "Леса у Строберри, к северу от Аннсбурга, Амбарино, Западная Элизабет. Много белок — северо-западный угол карты за ранчо Хэнгинг-Дог.",
+    "perfectKillRu": "Лук со стрелами для мелкой дичи (или варминт-винтовка)",
+    "behaviorRu": "Мелкая и быстрая.",
+    "danger": "safe",
+    "availability": "story",
+    "availabilityNoteRu": "",
+    "links": [
+      {
+        "labelRu": "Карта ареала и советы (RankedBoost)",
+        "url": "https://rankedboost.com/red-dead-redemption-2/squirrel/"
+      },
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Squirrel+location+map+perfect+pelt"
+      }
+    ]
+  },
+  {
+    "id": "wolf",
+    "type": "regular",
+    "nameRu": "Волк",
+    "nameEn": "Wolf",
+    "size": "medium",
+    "regions": [
+      "ambarino",
+      "west_elizabeth"
+    ],
+    "habitatRu": "Над буквой «O» в AMBARINO; перекрёсток трёх дорог севернее ранчо Хэнгинг-Дог (ночью нападает стая).",
+    "perfectKillRu": "Винтовка с экспресс-патронами, выстрел в голову; лук с обычными или отравленными стрелами.",
+    "behaviorRu": "Стаями, нападают. Активнее ночью.",
+    "danger": "dangerous",
+    "availability": "story",
+    "availabilityNoteRu": "",
+    "links": [
+      {
+        "labelRu": "Карта ареала и советы (RankedBoost)",
+        "url": "https://rankedboost.com/red-dead-redemption-2/wolf/"
+      },
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Wolf+location+map+perfect+pelt"
+      }
+    ]
+  },
+  {
+    "id": "robin",
+    "type": "bird",
+    "nameRu": "Странствующий дрозд",
+    "nameEn": "Robin",
+    "size": "small",
+    "regions": [
+      "new_hanover",
+      "lemoyne",
+      "west_elizabeth"
+    ],
+    "habitatRu": "Окрестности Валентайна, Строберри, Роудса, Аннсбурга.",
+    "perfectKillRu": "Лук со стрелами для мелкой дичи",
+    "behaviorRu": "Перья выпадают при любом качестве тушки — идеальное убийство не обязательно.",
+    "danger": "safe",
+    "availability": "story",
+    "availabilityNoteRu": "",
+    "links": [
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Robin+location"
+      }
+    ]
+  },
+  {
+    "id": "oriole",
+    "type": "bird",
+    "nameRu": "Иволга",
+    "nameEn": "Oriole",
+    "size": "small",
+    "regions": [
+      "lemoyne",
+      "new_hanover"
+    ],
+    "habitatRu": "Чуть севернее Роудса; северо-западный берег озера Флэт-Айрон и остров к востоку от него.",
+    "perfectKillRu": "Лук со стрелами для мелкой дичи",
+    "behaviorRu": "Перья выпадают при любом качестве тушки — идеальное убийство не обязательно.",
+    "danger": "safe",
+    "availability": "story",
+    "availabilityNoteRu": "",
+    "links": [
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Oriole+location"
+      }
+    ]
+  },
+  {
+    "id": "raven",
+    "type": "bird",
+    "nameRu": "Ворон",
+    "nameEn": "Raven",
+    "size": "small",
+    "regions": [
+      "west_elizabeth",
+      "lemoyne"
+    ],
+    "habitatRu": "Окрестности Блэкуотера; между буквами «E» и «M» в LEMOYNE.",
+    "perfectKillRu": "Лук со стрелами для мелкой дичи",
+    "behaviorRu": "Перья выпадают при любом качестве тушки — идеальное убийство не обязательно.",
+    "danger": "safe",
+    "availability": "story",
+    "availabilityNoteRu": "",
+    "links": [
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Raven+location"
+      }
+    ]
+  },
+  {
+    "id": "woodpecker",
+    "type": "bird",
+    "nameRu": "Дятел",
+    "nameEn": "Woodpecker",
+    "size": "small",
+    "regions": [
+      "west_elizabeth",
+      "ambarino"
+    ],
+    "habitatRu": "Леса Западной Элизабет и Амбарино.",
+    "perfectKillRu": "Лук со стрелами для мелкой дичи",
+    "behaviorRu": "Перья выпадают при любом качестве тушки — идеальное убийство не обязательно.",
+    "danger": "safe",
+    "availability": "story",
+    "availabilityNoteRu": "",
+    "links": [
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Woodpecker+location"
+      }
+    ]
+  },
+  {
+    "id": "chicken",
+    "type": "bird",
+    "nameRu": "Курица",
+    "nameEn": "Chicken",
+    "size": "small",
+    "regions": [
+      "new_hanover",
+      "west_elizabeth"
+    ],
+    "habitatRu": "Дикие куры там, где на карте написано NEW HANOVER; окрестности Блэкуотера. Убийство фермерских кур — преступление.",
+    "perfectKillRu": "Лук со стрелами для мелкой дичи",
+    "behaviorRu": "Перья выпадают при любом качестве тушки — идеальное убийство не обязательно.",
+    "danger": "safe",
+    "availability": "story",
+    "availabilityNoteRu": "",
+    "links": [
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Chicken+location"
+      }
+    ]
+  },
+  {
+    "id": "goose",
+    "type": "bird",
+    "nameRu": "Гусь",
+    "nameEn": "Goose",
+    "size": "small",
+    "regions": [
+      "new_hanover"
+    ],
+    "habitatRu": "Северо-западный берег озера Флэт-Айрон; около букв «N» и «O» в NEW HANOVER.",
+    "perfectKillRu": "Варминт-винтовка (патроны .22) или лук со стрелами для мелкой дичи",
+    "behaviorRu": "Перья выпадают при любом качестве тушки — идеальное убийство не обязательно.",
+    "danger": "safe",
+    "availability": "story",
+    "availabilityNoteRu": "",
+    "links": [
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Goose+location"
+      }
+    ]
+  },
+  {
+    "id": "hawk",
+    "type": "bird",
+    "nameRu": "Ястреб",
+    "nameEn": "Hawk",
+    "size": "small",
+    "regions": [
+      "west_elizabeth",
+      "new_austin",
+      "new_hanover"
+    ],
+    "habitatRu": "Западнее Блэкуотера у края карты; Нью-Остин; северо-восточнее Аннсбурга.",
+    "perfectKillRu": "Варминт-винтовка (патроны .22) или лук со стрелами для мелкой дичи",
+    "behaviorRu": "Перья выпадают при любом качестве тушки — идеальное убийство не обязательно.",
+    "danger": "safe",
+    "availability": "story",
+    "availabilityNoteRu": "",
+    "links": [
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Hawk+location"
+      }
+    ]
+  },
+  {
+    "id": "quail",
+    "type": "bird",
+    "nameRu": "Перепел",
+    "nameEn": "Quail",
+    "size": "small",
+    "regions": [
+      "west_elizabeth",
+      "new_hanover"
+    ],
+    "habitatRu": "Строберри и окрестности; район первой «N» в NEW HANOVER.",
+    "perfectKillRu": "Лук со стрелами для мелкой дичи",
+    "behaviorRu": "Перья выпадают при любом качестве тушки — идеальное убийство не обязательно.",
+    "danger": "safe",
+    "availability": "story",
+    "availabilityNoteRu": "",
+    "links": [
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Quail+location"
+      }
+    ]
+  },
+  {
+    "id": "pheasant",
+    "type": "bird",
+    "nameRu": "Фазан",
+    "nameEn": "Pheasant",
+    "size": "small",
+    "regions": [
+      "new_hanover"
+    ],
+    "habitatRu": "Чуть севернее промежутка между словами NEW и HANOVER; юго-западнее Валентайна.",
+    "perfectKillRu": "Лук со стрелами для мелкой дичи",
+    "behaviorRu": "Перья выпадают при любом качестве тушки — идеальное убийство не обязательно.",
+    "danger": "safe",
+    "availability": "story",
+    "availabilityNoteRu": "",
+    "links": [
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Pheasant+location"
+      }
+    ]
+  },
+  {
+    "id": "owl",
+    "type": "bird",
+    "nameRu": "Сова",
+    "nameEn": "Owl",
+    "size": "small",
+    "regions": [
+      "west_elizabeth",
+      "new_hanover",
+      "ambarino"
+    ],
+    "habitatRu": "Западнее Блэкуотера; южная часть острова на озере Флэт-Айрон; к северу от Аннсбурга; севернее букв «N» и «O» в AMBARINO.",
+    "perfectKillRu": "Варминт-винтовка (патроны .22) или лук со стрелами для мелкой дичи",
+    "behaviorRu": "Активна ночью. Перья выпадают при любом качестве тушки.",
+    "danger": "safe",
+    "availability": "story",
+    "availabilityNoteRu": "",
+    "links": [
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Owl+location"
+      }
+    ]
+  },
+  {
+    "id": "turkey",
+    "type": "bird",
+    "nameRu": "Индейка",
+    "nameEn": "Turkey",
+    "size": "small",
+    "regions": [
+      "new_hanover",
+      "lemoyne"
+    ],
+    "habitatRu": "Почти везде; много в Нью-Ганновере и Лемойне, у Ван-Хорна и Аннсбурга.",
+    "perfectKillRu": "Варминт-винтовка (патроны .22) или лук со стрелами для мелкой дичи",
+    "behaviorRu": "Перья выпадают при любом качестве тушки — идеальное убийство не обязательно.",
+    "danger": "safe",
+    "availability": "story",
+    "availabilityNoteRu": "",
+    "links": [
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Turkey+location"
+      }
+    ]
+  },
+  {
+    "id": "eagle",
+    "type": "bird",
+    "nameRu": "Орёл",
+    "nameEn": "Eagle",
+    "size": "small",
+    "regions": [
+      "ambarino",
+      "new_hanover",
+      "west_elizabeth"
+    ],
+    "habitatRu": "Восточный Амбарино у Аннсбурга; северо-запад от северного берега озера Флэт-Айрон; юго-западные края карты.",
+    "perfectKillRu": "Варминт-винтовка (патроны .22) или лук со стрелами для мелкой дичи",
+    "behaviorRu": "Перья выпадают при любом качестве тушки — идеальное убийство не обязательно.",
+    "danger": "safe",
+    "availability": "story",
+    "availabilityNoteRu": "",
+    "links": [
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Eagle+location"
+      }
+    ]
+  },
+  {
+    "id": "cardinal",
+    "type": "bird",
+    "nameRu": "Кардинал",
+    "nameEn": "Cardinal",
+    "size": "small",
+    "regions": [
+      "new_hanover"
+    ],
+    "habitatRu": "Сразу юго-западнее и западнее Валентайна (реагирует на любую приманку).",
+    "perfectKillRu": "Лук со стрелами для мелкой дичи",
+    "behaviorRu": "Перья выпадают при любом качестве тушки — идеальное убийство не обязательно.",
+    "danger": "safe",
+    "availability": "story",
+    "availabilityNoteRu": "",
+    "links": [
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Cardinal+location"
+      }
+    ]
+  },
+  {
+    "id": "rooster",
+    "type": "bird",
+    "nameRu": "Петух",
+    "nameEn": "Rooster",
+    "size": "small",
+    "regions": [
+      "new_hanover",
+      "lemoyne"
+    ],
+    "habitatRu": "Восточные окраины Ван-Хорна; севернее и южнее Брейтуэйт-Мэнор. Убийство фермерских петухов — преступление.",
+    "perfectKillRu": "Лук со стрелами для мелкой дичи",
+    "behaviorRu": "Перья выпадают при любом качестве тушки — идеальное убийство не обязательно.",
+    "danger": "safe",
+    "availability": "story",
+    "availabilityNoteRu": "",
+    "links": [
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Rooster+location"
+      }
+    ]
+  },
+  {
+    "id": "songbird",
+    "type": "bird",
+    "nameRu": "Певчая птица",
+    "nameEn": "Songbird",
+    "size": "small",
+    "regions": [
+      "ambarino",
+      "west_elizabeth",
+      "new_hanover",
+      "lemoyne"
+    ],
+    "habitatRu": "Амбарино, Западная Элизабет, Нью-Ганновер, Лемойн — окраины городов.",
+    "perfectKillRu": "Лук со стрелами для мелкой дичи",
+    "behaviorRu": "Перья выпадают при любом качестве тушки — идеальное убийство не обязательно.",
+    "danger": "safe",
+    "availability": "story",
+    "availabilityNoteRu": "",
+    "links": [
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Songbird+location"
+      }
+    ]
+  },
+  {
+    "id": "sparrow",
+    "type": "bird",
+    "nameRu": "Воробей",
+    "nameEn": "Sparrow",
+    "size": "small",
+    "regions": [
+      "west_elizabeth",
+      "ambarino",
+      "lemoyne",
+      "new_hanover"
+    ],
+    "habitatRu": "Западная Элизабет, Амбарино, Лемойн; северные окраины Валентайна и Роудса.",
+    "perfectKillRu": "Лук со стрелами для мелкой дичи",
+    "behaviorRu": "Перья выпадают при любом качестве тушки — идеальное убийство не обязательно.",
+    "danger": "safe",
+    "availability": "story",
+    "availabilityNoteRu": "",
+    "links": [
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Sparrow+location"
+      }
+    ]
+  },
+  {
+    "id": "cedar_waxwing",
+    "type": "bird",
+    "nameRu": "Кедровый свиристель",
+    "nameEn": "Cedar Waxwing",
+    "size": "small",
+    "regions": [
+      "new_hanover",
+      "west_elizabeth"
+    ],
+    "habitatRu": "Западнее Валентайна; севернее Блэкуотера, у букв «Z» и «A» в ELIZABETH.",
+    "perfectKillRu": "Лук со стрелами для мелкой дичи",
+    "behaviorRu": "Перья выпадают при любом качестве тушки — идеальное убийство не обязательно.",
+    "danger": "safe",
+    "availability": "story",
+    "availabilityNoteRu": "",
+    "links": [
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Cedar+Waxwing+location"
+      }
+    ]
+  },
+  {
+    "id": "blue_jay",
+    "type": "bird",
+    "nameRu": "Голубая сойка",
+    "nameEn": "Blue Jay",
+    "size": "small",
+    "regions": [
+      "lemoyne",
+      "new_hanover"
+    ],
+    "habitatRu": "Роудс и окрестности; южнее и юго-западнее Валентайна; Аннсбург.",
+    "perfectKillRu": "Лук со стрелами для мелкой дичи",
+    "behaviorRu": "Перья выпадают при любом качестве тушки — идеальное убийство не обязательно.",
+    "danger": "safe",
+    "availability": "story",
+    "availabilityNoteRu": "",
+    "links": [
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Blue+Jay+location"
+      }
+    ]
+  },
+  {
+    "id": "duck",
+    "type": "bird",
+    "nameRu": "Утка",
+    "nameEn": "Duck",
+    "size": "small",
+    "regions": [
+      "lemoyne",
+      "new_hanover",
+      "west_elizabeth"
+    ],
+    "habitatRu": "Почти все водоёмы; болота у Сен-Дени; район Аннсбурга, восточный берег реки.",
+    "perfectKillRu": "Лук со стрелами для мелкой дичи",
+    "behaviorRu": "Перья выпадают при любом качестве тушки — идеальное убийство не обязательно.",
+    "danger": "safe",
+    "availability": "story",
+    "availabilityNoteRu": "",
+    "links": [
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Duck+location"
+      }
+    ]
+  },
+  {
+    "id": "pigeon",
+    "type": "bird",
+    "nameRu": "Голубь",
+    "nameEn": "Pigeon",
+    "size": "small",
+    "regions": [
+      "lemoyne",
+      "new_hanover"
+    ],
+    "habitatRu": "Юг Сен-Дени; северо-западный берег озера Флэт-Айрон; Аннсбург.",
+    "perfectKillRu": "Лук со стрелами для мелкой дичи",
+    "behaviorRu": "Перья выпадают при любом качестве тушки — идеальное убийство не обязательно.",
+    "danger": "safe",
+    "availability": "story",
+    "availabilityNoteRu": "",
+    "links": [
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Pigeon+location"
+      }
+    ]
+  },
+  {
+    "id": "crow",
+    "type": "bird",
+    "nameRu": "Ворона",
+    "nameEn": "Crow",
+    "size": "small",
+    "regions": [
+      "lemoyne"
+    ],
+    "habitatRu": "Лемойн: окрестности Роудса и запад Сен-Дени.",
+    "perfectKillRu": "Лук со стрелами для мелкой дичи",
+    "behaviorRu": "Перья выпадают при любом качестве тушки — идеальное убийство не обязательно.",
+    "danger": "safe",
+    "availability": "story",
+    "availabilityNoteRu": "",
+    "links": [
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Crow+location"
+      }
+    ]
+  },
+  {
+    "id": "vulture",
+    "type": "bird",
+    "nameRu": "Гриф",
+    "nameEn": "Vulture",
+    "size": "small",
+    "regions": [
+      "new_austin",
+      "lemoyne",
+      "new_hanover"
+    ],
+    "habitatRu": "Большая часть Нью-Остина; север Лемойна у Хорсшу-Оверлук; южнее Брейтуэйт-Мэнор; между буквами «A» и «N» в NEW HANOVER.",
+    "perfectKillRu": "Варминт-винтовка (патроны .22) или лук со стрелами для мелкой дичи",
+    "behaviorRu": "Перья выпадают при любом качестве тушки — идеальное убийство не обязательно.",
+    "danger": "safe",
+    "availability": "story",
+    "availabilityNoteRu": "",
+    "links": [
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Vulture+location"
+      }
+    ]
+  },
+  {
+    "id": "seagull",
+    "type": "bird",
+    "nameRu": "Чайка",
+    "nameEn": "Seagull",
+    "size": "small",
+    "regions": [
+      "lemoyne",
+      "new_hanover"
+    ],
+    "habitatRu": "У любой большой воды; доки Сен-Дени; восточные края карты.",
+    "perfectKillRu": "Варминт-винтовка (патроны .22) или лук со стрелами для мелкой дичи",
+    "behaviorRu": "Перья выпадают при любом качестве тушки — идеальное убийство не обязательно.",
+    "danger": "safe",
+    "availability": "story",
+    "availabilityNoteRu": "",
+    "links": [
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Seagull+location"
+      }
+    ]
+  },
+  {
+    "id": "loon",
+    "type": "bird",
+    "nameRu": "Гагара",
+    "nameEn": "Loon",
+    "size": "small",
+    "regions": [
+      "new_hanover",
+      "lemoyne"
+    ],
+    "habitatRu": "Озеро Флэт-Айрон (восточный остров, северо-западный берег); севернее и восточнее Аннсбурга; у Лаграса.",
+    "perfectKillRu": "Лук со стрелами для мелкой дичи",
+    "behaviorRu": "Перья выпадают при любом качестве тушки — идеальное убийство не обязательно.",
+    "danger": "safe",
+    "availability": "story",
+    "availabilityNoteRu": "",
+    "links": [
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Loon+location"
+      }
+    ]
+  },
+  {
+    "id": "condor",
+    "type": "bird",
+    "nameRu": "Кондор",
+    "nameEn": "Condor",
+    "size": "small",
+    "regions": [
+      "new_austin"
+    ],
+    "habitatRu": "Западнее Тамблвида, севернее буквы «E» в NEW AUSTIN. Только в эпилоге.",
+    "perfectKillRu": "Варминт-винтовка (патроны .22) или лук со стрелами для мелкой дичи",
+    "behaviorRu": "Перья выпадают при любом качестве тушки — идеальное убийство не обязательно.",
+    "danger": "safe",
+    "availability": "epilogue",
+    "availabilityNoteRu": "Нью-Остин доступен только в эпилоге.",
+    "links": [
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Condor+location"
+      }
+    ]
+  },
+  {
+    "id": "leg_bear",
+    "type": "legendary",
+    "nameRu": "Легендарный медведь Бхарати",
+    "nameEn": "Legendary Bharati Grizzly Bear",
+    "size": "large",
+    "regions": [
+      "ambarino"
+    ],
+    "habitatRu": "Гризлис-Ист, к северу от О'Крис-Ран (Амбарино).",
+    "perfectKillRu": "Мощная винтовка с экспресс-патронами, «Меткий глаз», стрельба в сердце/голову.",
+    "behaviorRu": "Качество шкуры легендарного зверя не зависит от способа убийства. Зона появляется на карте после получения карты легендарных животных (глава 2, задание Хозии). Найдите в зоне «?» следы через «Орлиный глаз» и идите по ним.",
+    "unlockRu": "Впервые встречается в задании главы 2 «Уходит, преследуемый уязвлённым самолюбием» (с Хозией). После задания можно вернуться в любой момент.",
+    "danger": "dangerous",
+    "availability": "story",
+    "availabilityNoteRu": "",
+    "links": [
+      {
+        "labelRu": "Гайд и карта (RDR2.org)",
+        "url": "https://www.rdr2.org/guides/red-dead-redemption-2-legendary-animals-guide/#legendary-bharati-grizzly-bear"
+      },
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Legendary+Bharati+Grizzly+Bear+location"
+      }
+    ]
+  },
+  {
+    "id": "leg_beaver",
+    "type": "legendary",
+    "nameRu": "Легендарный бобр",
+    "nameEn": "Legendary Beaver",
+    "size": "large",
+    "regions": [
+      "new_hanover"
+    ],
+    "habitatRu": "Бутчер-Крик у реки Камасса (Роанок-Ридж, Нью-Ганновер), западнее фактории Ван-Хорн, чуть южнее буквы «E» в NEW HANOVER.",
+    "perfectKillRu": "Почти не сопротивляется — любое оружие, хватит одного выстрела.",
+    "behaviorRu": "Качество шкуры легендарного зверя не зависит от способа убийства. Зона появляется на карте после получения карты легендарных животных (глава 2, задание Хозии). Найдите в зоне «?» следы через «Орлиный глаз» и идите по ним.",
+    "unlockRu": "Доступен с главы 2.",
+    "danger": "safe",
+    "availability": "story",
+    "availabilityNoteRu": "",
+    "links": [
+      {
+        "labelRu": "Гайд и карта (RDR2.org)",
+        "url": "https://www.rdr2.org/guides/red-dead-redemption-2-legendary-animals-guide/#legendary-beaver"
+      },
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Legendary+Beaver+location"
+      }
+    ]
+  },
+  {
+    "id": "leg_ram",
+    "type": "legendary",
+    "nameRu": "Легендарный толсторог",
+    "nameEn": "Legendary Bighorn Ram",
+    "size": "large",
+    "regions": [
+      "new_hanover",
+      "ambarino"
+    ],
+    "habitatRu": "Холмы восточнее пруда Кэттейл, рядом с Валентайном (между прудом и рекой Дакота; граница Нью-Ганновера и Амбарино).",
+    "perfectKillRu": "Не очень живуч — винтовка, выстрел в уязвимое место.",
+    "behaviorRu": "Качество шкуры легендарного зверя не зависит от способа убийства. Зона появляется на карте после получения карты легендарных животных (глава 2, задание Хозии). Найдите в зоне «?» следы через «Орлиный глаз» и идите по ним.",
+    "unlockRu": "Доступен с главы 2.",
+    "danger": "aggressive",
+    "availability": "story",
+    "availabilityNoteRu": "",
+    "links": [
+      {
+        "labelRu": "Гайд и карта (RDR2.org)",
+        "url": "https://www.rdr2.org/guides/red-dead-redemption-2-legendary-animals-guide/#legendary-bighorn-ram"
+      },
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Legendary+Bighorn+Ram+location"
+      }
+    ]
+  },
+  {
+    "id": "leg_boar",
+    "type": "legendary",
+    "nameRu": "Легендарный кабан",
+    "nameEn": "Legendary Boar",
+    "size": "large",
+    "regions": [
+      "lemoyne"
+    ],
+    "habitatRu": "Южнее Блуотер-Марш — севернее буквы «S» в MARSH и буквы «A» в BLUEWATER.",
+    "perfectKillRu": "Сразу нападает: мощная винтовка (Springfield) или отравленная стрела.",
+    "behaviorRu": "Качество шкуры легендарного зверя не зависит от способа убийства. Зона появляется на карте после получения карты легендарных животных (глава 2, задание Хозии). Найдите в зоне «?» следы через «Орлиный глаз» и идите по ним.",
+    "unlockRu": "Доступен с главы 2.",
+    "danger": "dangerous",
+    "availability": "story",
+    "availabilityNoteRu": "",
+    "links": [
+      {
+        "labelRu": "Гайд и карта (RDR2.org)",
+        "url": "https://www.rdr2.org/guides/red-dead-redemption-2-legendary-animals-guide/#legendary-boar"
+      },
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Legendary+Boar+location"
+      }
+    ]
+  },
+  {
+    "id": "leg_buck",
+    "type": "legendary",
+    "nameRu": "Легендарный олень",
+    "nameEn": "Legendary Buck",
+    "size": "large",
+    "regions": [
+      "west_elizabeth"
+    ],
+    "habitatRu": "Биг-Вэлли, юго-западнее буквы «B» в BIG VALLEY.",
+    "perfectKillRu": "Один выстрел экспресс-патроном в сердце или голову.",
+    "behaviorRu": "Качество шкуры легендарного зверя не зависит от способа убийства. Зона появляется на карте после получения карты легендарных животных (глава 2, задание Хозии). Найдите в зоне «?» следы через «Орлиный глаз» и идите по ним.",
+    "unlockRu": "Доступен с главы 2.",
+    "danger": "safe",
+    "availability": "story",
+    "availabilityNoteRu": "",
+    "links": [
+      {
+        "labelRu": "Гайд и карта (RDR2.org)",
+        "url": "https://www.rdr2.org/guides/red-dead-redemption-2-legendary-animals-guide/#legendary-buck"
+      },
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Legendary+Buck+location"
+      }
+    ]
+  },
+  {
+    "id": "leg_bullgator",
+    "type": "legendary",
+    "nameRu": "Легендарный аллигатор (Буллгатор)",
+    "nameEn": "Legendary Bullgator",
+    "size": "large",
+    "regions": [
+      "lemoyne"
+    ],
+    "habitatRu": "Бэйю-Нва, Лакей — к северу от Сен-Дени.",
+    "perfectKillRu": "Один из самых опасных: дальнобойная мощная винтовка (Rolling Block), не подпускать близко.",
+    "behaviorRu": "Качество шкуры легендарного зверя не зависит от способа убийства. Зона появляется на карте после получения карты легендарных животных (глава 2, задание Хозии). Найдите в зоне «?» следы через «Орлиный глаз» и идите по ним.",
+    "unlockRu": "Впервые встречается в задании главы 4 «Загородные развлечения» (Country Pursuits); после него появляется на карте. По данным GTABase — только после задания «Это страна Мёрфри» (That's Murfree Country). Если зоны нет — пройдите дальше по сюжету.",
+    "danger": "dangerous",
+    "availability": "story",
+    "availabilityNoteRu": "",
+    "links": [
+      {
+        "labelRu": "Гайд и карта (RDR2.org)",
+        "url": "https://www.rdr2.org/guides/red-dead-redemption-2-legendary-animals-guide/#legendary-bullgator"
+      },
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Legendary+Bullgator+location"
+      }
+    ]
+  },
+  {
+    "id": "leg_cougar",
+    "type": "legendary",
+    "nameRu": "Легендарная пума",
+    "nameEn": "Legendary Cougar",
+    "size": "large",
+    "regions": [
+      "new_austin"
+    ],
+    "habitatRu": "Гэптус-Ридж, западнее Тамблвида (Нью-Остин).",
+    "perfectKillRu": "Очень быстрая: полный «Меткий глаз», винтовка; вблизи — дробовик.",
+    "behaviorRu": "Качество шкуры легендарного зверя не зависит от способа убийства. Зона появляется на карте после получения карты легендарных животных (глава 2, задание Хозии). Найдите в зоне «?» следы через «Орлиный глаз» и идите по ним.",
+    "unlockRu": "Только в эпилоге (Нью-Остин).",
+    "danger": "dangerous",
+    "availability": "epilogue",
+    "availabilityNoteRu": "Нью-Остин доступен только в эпилоге.",
+    "links": [
+      {
+        "labelRu": "Гайд и карта (RDR2.org)",
+        "url": "https://www.rdr2.org/guides/red-dead-redemption-2-legendary-animals-guide/#legendary-cougar"
+      },
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Legendary+Cougar+location"
+      }
+    ]
+  },
+  {
+    "id": "leg_coyote",
+    "type": "legendary",
+    "nameRu": "Легендарный койот",
+    "nameEn": "Legendary Coyote",
+    "size": "large",
+    "regions": [
+      "lemoyne"
+    ],
+    "habitatRu": "Скарлетт-Медоуз, чуть западнее буквы «R» в SCARLETT.",
+    "perfectKillRu": "Сразу убегает: точный выстрел мощной винтовкой (Rolling Block).",
+    "behaviorRu": "Качество шкуры легендарного зверя не зависит от способа убийства. Зона появляется на карте после получения карты легендарных животных (глава 2, задание Хозии). Найдите в зоне «?» следы через «Орлиный глаз» и идите по ним.",
+    "unlockRu": "Доступен с главы 2.",
+    "danger": "safe",
+    "availability": "story",
+    "availabilityNoteRu": "",
+    "links": [
+      {
+        "labelRu": "Гайд и карта (RDR2.org)",
+        "url": "https://www.rdr2.org/guides/red-dead-redemption-2-legendary-animals-guide/#legendary-coyote"
+      },
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Legendary+Coyote+location"
+      }
+    ]
+  },
+  {
+    "id": "leg_elk",
+    "type": "legendary",
+    "nameRu": "Легендарный вапити",
+    "nameEn": "Legendary Elk",
+    "size": "large",
+    "regions": [
+      "new_hanover",
+      "ambarino"
+    ],
+    "habitatRu": "Камберлендский лес, восточнее станции Бэккус (рядом с Форт-Уоллес, у границы с Амбарино).",
+    "perfectKillRu": "Не сопротивляется: мощная винтовка с экспресс-патронами.",
+    "behaviorRu": "Качество шкуры легендарного зверя не зависит от способа убийства. Зона появляется на карте после получения карты легендарных животных (глава 2, задание Хозии). Найдите в зоне «?» следы через «Орлиный глаз» и идите по ним.",
+    "unlockRu": "Доступен с главы 2.",
+    "danger": "safe",
+    "availability": "story",
+    "availabilityNoteRu": "",
+    "links": [
+      {
+        "labelRu": "Гайд и карта (RDR2.org)",
+        "url": "https://www.rdr2.org/guides/red-dead-redemption-2-legendary-animals-guide/#legendary-elk"
+      },
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Legendary+Elk+location"
+      }
+    ]
+  },
+  {
+    "id": "leg_fox",
+    "type": "legendary",
+    "nameRu": "Легендарная лиса",
+    "nameEn": "Legendary Fox",
+    "size": "large",
+    "regions": [
+      "lemoyne"
+    ],
+    "habitatRu": "Пруд Мэтток, к северу от Роудса.",
+    "perfectKillRu": "Сразу убегает: мощная винтовка, не промахнуться с первого выстрела.",
+    "behaviorRu": "Качество шкуры легендарного зверя не зависит от способа убийства. Зона появляется на карте после получения карты легендарных животных (глава 2, задание Хозии). Найдите в зоне «?» следы через «Орлиный глаз» и идите по ним.",
+    "unlockRu": "Доступна с главы 2.",
+    "danger": "safe",
+    "availability": "story",
+    "availabilityNoteRu": "",
+    "links": [
+      {
+        "labelRu": "Гайд и карта (RDR2.org)",
+        "url": "https://www.rdr2.org/guides/red-dead-redemption-2-legendary-animals-guide/#legendary-fox"
+      },
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Legendary+Fox+location"
+      }
+    ]
+  },
+  {
+    "id": "leg_panther",
+    "type": "legendary",
+    "nameRu": "Легендарная пантера Жагуаро",
+    "nameEn": "Legendary Giaguaro Panther",
+    "size": "large",
+    "regions": [
+      "lemoyne"
+    ],
+    "habitatRu": "Скарлетт-Медоуз (Лемойн), южнее Роудса: восточнее Брейтуэйт-Мэнор и южнее Болгер-Глейд.",
+    "perfectKillRu": "Самая сложная: лучшая винтовка (Rolling Block) с лучшими патронами, полный «Меткий глаз».",
+    "behaviorRu": "Качество шкуры легендарного зверя не зависит от способа убийства. Зона появляется на карте после получения карты легендарных животных (глава 2, задание Хозии). Найдите в зоне «?» следы через «Орлиный глаз» и идите по ним.",
+    "unlockRu": "Появляется только после 9-го ранга испытаний «Охотник-мастер».",
+    "danger": "dangerous",
+    "availability": "story",
+    "availabilityNoteRu": "",
+    "links": [
+      {
+        "labelRu": "Гайд и карта (RDR2.org)",
+        "url": "https://www.rdr2.org/guides/red-dead-redemption-2-legendary-animals-guide/#legendary-giaguaro-panther"
+      },
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Legendary+Giaguaro+Panther+location"
+      }
+    ]
+  },
+  {
+    "id": "leg_moose",
+    "type": "legendary",
+    "nameRu": "Легендарный лось",
+    "nameEn": "Legendary Moose",
+    "size": "large",
+    "regions": [
+      "new_hanover"
+    ],
+    "habitatRu": "Хребет Роанок, у озера севернее буквы «R» в ROANOKE, восточнее Доверхилла у водопада.",
+    "perfectKillRu": "Быстрый и живучий: полный «Меткий глаз», экспресс-патроны в сердце и шею.",
+    "behaviorRu": "Качество шкуры легендарного зверя не зависит от способа убийства. Зона появляется на карте после получения карты легендарных животных (глава 2, задание Хозии). Найдите в зоне «?» следы через «Орлиный глаз» и идите по ним.",
+    "unlockRu": "Доступен с главы 2.",
+    "danger": "safe",
+    "availability": "story",
+    "availabilityNoteRu": "",
+    "links": [
+      {
+        "labelRu": "Гайд и карта (RDR2.org)",
+        "url": "https://www.rdr2.org/guides/red-dead-redemption-2-legendary-animals-guide/#legendary-moose"
+      },
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Legendary+Moose+location"
+      }
+    ]
+  },
+  {
+    "id": "leg_pronghorn",
+    "type": "legendary",
+    "nameRu": "Легендарный вилорог",
+    "nameEn": "Legendary Pronghorn",
+    "size": "large",
+    "regions": [
+      "new_austin"
+    ],
+    "habitatRu": "Рио-Браво, у скалы Рио-дель-Лобо (Нью-Остин).",
+    "perfectKillRu": "Очень чуткий: подкрадываться, выстрел в уязвимое место.",
+    "behaviorRu": "Качество шкуры легендарного зверя не зависит от способа убийства. Зона появляется на карте после получения карты легендарных животных (глава 2, задание Хозии). Найдите в зоне «?» следы через «Орлиный глаз» и идите по ним.",
+    "unlockRu": "Только в эпилоге (Нью-Остин).",
+    "danger": "safe",
+    "availability": "epilogue",
+    "availabilityNoteRu": "Нью-Остин доступен только в эпилоге.",
+    "links": [
+      {
+        "labelRu": "Гайд и карта (RDR2.org)",
+        "url": "https://www.rdr2.org/guides/red-dead-redemption-2-legendary-animals-guide/#legendary-pronghorn"
+      },
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Legendary+Pronghorn+location"
+      }
+    ]
+  },
+  {
+    "id": "leg_tatanka_bison",
+    "type": "legendary",
+    "nameRu": "Легендарный бизон Татанка",
+    "nameEn": "Legendary Tatanka Bison",
+    "size": "large",
+    "regions": [
+      "new_austin"
+    ],
+    "habitatRu": "Хенниганс-Стед (Нью-Остин): юго-восточнее ранчо Макфарлейн, северо-западнее водопада Мантека.",
+    "perfectKillRu": "Мощная винтовка с экспресс-патронами; без попаданий в уязвимые места бой долгий.",
+    "behaviorRu": "Качество шкуры легендарного зверя не зависит от способа убийства. Зона появляется на карте после получения карты легендарных животных (глава 2, задание Хозии). Найдите в зоне «?» следы через «Орлиный глаз» и идите по ним.",
+    "unlockRu": "Только в эпилоге (Нью-Остин).",
+    "danger": "aggressive",
+    "availability": "epilogue",
+    "availabilityNoteRu": "Нью-Остин доступен только в эпилоге.",
+    "links": [
+      {
+        "labelRu": "Гайд и карта (RDR2.org)",
+        "url": "https://www.rdr2.org/guides/red-dead-redemption-2-legendary-animals-guide/#legendary-takana-bison"
+      },
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Legendary+Tatanka+Bison+location"
+      }
+    ]
+  },
+  {
+    "id": "leg_wolf",
+    "type": "legendary",
+    "nameRu": "Легендарный волк",
+    "nameEn": "Legendary Wolf",
+    "size": "large",
+    "regions": [
+      "ambarino"
+    ],
+    "habitatRu": "Котторра-Спрингс, южнее промежутка между буквами «A» и «R» в AMBARINO.",
+    "perfectKillRu": "Не особо живуч: винтовка, выстрел в уязвимое место.",
+    "behaviorRu": "Качество шкуры легендарного зверя не зависит от способа убийства. Зона появляется на карте после получения карты легендарных животных (глава 2, задание Хозии). Найдите в зоне «?» следы через «Орлиный глаз» и идите по ним.",
+    "unlockRu": "Доступен с главы 2.",
+    "danger": "dangerous",
+    "availability": "story",
+    "availabilityNoteRu": "",
+    "links": [
+      {
+        "labelRu": "Гайд и карта (RDR2.org)",
+        "url": "https://www.rdr2.org/guides/red-dead-redemption-2-legendary-animals-guide/#legendary-wolf"
+      },
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Legendary+Wolf+location"
+      }
+    ]
+  },
+  {
+    "id": "leg_white_bison",
+    "type": "legendary",
+    "nameRu": "Легендарный белый бизон",
+    "nameEn": "Legendary White Bison",
+    "size": "large",
+    "regions": [
+      "ambarino"
+    ],
+    "habitatRu": "Озеро Изабелла, северо-западнее буквы «A» в AMBARINO.",
+    "perfectKillRu": "Мощная винтовка, экспресс-патроны, точная стрельба.",
+    "behaviorRu": "Качество шкуры легендарного зверя не зависит от способа убийства. Зона появляется на карте после получения карты легендарных животных (глава 2, задание Хозии). Найдите в зоне «?» следы через «Орлиный глаз» и идите по ним.",
+    "unlockRu": "Доступен с главы 2.",
+    "danger": "aggressive",
+    "availability": "story",
+    "availabilityNoteRu": "",
+    "links": [
+      {
+        "labelRu": "Гайд и карта (RDR2.org)",
+        "url": "https://www.rdr2.org/guides/red-dead-redemption-2-legendary-animals-guide/#legendary-white-bison"
+      },
+      {
+        "labelRu": "Найти в Google: где искать",
+        "url": "https://www.google.com/search?q=RDR2+Legendary+White+Bison+location"
+      }
+    ]
+  }
+]

@@ -1,0 +1,101 @@
+/* Design tokens (SPEC 10.1, 10.2). Theme is chosen by <html data-theme>. */
+
+:root {
+  /* Fonts */
+  --font-display: 'Ruslan Display', 'Old Standard TT', Georgia, serif;
+  --font-ui: 'Oswald', 'Arial Narrow', system-ui, sans-serif;
+  --font-body: 'PT Serif', Georgia, 'Times New Roman', serif;
+
+  /* Type scale */
+  --fs-xs: 12px;
+  --fs-sm: 13px;
+  --fs-md: 16px;
+  --fs-lg: 18px;
+  --fs-xl: 22px;
+  --fs-2xl: 28px;
+
+  /* Spacing */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 20px;
+  --sp-6: 24px;
+  --sp-8: 32px;
+
+  /* Sizes */
+  --header-h: 56px;
+  --nav-h: 64px;
+  --subnav-h: 48px;
+  --row-min-h: 56px;
+  --hit: 44px;
+  --content-max: 560px;
+  --radius: 4px;
+  --radius-sm: 2px;
+
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+
+  --dur: 160ms;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+
+  /* Paper grain: feTurbulence noise as a data-URI, ~8% opacity (SPEC 10.1). */
+  --paper-grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .32 0 0 0 0 .22 0 0 0 0 .1 0 0 0 1.1 -.15'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.08'/%3E%3C/svg%3E");
+  --paper-fibers: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.012 .09' numOctaves='2' seed='7'/%3E%3CfeColorMatrix values='0 0 0 0 .4 0 0 0 0 .28 0 0 0 0 .12 0 0 0 .9 -.2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)' opacity='.07'/%3E%3C/svg%3E");
+}
+
+:root,
+[data-theme='night'] {
+  color-scheme: dark;
+  --bg: #0e0c0a;
+  --surface: #1a1612;
+  --surface-2: #241e18;
+  --paper: #e6d9bc;
+  --paper-ink: #2a2118;
+  --text: #ece4d4;
+  --text-muted: #a39580;
+  --border: #3a3027;
+  --accent: #b3261e;
+  --brass: #c8a24a;
+  --ok: #7d9a46;
+  --warn: #d08a2a;
+  --danger: #d0453a;
+
+  /* Derived (not in SPEC table, used for contrast on paper and accents) */
+  --on-accent: #f5eedd;
+  --paper-muted: #5e4d38;
+  --paper-rule: #8a6a1f;
+  --paper-ok: #4f6b25;
+  --paper-warn-bg: #f0d9a8;
+  --vignette: rgba(70, 45, 15, 0.22);
+  --shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
+  --scrim: rgba(8, 6, 4, 0.72);
+}
+
+[data-theme='paper'] {
+  color-scheme: light;
+  --bg: #d8ccb2;
+  --surface: #e9dfc8;
+  --surface-2: #f2ead8;
+  --paper: #f5eedd;
+  --paper-ink: #2a2118;
+  --text: #2a2118;
+  --text-muted: #6b5b46;
+  --border: #b9a684;
+  --accent: #9e1f18;
+  --brass: #8a6a1f;
+  --ok: #4f6b25;
+  --warn: #a2610f;
+  --danger: #a32a20;
+
+  --on-accent: #f5eedd;
+  --paper-muted: #5e4d38;
+  --paper-rule: #8a6a1f;
+  --paper-ok: #4f6b25;
+  --paper-warn-bg: #f0d9a8;
+  --vignette: rgba(90, 60, 20, 0.16);
+  --shadow: 0 1px 6px rgba(60, 40, 15, 0.25);
+  --scrim: rgba(42, 33, 24, 0.55);
+}
