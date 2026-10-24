@@ -1,5 +1,7 @@
 import { AppShell, animalsTabOf } from './components/AppShell';
+import { Toast } from './components/Toast';
 import { currentRoute, type Route } from './router';
+import { goalsCount } from './state/store';
 import { AnimalScreen } from './screens/AnimalScreen';
 import { Animals } from './screens/Animals';
 import { FenceTalismans } from './screens/FenceTalismans';
@@ -18,7 +20,7 @@ import { VendorScreen } from './screens/VendorScreen';
 
 /** Number of goals for the header star badge. */
 export function getGoalsCount(): number {
-  return 0;
+  return goalsCount.value;
 }
 
 function renderScreen(route: Route) {
@@ -59,7 +61,7 @@ function renderScreen(route: Route) {
 export function App() {
   const route = currentRoute.value;
   return (
-    <AppShell route={route} goalsCount={getGoalsCount()}>
+    <AppShell route={route} goalsCount={getGoalsCount()} toast={<Toast />}>
       {renderScreen(route)}
     </AppShell>
   );

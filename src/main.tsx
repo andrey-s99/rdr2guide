@@ -23,8 +23,13 @@ import './styles/components.css';
 import { App } from './app';
 import { startRouter } from './router';
 import { applyTheme } from './theme';
+import { effect } from '@preact/signals';
+import { initStore, state } from './state/store';
 
-applyTheme('night');
+initStore();
+effect(() => {
+  applyTheme(state.value.settings.theme);
+});
 startRouter();
 
 render(<App />, document.getElementById('app')!);
