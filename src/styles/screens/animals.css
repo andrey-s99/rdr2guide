@@ -1,0 +1,75 @@
+/* Animals list (SPEC 9.7) and animal card (SPEC 9.8). */
+
+.animals__controls {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  padding-inline: var(--sp-4);
+}
+
+.animal-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--sp-1) var(--sp-4);
+  font-family: var(--font-ui);
+  color: var(--paper-muted);
+}
+
+.animal-card__type {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-1);
+}
+
+.animal-card__badges,
+.animal-card__regions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
+
+.animal-card__badges {
+  justify-content: center;
+  margin-top: var(--sp-2);
+}
+
+.animal-card__note {
+  margin-top: var(--sp-3);
+  font-style: italic;
+  text-align: center;
+}
+
+.animal-card__block {
+  margin-top: var(--sp-4);
+  padding-top: var(--sp-3);
+  border-top: 1px solid color-mix(in srgb, var(--paper-rule) 60%, transparent);
+}
+
+.animal-card__block p + .animal-card__regions {
+  margin-top: var(--sp-2);
+}
+
+.animal-card__heading {
+  font-family: var(--font-ui);
+  font-weight: 600;
+  font-size: var(--fs-sm);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.animal-card__links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.animal-materials {
+  margin-inline: calc(-1 * var(--sp-4));
+}
+
+.animal-materials__list {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
