@@ -14,6 +14,7 @@ import {
 import { BottomNav } from './BottomNav';
 import { ConfirmHost } from './ConfirmDialog';
 import { type SegmentOption, SegmentedControl } from './SegmentedControl';
+import { SearchField } from './SearchField';
 import { TopBar } from './TopBar';
 
 export const SECTION_TITLES: Record<SectionTab, string> = {
@@ -118,7 +119,9 @@ export function AppShell({ route, goalsCount, toast, children }: AppShellProps) 
         title={section ? SECTION_TITLES[section] : (SCREEN_LABELS[route.name] ?? '')}
         onBack={section ? undefined : goBack}
         goalsCount={goalsCount}
-      />
+      >
+        {route.name === 'search' ? <SearchField q={route.query.q ?? ''} /> : undefined}
+      </TopBar>
       <main class="app-main" id="main">
         {section && section !== 'summary' && (
           <div class="app-subnav">
