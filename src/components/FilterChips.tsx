@@ -1,3 +1,7 @@
+import type { StatusFilter } from '../logic/filters';
+
+export type { StatusFilter } from '../logic/filters';
+
 export interface ChipOption<T extends string> {
   value: T;
   label: string;
@@ -27,9 +31,6 @@ export interface MultiChipsProps<T extends string> extends CommonProps<T> {
 }
 
 export type FilterChipsProps<T extends string> = SingleChipsProps<T> | MultiChipsProps<T>;
-
-/** Status filter used above item lists (SPEC 9). */
-export type StatusFilter = 'all' | 'not_crafted' | 'ready' | 'crafted';
 
 export const STATUS_FILTER_OPTIONS: ChipOption<StatusFilter>[] = [
   { value: 'all', label: 'Все' },

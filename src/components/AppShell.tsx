@@ -12,6 +12,7 @@ import {
   takeScrollTarget,
 } from '../router';
 import { BottomNav } from './BottomNav';
+import { ConfirmHost } from './ConfirmDialog';
 import { type SegmentOption, SegmentedControl } from './SegmentedControl';
 import { TopBar } from './TopBar';
 
@@ -132,6 +133,7 @@ export function AppShell({ route, goalsCount, toast, children }: AppShellProps) 
         {toast}
       </div>
       <BottomNav active={tab} />
+      <ConfirmHost />
     </div>
   );
 }
