@@ -89,7 +89,7 @@ export function Animals({ tab }: AnimalsProps) {
   return (
     <div class="screen screen--flush animals">
       <div class="animals__controls">
-        <h2 class="screen-title">{TITLES[tab]}</h2>
+        <h2 class="visually-hidden">{TITLES[tab]}</h2>
         <FilterChips<RegionId>
           multiple
           scroll

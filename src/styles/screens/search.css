@@ -6,7 +6,7 @@
   align-items: center;
   flex: 1;
   min-width: 0;
-  height: 40px;
+  height: calc(var(--hit) + 2px); /* 44px inside the 1px border */
   border: 1px solid var(--border);
   border-radius: var(--radius);
   background: var(--surface-2);
@@ -32,6 +32,7 @@
   color: var(--text);
   font-family: var(--font-body);
   font-size: var(--fs-md);
+  text-overflow: ellipsis;
   outline: none;
 }
 
@@ -46,8 +47,9 @@
 }
 
 .search-field__clear {
-  width: 40px;
-  height: 38px;
+  flex: none;
+  width: var(--hit);
+  height: 100%;
   border-radius: var(--radius);
   color: var(--text-muted);
 }

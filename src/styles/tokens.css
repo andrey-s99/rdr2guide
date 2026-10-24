@@ -67,7 +67,15 @@
   --on-accent: #f5eedd;
   --paper-muted: #5e4d38;
   --paper-rule: #8a6a1f;
-  --paper-ok: #4f6b25;
+  --paper-ok: #435b1f;
+
+  /* Text variants of accent colors: decorative tokens above stay as in SPEC,
+     these are used wherever the color carries text (WCAG AA >= 4.5:1, SPEC 10.1). */
+  --brass-text: #c8a24a;
+  --ok-text: #8fae55;
+  --warn-text: #e39a3c;
+  --danger-text: #f07b6f;
+  --paper-brass-text: #6b4f12;
   --paper-warn-bg: #f0d9a8;
   --vignette: rgba(70, 45, 15, 0.22);
   --shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
@@ -82,7 +90,8 @@
   --paper: #f5eedd;
   --paper-ink: #2a2118;
   --text: #2a2118;
-  --text-muted: #6b5b46;
+  /* SPEC: #6b5b46 — darkened, it gives only 4.1:1 on --bg (SPEC 10.1 requires AA). */
+  --text-muted: #5e4d38;
   --border: #b9a684;
   --accent: #9e1f18;
   --brass: #8a6a1f;
@@ -93,9 +102,15 @@
   --on-accent: #f5eedd;
   --paper-muted: #5e4d38;
   --paper-rule: #8a6a1f;
-  --paper-ok: #4f6b25;
+  --paper-ok: #435b1f;
   --paper-warn-bg: #f0d9a8;
   --vignette: rgba(90, 60, 20, 0.16);
+
+  --brass-text: #5f4610;
+  --ok-text: #364b16;
+  --warn-text: #6b3d05;
+  --danger-text: #7e1c15;
+  --paper-brass-text: #6b4f12;
   --shadow: 0 1px 6px rgba(60, 40, 15, 0.25);
   --scrim: rgba(42, 33, 24, 0.55);
 }

@@ -52,7 +52,7 @@ export function VendorListScreen({
 
   return (
     <div class="screen vendor-list">
-      <h2 class="vendor-list__sr">{title}</h2>
+      <h2 class="visually-hidden">{title}</h2>
       <div class="vendor-list__top">{top}</div>
       <FilterChips
         options={options}

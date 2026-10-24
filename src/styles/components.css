@@ -223,7 +223,7 @@
   height: 17px;
   padding: 0 4px;
   border-radius: 9px;
-  background: var(--brass);
+  background: var(--brass-text);
   color: var(--surface);
   font-family: var(--font-ui);
   font-size: 11px;
@@ -290,8 +290,13 @@
 }
 
 .segmented--boxed .segmented__option {
+  padding: var(--sp-1);
   border-radius: var(--radius-sm);
   font-size: 14px;
+  line-height: 1.15;
+  /* Long labels («Как в системе») wrap to a second line instead of being cut. */
+  white-space: normal;
+  overflow-wrap: break-word;
 }
 
 .segmented--boxed .segmented__option::after {
@@ -315,8 +320,8 @@
   flex-wrap: nowrap;
   overflow-x: auto;
   scrollbar-width: none;
-  margin-inline: calc(-1 * var(--sp-4));
-  padding-inline: var(--sp-4);
+  margin: -5px calc(-1 * var(--sp-4));
+  padding: 5px var(--sp-4);
 }
 
 .chips--scroll::-webkit-scrollbar {
@@ -329,10 +334,10 @@
   align-items: center;
   gap: 6px;
   flex: none;
-  height: 34px;
+  height: 36px;
   padding: 0 var(--sp-3);
   border: 1px solid var(--border);
-  border-radius: 17px;
+  border-radius: 18px;
   background: transparent;
   color: var(--text-muted);
   font-family: var(--font-ui);
@@ -346,7 +351,7 @@
     border-color var(--dur) var(--ease);
 }
 
-/* Extend hit area to 44px without changing visuals. */
+/* Extend hit area to 44px (inset is from the padding box) without changing visuals. */
 .chip::after {
   content: '';
   position: absolute;
@@ -365,6 +370,12 @@
   font-variant-numeric: tabular-nums;
   color: var(--text-muted);
   font-weight: 400;
+}
+
+.chip[aria-pressed='true'] .chip__count,
+.chip[aria-checked='true'] .chip__count,
+.chip--active .chip__count {
+  color: inherit;
 }
 
 /* Small static tag (recipe mini-chips, region tags, outfit labels). */
@@ -390,23 +401,23 @@
 
 .tag--ok {
   border-color: color-mix(in srgb, var(--ok) 60%, transparent);
-  color: var(--ok);
+  color: var(--ok-text);
   background: color-mix(in srgb, var(--ok) 12%, transparent);
 }
 
 .tag--warn {
   border-color: color-mix(in srgb, var(--warn) 60%, transparent);
-  color: var(--warn);
+  color: var(--warn-text);
 }
 
 .tag--danger {
   border-color: color-mix(in srgb, var(--danger) 60%, transparent);
-  color: var(--danger);
+  color: var(--danger-text);
 }
 
 .tag--brass {
   border-color: color-mix(in srgb, var(--brass) 60%, transparent);
-  color: var(--brass);
+  color: var(--brass-text);
 }
 
 .tags {
@@ -436,17 +447,17 @@
 
 .badge--ok {
   background: color-mix(in srgb, var(--ok) 22%, transparent);
-  color: var(--ok);
+  color: var(--ok-text);
 }
 
 .badge--warn {
   background: color-mix(in srgb, var(--warn) 22%, transparent);
-  color: var(--warn);
+  color: var(--warn-text);
 }
 
 .badge--danger {
   background: color-mix(in srgb, var(--danger) 22%, transparent);
-  color: var(--danger);
+  color: var(--danger-text);
 }
 
 .badge--accent {
@@ -456,7 +467,7 @@
 
 .badge--brass {
   background: color-mix(in srgb, var(--brass) 20%, transparent);
-  color: var(--brass);
+  color: var(--brass-text);
 }
 
 /* ===== Buttons ======================================================= */
@@ -516,7 +527,7 @@
 
 .btn--danger {
   background: transparent;
-  color: var(--danger);
+  color: var(--danger-text);
   border-color: var(--danger);
 }
 
@@ -536,7 +547,7 @@
   font-family: var(--font-ui);
   font-size: 15px;
   letter-spacing: 0.02em;
-  color: var(--brass);
+  color: var(--brass-text);
   text-decoration: none;
 }
 
@@ -625,7 +636,7 @@
 .price {
   font-family: var(--font-ui);
   font-variant-numeric: tabular-nums;
-  color: var(--brass);
+  color: var(--brass-text);
   font-weight: 500;
 }
 
@@ -662,6 +673,8 @@
   flex: none;
   font-family: var(--font-ui);
   font-size: var(--fs-sm);
+  text-transform: none;
+  letter-spacing: 0.02em;
   font-variant-numeric: tabular-nums;
   color: var(--text-muted);
 }
@@ -721,7 +734,7 @@
 }
 
 .paper-card .price {
-  color: var(--paper-rule);
+  color: var(--paper-brass-text);
 }
 
 .paper-card .tag {
@@ -753,7 +766,8 @@
   line-height: 1.15;
   color: var(--paper-ink);
   text-align: center;
-  overflow-wrap: anywhere;
+  /* Break between words only; a long single word may still break as a last resort. */
+  overflow-wrap: break-word;
 }
 
 .paper-card__title::before,
@@ -1064,7 +1078,7 @@
   font-size: 15px;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  color: var(--brass);
+  color: var(--brass-text);
 }
 
 @keyframes toast-in {
@@ -1162,19 +1176,24 @@
 /* ===== Danger / status markers ====================================== */
 
 .text-ok {
-  color: var(--ok);
+  color: var(--ok-text);
 }
 
 .text-warn {
-  color: var(--warn);
+  color: var(--warn-text);
 }
 
 .text-danger {
-  color: var(--danger);
+  color: var(--danger-text);
+}
+
+/* Decorative brass for icons (stars); text uses --brass-text. */
+.icon-brass {
+  color: var(--brass);
 }
 
 .text-brass {
-  color: var(--brass);
+  color: var(--brass-text);
 }
 
 /* ===== Not found ==================================================== */
@@ -1216,10 +1235,14 @@
 }
 
 .list-row__actions,
-.list-row .data-warning,
 .list-row .data-warning__note {
   position: relative;
   z-index: 1;
+}
+
+/* Above its own note so the 44px hit area is not covered when expanded. */
+.list-row .data-warning {
+  z-index: 2;
 }
 
 .list-row__aside {
@@ -1292,7 +1315,7 @@
 .paper-card .badge--brass,
 .paper-card .badge--warn {
   background: color-mix(in srgb, var(--paper-rule) 16%, transparent);
-  color: #6e5214;
+  color: var(--paper-brass-text);
 }
 
 .paper-card .badge--danger {
@@ -1400,7 +1423,7 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  color: var(--brass);
+  color: var(--brass-text);
   text-underline-offset: 3px;
 }
 
@@ -1558,7 +1581,7 @@
 }
 
 .recipe-row__qty--ok {
-  color: var(--ok);
+  color: var(--ok-text);
 }
 
 .paper-card .recipe-row__qty--ok {
@@ -1581,13 +1604,13 @@
   margin-bottom: -8px;
   font-family: var(--font-ui);
   font-size: 15px;
-  color: var(--brass);
+  color: var(--brass-text);
   text-decoration: none;
 }
 
 .paper-card .recipe-row__where,
 .paper-card .material-row__animal {
-  color: var(--paper-rule);
+  color: var(--paper-brass-text);
 }
 
 /* ===== Material row ================================================= */
@@ -1633,7 +1656,7 @@
   font-size: var(--fs-md);
   line-height: 1.3;
   color: var(--text);
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
 }
 
 .material-row__counts {
@@ -1650,7 +1673,7 @@
   font-size: var(--fs-xs);
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  color: var(--brass);
+  color: var(--brass-text);
 }
 
 .material-row__remaining {
@@ -1664,7 +1687,7 @@
 }
 
 .material-row--done .material-row__remaining {
-  color: var(--ok);
+  color: var(--ok-text);
 }
 
 .material-row--done .material-row__name {

@@ -11,9 +11,11 @@ export interface TopBarProps {
   goalsCount: number;
   /** Optional custom content replacing the title (e.g. a search field). */
   children?: ComponentChildren;
+  /** Hide the «Поиск» action (on the search screen itself). */
+  hideSearch?: boolean;
 }
 
-export function TopBar({ title, onBack, goalsCount, children }: TopBarProps) {
+export function TopBar({ title, onBack, goalsCount, children, hideSearch }: TopBarProps) {
   return (
     <header class="app-header">
       <div class={`app-header__inner column${onBack ? ' app-header__inner--back' : ''}`}>
@@ -31,21 +33,23 @@ export function TopBar({ title, onBack, goalsCount, children }: TopBarProps) {
             ))}
         </div>
         <nav class="app-header__actions" aria-label="Быстрые действия">
-          <button
-            type="button"
-            class="icon-btn"
-            aria-label="Поиск"
-            onClick={() => navigate('/search')}
-          >
-            <SearchIcon />
-          </button>
+          {!hideSearch && (
+            <button
+              type="button"
+              class="icon-btn"
+              aria-label="Поиск"
+              onClick={() => navigate('/search')}
+            >
+              <SearchIcon />
+            </button>
+          )}
           <button
             type="button"
             class="icon-btn"
             aria-label={goalsCount > 0 ? `Цели: ${goalsCount}` : 'Цели'}
             onClick={() => navigate('/summary?scope=goals')}
           >
-            <StarIcon filled={goalsCount > 0} class={goalsCount > 0 ? 'text-brass' : undefined} />
+            <StarIcon filled={goalsCount > 0} class={goalsCount > 0 ? 'icon-brass' : undefined} />
             {goalsCount > 0 && (
               <span class="count-badge" aria-hidden="true">
                 {goalsCount > 99 ? '99+' : goalsCount}

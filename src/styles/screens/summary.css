@@ -41,7 +41,7 @@
   font-family: var(--font-ui);
   font-size: var(--fs-xl);
   font-weight: 500;
-  color: var(--brass);
+  color: var(--brass-text);
 }
 
 .summary-list {

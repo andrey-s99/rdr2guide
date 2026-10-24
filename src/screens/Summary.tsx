@@ -203,7 +203,7 @@ export function Summary({ scope: scopeParam, group: groupParam }: SummaryProps) 
 
   return (
     <div class="screen summary">
-      <h2 class="screen-title">Сводка</h2>
+      <h2 class="visually-hidden">Сводка</h2>
 
       <div class="summary-controls">
         <label class="summary-scope">

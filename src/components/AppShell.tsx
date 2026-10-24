@@ -119,6 +119,7 @@ export function AppShell({ route, goalsCount, toast, children }: AppShellProps) 
         title={section ? SECTION_TITLES[section] : (SCREEN_LABELS[route.name] ?? '')}
         onBack={section ? undefined : goBack}
         goalsCount={goalsCount}
+        hideSearch={route.name === 'search'}
       >
         {route.name === 'search' ? <SearchField q={route.query.q ?? ''} /> : undefined}
       </TopBar>
