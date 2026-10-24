@@ -1,0 +1,91 @@
+/* Pearson / Fence lists (SPEC 9.5, 9.6) and the vendor page (SPEC 9.11). */
+
+.vendor-list__sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.vendor-list__top {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+}
+
+.vendor-list__reminder {
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+}
+
+.vendor-list__group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.vendor-list__prereq-done {
+  margin-top: 4px;
+  font-family: var(--font-ui);
+  font-size: var(--fs-sm);
+  color: var(--ok);
+}
+
+.vendor-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.vendor-page__heading {
+  font-family: var(--font-ui);
+  font-weight: 500;
+  font-size: var(--fs-sm);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--paper-rule);
+  margin-bottom: var(--sp-2);
+}
+
+.vendor-page__list {
+  margin: 0;
+  padding-left: 1.2em;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  line-height: 1.45;
+  list-style: square;
+}
+
+.vendor-page__list li::marker {
+  color: var(--paper-rule);
+}
+
+.vendor-page__links {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid color-mix(in srgb, var(--paper-rule) 45%, transparent);
+}
+
+.vendor-page__link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-2);
+  min-height: var(--hit);
+  padding: var(--sp-2) 0;
+  font-family: var(--font-ui);
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  border-bottom: 1px solid color-mix(in srgb, var(--paper-rule) 45%, transparent);
+}
+
+.vendor-page__link .icon {
+  flex: none;
+  color: var(--paper-rule);
+}

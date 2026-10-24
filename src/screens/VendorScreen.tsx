@@ -1,14 +1,83 @@
+import { AppLink } from '../components/AppLink';
+import { EnName } from '../components/EnName';
 import { PaperCard } from '../components/PaperCard';
+import { ProgressBar } from '../components/ProgressBar';
+import { itemsByVendor, vendorsById } from '../data';
+import type { VendorId } from '../data/types';
+import { ChevronIcon } from '../icons';
+import { craftedProgress } from '../logic/calc';
+import { state } from '../state/store';
+import '../styles/screens/vendors.css';
+import { NotFound } from './NotFound';
 
 export interface VendorScreenProps {
   id: string;
 }
 
+interface SubLink {
+  label: string;
+  to: string;
+}
+
+const SUB_LINKS: Record<VendorId, SubLink[]> = {
+  trapper: [
+    { label: 'Костюмы', to: '/trapper/outfits' },
+    { label: 'Предметы', to: '/trapper/items' },
+  ],
+  pearson: [
+    { label: 'Сумки', to: '/pearson/satchels' },
+    { label: 'Лагерь', to: '/pearson/camp' },
+  ],
+  fence: [
+    { label: 'Безделушки', to: '/fence/trinkets' },
+    { label: 'Талисманы', to: '/fence/talismans' },
+  ],
+};
+
+/** О торговце `#/vendor/<id>` (SPEC 9.11). */
 export function VendorScreen({ id }: VendorScreenProps) {
+  const vendor = vendorsById.get(id as VendorId);
+  if (!vendor) return <NotFound />;
+  const { done, total } = craftedProgress(itemsByVendor.get(vendor.id) ?? [], state.value.crafted);
+  const links: SubLink[] = [
+    ...SUB_LINKS[vendor.id],
+    { label: 'Сводка по торговцу', to: `/summary?scope=${vendor.id}` },
+  ];
+
   return (
     <div class="screen">
-      <PaperCard title="Торговец" subtitle={id}>
-        <p class="muted">Карточка появится в следующей версии.</p>
+      <PaperCard as="article" title={vendor.nameRu} subtitle={<EnName text={vendor.nameEn} />}>
+        <div class="vendor-page">
+          <ProgressBar value={done} max={total} label={`Изготовлено ${done} из ${total}`} />
+          {vendor.locationsRu.length > 0 && (
+            <section class="vendor-page__block">
+              <h3 class="vendor-page__heading">Где найти</h3>
+              <ul class="vendor-page__list">
+                {vendor.locationsRu.map((text) => (
+                  <li key={text}>{text}</li>
+                ))}
+              </ul>
+            </section>
+          )}
+          {vendor.rulesRu.length > 0 && (
+            <section class="vendor-page__block">
+              <h3 class="vendor-page__heading">Как работает</h3>
+              <ul class="vendor-page__list">
+                {vendor.rulesRu.map((text) => (
+                  <li key={text}>{text}</li>
+                ))}
+              </ul>
+            </section>
+          )}
+          <nav class="vendor-page__links" aria-label="Разделы торговца">
+            {links.map((l) => (
+              <AppLink key={l.to} to={l.to} class="vendor-page__link">
+                <span>{l.label}</span>
+                <ChevronIcon direction="right" size={18} />
+              </AppLink>
+            ))}
+          </nav>
+        </div>
       </PaperCard>
     </div>
   );
