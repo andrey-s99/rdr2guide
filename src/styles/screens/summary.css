@@ -1,0 +1,117 @@
+/* Summary screen (SPEC 9.9). */
+
+.summary-controls {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.summary-scope {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+}
+
+.summary-scope__label {
+  font-family: var(--font-ui);
+  font-size: var(--fs-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+.summary-totals {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  padding: var(--sp-3) var(--sp-4);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.summary-totals__line {
+  font-family: var(--font-body);
+  font-size: var(--fs-md);
+  line-height: 1.4;
+  color: var(--text);
+}
+
+.summary-totals__line strong {
+  font-family: var(--font-ui);
+  font-size: var(--fs-xl);
+  font-weight: 500;
+  color: var(--brass);
+}
+
+.summary-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  margin-inline: calc(-1 * var(--sp-4));
+}
+
+.summary-region {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.summary-region + .summary-region {
+  margin-top: var(--sp-2);
+}
+
+.summary-group,
+.summary-flat,
+.summary-region > .summary-rows {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.summary-group__title {
+  margin: 0;
+}
+
+.summary-group__head {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  min-height: var(--row-min-h);
+  padding: var(--sp-2) var(--sp-2) var(--sp-2) var(--sp-4);
+  background: var(--surface-2);
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border);
+}
+
+a.summary-group__head:active {
+  background: var(--border);
+}
+
+.summary-group__main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.summary-group__name {
+  font-family: var(--font-ui);
+  font-size: var(--fs-md);
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.summary-group__regions {
+  font-family: var(--font-ui);
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+}
+
+.summary-group__chevron {
+  flex: none;
+  color: var(--text-muted);
+}
