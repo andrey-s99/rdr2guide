@@ -56,6 +56,18 @@ describe('Vendor page (9.11)', () => {
     },
   );
 
+  it('fence page lists non-hunting ingredients with where to find them', () => {
+    render(<VendorScreen id="fence" />);
+    expect(screen.getByText('Вещи не с охоты')).toBeTruthy();
+    expect(screen.getByText('Старый латунный компас')).toBeTruthy();
+    expect(screen.getByText('Наручники времён Гражданской войны')).toBeTruthy();
+  });
+
+  it('trapper page has no non-hunting block', () => {
+    render(<VendorScreen id="trapper" />);
+    expect(screen.queryByText('Вещи не с охоты')).toBeNull();
+  });
+
   it('unknown id shows «Не найдено»', () => {
     render(<VendorScreen id="nobody" />);
     expect(screen.getByText('Не найдено')).toBeTruthy();

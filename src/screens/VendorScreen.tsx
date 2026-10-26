@@ -2,8 +2,8 @@ import { AppLink } from '../components/AppLink';
 import { EnName } from '../components/EnName';
 import { PaperCard } from '../components/PaperCard';
 import { ProgressBar } from '../components/ProgressBar';
-import { itemsByVendor, vendorsById } from '../data';
-import type { VendorId } from '../data/types';
+import { itemsByVendor, materialsById, vendorsById } from '../data';
+import type { Material, VendorId } from '../data/types';
 import { ChevronIcon } from '../icons';
 import { craftedProgress } from '../logic/calc';
 import { state } from '../state/store';
@@ -30,11 +30,27 @@ const SUB_LINKS: Record<VendorId, SubLink[]> = {
   ],
 };
 
+/** Non-hunting ingredients (kind `special`) used by the vendor's recipes, with the items they go into. */
+function specialIngredients(vendorId: VendorId): { material: Material; usedIn: string[] }[] {
+  const byId = new Map<string, { material: Material; usedIn: string[] }>();
+  for (const item of itemsByVendor.get(vendorId) ?? []) {
+    for (const { materialId } of item.recipe) {
+      const material = materialsById.get(materialId);
+      if (material?.kind !== 'special') continue;
+      const entry = byId.get(materialId) ?? { material, usedIn: [] };
+      entry.usedIn.push(item.nameRu);
+      byId.set(materialId, entry);
+    }
+  }
+  return [...byId.values()];
+}
+
 /** О торговце `#/vendor/<id>` (SPEC 9.11). */
 export function VendorScreen({ id }: VendorScreenProps) {
   const vendor = vendorsById.get(id as VendorId);
   if (!vendor) return <NotFound />;
   const { done, total } = craftedProgress(itemsByVendor.get(vendor.id) ?? [], state.value.crafted);
+  const specials = specialIngredients(vendor.id);
   const links: SubLink[] = [
     ...SUB_LINKS[vendor.id],
     { label: 'Сводка по торговцу', to: `/summary?scope=${vendor.id}` },
@@ -61,6 +77,18 @@ export function VendorScreen({ id }: VendorScreenProps) {
               <ul class="vendor-page__list">
                 {vendor.rulesRu.map((text) => (
                   <li key={text}>{text}</li>
+                ))}
+              </ul>
+            </section>
+          )}
+          {specials.length > 0 && (
+            <section class="vendor-page__block">
+              <h3 class="vendor-page__heading">Вещи не с охоты</h3>
+              <ul class="vendor-page__list">
+                {specials.map(({ material, usedIn }) => (
+                  <li key={material.id}>
+                    <strong>{material.nameRu}</strong> (для: {usedIn.join(', ')}). {material.sourceRu}
+                  </li>
                 ))}
               </ul>
             </section>
