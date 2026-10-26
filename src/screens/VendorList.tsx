@@ -4,7 +4,6 @@ import { AppLink } from '../components/AppLink';
 import { EmptyState } from '../components/EmptyState';
 import { FilterChips, STATUS_FILTER_OPTIONS } from '../components/FilterChips';
 import type { Item } from '../data/types';
-import { prerequisiteProgress } from '../logic/calc';
 import { filterByStatus, statusFilterCounts, type StatusFilter } from '../logic/filters';
 import { statusFilterSignal } from '../state/session';
 import { state } from '../state/store';
@@ -76,7 +75,7 @@ export interface VendorInfoLinkProps {
   label: string;
 }
 
-/** «Как работает Пирсон →» link row. */
+/** «Как работает …» link row. */
 export function VendorInfoLink({ vendorId, label }: VendorInfoLinkProps) {
   return (
     <AppLink to={`/vendor/${vendorId}`} class="link-row">
@@ -100,20 +99,4 @@ export function SummaryButton({ scope, label }: SummaryButtonProps) {
       {label}
     </AppLink>
   );
-}
-
-export interface PrerequisitesDoneProps {
-  item: Item;
-}
-
-/**
- * Prerequisite progress after unlocking (e.g. «Остальные сумки: 6/6»).
- * While locked, ItemRow already shows the lock marker with X/N.
- */
-export function PrerequisitesDone({ item }: PrerequisitesDoneProps) {
-  const { crafted } = state.value;
-  if (item.prerequisiteItemIds.length === 0) return null;
-  const { done, total } = prerequisiteProgress(item, crafted);
-  if (done < total) return null;
-  return <p class="vendor-list__prereq-done">{`Нужные предметы изготовлены: ${done}/${total}`}</p>;
 }

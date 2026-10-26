@@ -130,7 +130,7 @@
 
 .app-nav__list {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   height: var(--nav-h);
 }
 
