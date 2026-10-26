@@ -3,6 +3,7 @@ import { cleanup, render, screen, within } from '@testing-library/preact';
 import { itemsByCategory, itemsByVendor } from '../src/data';
 import { FenceTalismans } from '../src/screens/FenceTalismans';
 import { FenceTrinkets } from '../src/screens/FenceTrinkets';
+import { ItemScreen } from '../src/screens/ItemScreen';
 import { VendorScreen } from '../src/screens/VendorScreen';
 import { resetSessionForTests } from '../src/state/session';
 import { resetStoreForTests } from '../src/state/store';
@@ -38,6 +39,13 @@ describe('Fence (9.6)', () => {
     expect(screen.getByText('Сводка по Скупщику').getAttribute('href')).toBe(
       '#/summary?scope=fence',
     );
+  });
+});
+
+describe('Item card for non-hunting materials', () => {
+  it('shows where to get the ingredient', () => {
+    render(<ItemScreen id="raven_claw_talisman" />);
+    expect(screen.getByText(/На столе в хижине Фрэнсиса Синклера/)).toBeTruthy();
   });
 });
 

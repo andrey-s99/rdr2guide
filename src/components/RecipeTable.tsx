@@ -44,6 +44,11 @@ export function RecipeTable({ item }: RecipeTableProps) {
                 <Stepper materialId={entry.materialId} />
               </span>
             </div>
+            {m?.kind === 'special' && m.sourceRu && (
+              <p class="recipe-row__source">
+                <span class="muted">Где взять:</span> {m.sourceRu}
+              </p>
+            )}
             {animal && (
               <AppLink to={`/animal/${animal.id}`} class="recipe-row__where">
                 Где добыть: {animal.nameRu}

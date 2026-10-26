@@ -6,7 +6,7 @@ import { MaterialRow } from '../components/MaterialRow';
 import { ProgressBar } from '../components/ProgressBar';
 import { SectionHeader } from '../components/SectionHeader';
 import { SegmentedControl, type SegmentOption } from '../components/SegmentedControl';
-import { regionsById } from '../data';
+import { materialsById, regionsById } from '../data';
 import type { Item } from '../data/types';
 import { ChevronIcon } from '../icons';
 import { computeNeeds, craftedProgress, type MaterialNeed } from '../logic/calc';
@@ -70,6 +70,12 @@ interface RowsProps {
   scopeItemIds: ReadonlySet<string>;
 }
 
+/** Non-hunting materials have no animal link, so show where to get them instead. */
+function materialNote(materialId: string): string | undefined {
+  const m = materialsById.get(materialId);
+  return m?.kind === 'special' ? m.sourceRu : undefined;
+}
+
 function MaterialRows({ rows, scopeItemIds }: RowsProps) {
   return (
     <div class="summary-rows">
@@ -78,6 +84,7 @@ function MaterialRows({ rows, scopeItemIds }: RowsProps) {
           key={r.materialId}
           materialId={r.materialId}
           need={r.need}
+          note={materialNote(r.materialId)}
           usedIn={usedInScope(r.materialId, scopeItemIds)}
         />
       ))}
