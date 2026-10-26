@@ -48,18 +48,6 @@
     "icon": "saddle"
   },
   {
-    "id": "satchel",
-    "nameRu": "Сумки",
-    "vendorId": "pearson",
-    "icon": "satchel"
-  },
-  {
-    "id": "camp",
-    "nameRu": "Украшения лагеря",
-    "vendorId": "pearson",
-    "icon": "camp"
-  },
-  {
     "id": "trinket",
     "nameRu": "Безделушки",
     "vendorId": "fence",

@@ -107,9 +107,9 @@ describe('summary grouping on real data', () => {
   it('animal groups cover every row exactly once and are sorted', () => {
     const groups = groupByAnimal(needs.rows);
     const ids = groups.flatMap((g) => g.rows.map((r) => r.materialId));
-    expect(ids).toHaveLength(110);
-    expect(new Set(ids).size).toBe(110);
-    expect(groups.reduce((s, g) => s + g.remaining, 0)).toBe(352);
+    expect(ids).toHaveLength(103);
+    expect(new Set(ids).size).toBe(103);
+    expect(groups.reduce((s, g) => s + g.remaining, 0)).toBe(299);
     for (let i = 1; i < groups.length; i++) {
       expect(groups[i - 1].remaining).toBeGreaterThanOrEqual(groups[i].remaining);
     }
@@ -124,7 +124,7 @@ describe('summary grouping on real data', () => {
     const regionIds = groups.filter((g) => g.region).map((g) => g.id);
     expect(regionIds).toEqual(regions.map((r) => r.id).filter((id) => regionIds.includes(id)));
     expect(groups.at(-1)?.id).toBe(SPECIAL_GROUP_ID);
-    expect(groups.reduce((s, g) => s + g.remaining, 0)).toBe(352);
+    expect(groups.reduce((s, g) => s + g.remaining, 0)).toBe(299);
     for (const g of groups) {
       for (const ag of g.groups) {
         if (ag.animal) expect(ag.animal.regions[0]).toBe(g.id);
@@ -134,7 +134,7 @@ describe('summary grouping on real data', () => {
 
   it('flat list starts with the largest remaining', () => {
     const flat = sortFlat(needs.rows);
-    expect(flat[0]).toMatchObject({ materialId: 'perfect_snake', remaining: 17 });
+    expect(flat[0]).toMatchObject({ materialId: 'perfect_rat', remaining: 16 });
   });
 
   it('usedInScope keeps only items of the scope', () => {

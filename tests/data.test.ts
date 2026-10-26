@@ -22,11 +22,10 @@ describe('data integrity (SPEC 6.4)', () => {
   });
 
   it('has the expected counts (15.1)', () => {
-    expect(items).toHaveLength(167);
+    expect(items).toHaveLength(141);
     expect(items.filter((i) => i.vendorId === 'trapper')).toHaveLength(123);
-    expect(items.filter((i) => i.vendorId === 'pearson')).toHaveLength(26);
     expect(items.filter((i) => i.vendorId === 'fence')).toHaveLength(18);
-    expect(materials).toHaveLength(110);
+    expect(materials).toHaveLength(103);
     expect(animals).toHaveLength(77);
     expect(animals.filter((a) => a.type === 'regular')).toHaveLength(36);
     expect(animals.filter((a) => a.type === 'bird')).toHaveLength(25);
@@ -89,7 +88,7 @@ describe('data integrity (SPEC 6.4)', () => {
       const errors = validateDataset(d);
       expect(errors.some((e) => e.includes('"unused" is not used'))).toBe(true);
       expect(errors.some((e) => e.includes('"lonely" is not a source'))).toBe(true);
-      expect(errors.some((e) => e.startsWith('materials: expected 110'))).toBe(true);
+      expect(errors.some((e) => e.startsWith('materials: expected 103'))).toBe(true);
     });
   });
 });

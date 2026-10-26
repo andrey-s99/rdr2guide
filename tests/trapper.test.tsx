@@ -124,9 +124,9 @@ describe('ItemScreen (9.4)', () => {
   });
 
   it('opens items of other vendors too', () => {
-    const pearsonItem = [...itemsById.values()].find((i) => i.vendorId === 'pearson')!;
-    render(<ItemScreen id={pearsonItem.id} />);
-    expect(screen.getByText(pearsonItem.nameRu)).toBeTruthy();
+    const fenceItem = [...itemsById.values()].find((i) => i.vendorId === 'fence')!;
+    render(<ItemScreen id={fenceItem.id} />);
+    expect(screen.getByText(fenceItem.nameRu)).toBeTruthy();
   });
 });
 

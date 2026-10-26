@@ -134,24 +134,6 @@ export const SaddleIcon = (p: IconProps) => (
   </Svg>
 );
 
-export const SatchelIcon = (p: IconProps) => (
-  <Svg {...p}>
-    <path d="M5 8 8.5 3h7L19 8" />
-    <rect x="3" y="8" width="18" height="12" rx="1.5" />
-    <path d="M3 10.5c3.5 3.2 14.5 3.2 18 0" />
-    <rect x="10.8" y="12.6" width="2.4" height="3.2" rx=".4" />
-  </Svg>
-);
-
-export const CampIcon = (p: IconProps) => (
-  <Svg {...p}>
-    <path d="M2 20h20" />
-    <path d="M4 20 12 5l8 15" />
-    <path d="M12 5 10.8 3M12 5l1.2-2" />
-    <path d="M12 20v-6.5L9 20M12 13.5l3 6.5" />
-  </Svg>
-);
-
 export const TrinketIcon = (p: IconProps) => (
   <Svg {...p}>
     <path d="M6.5 3c0 4.5 2 8 5.5 9 3.5-1 5.5-4.5 5.5-9" />
@@ -317,8 +299,6 @@ export const icons = {
   chaps: ChapsIcon,
   feather: FeatherIcon,
   saddle: SaddleIcon,
-  satchel: SatchelIcon,
-  camp: CampIcon,
   trinket: TrinketIcon,
   talisman: TalismanIcon,
   paw: PawIcon,

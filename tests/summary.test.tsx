@@ -46,11 +46,9 @@ afterEach(() => {
 
 // SPEC 15.3 reference totals (empty progress and stock).
 const REFERENCE: [scope: string, distinct: number, units: number, itemsTotal: number | null][] = [
-  ['all', 110, 352, 167],
+  ['all', 103, 299, 141],
   ['trapper', 77, 273, 123],
   ['trapper_outfits', 50, 118, null],
-  ['pearson', 30, 53, 26],
-  ['pearson_satchels', 14, 21, null],
   ['fence', 26, 26, 18],
   ['outfit:bear_hunter', 5, 6, 4],
   ['outfit:desperado', 9, 12, null],
@@ -76,7 +74,7 @@ describe('Summary screen: 15.3 totals on screen', () => {
   it('select has optgroups and all scopes (16 outfits, 8 trapper categories)', () => {
     open('/summary?scope=all');
     const groups = [...document.querySelectorAll('optgroup')].map((g) => g.label);
-    expect(groups).toEqual(['Общее', 'Охотник', 'Костюмы', 'Пирсон', 'Скупщик']);
+    expect(groups).toEqual(['Общее', 'Охотник', 'Костюмы', 'Скупщик']);
     const values = [...document.querySelectorAll('option')].map((o) => o.value);
     expect(values.filter((v) => v.startsWith('outfit:'))).toHaveLength(16);
     expect(values.filter((v) => v.startsWith('trapper_cat:'))).toHaveLength(8);
@@ -86,9 +84,6 @@ describe('Summary screen: 15.3 totals on screen', () => {
         'goals',
         'trapper',
         'trapper_outfits',
-        'pearson',
-        'pearson_satchels',
-        'pearson_camp',
         'fence',
       ]),
     );
@@ -104,7 +99,7 @@ describe('Summary screen: grouping', () => {
     const first = heads[0] as HTMLAnchorElement;
     expect(first.getAttribute('href')).toMatch(/^#\/animal\//);
     expect(screen.getByText('Особые предметы')).toBeTruthy();
-    expect(renderedRows()).toEqual({ count: 110, units: 352 });
+    expect(renderedRows()).toEqual({ count: 103, units: 299 });
     // Group badges are sorted by remaining desc.
     const badges = [...document.querySelectorAll('.summary-group__head .badge')].map((b) =>
       Number(b.textContent),
@@ -122,7 +117,7 @@ describe('Summary screen: grouping', () => {
     const regionNames = regions.map((r) => r.nameRu);
     expect(titles.at(-1)).toBe('Особые предметы');
     expect(titles.slice(0, -1)).toEqual(regionNames.filter((n) => titles.includes(n)));
-    expect(renderedRows()).toEqual({ count: 110, units: 352 });
+    expect(renderedRows()).toEqual({ count: 103, units: 299 });
     expect(uiPrefs().summaryGroup).toBe('region');
   });
 
@@ -132,7 +127,7 @@ describe('Summary screen: grouping', () => {
     const values = [...document.querySelectorAll('.material-row__remaining')].map((el) =>
       Number(el.textContent),
     );
-    expect(values[0]).toBe(17);
+    expect(values[0]).toBe(16);
     expect([...values].sort((a, b) => b - a)).toEqual(values);
   });
 
@@ -145,9 +140,9 @@ describe('Summary screen: grouping', () => {
       settings: { theme: 'night', showEnglish: true },
     });
     open('/summary?scope=all&group=flat');
-    expect(renderedRows()).toEqual({ count: 109, units: 335 });
+    expect(renderedRows()).toEqual({ count: 102, units: 284 });
     fireEvent.click(screen.getByRole('switch', { name: 'Показывать собранное' }));
-    expect(renderedRows()).toEqual({ count: 110, units: 335 });
+    expect(renderedRows()).toEqual({ count: 103, units: 284 });
   });
 });
 
@@ -177,7 +172,7 @@ describe('Summary screen: scope selection and persistence', () => {
   it('invalid scope in URL falls back to all', () => {
     open('/summary?scope=outfit:nope');
     expect(currentRoute.value.query.scope).toBe('all');
-    expect(totalsText()).toMatch(/^Осталось добыть: 352 шт\., 110 вид/);
+    expect(totalsText()).toMatch(/^Осталось добыть: 299 шт\., 103 вид/);
   });
 
   it('saved scope is used when no query; unknown saved scope → all', () => {
@@ -194,10 +189,10 @@ describe('Summary screen: scope selection and persistence', () => {
     open('/summary?scope=all');
     const select = screen.getByRole('combobox') as HTMLSelectElement;
     act(() => {
-      fireEvent.change(select, { target: { value: 'pearson' } });
+      fireEvent.change(select, { target: { value: 'fence' } });
     });
-    expect(currentRoute.value.query.scope).toBe('pearson');
-    expect(uiPrefs()).toEqual({ summaryScope: 'pearson', summaryGroup: 'animal' });
-    expect(totalsText()).toMatch(/^Осталось добыть: 53 шт\., 30 вид/);
+    expect(currentRoute.value.query.scope).toBe('fence');
+    expect(uiPrefs()).toEqual({ summaryScope: 'fence', summaryGroup: 'animal' });
+    expect(totalsText()).toMatch(/^Осталось добыть: 26 шт\., 26 вид/);
   });
 });

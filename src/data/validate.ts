@@ -3,13 +3,13 @@ import type { Dataset } from './dataset';
 /** Expected counts from SPEC table 6.3 / 15.1. */
 export const EXPECTED_COUNTS = {
   regions: 5,
-  vendors: 3,
-  categories: 12,
+  vendors: 2,
+  categories: 10,
   animals: 77,
-  materials: 110,
-  items: 167,
+  materials: 103,
+  items: 141,
   outfits: 16,
-  itemsByVendor: { trapper: 123, pearson: 26, fence: 18 },
+  itemsByVendor: { trapper: 123, fence: 18 },
   animalsByType: { regular: 36, bird: 25, legendary: 16 },
 } as const;
 

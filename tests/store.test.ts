@@ -327,10 +327,10 @@ describe('ui prefs', () => {
   it('saves and loads', () => {
     const storage = memoryStorage();
     expect(loadUiPrefs(storage)).toEqual({});
-    saveUiPrefs({ summaryScope: 'pearson' }, storage);
+    saveUiPrefs({ summaryScope: 'fence' }, storage);
     saveUiPrefs({ summaryGroup: 'flat' }, storage);
     expect(JSON.parse(storage.data[UI_KEY])).toEqual({
-      summaryScope: 'pearson',
+      summaryScope: 'fence',
       summaryGroup: 'flat',
     });
     expect(loadUiPrefs(memoryStorage({ [UI_KEY]: '{bad' }))).toEqual({});

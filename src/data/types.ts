@@ -1,5 +1,5 @@
 export type RegionId = 'ambarino' | 'new_hanover' | 'lemoyne' | 'west_elizabeth' | 'new_austin';
-export type VendorId = 'trapper' | 'pearson' | 'fence';
+export type VendorId = 'trapper' | 'fence';
 export type CategoryId =
   | 'hat'
   | 'coat'
@@ -9,8 +9,6 @@ export type CategoryId =
   | 'chaps'
   | 'hat_accessory'
   | 'saddle'
-  | 'satchel'
-  | 'camp'
   | 'trinket'
   | 'talisman';
 
@@ -94,7 +92,7 @@ export interface Item {
   recipe: RecipeEntry[];
   requirementRu: string; // recipe unlock condition, may be empty
   effectRu: string; // effect (satchels, trinkets, talismans), may be empty
-  campSpotRu: string; // where it appears in camp (Pearson decorations), may be empty
+  campSpotRu: string; // where it appears in camp, may be empty
   prerequisiteItemIds: string[]; // items that must be crafted first (only "Legend of the East")
   outfitIds: string[]; // outfits this item belongs to
   dataConfidence: 'high' | 'medium' | 'low';

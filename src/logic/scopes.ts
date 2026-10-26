@@ -9,7 +9,7 @@ import {
 } from '../data';
 import type { Item } from '../data/types';
 
-export type ScopeGroupLabel = 'Общее' | 'Охотник' | 'Костюмы' | 'Пирсон' | 'Скупщик';
+export type ScopeGroupLabel = 'Общее' | 'Охотник' | 'Костюмы' | 'Скупщик';
 
 export interface ScopeDef {
   id: string;
@@ -41,9 +41,6 @@ export const scopes: readonly ScopeDef[] = [
     labelRu: `Костюм: ${o.nameRu}`,
     group: 'Костюмы',
   })),
-  { id: 'pearson', labelRu: 'Пирсон: всё', group: 'Пирсон' },
-  { id: 'pearson_satchels', labelRu: 'Пирсон: сумки', group: 'Пирсон' },
-  { id: 'pearson_camp', labelRu: 'Пирсон: лагерь', group: 'Пирсон' },
   { id: 'fence', labelRu: 'Скупщик: всё', group: 'Скупщик' },
 ];
 
@@ -53,7 +50,6 @@ export const scopeGroupOrder: readonly ScopeGroupLabel[] = [
   'Общее',
   'Охотник',
   'Костюмы',
-  'Пирсон',
   'Скупщик',
 ];
 
@@ -105,12 +101,6 @@ export function getScopeItems(scopeId: string, goals: Goals): Item[] {
       return items.filter((i) => i.vendorId === 'trapper');
     case 'trapper_outfits':
       return itemsInSet(outfitPartIds(outfits.map((o) => o.id)));
-    case 'pearson':
-      return items.filter((i) => i.vendorId === 'pearson');
-    case 'pearson_satchels':
-      return items.filter((i) => i.category === 'satchel');
-    case 'pearson_camp':
-      return items.filter((i) => i.category === 'camp');
     case 'fence':
       return items.filter((i) => i.vendorId === 'fence');
     case 'goals': {

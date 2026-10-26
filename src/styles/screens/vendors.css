@@ -1,4 +1,4 @@
-/* Pearson / Fence lists (SPEC 9.5, 9.6) and the vendor page (SPEC 9.11). */
+/* Fence lists (SPEC 9.5, 9.6) and the vendor page (SPEC 9.11). */
 
 .vendor-list__top {
   display: flex;

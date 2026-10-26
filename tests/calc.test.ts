@@ -87,7 +87,7 @@ describe('15.2 calculations', () => {
   });
 
   it('lock and outfit progress', () => {
-    const legend = item('legend_of_the_east_satchel');
+    const legend = { ...item('badger_mountain_hat'), prerequisiteItemIds: ['a', 'b', 'c', 'd', 'e', 'f'] };
     expect(isLocked(legend, {})).toBe(true);
     expect(prerequisiteProgress(legend, {})).toEqual({ done: 0, total: 6 });
     const all = Object.fromEntries(
@@ -118,11 +118,9 @@ describe('15.2 calculations', () => {
 
 describe('15.3 reference totals (empty progress)', () => {
   const refs: [string, number, number][] = [
-    ['all', 110, 352],
+    ['all', 103, 299],
     ['trapper', 77, 273],
     ['trapper_outfits', 50, 118],
-    ['pearson', 30, 53],
-    ['pearson_satchels', 14, 21],
     ['fence', 26, 26],
     ['outfit:bear_hunter', 5, 6],
     ['outfit:desperado', 9, 12],
@@ -135,19 +133,13 @@ describe('15.3 reference totals (empty progress)', () => {
   it('per-material values for all', () => {
     const n = needs('all').byMaterial;
     const expected = {
-      perfect_snake: 17,
-      perfect_boar: 16,
+      perfect_snake: 15,
+      perfect_boar: 10,
       perfect_rat: 16,
       feather_raven: 13,
-      perfect_deer: 12,
-      perfect_beaver: 11,
+      perfect_deer: 5,
+      perfect_beaver: 9,
     };
-    for (const [m, v] of Object.entries(expected)) expect(n.get(m)?.remaining, m).toBe(v);
-  });
-
-  it('per-material values for pearson', () => {
-    const n = needs('pearson').byMaterial;
-    const expected = { perfect_deer: 7, perfect_boar: 6, perfect_cougar: 3, perfect_wolf: 3 };
     for (const [m, v] of Object.entries(expected)) expect(n.get(m)?.remaining, m).toBe(v);
   });
 
@@ -173,19 +165,17 @@ describe('scopes', () => {
       'Общее',
       'Охотник',
       'Костюмы',
-      'Пирсон',
       'Скупщик',
     ]);
-    for (const id of ['all', 'goals', 'trapper', 'pearson_camp', 'fence', 'outfit:wrangler']) {
+    for (const id of ['all', 'goals', 'trapper', 'fence', 'outfit:wrangler']) {
       expect(scopeExists(id)).toBe(true);
     }
     expect(scopeExists('outfit:nope')).toBe(false);
   });
 
   it('returns scope items', () => {
-    expect(getScopeItems('all', noGoals)).toHaveLength(167);
+    expect(getScopeItems('all', noGoals)).toHaveLength(141);
     expect(getScopeItems('trapper', noGoals)).toHaveLength(123);
-    expect(getScopeItems('pearson', noGoals)).toHaveLength(26);
     expect(getScopeItems('fence', noGoals)).toHaveLength(18);
     expect(getScopeItems('goals', noGoals)).toHaveLength(0);
     expect(getScopeItems('unknown', noGoals)).toHaveLength(0);

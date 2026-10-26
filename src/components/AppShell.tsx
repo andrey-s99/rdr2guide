@@ -19,7 +19,6 @@ import { TopBar } from './TopBar';
 
 export const SECTION_TITLES: Record<SectionTab, string> = {
   trapper: 'Охотник',
-  pearson: 'Пирсон',
   fence: 'Скупщик',
   animals: 'Звери',
   summary: 'Сводка',
@@ -55,13 +54,6 @@ const SUBNAV: Partial<Record<SectionTab, { label: string; options: SegmentOption
     options: [
       { value: '/trapper/outfits', label: 'Костюмы' },
       { value: '/trapper/items', label: 'Предметы' },
-    ],
-  },
-  pearson: {
-    label: 'Подразделы Пирсона',
-    options: [
-      { value: '/pearson/satchels', label: 'Сумки' },
-      { value: '/pearson/camp', label: 'Лагерь' },
     ],
   },
   fence: {

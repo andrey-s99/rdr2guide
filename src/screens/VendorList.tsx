@@ -1,4 +1,4 @@
-// Shared building blocks of the Pearson and Fence list screens (SPEC 9.5, 9.6).
+// Shared building blocks of the Fence list screens (SPEC 9.5, 9.6).
 import type { ComponentChildren } from 'preact';
 import { AppLink } from '../components/AppLink';
 import { EmptyState } from '../components/EmptyState';

@@ -36,8 +36,8 @@ describe('parseHash', () => {
   });
 
   it('tolerates missing # or leading slash and trailing slashes', () => {
-    expect(parseHash('/pearson/camp')?.name).toBe('pearson-camp');
-    expect(parseHash('#pearson/camp/')?.name).toBe('pearson-camp');
+    expect(parseHash('/fence/trinkets')?.name).toBe('fence-trinkets');
+    expect(parseHash('#fence/trinkets/')?.name).toBe('fence-trinkets');
   });
 
   it('returns null for unknown routes', () => {

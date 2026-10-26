@@ -24,10 +24,6 @@ const SUB_LINKS: Record<VendorId, SubLink[]> = {
     { label: 'Костюмы', to: '/trapper/outfits' },
     { label: 'Предметы', to: '/trapper/items' },
   ],
-  pearson: [
-    { label: 'Сумки', to: '/pearson/satchels' },
-    { label: 'Лагерь', to: '/pearson/camp' },
-  ],
   fence: [
     { label: 'Безделушки', to: '/fence/trinkets' },
     { label: 'Талисманы', to: '/fence/talismans' },
