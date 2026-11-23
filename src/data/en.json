@@ -1,0 +1,1095 @@
+{
+  "meta": {
+    "notes": "Names and descriptions use the original English text of the game. The dataConfidence field: high — several sources agree, medium — sources disagree, low — a single source.",
+    "globalMapLinks": [
+      "RDR2 interactive map (GTABase)",
+      "RDR2 map (RDR2.org)",
+      "All animal locations (RDR2.org)",
+      "All legendary animals (RDR2.org)"
+    ]
+  },
+  "categories": {
+    "hat": "Hats",
+    "coat": "Coats",
+    "vest": "Vests",
+    "gloves": "Gloves",
+    "boots": "Boots",
+    "chaps": "Chaps",
+    "hat_accessory": "Hat Accessories",
+    "saddle": "Saddles",
+    "trinket": "Trinkets",
+    "talisman": "Talismans"
+  },
+  "vendors": {
+    "trapper": {
+      "locations": [
+        "Saint Denis (market square, east side of town)",
+        "Northern Big Valley by the western map edge (north-west of Strawberry)",
+        "North-east of Riggs Station (on the mountain)",
+        "Roanoke Ridge: south-west of Annesburg, between Elysian Pool and the state border",
+        "Tall Trees (West Elizabeth): south-west of Manzanita Post by the Lower Montana River — Epilogue only"
+      ],
+      "rules": [
+        "The Trapper only crafts from what you have SOLD him beforehand: sell the pelts first, then order the item.",
+        "Pelts must be Perfect quality (3★ animal + clean kill).",
+        "A legendary pelt is sold once and unlocks every item made from that animal.",
+        "Besides pelts, every item costs money (the price is shown on the item card).",
+        "Also available in the Epilogue."
+      ]
+    },
+    "fence": {
+      "locations": [
+        "Emerald Ranch (New Hanover)",
+        "Rhodes — north of town (Lemoyne)",
+        "Saint Denis — north-east, by the market (Lemoyne)",
+        "Van Horn Trading Post (New Hanover)"
+      ],
+      "rules": [
+        "Becomes available after the Chapter 2 mission \"The Spines of America\".",
+        "Crafting costs money; prices are not listed in this guide — check the Fence's menu.",
+        "Legendary animal parts you didn't collect go to the Fence automatically.",
+        "Not craftable (for reference): the Owl Feather trinket is a reward for \"Archeology for Beginners\" without killing the guards; the Iguana Scale trinket and the Eagle Talon talisman are Special/Ultimate Edition bonuses."
+      ]
+    }
+  },
+  "animals": {
+    "alligator": {
+      "habitat": "Swamps around Saint Denis (Bayou Nwa), riverbanks and backwaters across Lemoyne.",
+      "perfectKill": "Poison Arrows or a high-powered rifle; Improved/Express ammo keeps the skin intact.",
+      "behavior": "Lurks by the water and attacks if you get close.",
+      "availabilityNote": "",
+      "links": [
+        "Range map and tips (RankedBoost)",
+        "Google: where to find"
+      ]
+    },
+    "armadillo": {
+      "habitat": "All over New Austin, south-west of the map.",
+      "perfectKill": "Varmint Rifle (.22 ammo) or Bow with Small Game Arrows.",
+      "behavior": "Skittish, stays near shrubs.",
+      "availabilityNote": "New Austin is only accessible in the Epilogue (before that you're wanted there).",
+      "links": [
+        "Google: where to find"
+      ]
+    },
+    "badger": {
+      "habitat": "Lemoyne, from the northern edge down to Rhodes and the Saint Denis outskirts. A guaranteed 3★ badger sits on the rocks behind the Trapper's shop near Riggs Station.",
+      "perfectKill": "Varmint Rifle (.22 ammo) or Bow with Small Game Arrows.",
+      "behavior": "Predator: Predator Bait lures it out. Often active at dusk and at night.",
+      "availabilityNote": "",
+      "links": [
+        "Range map and tips (RankedBoost)",
+        "Google: where to find"
+      ]
+    },
+    "bear": {
+      "habitat": "Mountains and forests of Ambarino (The Grizzlies) and the wooded slopes of West Elizabeth.",
+      "perfectKill": "High-powered rifle (Rolling Block / Springfield) with Express ammo, or Poison Arrows; kill with one or two headshots.",
+      "behavior": "Very aggressive, attacks first.",
+      "availabilityNote": "",
+      "links": [
+        "Range map and tips (RankedBoost)",
+        "Google: where to find"
+      ]
+    },
+    "black_bear": {
+      "habitat": "Forest in Big Valley (West Elizabeth) and the woods north of Annesburg. Potent Predator Bait helps.",
+      "perfectKill": "Poison or Improved Arrows, or a rifle; aim for a one-shot kill.",
+      "behavior": "Aggressive when approached.",
+      "availabilityNote": "",
+      "links": [
+        "Range map and tips (RankedBoost)",
+        "Google: where to find"
+      ]
+    },
+    "beaver": {
+      "habitat": "Riverbanks: near the letters \"E\" and \"R\" of NEW HANOVER (Kamassa River, Butcher Creek) and Owanjila lake in West Elizabeth.",
+      "perfectKill": "Bow with regular arrows, Repeater or Rifle (the Varmint Rifle also gives a clean kill).",
+      "behavior": "Stays by the water, dives when threatened.",
+      "availabilityNote": "",
+      "links": [
+        "Range map and tips (RankedBoost)",
+        "Google: where to find"
+      ]
+    },
+    "bison": {
+      "habitat": "West of Blackwater (Great Plains) and the Heartlands floodplain south-west of Annesburg.",
+      "perfectKill": "Poison Arrows or a high-powered / Sniper Rifle, headshot.",
+      "behavior": "Herd animal. Very tough — headshots only.",
+      "availabilityNote": "",
+      "links": [
+        "Range map and tips (RankedBoost)",
+        "Google: where to find"
+      ]
+    },
+    "boar": {
+      "habitat": "Woods all over Lemoyne, especially around Bluewater Marsh and south of Rhodes.",
+      "perfectKill": "Bow with regular or Poison Arrows, or a Rifle.",
+      "behavior": "Aggressive when approached.",
+      "availabilityNote": "",
+      "links": [
+        "Range map and tips (RankedBoost)",
+        "Google: where to find"
+      ]
+    },
+    "buck": {
+      "habitat": "Lemoyne and northern New Hanover near the Ambarino border. Very common.",
+      "perfectKill": "Bow with regular or Poison Arrows, or a Rifle.",
+      "behavior": "Skittish; use Herbivore Bait and approach from downwind.",
+      "availabilityNote": "",
+      "links": [
+        "Range map and tips (RankedBoost)",
+        "Google: where to find"
+      ]
+    },
+    "bull": {
+      "habitat": "Farms: north of Saint Denis near Lagras; just north of the \"H\" in NEW HANOVER; just north of the \"E\" in WEST ELIZABETH.",
+      "perfectKill": "Poison or Improved Arrows, or a Rifle.",
+      "behavior": "May charge. Farm livestock — the owner may attack you, so go at night.",
+      "availabilityNote": "",
+      "links": [
+        "Range map and tips (RankedBoost)",
+        "Google: where to find"
+      ]
+    },
+    "collared_peccary": {
+      "habitat": "New Austin: past the railroad east of Benedict Point.",
+      "perfectKill": "Poison Arrows or a Rifle.",
+      "behavior": "Aggressive when approached.",
+      "availabilityNote": "New Austin is only accessible in the Epilogue.",
+      "links": [
+        "Google: where to find"
+      ]
+    },
+    "cougar": {
+      "habitat": "South of Blackwater by the river; the western edge of West Elizabeth by the map border; in the Epilogue, south of Tumbleweed above the riverbank.",
+      "perfectKill": "Bow with regular or Poison Arrows, or a Rifle.",
+      "behavior": "Very dangerous, attacks from ambush.",
+      "availabilityNote": "",
+      "links": [
+        "Range map and tips (RankedBoost)",
+        "Google: where to find"
+      ]
+    },
+    "cow": {
+      "habitat": "Farms north of Saint Denis along the coast; Painted Sky ranch above the Dakota River (2 cows in the pen).",
+      "perfectKill": "Poison Arrows or a Rifle.",
+      "behavior": "Farm livestock — the owner may attack you, so go at night.",
+      "availabilityNote": "",
+      "links": [
+        "Range map and tips (RankedBoost)",
+        "Google: where to find"
+      ]
+    },
+    "coyote": {
+      "habitat": "Eastern New Hanover, from south of Van Horn to north of Annesburg; around Rhodes.",
+      "perfectKill": "Bow with regular or Poison Arrows, Repeater or Rifle.",
+      "behavior": "Skittish, sometimes in packs.",
+      "availabilityNote": "",
+      "links": [
+        "Range map and tips (RankedBoost)",
+        "Google: where to find"
+      ]
+    },
+    "deer": {
+      "habitat": "Woods of Lemoyne and eastern Ambarino. Best spot: the open meadows between Rhodes and Bolger Glade.",
+      "perfectKill": "Bow with regular or Poison Arrows, or a Rifle.",
+      "behavior": "Skittish.",
+      "availabilityNote": "",
+      "links": [
+        "Range map and tips (RankedBoost)",
+        "Google: where to find"
+      ]
+    },
+    "elk": {
+      "habitat": "Cold areas: Ambarino and north of Annesburg.",
+      "perfectKill": "Poison Arrows or a high-powered / Sniper Rifle, headshot.",
+      "behavior": "Skittish, herd animal.",
+      "availabilityNote": "",
+      "links": [
+        "Range map and tips (RankedBoost)",
+        "Google: where to find"
+      ]
+    },
+    "fox": {
+      "habitat": "Woods of Ambarino and Lemoyne. Reliable spot: near the letters \"BER\" in CUMBERLAND FOREST.",
+      "perfectKill": "Bow with regular or Poison Arrows, Repeater or Rifle.",
+      "behavior": "Skittish.",
+      "availabilityNote": "",
+      "links": [
+        "Range map and tips (RankedBoost)",
+        "Google: where to find"
+      ]
+    },
+    "gila_monster": {
+      "habitat": "New Austin, near the letters \"A\", \"S\" and \"T\" of NEW AUSTIN.",
+      "perfectKill": "Varmint Rifle (.22 ammo) or Bow with Small Game Arrows.",
+      "behavior": "Venomous.",
+      "availabilityNote": "New Austin is only accessible in the Epilogue.",
+      "links": [
+        "Range map and tips (RankedBoost)",
+        "Google: where to find"
+      ]
+    },
+    "goat": {
+      "habitat": "Just north of Saint Denis along the coast; Larned Sod ranch below the \"H\" in NEW HANOVER (always has a 3★ goat, best at night).",
+      "perfectKill": "Bow with regular or Poison Arrows, or a Rifle.",
+      "behavior": "Domestic: the owner may attack you.",
+      "availabilityNote": "",
+      "links": [
+        "Range map and tips (RankedBoost)",
+        "Google: where to find"
+      ]
+    },
+    "iguana": {
+      "habitat": "Before the Epilogue: only on the northern part of the island off the east shore of Flat Iron Lake (2–3 iguanas). In the Epilogue: common in New Austin.",
+      "perfectKill": "Varmint Rifle (.22 ammo) or Bow with Small Game Arrows.",
+      "behavior": "Skittish.",
+      "availabilityNote": "",
+      "links": [
+        "Range map and tips (RankedBoost)",
+        "Google: where to find"
+      ]
+    },
+    "moose": {
+      "habitat": "Between the letters \"I\" and \"N\" of AMBARINO; north of Annesburg by the map edge; Cairn Lake and around Colter. In the Epilogue: Tall Trees.",
+      "perfectKill": "Poison or Improved Arrows, a Rifle, or a Shotgun with Slug shells.",
+      "behavior": "Rare before the Epilogue: use Potent Herbivore Bait.",
+      "availabilityNote": "",
+      "links": [
+        "Range map and tips (RankedBoost)",
+        "Google: where to find"
+      ]
+    },
+    "muskrat": {
+      "habitat": "Drying creeks: Dewberry Creek (north of the \"E\" in LEMOYNE), north of Annesburg, west and south of Strawberry.",
+      "perfectKill": "Varmint Rifle (.22 ammo) or Bow with Small Game Arrows.",
+      "behavior": "Stays by the water.",
+      "availabilityNote": "",
+      "links": [
+        "Range map and tips (RankedBoost)",
+        "Google: where to find"
+      ]
+    },
+    "opossum": {
+      "habitat": "North of Annesburg; the northern shores of Flat Iron Lake; near the \"W\" in WEST ELIZABETH.",
+      "perfectKill": "Varmint Rifle (.22 ammo) or Bow with Small Game Arrows.",
+      "behavior": "Mostly at night.",
+      "availabilityNote": "",
+      "links": [
+        "Google: where to find"
+      ]
+    },
+    "ox": {
+      "habitat": "Ranch shack north-west of Van Horn (east of Butcher Creek) — always a 2★ or 3★ ox there; north of Braithwaite Manor; north and east of Rhodes.",
+      "perfectKill": "Poison Arrows or a Rifle.",
+      "behavior": "Ranch livestock — the owner may attack you.",
+      "availabilityNote": "",
+      "links": [
+        "Range map and tips (RankedBoost)",
+        "Google: where to find"
+      ]
+    },
+    "panther": {
+      "habitat": "South of Rhodes by the river, south-east of Braithwaite Manor (woods near Old Harry Fen); north of Saint Denis, above the \"N\" and \"E\" of LEMOYNE.",
+      "perfectKill": "Bow with regular or Poison Arrows, or a Rifle.",
+      "behavior": "Very dangerous, attacks without warning. Shows up more at night — save before hunting.",
+      "availabilityNote": "",
+      "links": [
+        "Range map and tips (RankedBoost)",
+        "Google: where to find"
+      ]
+    },
+    "pig": {
+      "habitat": "Farms east of Saint Denis; north of Flat Iron Lake, below the first \"N\" of NEW HANOVER. Any breed of pig works.",
+      "perfectKill": "Bow with regular or Poison Arrows, Repeater or Rifle.",
+      "behavior": "Domestic: the owner may attack you.",
+      "availabilityNote": "",
+      "links": [
+        "Range map and tips (RankedBoost)",
+        "Google: where to find"
+      ]
+    },
+    "pronghorn": {
+      "habitat": "Around the word \"NEW\" in NEW HANOVER and south towards Flat Iron Lake; western West Elizabeth past Hanging Dog Ranch, above the \"W\" of WEST ELIZABETH.",
+      "perfectKill": "Bow with regular or Poison Arrows, or a Rifle.",
+      "behavior": "Skittish, herd animal.",
+      "availabilityNote": "",
+      "links": [
+        "Range map and tips (RankedBoost)",
+        "Google: where to find"
+      ]
+    },
+    "rabbit": {
+      "habitat": "Around Valentine, Strawberry, Rhodes and Saint Denis, often near roads.",
+      "perfectKill": "Varmint Rifle (.22 ammo) or Bow with Small Game Arrows.",
+      "behavior": "Skittish.",
+      "availabilityNote": "",
+      "links": [
+        "Google: where to find"
+      ]
+    },
+    "raccoon": {
+      "habitat": "Lemoyne, New Hanover and West Elizabeth — near water and woods.",
+      "perfectKill": "Varmint Rifle (.22 ammo) or Bow with Small Game Arrows.",
+      "behavior": "Mostly at night.",
+      "availabilityNote": "",
+      "links": [
+        "Range map and tips (RankedBoost)",
+        "Google: where to find"
+      ]
+    },
+    "ram": {
+      "habitat": "Mountains of Ambarino and West Elizabeth; the open ledge by the railroad south of Cattail Pond (above the Cumberland Falls label).",
+      "perfectKill": "Bow with regular or Poison Arrows, or a Rifle.",
+      "behavior": "Stays on slopes.",
+      "availabilityNote": "",
+      "links": [
+        "Range map and tips (RankedBoost)",
+        "Google: where to find"
+      ]
+    },
+    "rat": {
+      "habitat": "Best: the Saint Denis docks; also West Elizabeth and northern Lemoyne. Bait helps.",
+      "perfectKill": "Bow with Small Game Arrows (or the Varmint Rifle).",
+      "behavior": "Small and fast, needs a precise shot.",
+      "availabilityNote": "",
+      "links": [
+        "Range map and tips (RankedBoost)",
+        "Google: where to find"
+      ]
+    },
+    "sheep": {
+      "habitat": "Ambarino and northern West Elizabeth by the western map edge (often together with Bighorn Rams); in the Epilogue, around Tumbleweed.",
+      "perfectKill": "Bow with regular or Poison Arrows, or a Rifle.",
+      "behavior": "Herd animal.",
+      "availabilityNote": "",
+      "links": [
+        "Range map and tips (RankedBoost)",
+        "Google: where to find"
+      ]
+    },
+    "skunk": {
+      "habitat": "All of Lemoyne; eastern New Hanover; the western edge of West Elizabeth.",
+      "perfectKill": "Varmint Rifle (.22 ammo) or Bow with Small Game Arrows.",
+      "behavior": "Sprays when approached. Mostly at night.",
+      "availabilityNote": "",
+      "links": [
+        "Range map and tips (RankedBoost)",
+        "Google: where to find"
+      ]
+    },
+    "snake": {
+      "habitat": "The road from Saint Denis to Van Horn and Annesburg (Predator Bait helps); water snakes in the swamps near Lagras.",
+      "perfectKill": "Bow with Small Game Arrows, headshots only.",
+      "behavior": "Venomous.",
+      "availabilityNote": "",
+      "links": [
+        "Range map and tips (RankedBoost)",
+        "Google: where to find"
+      ]
+    },
+    "squirrel": {
+      "habitat": "Woods near Strawberry, north of Annesburg, Ambarino, West Elizabeth. Lots of squirrels in the north-west corner of the map past Hanging Dog Ranch.",
+      "perfectKill": "Bow with Small Game Arrows (or the Varmint Rifle).",
+      "behavior": "Small and fast.",
+      "availabilityNote": "",
+      "links": [
+        "Range map and tips (RankedBoost)",
+        "Google: where to find"
+      ]
+    },
+    "wolf": {
+      "habitat": "Above the \"O\" in AMBARINO; the three-way crossroads north of Hanging Dog Ranch (a pack attacks at night).",
+      "perfectKill": "Rifle with Express ammo, headshot; or Bow with regular or Poison Arrows.",
+      "behavior": "Hunts in packs and attacks. More active at night.",
+      "availabilityNote": "",
+      "links": [
+        "Range map and tips (RankedBoost)",
+        "Google: where to find"
+      ]
+    },
+    "robin": {
+      "habitat": "Around Valentine, Strawberry, Rhodes and Annesburg.",
+      "perfectKill": "Bow with Small Game Arrows.",
+      "behavior": "Feathers drop at any carcass quality — a perfect kill is not required.",
+      "availabilityNote": "",
+      "links": [
+        "Google: where to find"
+      ]
+    },
+    "oriole": {
+      "habitat": "Just north of Rhodes; the north-west shore of Flat Iron Lake and the island east of it.",
+      "perfectKill": "Bow with Small Game Arrows.",
+      "behavior": "Feathers drop at any carcass quality — a perfect kill is not required.",
+      "availabilityNote": "",
+      "links": [
+        "Google: where to find"
+      ]
+    },
+    "raven": {
+      "habitat": "Around Blackwater; between the letters \"E\" and \"M\" of LEMOYNE.",
+      "perfectKill": "Bow with Small Game Arrows.",
+      "behavior": "Feathers drop at any carcass quality — a perfect kill is not required.",
+      "availabilityNote": "",
+      "links": [
+        "Google: where to find"
+      ]
+    },
+    "woodpecker": {
+      "habitat": "Woods of West Elizabeth and Ambarino.",
+      "perfectKill": "Bow with Small Game Arrows.",
+      "behavior": "Feathers drop at any carcass quality — a perfect kill is not required.",
+      "availabilityNote": "",
+      "links": [
+        "Google: where to find"
+      ]
+    },
+    "chicken": {
+      "habitat": "Wild chickens where NEW HANOVER is written on the map; around Blackwater. Killing farm chickens is a crime.",
+      "perfectKill": "Bow with Small Game Arrows.",
+      "behavior": "Feathers drop at any carcass quality — a perfect kill is not required.",
+      "availabilityNote": "",
+      "links": [
+        "Google: where to find"
+      ]
+    },
+    "goose": {
+      "habitat": "North-west shore of Flat Iron Lake; near the letters \"N\" and \"O\" of NEW HANOVER.",
+      "perfectKill": "Varmint Rifle (.22 ammo) or Bow with Small Game Arrows.",
+      "behavior": "Feathers drop at any carcass quality — a perfect kill is not required.",
+      "availabilityNote": "",
+      "links": [
+        "Google: where to find"
+      ]
+    },
+    "hawk": {
+      "habitat": "West of Blackwater by the map edge; New Austin; north-east of Annesburg.",
+      "perfectKill": "Varmint Rifle (.22 ammo) or Bow with Small Game Arrows.",
+      "behavior": "Feathers drop at any carcass quality — a perfect kill is not required.",
+      "availabilityNote": "",
+      "links": [
+        "Google: where to find"
+      ]
+    },
+    "quail": {
+      "habitat": "Strawberry and its surroundings; around the first \"N\" of NEW HANOVER.",
+      "perfectKill": "Bow with Small Game Arrows.",
+      "behavior": "Feathers drop at any carcass quality — a perfect kill is not required.",
+      "availabilityNote": "",
+      "links": [
+        "Google: where to find"
+      ]
+    },
+    "pheasant": {
+      "habitat": "Just north of the gap between NEW and HANOVER; south-west of Valentine.",
+      "perfectKill": "Bow with Small Game Arrows.",
+      "behavior": "Feathers drop at any carcass quality — a perfect kill is not required.",
+      "availabilityNote": "",
+      "links": [
+        "Google: where to find"
+      ]
+    },
+    "owl": {
+      "habitat": "West of Blackwater; the southern part of the island in Flat Iron Lake; north of Annesburg; north of the letters \"N\" and \"O\" of AMBARINO.",
+      "perfectKill": "Varmint Rifle (.22 ammo) or Bow with Small Game Arrows.",
+      "behavior": "Active at night. Feathers drop at any carcass quality.",
+      "availabilityNote": "",
+      "links": [
+        "Google: where to find"
+      ]
+    },
+    "turkey": {
+      "habitat": "Almost everywhere; plenty in New Hanover and Lemoyne, around Van Horn and Annesburg.",
+      "perfectKill": "Varmint Rifle (.22 ammo) or Bow with Small Game Arrows.",
+      "behavior": "Feathers drop at any carcass quality — a perfect kill is not required.",
+      "availabilityNote": "",
+      "links": [
+        "Google: where to find"
+      ]
+    },
+    "eagle": {
+      "habitat": "Eastern Ambarino near Annesburg; north-west of the northern shore of Flat Iron Lake; the south-western edges of the map.",
+      "perfectKill": "Varmint Rifle (.22 ammo) or Bow with Small Game Arrows.",
+      "behavior": "Feathers drop at any carcass quality — a perfect kill is not required.",
+      "availabilityNote": "",
+      "links": [
+        "Google: where to find"
+      ]
+    },
+    "cardinal": {
+      "habitat": "Just south-west and west of Valentine (responds to any bait).",
+      "perfectKill": "Bow with Small Game Arrows.",
+      "behavior": "Feathers drop at any carcass quality — a perfect kill is not required.",
+      "availabilityNote": "",
+      "links": [
+        "Google: where to find"
+      ]
+    },
+    "rooster": {
+      "habitat": "Eastern outskirts of Van Horn; north and south of Braithwaite Manor. Killing farm roosters is a crime.",
+      "perfectKill": "Bow with Small Game Arrows.",
+      "behavior": "Feathers drop at any carcass quality — a perfect kill is not required.",
+      "availabilityNote": "",
+      "links": [
+        "Google: where to find"
+      ]
+    },
+    "songbird": {
+      "habitat": "Ambarino, West Elizabeth, New Hanover, Lemoyne — town outskirts.",
+      "perfectKill": "Bow with Small Game Arrows.",
+      "behavior": "Feathers drop at any carcass quality — a perfect kill is not required.",
+      "availabilityNote": "",
+      "links": [
+        "Google: where to find"
+      ]
+    },
+    "sparrow": {
+      "habitat": "West Elizabeth, Ambarino, Lemoyne; the northern outskirts of Valentine and Rhodes.",
+      "perfectKill": "Bow with Small Game Arrows.",
+      "behavior": "Feathers drop at any carcass quality — a perfect kill is not required.",
+      "availabilityNote": "",
+      "links": [
+        "Google: where to find"
+      ]
+    },
+    "cedar_waxwing": {
+      "habitat": "West of Valentine; north of Blackwater, by the letters \"Z\" and \"A\" of ELIZABETH.",
+      "perfectKill": "Bow with Small Game Arrows.",
+      "behavior": "Feathers drop at any carcass quality — a perfect kill is not required.",
+      "availabilityNote": "",
+      "links": [
+        "Google: where to find"
+      ]
+    },
+    "blue_jay": {
+      "habitat": "Rhodes and its surroundings; south and south-west of Valentine; Annesburg.",
+      "perfectKill": "Bow with Small Game Arrows.",
+      "behavior": "Feathers drop at any carcass quality — a perfect kill is not required.",
+      "availabilityNote": "",
+      "links": [
+        "Google: where to find"
+      ]
+    },
+    "duck": {
+      "habitat": "Almost any body of water; the swamps near Saint Denis; the Annesburg area, east riverbank.",
+      "perfectKill": "Bow with Small Game Arrows.",
+      "behavior": "Feathers drop at any carcass quality — a perfect kill is not required.",
+      "availabilityNote": "",
+      "links": [
+        "Google: where to find"
+      ]
+    },
+    "pigeon": {
+      "habitat": "Southern Saint Denis; the north-west shore of Flat Iron Lake; Annesburg.",
+      "perfectKill": "Bow with Small Game Arrows.",
+      "behavior": "Feathers drop at any carcass quality — a perfect kill is not required.",
+      "availabilityNote": "",
+      "links": [
+        "Google: where to find"
+      ]
+    },
+    "crow": {
+      "habitat": "Lemoyne: around Rhodes and west of Saint Denis.",
+      "perfectKill": "Bow with Small Game Arrows.",
+      "behavior": "Feathers drop at any carcass quality — a perfect kill is not required.",
+      "availabilityNote": "",
+      "links": [
+        "Google: where to find"
+      ]
+    },
+    "vulture": {
+      "habitat": "Most of New Austin; northern Lemoyne near Horseshoe Overlook; south of Braithwaite Manor; between the letters \"A\" and \"N\" of NEW HANOVER.",
+      "perfectKill": "Varmint Rifle (.22 ammo) or Bow with Small Game Arrows.",
+      "behavior": "Feathers drop at any carcass quality — a perfect kill is not required.",
+      "availabilityNote": "",
+      "links": [
+        "Google: where to find"
+      ]
+    },
+    "seagull": {
+      "habitat": "Near any large body of water; the Saint Denis docks; the eastern edges of the map.",
+      "perfectKill": "Varmint Rifle (.22 ammo) or Bow with Small Game Arrows.",
+      "behavior": "Feathers drop at any carcass quality — a perfect kill is not required.",
+      "availabilityNote": "",
+      "links": [
+        "Google: where to find"
+      ]
+    },
+    "loon": {
+      "habitat": "Flat Iron Lake (eastern island, north-west shore); north and east of Annesburg; near Lagras.",
+      "perfectKill": "Bow with Small Game Arrows.",
+      "behavior": "Feathers drop at any carcass quality — a perfect kill is not required.",
+      "availabilityNote": "",
+      "links": [
+        "Google: where to find"
+      ]
+    },
+    "condor": {
+      "habitat": "West of Tumbleweed, north of the \"E\" in NEW AUSTIN. Epilogue only.",
+      "perfectKill": "Varmint Rifle (.22 ammo) or Bow with Small Game Arrows.",
+      "behavior": "Feathers drop at any carcass quality — a perfect kill is not required.",
+      "availabilityNote": "New Austin is only accessible in the Epilogue.",
+      "links": [
+        "Google: where to find"
+      ]
+    },
+    "leg_bear": {
+      "habitat": "Grizzlies East, north of O'Creagh's Run (Ambarino).",
+      "perfectKill": "High-powered rifle with Express ammo, Dead Eye, shots to the heart / head.",
+      "behavior": "A legendary pelt's quality does not depend on how you kill it. The area appears on the map once you have the Legendary Animals map (Chapter 2, Hosea's mission). Inside the \"?\" area, find clues with Eagle Eye and follow the tracks.",
+      "unlock": "First encountered in the Chapter 2 mission \"Exit Pursued by a Bruised Ego\" (with Hosea). You can come back at any time after the mission.",
+      "availabilityNote": "",
+      "links": [
+        "Guide and map (RDR2.org)",
+        "Google: where to find"
+      ]
+    },
+    "leg_beaver": {
+      "habitat": "Butcher Creek by the Kamassa River (Roanoke Ridge, New Hanover), west of Van Horn Trading Post, just south of the \"E\" in NEW HANOVER.",
+      "perfectKill": "Barely fights back — any weapon, one shot is enough.",
+      "behavior": "A legendary pelt's quality does not depend on how you kill it. The area appears on the map once you have the Legendary Animals map (Chapter 2, Hosea's mission). Inside the \"?\" area, find clues with Eagle Eye and follow the tracks.",
+      "unlock": "Available from Chapter 2.",
+      "availabilityNote": "",
+      "links": [
+        "Guide and map (RDR2.org)",
+        "Google: where to find"
+      ]
+    },
+    "leg_ram": {
+      "habitat": "The hills east of Cattail Pond, near Valentine (between the pond and the Dakota River; on the New Hanover / Ambarino border).",
+      "perfectKill": "Not very tough — Rifle, shot to a vital spot.",
+      "behavior": "A legendary pelt's quality does not depend on how you kill it. The area appears on the map once you have the Legendary Animals map (Chapter 2, Hosea's mission). Inside the \"?\" area, find clues with Eagle Eye and follow the tracks.",
+      "unlock": "Available from Chapter 2.",
+      "availabilityNote": "",
+      "links": [
+        "Guide and map (RDR2.org)",
+        "Google: where to find"
+      ]
+    },
+    "leg_boar": {
+      "habitat": "South of Bluewater Marsh — north of the \"S\" in MARSH and the \"A\" in BLUEWATER.",
+      "perfectKill": "Charges right away: high-powered rifle (Springfield) or a Poison Arrow.",
+      "behavior": "A legendary pelt's quality does not depend on how you kill it. The area appears on the map once you have the Legendary Animals map (Chapter 2, Hosea's mission). Inside the \"?\" area, find clues with Eagle Eye and follow the tracks.",
+      "unlock": "Available from Chapter 2.",
+      "availabilityNote": "",
+      "links": [
+        "Guide and map (RDR2.org)",
+        "Google: where to find"
+      ]
+    },
+    "leg_buck": {
+      "habitat": "Big Valley, south-west of the \"B\" in BIG VALLEY.",
+      "perfectKill": "One Express round to the heart or head.",
+      "behavior": "A legendary pelt's quality does not depend on how you kill it. The area appears on the map once you have the Legendary Animals map (Chapter 2, Hosea's mission). Inside the \"?\" area, find clues with Eagle Eye and follow the tracks.",
+      "unlock": "Available from Chapter 2.",
+      "availabilityNote": "",
+      "links": [
+        "Guide and map (RDR2.org)",
+        "Google: where to find"
+      ]
+    },
+    "leg_bullgator": {
+      "habitat": "Bayou Nwa, Lakay — north of Saint Denis.",
+      "perfectKill": "One of the most dangerous: long-range high-powered rifle (Rolling Block), don't let it get close.",
+      "behavior": "A legendary pelt's quality does not depend on how you kill it. The area appears on the map once you have the Legendary Animals map (Chapter 2, Hosea's mission). Inside the \"?\" area, find clues with Eagle Eye and follow the tracks.",
+      "unlock": "First encountered in the Chapter 4 mission \"Country Pursuits\"; it appears on the map after that. According to GTABase, only after \"That's Murfree Country\". If the area isn't there, progress the story further.",
+      "availabilityNote": "",
+      "links": [
+        "Guide and map (RDR2.org)",
+        "Google: where to find"
+      ]
+    },
+    "leg_cougar": {
+      "habitat": "Gaptooth Ridge, west of Tumbleweed (New Austin).",
+      "perfectKill": "Very fast: full Dead Eye and a Rifle; a Shotgun up close.",
+      "behavior": "A legendary pelt's quality does not depend on how you kill it. The area appears on the map once you have the Legendary Animals map (Chapter 2, Hosea's mission). Inside the \"?\" area, find clues with Eagle Eye and follow the tracks.",
+      "unlock": "Epilogue only (New Austin).",
+      "availabilityNote": "New Austin is only accessible in the Epilogue.",
+      "links": [
+        "Guide and map (RDR2.org)",
+        "Google: where to find"
+      ]
+    },
+    "leg_coyote": {
+      "habitat": "Scarlett Meadows, just west of the \"R\" in SCARLETT.",
+      "perfectKill": "Runs off immediately: one precise shot with a high-powered rifle (Rolling Block).",
+      "behavior": "A legendary pelt's quality does not depend on how you kill it. The area appears on the map once you have the Legendary Animals map (Chapter 2, Hosea's mission). Inside the \"?\" area, find clues with Eagle Eye and follow the tracks.",
+      "unlock": "Available from Chapter 2.",
+      "availabilityNote": "",
+      "links": [
+        "Guide and map (RDR2.org)",
+        "Google: where to find"
+      ]
+    },
+    "leg_elk": {
+      "habitat": "Cumberland Forest, east of Bacchus Station (near Fort Wallace, by the Ambarino border).",
+      "perfectKill": "Doesn't fight back: high-powered rifle with Express ammo.",
+      "behavior": "A legendary pelt's quality does not depend on how you kill it. The area appears on the map once you have the Legendary Animals map (Chapter 2, Hosea's mission). Inside the \"?\" area, find clues with Eagle Eye and follow the tracks.",
+      "unlock": "Available from Chapter 2.",
+      "availabilityNote": "",
+      "links": [
+        "Guide and map (RDR2.org)",
+        "Google: where to find"
+      ]
+    },
+    "leg_fox": {
+      "habitat": "Mattock Pond, north of Rhodes.",
+      "perfectKill": "Runs off immediately: high-powered rifle, don't miss the first shot.",
+      "behavior": "A legendary pelt's quality does not depend on how you kill it. The area appears on the map once you have the Legendary Animals map (Chapter 2, Hosea's mission). Inside the \"?\" area, find clues with Eagle Eye and follow the tracks.",
+      "unlock": "Available from Chapter 2.",
+      "availabilityNote": "",
+      "links": [
+        "Guide and map (RDR2.org)",
+        "Google: where to find"
+      ]
+    },
+    "leg_panther": {
+      "habitat": "Scarlett Meadows (Lemoyne), south of Rhodes: east of Braithwaite Manor and south of Bolger Glade.",
+      "perfectKill": "The hardest one: your best rifle (Rolling Block) with your best ammo and full Dead Eye.",
+      "behavior": "A legendary pelt's quality does not depend on how you kill it. The area appears on the map once you have the Legendary Animals map (Chapter 2, Hosea's mission). Inside the \"?\" area, find clues with Eagle Eye and follow the tracks.",
+      "unlock": "Appears only after Master Hunter Challenge Rank 9.",
+      "availabilityNote": "",
+      "links": [
+        "Guide and map (RDR2.org)",
+        "Google: where to find"
+      ]
+    },
+    "leg_moose": {
+      "habitat": "Roanoke Ridge, by the lake north of the \"R\" in ROANOKE, east of Doverhill by the waterfall.",
+      "perfectKill": "Fast and tough: full Dead Eye, Express rounds to the heart and neck.",
+      "behavior": "A legendary pelt's quality does not depend on how you kill it. The area appears on the map once you have the Legendary Animals map (Chapter 2, Hosea's mission). Inside the \"?\" area, find clues with Eagle Eye and follow the tracks.",
+      "unlock": "Available from Chapter 2.",
+      "availabilityNote": "",
+      "links": [
+        "Guide and map (RDR2.org)",
+        "Google: where to find"
+      ]
+    },
+    "leg_pronghorn": {
+      "habitat": "Rio Bravo, by Rio Del Lobo Rock (New Austin).",
+      "perfectKill": "Very skittish: sneak up and shoot a vital spot.",
+      "behavior": "A legendary pelt's quality does not depend on how you kill it. The area appears on the map once you have the Legendary Animals map (Chapter 2, Hosea's mission). Inside the \"?\" area, find clues with Eagle Eye and follow the tracks.",
+      "unlock": "Epilogue only (New Austin).",
+      "availabilityNote": "New Austin is only accessible in the Epilogue.",
+      "links": [
+        "Guide and map (RDR2.org)",
+        "Google: where to find"
+      ]
+    },
+    "leg_tatanka_bison": {
+      "habitat": "Hennigan's Stead (New Austin): south-east of MacFarlane's Ranch, north-west of Manteca Falls.",
+      "perfectKill": "High-powered rifle with Express ammo; without vital-spot hits the fight drags on.",
+      "behavior": "A legendary pelt's quality does not depend on how you kill it. The area appears on the map once you have the Legendary Animals map (Chapter 2, Hosea's mission). Inside the \"?\" area, find clues with Eagle Eye and follow the tracks.",
+      "unlock": "Epilogue only (New Austin).",
+      "availabilityNote": "New Austin is only accessible in the Epilogue.",
+      "links": [
+        "Guide and map (RDR2.org)",
+        "Google: where to find"
+      ]
+    },
+    "leg_wolf": {
+      "habitat": "Cotorra Springs, south of the gap between the letters \"A\" and \"R\" of AMBARINO.",
+      "perfectKill": "Not very tough: Rifle, shot to a vital spot.",
+      "behavior": "A legendary pelt's quality does not depend on how you kill it. The area appears on the map once you have the Legendary Animals map (Chapter 2, Hosea's mission). Inside the \"?\" area, find clues with Eagle Eye and follow the tracks.",
+      "unlock": "Available from Chapter 2.",
+      "availabilityNote": "",
+      "links": [
+        "Guide and map (RDR2.org)",
+        "Google: where to find"
+      ]
+    },
+    "leg_white_bison": {
+      "habitat": "Lake Isabella, north-west of the \"A\" in AMBARINO.",
+      "perfectKill": "High-powered rifle, Express ammo, accurate shots.",
+      "behavior": "A legendary pelt's quality does not depend on how you kill it. The area appears on the map once you have the Legendary Animals map (Chapter 2, Hosea's mission). Inside the \"?\" area, find clues with Eagle Eye and follow the tracks.",
+      "unlock": "Available from Chapter 2.",
+      "availabilityNote": "",
+      "links": [
+        "Guide and map (RDR2.org)",
+        "Google: where to find"
+      ]
+    }
+  },
+  "materials": {
+    "perfect_alligator": "Clean kill (no extra hits) of a 3★ animal with the right weapon.",
+    "perfect_armadillo": "Clean kill (no extra hits) of a 3★ animal with the right weapon.",
+    "perfect_badger": "Clean kill (no extra hits) of a 3★ animal with the right weapon.",
+    "perfect_bear": "Clean kill (no extra hits) of a 3★ animal with the right weapon.",
+    "perfect_black_bear": "Clean kill (no extra hits) of a 3★ animal with the right weapon.",
+    "perfect_beaver": "Clean kill (no extra hits) of a 3★ animal with the right weapon.",
+    "perfect_bison": "Clean kill (no extra hits) of a 3★ animal with the right weapon.",
+    "perfect_boar": "Clean kill (no extra hits) of a 3★ animal with the right weapon.",
+    "perfect_buck": "Clean kill (no extra hits) of a 3★ animal with the right weapon.",
+    "perfect_bull": "Clean kill (no extra hits) of a 3★ animal with the right weapon.",
+    "perfect_collared_peccary": "Clean kill (no extra hits) of a 3★ animal with the right weapon.",
+    "perfect_cougar": "Clean kill (no extra hits) of a 3★ animal with the right weapon.",
+    "perfect_cow": "Clean kill (no extra hits) of a 3★ animal with the right weapon.",
+    "perfect_coyote": "Clean kill (no extra hits) of a 3★ animal with the right weapon.",
+    "perfect_deer": "Clean kill (no extra hits) of a 3★ animal with the right weapon.",
+    "perfect_elk": "Clean kill (no extra hits) of a 3★ animal with the right weapon.",
+    "perfect_fox": "Clean kill (no extra hits) of a 3★ animal with the right weapon.",
+    "perfect_gila_monster": "Clean kill (no extra hits) of a 3★ animal with the right weapon.",
+    "perfect_goat": "Clean kill (no extra hits) of a 3★ animal with the right weapon.",
+    "perfect_iguana": "Clean kill (no extra hits) of a 3★ animal with the right weapon.",
+    "perfect_moose": "Clean kill (no extra hits) of a 3★ animal with the right weapon.",
+    "perfect_muskrat": "Clean kill (no extra hits) of a 3★ animal with the right weapon.",
+    "perfect_opossum": "Clean kill (no extra hits) of a 3★ animal with the right weapon.",
+    "perfect_ox": "Clean kill (no extra hits) of a 3★ animal with the right weapon.",
+    "perfect_panther": "Clean kill (no extra hits) of a 3★ animal with the right weapon.",
+    "perfect_pig": "Clean kill (no extra hits) of a 3★ animal with the right weapon.",
+    "perfect_pronghorn": "Clean kill (no extra hits) of a 3★ animal with the right weapon.",
+    "perfect_rabbit": "Clean kill (no extra hits) of a 3★ animal with the right weapon.",
+    "perfect_raccoon": "Clean kill (no extra hits) of a 3★ animal with the right weapon.",
+    "perfect_ram": "Clean kill (no extra hits) of a 3★ animal with the right weapon.",
+    "perfect_rat": "Clean kill (no extra hits) of a 3★ animal with the right weapon.",
+    "perfect_sheep": "Clean kill (no extra hits) of a 3★ animal with the right weapon.",
+    "perfect_skunk": "Clean kill (no extra hits) of a 3★ animal with the right weapon.",
+    "perfect_snake": "Clean kill (no extra hits) of a 3★ animal with the right weapon.",
+    "perfect_squirrel": "Clean kill (no extra hits) of a 3★ animal with the right weapon.",
+    "perfect_wolf": "Clean kill (no extra hits) of a 3★ animal with the right weapon.",
+    "feather_robin": "Plucked from a bird of any quality.",
+    "feather_oriole": "Plucked from a bird of any quality.",
+    "feather_raven": "Plucked from a bird of any quality.",
+    "feather_woodpecker": "Plucked from a bird of any quality.",
+    "feather_chicken": "Plucked from a bird of any quality.",
+    "feather_goose": "Plucked from a bird of any quality.",
+    "feather_hawk": "Plucked from a bird of any quality.",
+    "feather_quail": "Plucked from a bird of any quality.",
+    "feather_pheasant": "Plucked from a bird of any quality.",
+    "feather_owl": "Plucked from a bird of any quality.",
+    "feather_turkey": "Plucked from a bird of any quality.",
+    "feather_eagle": "Plucked from a bird of any quality.",
+    "feather_cardinal": "Plucked from a bird of any quality.",
+    "feather_rooster": "Plucked from a bird of any quality.",
+    "feather_songbird": "Plucked from a bird of any quality.",
+    "feather_sparrow": "Plucked from a bird of any quality.",
+    "feather_cedar_waxwing": "Plucked from a bird of any quality.",
+    "feather_blue_jay": "Plucked from a bird of any quality.",
+    "feather_duck": "Plucked from a bird of any quality.",
+    "feather_pigeon": "Plucked from a bird of any quality.",
+    "feather_crow": "Plucked from a bird of any quality.",
+    "feather_vulture": "Plucked from a bird of any quality.",
+    "feather_seagull": "Plucked from a bird of any quality.",
+    "feather_loon": "Plucked from a bird of any quality.",
+    "feather_condor": "Plucked from a bird of any quality.",
+    "legendary_bear_pelt": "Skinned from the legendary animal. Sell it to the Trapper once — that unlocks ALL of his items made from this animal. If you lose the pelt, the Trapper still receives it on his own (without payment).",
+    "legendary_bear_claw": "Taken from the legendary animal together with the pelt. If you didn't collect it, it goes to the Fence automatically.",
+    "legendary_beaver_pelt": "Skinned from the legendary animal. Sell it to the Trapper once — that unlocks ALL of his items made from this animal. If you lose the pelt, the Trapper still receives it on his own (without payment).",
+    "legendary_beaver_tooth": "Taken from the legendary animal together with the pelt. If you didn't collect it, it goes to the Fence automatically.",
+    "legendary_ram_pelt": "Skinned from the legendary animal. Sell it to the Trapper once — that unlocks ALL of his items made from this animal. If you lose the pelt, the Trapper still receives it on his own (without payment).",
+    "legendary_ram_horn": "Taken from the legendary animal together with the pelt. If you didn't collect it, it goes to the Fence automatically.",
+    "legendary_boar_pelt": "Skinned from the legendary animal. Sell it to the Trapper once — that unlocks ALL of his items made from this animal. If you lose the pelt, the Trapper still receives it on his own (without payment).",
+    "legendary_boar_tusk": "Taken from the legendary animal together with the pelt. If you didn't collect it, it goes to the Fence automatically.",
+    "legendary_buck_pelt": "Skinned from the legendary animal. Sell it to the Trapper once — that unlocks ALL of his items made from this animal. If you lose the pelt, the Trapper still receives it on his own (without payment).",
+    "legendary_buck_antler": "Taken from the legendary animal together with the pelt. If you didn't collect it, it goes to the Fence automatically.",
+    "legendary_bullgator_pelt": "Skinned from the legendary animal. Sell it to the Trapper once — that unlocks ALL of his items made from this animal. If you lose the pelt, the Trapper still receives it on his own (without payment).",
+    "legendary_bullgator_tooth": "Taken from the legendary animal together with the pelt. If you didn't collect it, it goes to the Fence automatically.",
+    "legendary_cougar_pelt": "Skinned from the legendary animal. Sell it to the Trapper once — that unlocks ALL of his items made from this animal. If you lose the pelt, the Trapper still receives it on his own (without payment).",
+    "legendary_cougar_fang": "Taken from the legendary animal together with the pelt. If you didn't collect it, it goes to the Fence automatically.",
+    "legendary_coyote_pelt": "Skinned from the legendary animal. Sell it to the Trapper once — that unlocks ALL of his items made from this animal. If you lose the pelt, the Trapper still receives it on his own (without payment).",
+    "legendary_coyote_fang": "Taken from the legendary animal together with the pelt. If you didn't collect it, it goes to the Fence automatically.",
+    "legendary_elk_pelt": "Skinned from the legendary animal. Sell it to the Trapper once — that unlocks ALL of his items made from this animal. If you lose the pelt, the Trapper still receives it on his own (without payment).",
+    "legendary_elk_antler": "Taken from the legendary animal together with the pelt. If you didn't collect it, it goes to the Fence automatically.",
+    "legendary_fox_pelt": "Skinned from the legendary animal. Sell it to the Trapper once — that unlocks ALL of his items made from this animal. If you lose the pelt, the Trapper still receives it on his own (without payment).",
+    "legendary_fox_claw": "Taken from the legendary animal together with the pelt. If you didn't collect it, it goes to the Fence automatically.",
+    "legendary_panther_pelt": "Skinned from the legendary animal. Sell it to the Trapper once — that unlocks ALL of his items made from this animal. If you lose the pelt, the Trapper still receives it on his own (without payment).",
+    "legendary_panther_eye": "Taken from the legendary animal together with the pelt. If you didn't collect it, it goes to the Fence automatically.",
+    "legendary_moose_pelt": "Skinned from the legendary animal. Sell it to the Trapper once — that unlocks ALL of his items made from this animal. If you lose the pelt, the Trapper still receives it on his own (without payment).",
+    "legendary_moose_antler": "Taken from the legendary animal together with the pelt. If you didn't collect it, it goes to the Fence automatically.",
+    "legendary_pronghorn_pelt": "Skinned from the legendary animal. Sell it to the Trapper once — that unlocks ALL of his items made from this animal. If you lose the pelt, the Trapper still receives it on his own (without payment).",
+    "legendary_pronghorn_horn": "Taken from the legendary animal together with the pelt. If you didn't collect it, it goes to the Fence automatically.",
+    "legendary_tatanka_bison_pelt": "Skinned from the legendary animal. Sell it to the Trapper once — that unlocks ALL of his items made from this animal. If you lose the pelt, the Trapper still receives it on his own (without payment).",
+    "legendary_tatanka_bison_horn": "Taken from the legendary animal together with the pelt. If you didn't collect it, it goes to the Fence automatically.",
+    "legendary_wolf_pelt": "Skinned from the legendary animal. Sell it to the Trapper once — that unlocks ALL of his items made from this animal. If you lose the pelt, the Trapper still receives it on his own (without payment).",
+    "legendary_wolf_heart": "Taken from the legendary animal together with the pelt. If you didn't collect it, it goes to the Fence automatically.",
+    "legendary_white_bison_pelt": "Skinned from the legendary animal. Sell it to the Trapper once — that unlocks ALL of his items made from this animal. If you lose the pelt, the Trapper still receives it on his own (without payment).",
+    "legendary_white_bison_horn": "Taken from the legendary animal together with the pelt. If you didn't collect it, it goes to the Fence automatically.",
+    "vintage_handcuffs": "Reward from Phineas T. Ramsbottom for the first complete set of cigarette cards (\"Smoking and Other Hobbies\").",
+    "gold_jointed_bracelet": "Valuable: found when looting houses, stashes and during robberies. Don't sell it to the Fence if you need the talisman.",
+    "silver_chain_bracelet": "Valuable: found when looting houses, stashes and during robberies.",
+    "quartz_chunk": "Reward from Deborah MacGuiness for the letter about your first dinosaur bone (\"A Test of Faith\"). Don't sell or donate it — there is only one.",
+    "gold_earring": "Valuable: found when looting houses, stashes and during robberies.",
+    "cobalt_petrified_wood": "On a wagon north-west of Lake Isabella (Ambarino).",
+    "abalone_shell_fragment": "Only one in the game: the boarded-up yellow house in northern Rhodes (near the butcher) — on the workbench in the southern room. Don't sell it to the Fence if you need the talisman.",
+    "silver_earring": "Valuable: found when looting houses, stashes and during robberies.",
+    "old_brass_compass": "On the table in Francis Sinclair's cabin — after sending all 10 rock carving locations (\"Geology for Beginners\").",
+    "lions_paw": "Taken from the lion (it can't be skinned, only looted) in the Stranger mission \"He's British, of Course\" (part IV), near Emerald Ranch."
+  },
+  "items": {
+    "legendary_alligator_gamblers_hat": {
+      "requirement": "Sell the matching legendary pelt to the Trapper first."
+    },
+    "legendary_bear_head_hat": {
+      "requirement": "Sell the matching legendary pelt to the Trapper first."
+    },
+    "legendary_beaver_flop_hat": {
+      "requirement": "Sell the matching legendary pelt to the Trapper first."
+    },
+    "legendary_cougar_flop_hat": {
+      "requirement": "Sell the matching legendary pelt to the Trapper first."
+    },
+    "legendary_coyote_mountain_hat": {
+      "requirement": "Sell the matching legendary pelt to the Trapper first."
+    },
+    "legendary_ram_hat": {
+      "requirement": "Sell the matching legendary pelt to the Trapper first."
+    },
+    "legendary_white_bison_hat": {
+      "requirement": "Sell the matching legendary pelt to the Trapper first."
+    },
+    "beaver_hunting_jacket": {
+      "dataNote": "Trapper crafting lists say 2 Beaver pelts; one Bounty Hunter outfit guide says 1. Using 2 (most sources)."
+    },
+    "legendary_bear_coat": {
+      "requirement": "Sell the matching legendary pelt to the Trapper first."
+    },
+    "legendary_moose_hunting_jacket": {
+      "requirement": "Sell the matching legendary pelt to the Trapper first."
+    },
+    "legendary_panther_cloak": {
+      "requirement": "Sell the matching legendary pelt to the Trapper first."
+    },
+    "legendary_pronghorn_coat": {
+      "requirement": "Sell the matching legendary pelt to the Trapper first."
+    },
+    "legendary_white_bison_coat": {
+      "requirement": "Sell the matching legendary pelt to the Trapper first."
+    },
+    "billy_vest": {
+      "dataNote": "Crafting lists say 2 Armadillo skins; the Desperado outfit guide says 1. Using 2."
+    },
+    "legendary_alligator_vest": {
+      "requirement": "Sell the matching legendary pelt to the Trapper first."
+    },
+    "legendary_bison_vest": {
+      "requirement": "Sell the matching legendary pelt to the Trapper first."
+    },
+    "legendary_buck_vest": {
+      "requirement": "Sell the matching legendary pelt to the Trapper first."
+    },
+    "legendary_cougar_wolf_vest": {
+      "requirement": "Sell the matching legendary pelt to the Trapper first."
+    },
+    "sheepskin_vest": {
+      "dataNote": "Most sources say 2 Sheep pelts, one guide says 1. Using 2."
+    },
+    "legendary_beaver_cavalry_gloves": {
+      "requirement": "Sell the matching legendary pelt to the Trapper first."
+    },
+    "legendary_buck_fox_range_gloves": {
+      "requirement": "Sell the matching legendary pelt to the Trapper first."
+    },
+    "legendary_cougar_riding_gloves": {
+      "requirement": "Sell the matching legendary pelt to the Trapper first."
+    },
+    "legendary_elk_range_gloves": {
+      "requirement": "Sell the matching legendary pelt to the Trapper first."
+    },
+    "legendary_panther_range_gloves": {
+      "requirement": "Sell the matching legendary pelt to the Trapper first.",
+      "dataNote": "Trapper crafting lists say 1 Gila Monster skin; two Deadly Tumble outfit guides say 2. Using 1."
+    },
+    "legendary_pronghorn_range_gloves": {
+      "requirement": "Sell the matching legendary pelt to the Trapper first."
+    },
+    "legendary_ram_rifleman_gloves": {
+      "requirement": "Sell the matching legendary pelt to the Trapper first."
+    },
+    "bull_fowler_boots": {
+      "dataNote": "Most sources say 1 Bull pelt, one guide says 2. Using 1."
+    },
+    "legendary_alligator_fowlers": {
+      "requirement": "Sell the matching legendary pelt to the Trapper first."
+    },
+    "legendary_bear_roper": {
+      "requirement": "Sell the matching legendary pelt to the Trapper first."
+    },
+    "legendary_boar_bison_fowlers": {
+      "requirement": "Sell the matching legendary pelt to the Trapper first."
+    },
+    "legendary_elk_moccasins": {
+      "requirement": "Sell the matching legendary pelt to the Trapper first."
+    },
+    "legendary_fox_moccasins": {
+      "requirement": "Sell the matching legendary pelt to the Trapper first.",
+      "dataNote": "Crafting lists say Legendary Fox Pelt + Perfect Elk Pelt; one outfit guide lists a Perfect Fox Pelt instead of the legendary one. Using the legendary pelt."
+    },
+    "legendary_moose_moccasins": {
+      "requirement": "Sell the matching legendary pelt to the Trapper first."
+    },
+    "legendary_bison_batwing_chaps": {
+      "requirement": "Sell the matching legendary pelt to the Trapper first.",
+      "dataNote": "Price: $32 in crafting lists, $30 in the outfit guide."
+    },
+    "legendary_coyote_half_chaps": {
+      "requirement": "Sell the matching legendary pelt to the Trapper first."
+    },
+    "legendary_elk_half_chaps": {
+      "requirement": "Sell the matching legendary pelt to the Trapper first."
+    },
+    "legendary_ram_batwing_chaps": {
+      "requirement": "Sell the matching legendary pelt to the Trapper first."
+    },
+    "legendary_wolf_batwing_chaps": {
+      "requirement": "Sell the matching legendary pelt to the Trapper first."
+    },
+    "glorious_accessory": {
+      "dataNote": "Most sources say 4 Woodpecker feathers, one (Vandal) says 3. Using 4."
+    },
+    "beaver_tooth_trinket": {
+      "effect": "Weapons degrade 10% slower."
+    },
+    "buck_antler_trinket": {
+      "effect": "Improves the quality of animal parts when skinning."
+    },
+    "cougar_fang_trinket": {
+      "effect": "10% increase to Stamina experience gained."
+    },
+    "coyote_fang_trinket": {
+      "effect": "10% increase to Dead Eye experience gained."
+    },
+    "elk_antler_trinket": {
+      "effect": "10% increase to money found when looting."
+    },
+    "fox_claw_trinket": {
+      "effect": "Eagle Eye lasts 5 seconds longer."
+    },
+    "lions_paw_trinket": {
+      "effect": "10% increase to Stamina experience gained."
+    },
+    "moose_antler_trinket": {
+      "effect": "10% increase to Health experience gained."
+    },
+    "panther_eye_trinket": {
+      "effect": "Dead Eye meter drains 10% slower for 3 seconds."
+    },
+    "pronghorn_horn_trinket": {
+      "effect": "Carcasses on your horse do not rot."
+    },
+    "ram_horn_trinket": {
+      "effect": "Double yield when picking Oregano, Creeping Thyme and Wild Mint."
+    },
+    "wolf_heart_trinket": {
+      "effect": "Doubles your tolerance to alcohol."
+    },
+    "tatanka_bison_horn_trinket": {
+      "effect": "10% reduction in melee damage taken."
+    },
+    "alligator_tooth_talisman": {
+      "effect": "Dead Eye core drains 10% slower."
+    },
+    "bear_claw_talisman": {
+      "effect": "Health core drains 10% slower."
+    },
+    "boar_tusk_talisman": {
+      "effect": "Horse Health and Stamina cores drain 10% slower."
+    },
+    "bison_horn_talisman": {
+      "effect": "Stamina core drains 10% slower."
+    },
+    "raven_claw_talisman": {
+      "effect": "Weapons degrade 20% slower."
+    }
+  }
+}

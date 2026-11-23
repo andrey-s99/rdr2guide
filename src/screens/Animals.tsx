@@ -11,9 +11,9 @@ import { needsForScope, state } from '../state/store';
 import '../styles/screens/animals.css';
 
 const TITLES: Record<AnimalsTab, string> = {
-  regular: 'Обычные звери',
-  legendary: 'Легендарные звери',
-  birds: 'Птицы',
+  regular: 'Regular animals',
+  legendary: 'Legendary animals',
+  birds: 'Birds',
 };
 
 const ICONS: Record<AnimalsTab, string> = { regular: 'paw', legendary: 'legendary', birds: 'bird' };
@@ -26,12 +26,12 @@ const TYPE_OF_TAB: Record<AnimalsTab, Animal['type']> = {
 
 const REGION_OPTIONS: ChipOption<RegionId>[] = regions.map((r) => ({
   value: r.id,
-  label: r.nameRu,
+  label: r.nameEn,
 }));
 
 /** Region filter is shared by all three tabs for the session (empty = all regions). */
 export const animalRegionFilter = sessionSignal<RegionId[]>('animals:regions', []);
-/** «Только нужные», on by default. */
+/** "Needed only", on by default. */
 export const animalOnlyNeeded = sessionSignal<boolean>('animals:only-needed', true);
 
 interface AnimalEntry {
@@ -50,7 +50,7 @@ export function Animals({ tab }: AnimalsProps) {
   const selectedRegions = animalRegionFilter.value;
   const onlyNeeded = animalOnlyNeeded.value;
 
-  // Needs of the «all» scope, computed once per state change.
+  // Needs of the "all" scope, computed once per state change.
   const needs = useComputed(() => needsForScope('all', state.value));
   const stock = state.value.stock;
 
@@ -77,13 +77,13 @@ export function Animals({ tab }: AnimalsProps) {
     // Legendary: not yet obtained first, then by need.
     if (a.peltInStock !== b.peltInStock) return a.peltInStock ? 1 : -1;
     if (a.need !== b.need) return b.need - a.need;
-    return a.animal.nameRu.localeCompare(b.animal.nameRu, 'ru');
+    return a.animal.nameEn.localeCompare(b.animal.nameEn, 'en');
   });
 
   let empty: string | null = null;
   if (visible.length === 0) {
-    if (inRegions.length > 0) empty = 'Все звери из этого списка уже не нужны';
-    else empty = 'В выбранных регионах таких животных нет';
+    if (inRegions.length > 0) empty = 'Nothing more is needed from the animals in this list';
+    else empty = 'No such animals in the selected regions';
   }
 
   return (
@@ -93,13 +93,13 @@ export function Animals({ tab }: AnimalsProps) {
         <FilterChips<RegionId>
           multiple
           scroll
-          ariaLabel="Регионы"
+          ariaLabel="Regions"
           options={REGION_OPTIONS}
           value={selectedRegions}
           onChange={(v) => (animalRegionFilter.value = v)}
         />
         <label class="switch">
-          <span>Только нужные</span>
+          <span>Needed only</span>
           <input
             type="checkbox"
             role="switch"

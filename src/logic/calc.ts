@@ -53,7 +53,7 @@ export interface Progress {
   total: number;
 }
 
-/** Prerequisite progress, e.g. 0/6 for «Легенда Востока». */
+/** Prerequisite progress, e.g. 0/6. */
 export function prerequisiteProgress(item: Item, crafted: Crafted): Progress {
   const total = item.prerequisiteItemIds.length;
   const done = item.prerequisiteItemIds.filter((id) => isCrafted(id, crafted)).length;
@@ -73,7 +73,7 @@ export function outfitProgress(outfit: Outfit, crafted: Crafted): OutfitProgress
   return { craftedParts, totalParts, complete: craftedParts === totalParts };
 }
 
-/** Number of crafted items among a list (e.g. «Изготовлено X из Y»). */
+/** Number of crafted items among a list (e.g. "Crafted X of Y"). */
 export function craftedProgress(list: readonly Item[], crafted: Crafted): Progress {
   return { done: list.filter((i) => isCrafted(i.id, crafted)).length, total: list.length };
 }

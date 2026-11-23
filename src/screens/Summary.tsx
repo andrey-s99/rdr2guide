@@ -1,7 +1,6 @@
 import { useEffect, useMemo } from 'preact/hooks';
 import { AppLink } from '../components/AppLink';
 import { EmptyState } from '../components/EmptyState';
-import { EnName } from '../components/EnName';
 import { MaterialRow } from '../components/MaterialRow';
 import { ProgressBar } from '../components/ProgressBar';
 import { SectionHeader } from '../components/SectionHeader';
@@ -42,9 +41,9 @@ export interface SummaryProps {
 }
 
 const GROUP_OPTIONS: SegmentOption<SummaryGroupMode>[] = [
-  { value: 'animal', label: 'По зверям' },
-  { value: 'region', label: 'По регионам' },
-  { value: 'flat', label: 'Списком' },
+  { value: 'animal', label: 'By animal' },
+  { value: 'region', label: 'By region' },
+  { value: 'flat', label: 'List' },
 ];
 
 const SHOW_COLLECTED_KEY = 'summary:show-collected';
@@ -73,7 +72,7 @@ interface RowsProps {
 /** Non-hunting materials have no animal link, so show where to get them instead. */
 function materialNote(materialId: string): string | undefined {
   const m = materialsById.get(materialId);
-  return m?.kind === 'special' ? m.sourceRu : undefined;
+  return m?.kind === 'special' ? m.sourceEn : undefined;
 }
 
 function MaterialRows({ rows, scopeItemIds }: RowsProps) {
@@ -102,13 +101,13 @@ function AnimalGroup({ group, scopeItemIds, regionInfo }: AnimalGroupProps) {
   const { animal } = group;
   const regionNames = animal
     ? (regionInfo === 'primary' ? animal.regions.slice(0, 1) : animal.regions.slice(1))
-        .map((id) => regionsById.get(id)?.nameRu ?? id)
+        .map((id) => regionsById.get(id)?.nameEn ?? id)
         .join(', ')
     : '';
   const badge = (
     <span
       class={group.remaining > 0 ? 'badge badge--brass' : 'badge badge--ok'}
-      aria-label={`Осталось добыть: ${group.remaining}`}
+      aria-label={`Still to collect: ${group.remaining}`}
     >
       {group.remaining}
     </span>
@@ -119,8 +118,7 @@ function AnimalGroup({ group, scopeItemIds, regionInfo }: AnimalGroupProps) {
         {animal ? (
           <AppLink to={`/animal/${animal.id}`} class="summary-group__head">
             <span class="summary-group__main">
-              <span class="summary-group__name">{animal.nameRu}</span>
-              <EnName text={animal.nameEn} />
+              <span class="summary-group__name">{animal.nameEn}</span>
               {regionNames && <span class="summary-group__regions">{regionNames}</span>}
             </span>
             {badge}
@@ -129,7 +127,7 @@ function AnimalGroup({ group, scopeItemIds, regionInfo }: AnimalGroupProps) {
         ) : (
           <span class="summary-group__head">
             <span class="summary-group__main">
-              <span class="summary-group__name">{group.titleRu}</span>
+              <span class="summary-group__name">{group.title}</span>
             </span>
             {badge}
           </span>
@@ -169,13 +167,15 @@ export function Summary({ scope: scopeParam, group: groupParam }: SummaryProps) 
 
   let content;
   if (goalsEmpty) {
-    content = <EmptyState icon="star" text="Отметьте звёздочкой вещи или костюмы" />;
+    content = <EmptyState icon="star" text="Star items or outfits to set goals" />;
   } else if (rows.length === 0) {
     content = (
       <EmptyState
         icon="check"
         text={
-          needs.rows.length > 0 ? 'Всё нужное уже добыто' : 'Здесь пока пусто — всё изготовлено'
+          needs.rows.length > 0
+            ? 'Everything needed is collected'
+            : 'Nothing here — everything is crafted'
         }
       />
     );
@@ -189,9 +189,9 @@ export function Summary({ scope: scopeParam, group: groupParam }: SummaryProps) 
     content = groupByRegion(rows).map((rg) => (
       <section key={rg.id} class="summary-region">
         <SectionHeader
-          title={rg.titleRu}
+          title={rg.title}
           icon={rg.region ? 'map-pin' : undefined}
-          extra={`${rg.remaining} шт.`}
+          extra={`${rg.remaining} left`}
         />
         {rg.region ? (
           rg.groups.map((g) => (
@@ -210,11 +210,11 @@ export function Summary({ scope: scopeParam, group: groupParam }: SummaryProps) 
 
   return (
     <div class="screen summary">
-      <h2 class="visually-hidden">Сводка</h2>
+      <h2 class="visually-hidden">Summary</h2>
 
       <div class="summary-controls">
         <label class="summary-scope">
-          <span class="summary-scope__label">Что считать</span>
+          <span class="summary-scope__label">What to count</span>
           <select
             class="select"
             value={scope}
@@ -224,7 +224,7 @@ export function Summary({ scope: scopeParam, group: groupParam }: SummaryProps) 
               <optgroup key={g.label} label={g.label}>
                 {g.scopes.map((sc) => (
                   <option key={sc.id} value={sc.id}>
-                    {sc.labelRu}
+                    {sc.labelEn}
                   </option>
                 ))}
               </optgroup>
@@ -234,14 +234,14 @@ export function Summary({ scope: scopeParam, group: groupParam }: SummaryProps) 
 
         <SegmentedControl
           variant="boxed"
-          ariaLabel="Группировка"
+          ariaLabel="Grouping"
           options={GROUP_OPTIONS}
           value={group}
           onChange={(g) => change(scope, g)}
         />
 
         <label class="switch">
-          <span>Показывать собранное</span>
+          <span>Show collected</span>
           <input
             type="checkbox"
             role="switch"
@@ -257,7 +257,7 @@ export function Summary({ scope: scopeParam, group: groupParam }: SummaryProps) 
       {!goalsEmpty && (
         <div class="summary-totals">
           <p class="summary-totals__line" data-testid="summary-remaining">
-            Осталось добыть: <strong class="num">{needs.totals.units}</strong> шт.,{' '}
+            Still to collect: <strong class="num">{needs.totals.units}</strong>,{' '}
             <strong class="num">{needs.totals.distinct}</strong> {kindsWord(needs.totals.distinct)}
           </p>
           <ProgressBar

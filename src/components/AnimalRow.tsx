@@ -3,13 +3,12 @@ import { regionsById } from '../data';
 import type { Animal } from '../data/types';
 import { BirdIcon, CheckIcon, LegendaryIcon, PawIcon, WarningIcon } from '../icons';
 import { AppLink } from './AppLink';
-import { EnName } from './EnName';
 
 export interface AnimalRowProps {
   animal: Animal;
-  /** Σ remaining of its materials (area `all`) → badge «нужно N». Ignored for legendary when `peltInStock` is set. */
+  /** Σ remaining of its materials (area `all`) → badge "need N". Ignored for legendary when `peltInStock` is set. */
   need?: number;
-  /** Legendary only: pelt is in stock → «Шкура у Охотника ✓», otherwise «Не добыт». */
+  /** Legendary only: pelt is in stock → "Pelt at Trapper ✓", otherwise "Not taken". */
   peltInStock?: boolean;
   /** Extra line under the name (e.g. other regions in the summary). */
   note?: ComponentChildren;
@@ -17,7 +16,7 @@ export interface AnimalRowProps {
   showRegions?: boolean;
 }
 
-const DANGER_LABEL = { aggressive: 'Агрессивен', dangerous: 'Опасен' } as const;
+const DANGER_LABEL = { aggressive: 'Aggressive', dangerous: 'Dangerous' } as const;
 
 export function AnimalTypeIcon({ type, size = 26 }: { type: Animal['type']; size?: number }) {
   if (type === 'legendary') return <LegendaryIcon size={size} />;
@@ -37,7 +36,7 @@ export function DangerBadge({ danger }: { danger: Animal['danger'] }) {
 }
 
 export function EpilogueBadge() {
-  return <span class="badge badge--epilogue">Эпилог</span>;
+  return <span class="badge badge--epilogue">Epilogue</span>;
 }
 
 /** Animal list row (SPEC 9.7). The whole row opens #/animal/<id>. */
@@ -46,17 +45,17 @@ export function AnimalRow({ animal, need, peltInStock, note, showRegions = true 
   if (animal.type === 'legendary' && peltInStock !== undefined) {
     right = peltInStock ? (
       <span class="badge badge--ok">
-        Шкура у Охотника <CheckIcon size={14} strokeWidth={2} />
+        Pelt at Trapper <CheckIcon size={14} strokeWidth={2} />
       </span>
     ) : (
-      <span class="badge">Не добыт</span>
+      <span class="badge">Not taken</span>
     );
   } else if (need !== undefined) {
     right =
       need > 0 ? (
-        <span class="badge badge--accent num">нужно {need}</span>
+        <span class="badge badge--accent num">need {need}</span>
       ) : (
-        <span class="badge badge--ok">хватает</span>
+        <span class="badge badge--ok">enough</span>
       );
   }
   return (
@@ -65,14 +64,13 @@ export function AnimalRow({ animal, need, peltInStock, note, showRegions = true 
         <AnimalTypeIcon type={animal.type} />
       </span>
       <span class="list-row__main">
-        <span class="list-row__title clamp-2">{animal.nameRu}</span>
-        <EnName text={animal.nameEn} />
+        <span class="list-row__title clamp-2">{animal.nameEn}</span>
         {note && <span class="list-row__note">{note}</span>}
         <span class="list-row__meta">
           {showRegions &&
             animal.regions.map((r) => (
               <span key={r} class="tag">
-                {regionsById.get(r)?.nameRu ?? r}
+                {regionsById.get(r)?.nameEn ?? r}
               </span>
             ))}
           <DangerBadge danger={animal.danger} />

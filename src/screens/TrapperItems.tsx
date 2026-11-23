@@ -9,7 +9,7 @@ import { sessionSignal, statusFilterSignal } from '../state/session';
 import { state } from '../state/store';
 import '../styles/screens/trapper.css';
 
-/** Охотник → Предметы (SPEC 9.3). */
+/** Trapper → Items (SPEC 9.3). */
 export function TrapperItems() {
   const filter = statusFilterSignal('trapper-items');
   const collapsed = sessionSignal<readonly string[]>('trapper-items:collapsed', []);
@@ -37,7 +37,7 @@ export function TrapperItems() {
   return (
     <div class="screen trapper-screen">
       <FilterChips
-        ariaLabel="Фильтр предметов"
+        ariaLabel="Item filter"
         scroll
         options={options}
         value={filter.value}
@@ -48,10 +48,10 @@ export function TrapperItems() {
           icon="hat"
           text={
             filter.value === 'not_crafted'
-              ? 'Здесь пока пусто — всё изготовлено'
+              ? 'Nothing here — everything is crafted'
               : filter.value === 'ready'
-                ? 'Пока нет предметов, для которых всё добыто'
-                : 'Здесь пока пусто'
+                ? 'No items have all materials collected yet'
+                : 'Nothing here yet'
           }
         />
       ) : (
@@ -61,9 +61,9 @@ export function TrapperItems() {
           return (
             <section key={category.id} class="trapper-group">
               <SectionHeader
-                title={category.nameRu}
+                title={category.nameEn}
                 icon={category.icon}
-                extra={`сделано ${progress.done} из ${progress.total}`}
+                extra={`${progress.done} of ${progress.total} crafted`}
                 open={open}
                 onToggle={() => toggle(category.id)}
                 controls={regionId}

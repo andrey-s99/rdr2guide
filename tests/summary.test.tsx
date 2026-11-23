@@ -60,11 +60,11 @@ describe('Summary screen: 15.3 totals on screen', () => {
     it(`${scope}: ${units} units, ${distinct} kinds`, () => {
       open(`/summary?scope=${encodeURIComponent(scope)}&group=flat`);
       const text = totalsText();
-      expect(text).toMatch(new RegExp(`^Осталось добыть: ${units} шт\\., ${distinct} вид`));
+      expect(text).toMatch(new RegExp(`^Still to collect: ${units}, ${distinct} material type`));
       // The list itself shows the same numbers.
       expect(renderedRows()).toEqual({ count: distinct, units });
       if (itemsTotal !== null) {
-        expect(screen.getByText(new RegExp(`^Изготовлено 0 из ${itemsTotal} `))).toBeTruthy();
+        expect(screen.getByText(new RegExp(`^Crafted 0 of ${itemsTotal} `))).toBeTruthy();
       }
       const select = screen.getByRole('combobox') as HTMLSelectElement;
       expect(select.value).toBe(scope);
@@ -74,18 +74,12 @@ describe('Summary screen: 15.3 totals on screen', () => {
   it('select has optgroups and all scopes (16 outfits, 8 trapper categories)', () => {
     open('/summary?scope=all');
     const groups = [...document.querySelectorAll('optgroup')].map((g) => g.label);
-    expect(groups).toEqual(['Общее', 'Охотник', 'Костюмы', 'Скупщик']);
+    expect(groups).toEqual(['General', 'Trapper', 'Outfits', 'Fence']);
     const values = [...document.querySelectorAll('option')].map((o) => o.value);
     expect(values.filter((v) => v.startsWith('outfit:'))).toHaveLength(16);
     expect(values.filter((v) => v.startsWith('trapper_cat:'))).toHaveLength(8);
     expect(values).toEqual(
-      expect.arrayContaining([
-        'all',
-        'goals',
-        'trapper',
-        'trapper_outfits',
-        'fence',
-      ]),
+      expect.arrayContaining(['all', 'goals', 'trapper', 'trapper_outfits', 'fence']),
     );
   });
 });
@@ -98,7 +92,7 @@ describe('Summary screen: grouping', () => {
     expect(heads.length).toBeGreaterThan(10);
     const first = heads[0] as HTMLAnchorElement;
     expect(first.getAttribute('href')).toMatch(/^#\/animal\//);
-    expect(screen.getByText('Особые предметы')).toBeTruthy();
+    expect(screen.getByText('Special items')).toBeTruthy();
     expect(renderedRows()).toEqual({ count: 103, units: 299 });
     // Group badges are sorted by remaining desc.
     const badges = [...document.querySelectorAll('.summary-group__head .badge')].map((b) =>
@@ -109,13 +103,13 @@ describe('Summary screen: grouping', () => {
 
   it('by region: region headers in regions.json order, special group last', () => {
     open('/summary?scope=all');
-    fireEvent.click(screen.getByRole('tab', { name: 'По регионам' }));
+    fireEvent.click(screen.getByRole('tab', { name: 'By region' }));
     expect(currentRoute.value.query.group).toBe('region');
     const titles = [...document.querySelectorAll('.summary-region .section-header__title')].map(
       (el) => el.textContent,
     );
-    const regionNames = regions.map((r) => r.nameRu);
-    expect(titles.at(-1)).toBe('Особые предметы');
+    const regionNames = regions.map((r) => r.nameEn);
+    expect(titles.at(-1)).toBe('Special items');
     expect(titles.slice(0, -1)).toEqual(regionNames.filter((n) => titles.includes(n)));
     expect(renderedRows()).toEqual({ count: 103, units: 299 });
     expect(uiPrefs().summaryGroup).toBe('region');
@@ -131,17 +125,18 @@ describe('Summary screen: grouping', () => {
     expect([...values].sort((a, b) => b - a)).toEqual(values);
   });
 
-  it('«Показывать собранное» reveals rows with remaining = 0', () => {
+  it('"Show collected" reveals rows with remaining = 0', () => {
     resetStoreForTests({
-      schemaVersion: 1,
+      schemaVersion: 2,
       crafted: {},
       stock: { perfect_snake: 30 },
       goals: { items: [], outfits: [] },
-      settings: { theme: 'night', showEnglish: true },
+      challenges: {},
+      settings: { theme: 'night' },
     });
     open('/summary?scope=all&group=flat');
     expect(renderedRows()).toEqual({ count: 102, units: 284 });
-    fireEvent.click(screen.getByRole('switch', { name: 'Показывать собранное' }));
+    fireEvent.click(screen.getByRole('switch', { name: 'Show collected' }));
     expect(renderedRows()).toEqual({ count: 103, units: 284 });
   });
 });
@@ -149,14 +144,14 @@ describe('Summary screen: grouping', () => {
 describe('Summary screen: scope selection and persistence', () => {
   it('goals scope without goals shows the empty state', () => {
     open('/summary?scope=goals');
-    expect(screen.getByText('Отметьте звёздочкой вещи или костюмы')).toBeTruthy();
+    expect(screen.getByText('Star items or outfits to set goals')).toBeTruthy();
     expect(screen.queryByTestId('summary-remaining')).toBeNull();
   });
 
   it('goals scope with an outfit goal shows its totals', () => {
     toggleGoalOutfit('bear_hunter');
     open('/summary?scope=goals&group=flat');
-    expect(totalsText()).toMatch(/^Осталось добыть: 6 шт\., 5 вид/);
+    expect(totalsText()).toMatch(/^Still to collect: 6, 5 material types/);
   });
 
   it('default without query: all when there are no goals, goals otherwise', () => {
@@ -166,13 +161,13 @@ describe('Summary screen: scope selection and persistence', () => {
     toggleGoalOutfit('dreamcatcher');
     open('/summary');
     expect(currentRoute.value.query.scope).toBe('goals');
-    expect(totalsText()).toMatch(/^Осталось добыть: 4 шт\., 4 вид/);
+    expect(totalsText()).toMatch(/^Still to collect: 4, 4 material types/);
   });
 
   it('invalid scope in URL falls back to all', () => {
     open('/summary?scope=outfit:nope');
     expect(currentRoute.value.query.scope).toBe('all');
-    expect(totalsText()).toMatch(/^Осталось добыть: 299 шт\., 103 вид/);
+    expect(totalsText()).toMatch(/^Still to collect: 299, 103 material types/);
   });
 
   it('saved scope is used when no query; unknown saved scope → all', () => {
@@ -193,6 +188,6 @@ describe('Summary screen: scope selection and persistence', () => {
     });
     expect(currentRoute.value.query.scope).toBe('fence');
     expect(uiPrefs()).toEqual({ summaryScope: 'fence', summaryGroup: 'animal' });
-    expect(totalsText()).toMatch(/^Осталось добыть: 26 шт\., 26 вид/);
+    expect(totalsText()).toMatch(/^Still to collect: 26, 26 material types/);
   });
 });

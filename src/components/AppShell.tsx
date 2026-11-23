@@ -18,28 +18,30 @@ import { SearchField } from './SearchField';
 import { TopBar } from './TopBar';
 
 export const SECTION_TITLES: Record<SectionTab, string> = {
-  trapper: 'Охотник',
-  fence: 'Скупщик',
-  animals: 'Звери',
-  summary: 'Сводка',
+  trapper: 'Trapper',
+  fence: 'Fence',
+  animals: 'Animals',
+  challenges: 'Challenges',
+  summary: 'Summary',
 };
 
 /** Labels shown next to the back button on non-section screens. */
 const SCREEN_LABELS: Partial<Record<RouteName, string>> = {
-  item: 'Предмет',
-  outfit: 'Костюм',
-  animal: 'Зверь',
-  vendor: 'Торговец',
-  search: 'Поиск',
-  settings: 'Настройки',
+  item: 'Item',
+  outfit: 'Outfit',
+  animal: 'Animal',
+  vendor: 'Vendor',
+  search: 'Search',
+  settings: 'Settings',
+  challenge: 'Challenges',
 };
 
 export type AnimalsTab = 'regular' | 'legendary' | 'birds';
 
 export const ANIMAL_TABS: SegmentOption<AnimalsTab>[] = [
-  { value: 'regular', label: 'Обычные' },
-  { value: 'legendary', label: 'Легендарные' },
-  { value: 'birds', label: 'Птицы' },
+  { value: 'regular', label: 'Regular' },
+  { value: 'legendary', label: 'Legendary' },
+  { value: 'birds', label: 'Birds' },
 ];
 
 export function animalsTabOf(route: Route): AnimalsTab {
@@ -50,17 +52,17 @@ export function animalsTabOf(route: Route): AnimalsTab {
 /** Sub-section switchers: option value is the target path. */
 const SUBNAV: Partial<Record<SectionTab, { label: string; options: SegmentOption<string>[] }>> = {
   trapper: {
-    label: 'Подразделы Охотника',
+    label: 'Trapper sections',
     options: [
-      { value: '/trapper/outfits', label: 'Костюмы' },
-      { value: '/trapper/items', label: 'Предметы' },
+      { value: '/trapper/outfits', label: 'Outfits' },
+      { value: '/trapper/items', label: 'Items' },
     ],
   },
   fence: {
-    label: 'Подразделы Скупщика',
+    label: 'Fence sections',
     options: [
-      { value: '/fence/trinkets', label: 'Безделушки' },
-      { value: '/fence/talismans', label: 'Талисманы' },
+      { value: '/fence/trinkets', label: 'Trinkets' },
+      { value: '/fence/talismans', label: 'Talismans' },
     ],
   },
 };
@@ -69,7 +71,7 @@ function SubNav({ route, section }: { route: Route; section: SectionTab }) {
   if (section === 'animals') {
     return (
       <SegmentedControl
-        ariaLabel="Виды зверей"
+        ariaLabel="Animal types"
         options={ANIMAL_TABS}
         value={animalsTabOf(route)}
         onChange={(tab) => navigate(buildPath('/animals', { ...route.query, tab }))}
@@ -116,7 +118,7 @@ export function AppShell({ route, goalsCount, toast, children }: AppShellProps) 
         {route.name === 'search' ? <SearchField q={route.query.q ?? ''} /> : undefined}
       </TopBar>
       <main class="app-main" id="main">
-        {section && section !== 'summary' && (
+        {section && section !== 'summary' && section !== 'challenges' && (
           <div class="app-subnav">
             <div class="column">
               <SubNav route={route} section={section} />

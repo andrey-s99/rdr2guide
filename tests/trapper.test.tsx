@@ -32,30 +32,30 @@ describe('TrapperOutfits (9.1)', () => {
   it('renders all 16 outfits by default and the vendor link', () => {
     const { container } = render(<TrapperOutfits />);
     expect(container.querySelectorAll('.outfit-card')).toHaveLength(outfits.length);
-    expect(screen.getByText('Где найти Охотника и как он работает')).toBeTruthy();
-    expect(screen.getByText('Сводка по всем костюмам').getAttribute('href')).toBe(
+    expect(screen.getByText('Where to find the Trapper and how he works')).toBeTruthy();
+    expect(screen.getByText('Summary for all outfits').getAttribute('href')).toBe(
       '#/summary?scope=trapper_outfits',
     );
   });
 
-  it('hides complete outfits under «Не сделано» and shows them under «Сделано»', () => {
+  it('hides complete outfits under "Not crafted" and shows them under "Crafted"', () => {
     const outfit = outfitsById.get('bear_hunter')!;
     for (const id of outfit.itemIds) markCrafted(id, { toast: false });
     const { container } = render(<TrapperOutfits />);
     expect(container.querySelectorAll('.outfit-card')).toHaveLength(outfits.length - 1);
-    fireEvent.click(screen.getByRole('button', { name: /^Сделано/ }));
+    fireEvent.click(screen.getByRole('button', { name: /^Crafted/ }));
     expect(container.querySelectorAll('.outfit-card')).toHaveLength(1);
-    expect(screen.getByText(outfit.nameRu)).toBeTruthy();
-    fireEvent.click(screen.getByRole('button', { name: /^Готово к крафту/ }));
-    expect(screen.getByText('Пока нет костюмов, для которых всё добыто')).toBeTruthy();
+    expect(screen.getByText(outfit.nameEn)).toBeTruthy();
+    fireEvent.click(screen.getByRole('button', { name: /^Ready to craft/ }));
+    expect(screen.getByText('No outfits have all materials collected yet')).toBeTruthy();
   });
 });
 
 describe('TrapperItems (9.3)', () => {
   it('groups items by category with counters and collapses groups', () => {
     render(<TrapperItems />);
-    const header = screen.getByRole('button', { name: /Шляпы/ });
-    expect(header.textContent).toContain('сделано 0 из');
+    const header = screen.getByRole('button', { name: /Hats/ });
+    expect(header.textContent).toMatch(/0 of \d+ crafted/);
     expect(header.getAttribute('aria-expanded')).toBe('true');
     const rowsBefore = document.querySelectorAll('.item-row').length;
     fireEvent.click(header);
@@ -65,15 +65,15 @@ describe('TrapperItems (9.3)', () => {
 
   it('shows the empty state when the filter hides everything', () => {
     render(<TrapperItems />);
-    fireEvent.click(screen.getByRole('button', { name: /^Сделано/ }));
-    expect(screen.getByText('Здесь пока пусто')).toBeTruthy();
+    fireEvent.click(screen.getByRole('button', { name: /^Crafted/ }));
+    expect(screen.getByText('Nothing here yet')).toBeTruthy();
   });
 });
 
 describe('ItemScreen (9.4)', () => {
   it('renders NotFound for an unknown id', () => {
     render(<ItemScreen id="no_such_item" />);
-    expect(screen.getByText('Не найдено')).toBeTruthy();
+    expect(screen.getByText('Not found')).toBeTruthy();
   });
 
   it('marks an item (deducting stock) and unmarks it with confirmation (returning stock)', async () => {
@@ -86,23 +86,23 @@ describe('ItemScreen (9.4)', () => {
         <Toast />
       </>,
     );
-    expect(screen.getByText(gloves.nameRu)).toBeTruthy();
-    expect(screen.getByText('Рецепт')).toBeTruthy();
+    expect(screen.getByText(gloves.nameEn)).toBeTruthy();
+    expect(screen.getByText('Recipe')).toBeTruthy();
 
-    fireEvent.click(screen.getByRole('button', { name: 'Отметить изготовленным' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Mark as crafted' }));
     expect(state.value.crafted[gloves.id]).toBeDefined();
     expect(state.value.stock).toEqual({ perfect_boar: 0, perfect_rabbit: 0 });
-    expect(document.querySelector('.toast__detail')?.textContent).toBe('Кабан −1, Кролик −2');
+    expect(document.querySelector('.toast__detail')?.textContent).toBe('Boar −1, Rabbit −2');
 
-    fireEvent.click(screen.getByRole('button', { name: 'Снять отметку' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Unmark crafted' }));
     const dialog = await screen.findByRole('dialog');
-    expect(dialog.textContent).toContain('Вернуть списанные материалы в запасы?');
+    expect(dialog.textContent).toContain('Return the deducted materials to your stock?');
     await act(async () => {
-      fireEvent.click(screen.getAllByRole('button', { name: 'Снять отметку' }).at(-1)!);
+      fireEvent.click(screen.getAllByRole('button', { name: 'Unmark' }).at(-1)!);
     });
     await waitFor(() => expect(state.value.crafted[gloves.id]).toBeUndefined());
     expect(state.value.stock).toEqual({ perfect_boar: 1, perfect_rabbit: 2 });
-    expect(screen.getByRole('button', { name: 'Отметить изготовленным' })).toBeTruthy();
+    expect(screen.getByRole('button', { name: 'Mark as crafted' })).toBeTruthy();
   });
 
   it('cancelled unmark keeps the item crafted', async () => {
@@ -114,11 +114,11 @@ describe('ItemScreen (9.4)', () => {
         <ConfirmHost />
       </>,
     );
-    fireEvent.click(screen.getByRole('button', { name: 'Снять отметку' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Unmark crafted' }));
     const dialog = await screen.findByRole('dialog');
-    expect(dialog.textContent).toContain('ничего не вернётся');
+    expect(dialog.textContent).toContain('nothing returns to your stock');
     await act(async () => {
-      fireEvent.click(screen.getByRole('button', { name: 'Отмена' }));
+      fireEvent.click(screen.getByRole('button', { name: 'Cancel' }));
     });
     expect(state.value.crafted[gloves.id]).toBeDefined();
   });
@@ -126,17 +126,17 @@ describe('ItemScreen (9.4)', () => {
   it('opens items of other vendors too', () => {
     const fenceItem = [...itemsById.values()].find((i) => i.vendorId === 'fence')!;
     render(<ItemScreen id={fenceItem.id} />);
-    expect(screen.getByText(fenceItem.nameRu)).toBeTruthy();
+    expect(screen.getByText(fenceItem.nameEn)).toBeTruthy();
   });
 });
 
 describe('OutfitScreen (9.2)', () => {
   it('renders NotFound for an unknown id', () => {
     render(<OutfitScreen id="no_such_outfit" />);
-    expect(screen.getByText('Не найдено')).toBeTruthy();
+    expect(screen.getByText('Not found')).toBeTruthy();
   });
 
-  it('«Отметить весь костюм» marks all parts after confirmation; undo restores', async () => {
+  it('"Mark whole outfit" marks all parts after confirmation; undo restores', async () => {
     const outfit = outfitsById.get('bear_hunter')!;
     render(
       <>
@@ -145,24 +145,24 @@ describe('OutfitScreen (9.2)', () => {
         <Toast />
       </>,
     );
-    expect(screen.getByText('Что нужно добыть')).toBeTruthy();
+    expect(screen.getByText('What to collect')).toBeTruthy();
     expect(document.querySelector('.trapper-total')?.textContent).toContain('6');
-    expect(document.querySelector('.outfit-card__parts')?.textContent).toBe('0 / 4 части');
+    expect(document.querySelector('.outfit-card__parts')?.textContent).toBe('0 / 4 parts');
 
-    fireEvent.click(screen.getByRole('button', { name: 'Отметить весь костюм изготовленным' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Mark whole outfit as crafted' }));
     const dialog = await screen.findByRole('dialog');
-    expect(dialog.textContent).toContain('Отметить 4 части изготовленными?');
-    expect(dialog.textContent).toContain('Материалы будут списаны из запасов');
+    expect(dialog.textContent).toContain('Mark 4 parts as crafted?');
+    expect(dialog.textContent).toContain('Materials will be deducted from your stock');
     await act(async () => {
-      fireEvent.click(screen.getByRole('button', { name: 'Отметить' }));
+      fireEvent.click(screen.getByRole('button', { name: 'Mark' }));
     });
 
     await waitFor(() =>
       expect(outfit.itemIds.every((id) => state.value.crafted[id] !== undefined)).toBe(true),
     );
-    expect(document.querySelector('.outfit-card__parts')?.textContent).toBe('4 / 4 части');
-    expect(screen.getByText('Собран')).toBeTruthy();
-    expect(screen.queryByRole('button', { name: 'Отметить весь костюм изготовленным' })).toBeNull();
+    expect(document.querySelector('.outfit-card__parts')?.textContent).toBe('4 / 4 parts');
+    expect(screen.getByText('Complete')).toBeTruthy();
+    expect(screen.queryByRole('button', { name: 'Mark whole outfit as crafted' })).toBeNull();
 
     act(() => undoToast());
     expect(state.value.crafted).toEqual({});

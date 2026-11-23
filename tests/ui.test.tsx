@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it } from 'vitest';
-import { act, cleanup, fireEvent, render, screen } from '@testing-library/preact';
+import { cleanup, fireEvent, render, screen } from '@testing-library/preact';
 import { effect } from '@preact/signals';
 import { disputedItems, itemsById, outfits } from '../src/data';
 import type { Item, UserState } from '../src/data/types';
@@ -32,7 +32,7 @@ afterEach(() => {
 });
 
 describe('15.4 UI', () => {
-  it('marking an item in a list changes its status and shows a toast; «Отменить» restores', () => {
+  it('marking an item in a list changes its status and shows a toast; "Undo" restores', () => {
     state.value = withStock({ perfect_boar: 1, perfect_rabbit: 2 });
     render(
       <>
@@ -40,9 +40,9 @@ describe('15.4 UI', () => {
         <Toast />
       </>,
     );
-    expect(screen.getByText('Готово к крафту')).toBeTruthy();
+    expect(screen.getByText('Ready to craft')).toBeTruthy();
     const checkbox = screen.getByRole('checkbox', {
-      name: `Изготовлено: ${gloves.nameRu}`,
+      name: `Crafted: ${gloves.nameEn}`,
     }) as HTMLInputElement;
     expect(checkbox.checked).toBe(false);
 
@@ -50,19 +50,17 @@ describe('15.4 UI', () => {
 
     expect(state.value.crafted[gloves.id]).toBeDefined();
     expect(checkbox.checked).toBe(true);
-    expect(screen.getByText('Сделано')).toBeTruthy();
-    expect(screen.queryByText('Готово к крафту')).toBeNull();
-    expect(document.querySelector('.toast__title')?.textContent).toBe(
-      `Изготовлено: ${gloves.nameRu}`,
-    );
-    expect(document.querySelector('.toast__detail')?.textContent).toBe('Кабан −1, Кролик −2');
+    expect(screen.getByText('Crafted')).toBeTruthy();
+    expect(screen.queryByText('Ready to craft')).toBeNull();
+    expect(document.querySelector('.toast__title')?.textContent).toBe(`Crafted: ${gloves.nameEn}`);
+    expect(document.querySelector('.toast__detail')?.textContent).toBe('Boar −1, Rabbit −2');
 
-    fireEvent.click(screen.getByRole('button', { name: 'Отменить' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Undo' }));
 
     expect(state.value.crafted).toEqual({});
     expect(state.value.stock).toEqual({ perfect_boar: 1, perfect_rabbit: 2 });
     expect(checkbox.checked).toBe(false);
-    expect(screen.getByText('Готово к крафту')).toBeTruthy();
+    expect(screen.getByText('Ready to craft')).toBeTruthy();
     expect(document.querySelector('.toast')).toBeNull();
   });
 
@@ -87,29 +85,28 @@ describe('15.4 UI', () => {
 });
 
 describe('components', () => {
-  it('ItemRow shows English name only when enabled', () => {
-    render(<ItemRow item={gloves} />);
+  it('ItemRow shows the original English name and no Russian text', () => {
+    const { container } = render(<ItemRow item={gloves} />);
     expect(screen.queryByText(gloves.nameEn)).toBeTruthy();
-    act(() => setSettings({ showEnglish: false }));
-    expect(screen.queryByText(gloves.nameEn)).toBeNull();
+    expect(container.textContent).not.toMatch(/[А-Яа-яЁё]/);
   });
 
   it('Stepper changes stock with buttons and typed input (clamped)', () => {
-    render(<Stepper materialId="perfect_boar" label="Кабан" />);
-    const input = screen.getByRole('textbox', { name: 'Количество: Кабан' }) as HTMLInputElement;
-    fireEvent.click(screen.getByRole('button', { name: 'Добавить: Кабан' }));
+    render(<Stepper materialId="perfect_boar" label="Boar" />);
+    const input = screen.getByRole('textbox', { name: 'Amount: Boar' }) as HTMLInputElement;
+    fireEvent.click(screen.getByRole('button', { name: 'Increase: Boar' }));
     expect(state.value.stock.perfect_boar).toBe(1);
     expect(input.value).toBe('1');
     fireEvent.input(input, { target: { value: '5000' } });
     fireEvent.blur(input);
     expect(state.value.stock.perfect_boar).toBe(999);
-    fireEvent.click(screen.getByRole('button', { name: 'Убавить: Кабан' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Decrease: Boar' }));
     expect(state.value.stock.perfect_boar).toBe(998);
   });
 
   it('GoalStar toggles goals with aria-pressed', () => {
     render(<GoalStar kind="item" id={gloves.id} />);
-    const btn = screen.getByRole('button', { name: `Цель: ${gloves.nameRu}` });
+    const btn = screen.getByRole('button', { name: `Goal: ${gloves.nameEn}` });
     expect(btn.getAttribute('aria-pressed')).toBe('false');
     fireEvent.click(btn);
     expect(state.value.goals.items).toEqual([gloves.id]);
@@ -120,7 +117,7 @@ describe('components', () => {
     const outfit = outfits[0];
     render(<OutfitCard outfit={outfit} />);
     expect(screen.getByText(new RegExp(`^0 / ${outfit.itemIds.length} `))).toBeTruthy();
-    expect(screen.getByText(/Осталось добыть/)).toBeTruthy();
+    expect(screen.getByText(/Still to collect/)).toBeTruthy();
   });
 
   it('DataWarning reveals the note on tap', () => {
@@ -134,14 +131,14 @@ describe('components', () => {
 
   it('confirm() resolves via ConfirmHost', async () => {
     render(<ConfirmHost />);
-    const p = confirm({ title: 'Удалить?', confirmLabel: 'Да, удалить всё' });
-    const dialog = await screen.findByRole('dialog', { name: 'Удалить?' });
+    const p = confirm({ title: 'Delete?', confirmLabel: 'Yes, delete everything' });
+    const dialog = await screen.findByRole('dialog', { name: 'Delete?' });
     expect(dialog).toBeTruthy();
-    fireEvent.click(screen.getByRole('button', { name: 'Да, удалить всё' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Yes, delete everything' }));
     await expect(p).resolves.toBe(true);
     expect(screen.queryByRole('dialog')).toBeNull();
 
-    const p2 = confirm({ title: 'Ещё раз?' });
+    const p2 = confirm({ title: 'Again?' });
     fireEvent.keyDown(await screen.findByRole('dialog'), { key: 'Escape' });
     await expect(p2).resolves.toBe(false);
   });

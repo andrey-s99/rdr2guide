@@ -5,7 +5,7 @@ export interface SectionHeaderProps {
   title: string;
   /** Icon name from src/icons (e.g. category.icon). */
   icon?: string;
-  /** Right-side text, e.g. «сделано 3 из 12». */
+  /** Right-side text, e.g. "3 of 12 crafted". */
   extra?: ComponentChildren;
   /** When provided, the header becomes a toggle button for a collapsible group. */
   open?: boolean;

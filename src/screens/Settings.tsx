@@ -1,7 +1,6 @@
 import { useId, useRef, useState } from 'preact/hooks';
 import { AppLink } from '../components/AppLink';
 import { confirm } from '../components/ConfirmDialog';
-import { EnName } from '../components/EnName';
 import { ExternalLink } from '../components/ExternalLink';
 import { type SegmentOption, SegmentedControl } from '../components/SegmentedControl';
 import { disputedItems, meta } from '../data';
@@ -13,15 +12,15 @@ import '../styles/screens/settings.css';
 type Theme = UserState['settings']['theme'];
 
 const THEME_OPTIONS: SegmentOption<Theme>[] = [
-  { value: 'night', label: 'Ночь' },
-  { value: 'paper', label: 'Бумага' },
-  { value: 'system', label: 'Как в системе' },
+  { value: 'night', label: 'Night' },
+  { value: 'paper', label: 'Paper' },
+  { value: 'system', label: 'System' },
 ];
 
-export const IMPORT_CONFIRM_TITLE = 'Заменить текущий прогресс данными из файла?';
-export const IMPORT_DONE = 'Резервная копия загружена';
-export const RESET_DONE = 'Прогресс сброшен';
-export const RESET_FINAL_LABEL = 'Да, удалить всё';
+export const IMPORT_CONFIRM_TITLE = 'Replace your current progress with the data from the file?';
+export const IMPORT_DONE = 'Backup loaded';
+export const RESET_DONE = 'Progress reset';
+export const RESET_FINAL_LABEL = 'Yes, delete everything';
 
 /** Starts a browser download of the current state as a backup file (SPEC 11.2). */
 export function downloadBackup(now: Date = new Date()): void {
@@ -60,7 +59,7 @@ function DisputedList() {
   return (
     <div class="settings-disputed">
       <p>
-        Предметов с пометкой «данные спорные»: <span class="num">{count}</span>
+        Items marked "disputed data": <span class="num">{count}</span>
       </p>
       {count > 0 && (
         <>
@@ -71,7 +70,7 @@ function DisputedList() {
             aria-controls={listId}
             onClick={() => setOpen(!open)}
           >
-            {open ? 'Скрыть список' : 'Показать список'}
+            {open ? 'Hide list' : 'Show list'}
           </button>
           {open && (
             <ul id={listId} class="list settings-disputed__list">
@@ -79,9 +78,8 @@ function DisputedList() {
                 <li key={item.id}>
                   <AppLink to={`/item/${item.id}`} class="list-row">
                     <span class="list-row__main">
-                      <span class="list-row__title clamp-2">{item.nameRu}</span>
-                      <EnName text={item.nameEn} />
-                      {item.dataNoteRu && <span class="list-row__note">{item.dataNoteRu}</span>}
+                      <span class="list-row__title clamp-2">{item.nameEn}</span>
+                      {item.dataNoteEn && <span class="list-row__note">{item.dataNoteEn}</span>}
                     </span>
                   </AppLink>
                 </li>
@@ -96,10 +94,9 @@ function DisputedList() {
 
 /** Settings screen (SPEC 9.13). */
 export function Settings() {
-  const { theme, showEnglish } = state.value.settings;
+  const { theme } = state.value.settings;
   const fileInput = useRef<HTMLInputElement>(null);
   const [status, setStatus] = useState<Status>(null);
-  const englishId = useId();
 
   const onImportFile = async (input: HTMLInputElement) => {
     const file = input.files?.[0];
@@ -109,15 +106,15 @@ export function Settings() {
     try {
       text = await readFileText(file);
     } catch {
-      setStatus({ kind: 'error', text: 'Не удалось прочитать файл.' });
+      setStatus({ kind: 'error', text: 'Could not read the file.' });
       return;
     }
     const parsed = parseBackup(text);
     if (!parsed.ok) {
-      setStatus({ kind: 'error', text: `${parsed.error} Текущий прогресс не изменён.` });
+      setStatus({ kind: 'error', text: `${parsed.error} Your current progress was not changed.` });
       return;
     }
-    const ok = await confirm({ title: IMPORT_CONFIRM_TITLE, confirmLabel: 'Заменить' });
+    const ok = await confirm({ title: IMPORT_CONFIRM_TITLE, confirmLabel: 'Replace' });
     if (!ok) {
       setStatus(null);
       return;
@@ -129,15 +126,15 @@ export function Settings() {
   const onReset = async () => {
     setStatus(null);
     const first = await confirm({
-      title: 'Сбросить прогресс?',
-      body: 'Отметки «изготовлено», запасы и цели будут удалены. Настройки останутся.',
-      confirmLabel: 'Сбросить',
+      title: 'Reset progress?',
+      body: 'Crafted marks, stock, goals and challenge progress will be deleted. Settings stay.',
+      confirmLabel: 'Reset',
       danger: true,
     });
     if (!first) return;
     const second = await confirm({
-      title: 'Удалить весь прогресс без возможности восстановления?',
-      body: 'Если нужно, сначала сохраните резервную копию.',
+      title: 'Delete all progress permanently?',
+      body: 'If needed, save a backup first.',
       confirmLabel: RESET_FINAL_LABEL,
       danger: true,
     });
@@ -150,38 +147,27 @@ export function Settings() {
     <div class="screen settings">
       <section class="settings-group" aria-labelledby="settings-look">
         <h2 id="settings-look" class="settings-group__title">
-          Оформление
+          Appearance
         </h2>
         <div class="settings-field">
-          <span class="settings-field__label">Тема</span>
+          <span class="settings-field__label">Theme</span>
           <SegmentedControl
-            ariaLabel="Тема"
+            ariaLabel="Theme"
             variant="boxed"
             options={THEME_OPTIONS}
             value={theme}
             onChange={(t) => setSettings({ theme: t })}
           />
         </div>
-        <label class="switch settings-field" for={englishId}>
-          <span>Показывать английские названия</span>
-          <input
-            id={englishId}
-            type="checkbox"
-            role="switch"
-            class="switch__input"
-            checked={showEnglish}
-            onChange={(e) => setSettings({ showEnglish: e.currentTarget.checked })}
-          />
-        </label>
       </section>
 
       <section class="settings-group" aria-labelledby="settings-backup">
         <h2 id="settings-backup" class="settings-group__title">
-          Прогресс
+          Progress
         </h2>
         <p class="muted settings-group__hint">
-          Прогресс хранится только на этом устройстве. Резервная копия — файл, который можно
-          перенести на другой телефон или сохранить на случай очистки браузера.
+          Progress is stored only on this device. A backup is a file you can move to another phone
+          or keep in case the browser data is cleared.
         </p>
         <button
           type="button"
@@ -191,14 +177,14 @@ export function Settings() {
             downloadBackup();
           }}
         >
-          Сохранить резервную копию
+          Save backup
         </button>
         <button
           type="button"
           class="btn btn--secondary btn--block"
           onClick={() => fileInput.current?.click()}
         >
-          Загрузить резервную копию
+          Load backup
         </button>
         <input
           ref={fileInput}
@@ -206,12 +192,12 @@ export function Settings() {
           accept="application/json,.json"
           class="visually-hidden"
           tabIndex={-1}
-          aria-label="Файл резервной копии"
+          aria-label="Backup file"
           data-testid="backup-file"
           onChange={(e) => void onImportFile(e.currentTarget)}
         />
         <button type="button" class="btn btn--danger btn--block" onClick={() => void onReset()}>
-          Сбросить прогресс
+          Reset progress
         </button>
         <div aria-live="polite">
           {status && (
@@ -231,16 +217,16 @@ export function Settings() {
 
       <section class="settings-group" aria-labelledby="settings-data">
         <h2 id="settings-data" class="settings-group__title">
-          О данных
+          About the data
         </h2>
         <p>
-          Версия данных: <span class="num">{meta.dataVersion}</span>
+          Data version: <span class="num">{meta.dataVersion}</span>
         </p>
-        {meta.notesRu && <p class="muted">{meta.notesRu}</p>}
+        {meta.notesEn && <p class="muted">{meta.notesEn}</p>}
         <DisputedList />
         {meta.sources.length > 0 && (
           <>
-            <h3 class="settings-group__subtitle">Источники</h3>
+            <h3 class="settings-group__subtitle">Sources</h3>
             <ul class="settings-sources">
               {meta.sources.map((url) => (
                 <li key={url}>
@@ -253,7 +239,7 @@ export function Settings() {
       </section>
 
       <p class="muted settings-version">
-        Версия приложения: <span class="num">{__APP_VERSION__}</span>
+        App version: <span class="num">{__APP_VERSION__}</span>
       </p>
     </div>
   );

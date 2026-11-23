@@ -1,10 +1,9 @@
-import { materialAnimal, materialsById, qualityLabelRu } from '../data';
+import { materialAnimal, materialsById, qualityLabel } from '../data';
 import type { Item } from '../data/types';
 import { ChevronIcon } from '../icons';
 import { hasEnough } from '../logic/calc';
 import { state } from '../state/store';
 import { AppLink } from './AppLink';
-import { EnName } from './EnName';
 import { Stepper } from './Stepper';
 
 export interface RecipeTableProps {
@@ -29,29 +28,28 @@ export function RecipeTable({ item }: RecipeTableProps) {
         return (
           <li key={entry.materialId} class="recipe-row">
             <div class="recipe-row__head">
-              <span class="recipe-row__name">{m?.nameRu ?? entry.materialId}</span>
-              {m && <span class={qualityTag}>{qualityLabelRu[m.quality]}</span>}
-              {m && !m.consumedOnCraft && <span class="recipe-row__keep">не расходуется</span>}
+              <span class="recipe-row__name">{m?.nameEn ?? entry.materialId}</span>
+              {m && <span class={qualityTag}>{qualityLabel[m.quality]}</span>}
+              {m && !m.consumedOnCraft && <span class="recipe-row__keep">not consumed</span>}
             </div>
-            {m && <EnName text={m.nameEn} />}
             <div class="recipe-row__line">
               <span class="recipe-row__need">
-                <span class="muted">нужно</span>{' '}
+                <span class="muted">need</span>{' '}
                 <strong class={enough ? 'num recipe-row__qty--ok' : 'num'}>{entry.qty}</strong>
               </span>
               <span class="recipe-row__have">
-                <span class="muted">есть</span>
+                <span class="muted">have</span>
                 <Stepper materialId={entry.materialId} />
               </span>
             </div>
-            {m?.kind === 'special' && m.sourceRu && (
+            {m?.kind === 'special' && m.sourceEn && (
               <p class="recipe-row__source">
-                <span class="muted">Где взять:</span> {m.sourceRu}
+                <span class="muted">Where to get:</span> {m.sourceEn}
               </p>
             )}
             {animal && (
               <AppLink to={`/animal/${animal.id}`} class="recipe-row__where">
-                Где добыть: {animal.nameRu}
+                Where to hunt: {animal.nameEn}
                 <ChevronIcon size={16} />
               </AppLink>
             )}

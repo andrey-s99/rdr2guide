@@ -4,6 +4,8 @@ import { currentRoute, type Route } from './router';
 import { goalsCount } from './state/store';
 import { AnimalScreen } from './screens/AnimalScreen';
 import { Animals } from './screens/Animals';
+import { ChallengeScreen } from './screens/ChallengeScreen';
+import { Challenges } from './screens/Challenges';
 import { FenceTalismans } from './screens/FenceTalismans';
 import { FenceTrinkets } from './screens/FenceTrinkets';
 import { ItemScreen } from './screens/ItemScreen';
@@ -35,6 +37,10 @@ function renderScreen(route: Route) {
       return <Animals tab={animalsTabOf(route)} />;
     case 'summary':
       return <Summary scope={route.query.scope} group={route.query.group} />;
+    case 'challenges':
+      return <Challenges />;
+    case 'challenge':
+      return route.id ? <ChallengeScreen id={route.id} /> : <NotFound />;
     case 'item':
       return route.id ? <ItemScreen id={route.id} /> : <NotFound />;
     case 'outfit':

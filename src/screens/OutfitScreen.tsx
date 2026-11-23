@@ -1,6 +1,5 @@
 import { AppLink } from '../components/AppLink';
 import { confirm } from '../components/ConfirmDialog';
-import { EnName } from '../components/EnName';
 import { GoalStar } from '../components/GoalStar';
 import { ItemRow } from '../components/ItemRow';
 import { MaterialRow } from '../components/MaterialRow';
@@ -10,6 +9,7 @@ import { SectionHeader } from '../components/SectionHeader';
 import { outfitItems, outfitsById } from '../data';
 import { CheckIcon, ChevronIcon } from '../icons';
 import { isCrafted, outfitProgress } from '../logic/calc';
+import { kindsWord } from '../logic/summary';
 import { markOutfitCrafted, needsForScope, partsWord, state } from '../state/store';
 import '../styles/screens/trapper.css';
 import { NotFound } from './NotFound';
@@ -32,9 +32,9 @@ export function OutfitScreen({ id }: OutfitScreenProps) {
 
   const onMarkAll = async () => {
     const ok = await confirm({
-      title: `Отметить ${uncrafted} ${partsWord(uncrafted)} изготовленными?`,
-      body: 'Материалы будут списаны из запасов',
-      confirmLabel: 'Отметить',
+      title: `Mark ${uncrafted} ${partsWord(uncrafted)} as crafted?`,
+      body: 'Materials will be deducted from your stock',
+      confirmLabel: 'Mark',
     });
     if (ok) markOutfitCrafted(outfit.id);
   };
@@ -44,12 +44,11 @@ export function OutfitScreen({ id }: OutfitScreenProps) {
       <PaperCard as="article" muted={complete} class="outfit-head">
         <header class="paper-card__head">
           <h2 class="paper-card__title">
-            <span>{outfit.nameRu}</span>
+            <span>{outfit.nameEn}</span>
           </h2>
-          <EnName text={outfit.nameEn} class="paper-card__subtitle outfit-head__en" />
         </header>
         <div class="outfit-head__star">
-          <GoalStar kind="outfit" id={outfit.id} name={outfit.nameRu} />
+          <GoalStar kind="outfit" id={outfit.id} name={outfit.nameEn} />
         </div>
         <div class="outfit-card__progress">
           <span class="outfit-card__parts num">
@@ -58,19 +57,19 @@ export function OutfitScreen({ id }: OutfitScreenProps) {
           {complete && (
             <span class="outfit-card__done">
               <CheckIcon size={16} strokeWidth={2} />
-              Собран
+              Complete
             </span>
           )}
         </div>
         <ProgressBar
           value={craftedParts}
           max={totalParts}
-          ariaLabel={`Изготовлено частей: ${craftedParts} из ${totalParts}`}
+          ariaLabel={`Parts crafted: ${craftedParts} of ${totalParts}`}
         />
       </PaperCard>
 
       <section class="trapper-group">
-        <SectionHeader title="Части костюма" extra={`сделано ${craftedParts} из ${totalParts}`} />
+        <SectionHeader title="Outfit parts" extra={`${craftedParts} of ${totalParts} crafted`} />
         <div class="list trapper-bleed">
           {parts.map((item) => (
             <ItemRow key={item.id} item={item} showOutfits={false} showRecipe={false} />
@@ -80,14 +79,14 @@ export function OutfitScreen({ id }: OutfitScreenProps) {
 
       {uncrafted > 0 && (
         <button type="button" class="btn btn--primary btn--block" onClick={onMarkAll}>
-          Отметить весь костюм изготовленным
+          Mark whole outfit as crafted
         </button>
       )}
 
       <section class="trapper-group">
-        <SectionHeader title="Что нужно добыть" />
+        <SectionHeader title="What to collect" />
         {needs.rows.length === 0 ? (
-          <p class="muted trapper-note">Все части изготовлены, добывать ничего не нужно.</p>
+          <p class="muted trapper-note">All parts are crafted, nothing left to collect.</p>
         ) : (
           <>
             <div class="list trapper-bleed">
@@ -104,15 +103,16 @@ export function OutfitScreen({ id }: OutfitScreenProps) {
               ))}
             </div>
             <p class="trapper-total">
-              Осталось добыть: <strong class="num">{needs.totals.units}</strong> шт.,{' '}
-              <strong class="num">{needs.totals.distinct}</strong> видов материалов
+              Still to collect: <strong class="num">{needs.totals.units}</strong>,{' '}
+              <strong class="num">{needs.totals.distinct}</strong>{' '}
+              {kindsWord(needs.totals.distinct)}
             </p>
           </>
         )}
       </section>
 
       <AppLink to={`/summary?scope=${scopeId}`} class="link-row">
-        Открыть в сводке
+        Open in summary
         <ChevronIcon size={18} />
       </AppLink>
     </div>

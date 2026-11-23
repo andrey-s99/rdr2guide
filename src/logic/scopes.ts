@@ -9,11 +9,11 @@ import {
 } from '../data';
 import type { Item } from '../data/types';
 
-export type ScopeGroupLabel = 'Общее' | 'Охотник' | 'Костюмы' | 'Скупщик';
+export type ScopeGroupLabel = 'General' | 'Trapper' | 'Outfits' | 'Fence';
 
 export interface ScopeDef {
   id: string;
-  labelRu: string;
+  labelEn: string;
   group: ScopeGroupLabel;
 }
 
@@ -27,30 +27,30 @@ export const GOALS_SCOPE = 'goals';
 
 /** All scopes in display order (for the <select> with optgroups). */
 export const scopes: readonly ScopeDef[] = [
-  { id: 'all', labelRu: 'Всё', group: 'Общее' },
-  { id: 'goals', labelRu: 'Цели', group: 'Общее' },
-  { id: 'trapper', labelRu: 'Охотник: всё', group: 'Охотник' },
-  { id: 'trapper_outfits', labelRu: 'Охотник: все костюмы', group: 'Охотник' },
+  { id: 'all', labelEn: 'Everything', group: 'General' },
+  { id: 'goals', labelEn: 'Goals', group: 'General' },
+  { id: 'trapper', labelEn: 'Trapper: everything', group: 'Trapper' },
+  { id: 'trapper_outfits', labelEn: 'Trapper: all outfits', group: 'Trapper' },
   ...vendorCategories('trapper').map((c): ScopeDef => ({
     id: `trapper_cat:${c.id}`,
-    labelRu: `Охотник: ${c.nameRu}`,
-    group: 'Охотник',
+    labelEn: `Trapper: ${c.nameEn}`,
+    group: 'Trapper',
   })),
   ...outfits.map((o): ScopeDef => ({
     id: `outfit:${o.id}`,
-    labelRu: `Костюм: ${o.nameRu}`,
-    group: 'Костюмы',
+    labelEn: `Outfit: ${o.nameEn}`,
+    group: 'Outfits',
   })),
-  { id: 'fence', labelRu: 'Скупщик: всё', group: 'Скупщик' },
+  { id: 'fence', labelEn: 'Fence: everything', group: 'Fence' },
 ];
 
 const scopesById = new Map(scopes.map((s) => [s.id, s]));
 
 export const scopeGroupOrder: readonly ScopeGroupLabel[] = [
-  'Общее',
-  'Охотник',
-  'Костюмы',
-  'Скупщик',
+  'General',
+  'Trapper',
+  'Outfits',
+  'Fence',
 ];
 
 /** Scopes grouped for optgroups, in display order. */
@@ -67,7 +67,7 @@ export function getScope(scopeId: string): ScopeDef | undefined {
 
 /** Russian label of a scope, or the id itself if unknown. */
 export function scopeLabel(scopeId: string): string {
-  return scopesById.get(scopeId)?.labelRu ?? scopeId;
+  return scopesById.get(scopeId)?.labelEn ?? scopeId;
 }
 
 function itemsInSet(ids: ReadonlySet<string>): Item[] {

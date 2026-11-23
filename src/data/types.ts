@@ -14,6 +14,7 @@ export type CategoryId =
 
 export interface Link {
   labelRu: string;
+  labelEn: string;
   url: string;
 }
 
@@ -23,6 +24,7 @@ export interface Meta {
   language: 'ru';
   generatedAt: string;
   notesRu: string;
+  notesEn: string;
   sources: string[];
   globalMapLinks: Link[];
 }
@@ -38,13 +40,16 @@ export interface Vendor {
   nameRu: string;
   nameEn: string;
   locationsRu: string[]; // where to find the vendor
+  locationsEn: string[];
   rulesRu: string[]; // how crafting works with this vendor
+  rulesEn: string[];
   categories: CategoryId[]; // category order on screen
 }
 
 export interface Category {
   id: CategoryId;
   nameRu: string;
+  nameEn: string;
   vendorId: VendorId;
   icon: string;
 }
@@ -57,12 +62,17 @@ export interface Animal {
   size: 'small' | 'medium' | 'large';
   regions: RegionId[]; // regions[0] is the primary region (used for grouping)
   habitatRu: string; // where to look (exact spot for legendary animals)
+  habitatEn: string;
   perfectKillRu: string; // how to kill (tactics for legendary animals)
+  perfectKillEn: string;
   behaviorRu: string; // behaviour, time of day, tips
+  behaviorEn: string;
   unlockRu?: string; // legendary only: when it becomes available
+  unlockEn?: string;
   danger: 'safe' | 'aggressive' | 'dangerous';
   availability: 'story' | 'epilogue';
   availabilityNoteRu: string; // empty if there are no restrictions
+  availabilityNoteEn: string;
   links: Link[]; // external links: maps, guides
 }
 
@@ -75,6 +85,7 @@ export interface Material {
   animalId: string | null; // null only for kind = 'special'
   consumedOnCraft: boolean; // false only for legendary_pelt
   sourceRu: string; // how to obtain
+  sourceEn: string;
 }
 
 export interface RecipeEntry {
@@ -91,12 +102,16 @@ export interface Item {
   price: number | null;
   recipe: RecipeEntry[];
   requirementRu: string; // recipe unlock condition, may be empty
-  effectRu: string; // effect (satchels, trinkets, talismans), may be empty
+  requirementEn: string;
+  effectRu: string; // effect (trinkets, talismans), may be empty
+  effectEn: string;
   campSpotRu: string; // where it appears in camp, may be empty
+  campSpotEn: string;
   prerequisiteItemIds: string[]; // items that must be crafted first (only "Legend of the East")
   outfitIds: string[]; // outfits this item belongs to
   dataConfidence: 'high' | 'medium' | 'low';
   dataNoteRu: string;
+  dataNoteEn: string;
 }
 
 export interface Outfit {
@@ -106,6 +121,59 @@ export interface Outfit {
   itemIds: string[];
 }
 
+/**
+ * English texts layered over the game data (src/data/en.json). The original
+ * data/*.json files hold Russian descriptions; the UI shows the English ones.
+ */
+export interface EnglishTexts {
+  meta: { notes: string; globalMapLinks: string[] };
+  categories: Record<string, string>;
+  vendors: Record<string, { locations: string[]; rules: string[] }>;
+  animals: Record<
+    string,
+    {
+      habitat: string;
+      perfectKill: string;
+      behavior: string;
+      unlock?: string;
+      availabilityNote: string;
+      links: string[];
+    }
+  >;
+  materials: Record<string, string>;
+  items: Record<string, { requirement?: string; effect?: string; dataNote?: string }>;
+}
+
+/** Challenges (data/challenges.json is not part of the original data set). */
+export type ChallengeCategoryId =
+  | 'bandit'
+  | 'explorer'
+  | 'gambler'
+  | 'herbalist'
+  | 'horseman'
+  | 'master_hunter'
+  | 'sharpshooter'
+  | 'survivalist'
+  | 'weapons_expert';
+
+export interface ChallengeRank {
+  rank: number; // 1..10
+  text: string; // challenge description as shown in the game
+  guide: string; // how to do it quickly
+}
+
+export interface ChallengeCategory {
+  id: ChallengeCategoryId;
+  name: string;
+  /** What starts the category (the first rank activates on this action). */
+  unlock: string;
+  /** Reinforced equipment set and the attribute it raises. */
+  reward: string;
+  /** General tips for the whole category. */
+  tips: string[];
+  ranks: ChallengeRank[];
+}
+
 /** User state (section 7.1). */
 export interface CraftRecord {
   at: string; // ISO date
@@ -113,9 +181,11 @@ export interface CraftRecord {
 }
 
 export interface UserState {
-  schemaVersion: 1;
+  schemaVersion: 2;
   crafted: Record<string, CraftRecord>; // key: item.id
   stock: Record<string, number>; // key: material.id; missing key = 0
   goals: { items: string[]; outfits: string[] };
-  settings: { theme: 'night' | 'paper' | 'system'; showEnglish: boolean };
+  /** Completed challenge ranks per category (0..10); challenges are done in order. */
+  challenges: Partial<Record<ChallengeCategoryId, number>>;
+  settings: { theme: 'night' | 'paper' | 'system' };
 }

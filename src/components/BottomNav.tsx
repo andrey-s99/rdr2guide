@@ -1,5 +1,5 @@
 import type { FunctionComponent } from 'preact';
-import { HatIcon, type IconProps, LedgerIcon, PawIcon, TrinketIcon } from '../icons';
+import { HatIcon, type IconProps, LedgerIcon, MedalIcon, PawIcon, TrinketIcon } from '../icons';
 import { navigate, type SectionTab, tabPath } from '../router';
 
 interface TabDef {
@@ -9,10 +9,11 @@ interface TabDef {
 }
 
 export const TABS: TabDef[] = [
-  { id: 'trapper', label: 'Охотник', icon: HatIcon },
-  { id: 'fence', label: 'Скупщик', icon: TrinketIcon },
-  { id: 'animals', label: 'Звери', icon: PawIcon },
-  { id: 'summary', label: 'Сводка', icon: LedgerIcon },
+  { id: 'trapper', label: 'Trapper', icon: HatIcon },
+  { id: 'fence', label: 'Fence', icon: TrinketIcon },
+  { id: 'animals', label: 'Animals', icon: PawIcon },
+  { id: 'challenges', label: 'Challenges', icon: MedalIcon },
+  { id: 'summary', label: 'Summary', icon: LedgerIcon },
 ];
 
 export interface BottomNavProps {
@@ -21,7 +22,7 @@ export interface BottomNavProps {
 
 export function BottomNav({ active }: BottomNavProps) {
   return (
-    <nav class="app-nav" aria-label="Разделы">
+    <nav class="app-nav" aria-label="Sections">
       <ul class="app-nav__list column">
         {TABS.map(({ id, label, icon: Icon }) => (
           <li key={id}>

@@ -22,22 +22,22 @@ function row(materialId: string, need: number, have = 0): MaterialNeed {
 }
 
 // Small synthetic dataset for precise ordering checks.
-const animal = (id: string, nameRu: string, regionIds: Region['id'][]): Animal =>
-  ({ id, nameRu, regions: regionIds }) as Animal;
-const material = (id: string, nameRu: string, animalId: string | null): Material =>
-  ({ id, nameRu, animalId }) as Material;
+const animal = (id: string, nameEn: string, regionIds: Region['id'][]): Animal =>
+  ({ id, nameEn, regions: regionIds }) as Animal;
+const material = (id: string, nameEn: string, animalId: string | null): Material =>
+  ({ id, nameEn, animalId }) as Material;
 
 const tAnimals = [
-  animal('beaver', 'Бобр', ['new_hanover', 'lemoyne']),
-  animal('alligator', 'Аллигатор', ['lemoyne']),
-  animal('cougar', 'Пума', ['new_austin']),
+  animal('beaver', 'Beaver', ['new_hanover', 'lemoyne']),
+  animal('alligator', 'Alligator', ['lemoyne']),
+  animal('cougar', 'Cougar', ['new_austin']),
 ];
 const tMaterials = [
-  material('beaver_skin', 'Шкура бобра', 'beaver'),
-  material('beaver_tail', 'Хвост бобра', 'beaver'),
-  material('alligator_skin', 'Шкура аллигатора', 'alligator'),
-  material('cougar_skin', 'Шкура пумы', 'cougar'),
-  material('stone', 'Камень', null),
+  material('beaver_skin', 'Perfect Beaver Pelt', 'beaver'),
+  material('beaver_tail', 'Beaver Tail', 'beaver'),
+  material('alligator_skin', 'Perfect Alligator Skin', 'alligator'),
+  material('cougar_skin', 'Perfect Cougar Pelt', 'cougar'),
+  material('stone', 'Stone', null),
 ];
 const lookups: SummaryLookups = {
   material: (id) => tMaterials.find((m) => m.id === id),
@@ -55,17 +55,17 @@ describe('summary grouping (pure)', () => {
     row('beaver_skin', 1),
   ];
 
-  it('groups by animal, sorts groups by Σ remaining desc then nameRu, rows in data order', () => {
+  it('groups by animal, sorts groups by Σ remaining desc then nameEn, rows in data order', () => {
     const groups = groupByAnimal(rows, lookups, order);
     expect(groups.map((g) => [g.id, g.remaining])).toEqual([
       [SPECIAL_GROUP_ID, 5],
       ['cougar', 3],
-      // Tie at 2: «Аллигатор» before «Бобр».
+      // Tie at 2: "Alligator" before "Beaver".
       ['alligator', 2],
       ['beaver', 2],
     ]);
     expect(groups[3].rows.map((r) => r.materialId)).toEqual(['beaver_skin', 'beaver_tail']);
-    expect(groups[0].titleRu).toBe('Особые предметы');
+    expect(groups[0].title).toBe('Special items');
     expect(groups[0].animal).toBeNull();
   });
 
@@ -78,8 +78,8 @@ describe('summary grouping (pure)', () => {
     expect(groups.map((g) => g.remaining)).toEqual([2, 2, 3, 5]);
   });
 
-  it('flat list sorts by remaining desc, then nameRu', () => {
-    // Tie at 1: «Хвост бобра» before «Шкура бобра».
+  it('flat list sorts by remaining desc, then nameEn', () => {
+    // Tie at 1: "Beaver Tail" before "Perfect Beaver Pelt".
     expect(sortFlat(rows, lookups).map((r) => r.materialId)).toEqual([
       'stone',
       'cougar_skin',
@@ -147,13 +147,10 @@ describe('summary grouping on real data', () => {
 });
 
 describe('summary texts', () => {
-  it('pluralizes material kinds and crafted counter', () => {
-    expect(kindsWord(1)).toBe('вид материала');
-    expect(kindsWord(4)).toBe('вида материалов');
-    expect(kindsWord(110)).toBe('видов материалов');
-    expect(kindsWord(11)).toBe('видов материалов');
-    expect(craftedText(0, 167)).toBe('Изготовлено 0 из 167 предметов');
-    expect(craftedText(1, 21)).toBe('Изготовлено 1 из 21 предмета');
-    expect(craftedText(0, 4)).toBe('Изготовлено 0 из 4 предметов');
+  it('pluralizes material types and the crafted counter', () => {
+    expect(kindsWord(1)).toBe('material type');
+    expect(kindsWord(4)).toBe('material types');
+    expect(craftedText(0, 167)).toBe('Crafted 0 of 167 items');
+    expect(craftedText(1, 1)).toBe('Crafted 1 of 1 item');
   });
 });

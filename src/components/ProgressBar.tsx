@@ -1,7 +1,7 @@
 export interface ProgressBarProps {
   value: number;
   max: number;
-  /** Visible caption above the bar, e.g. «Изготовлено 3 из 12». */
+  /** Visible caption above the bar, e.g. "Crafted 3 of 12". */
   label?: string;
   /** Accessible name when there is no visible label. */
   ariaLabel?: string;

@@ -30,54 +30,49 @@ describe('Fence (9.6)', () => {
     ['talisman', FenceTalismans],
   ] as const)('%s list shows effects, vendor link and no price', (category, Screen) => {
     render(<Screen />);
-    expect(screen.getByText('Как работает Скупщик →').getAttribute('href')).toBe('#/vendor/fence');
+    expect(screen.getByText('How the Fence works →').getAttribute('href')).toBe('#/vendor/fence');
     for (const item of itemsByCategory.get(category) ?? []) {
-      const row = rowOf(item.nameRu);
-      expect(within(row).getByText(item.effectRu)).toBeTruthy();
+      const row = rowOf(item.nameEn);
+      expect(within(row).getByText(item.effectEn)).toBeTruthy();
       expect(row.querySelector('.price')).toBeNull();
     }
-    expect(screen.getByText('Сводка по Скупщику').getAttribute('href')).toBe(
-      '#/summary?scope=fence',
-    );
+    expect(screen.getByText('Fence summary').getAttribute('href')).toBe('#/summary?scope=fence');
   });
 });
 
 describe('Item card for non-hunting materials', () => {
   it('shows where to get the ingredient', () => {
     render(<ItemScreen id="raven_claw_talisman" />);
-    expect(screen.getByText(/На столе в хижине Фрэнсиса Синклера/)).toBeTruthy();
+    expect(screen.getByText(/On the table in Francis Sinclair's cabin/)).toBeTruthy();
   });
 });
 
 describe('Vendor page (9.11)', () => {
-  it.each(['trapper', 'fence'] as const)(
-    '%s shows locations, rules and progress',
-    (id) => {
-      render(<VendorScreen id={id} />);
-      const total = itemsByVendor.get(id)?.length ?? 0;
-      expect(screen.getByText(`Изготовлено 0 из ${total}`)).toBeTruthy();
-      expect(screen.getByText('Где найти')).toBeTruthy();
-      expect(screen.getByText('Как работает')).toBeTruthy();
-      expect(screen.getByText('Сводка по торговцу').closest('a')?.getAttribute('href')).toBe(
-        `#/summary?scope=${id}`,
-      );
-    },
-  );
+  it.each(['trapper', 'fence'] as const)('%s shows locations, rules and progress', (id) => {
+    render(<VendorScreen id={id} />);
+    const total = itemsByVendor.get(id)?.length ?? 0;
+    expect(screen.getByText(`Crafted 0 of ${total}`)).toBeTruthy();
+    expect(screen.getByText('Where to find')).toBeTruthy();
+    expect(screen.getByText('How it works')).toBeTruthy();
+    expect(screen.getByText('Vendor summary').closest('a')?.getAttribute('href')).toBe(
+      `#/summary?scope=${id}`,
+    );
+  });
 
   it('fence page lists non-hunting ingredients with where to find them', () => {
     render(<VendorScreen id="fence" />);
-    expect(screen.getByText('Вещи не с охоты')).toBeTruthy();
-    expect(screen.getByText('Старый латунный компас')).toBeTruthy();
-    expect(screen.getByText('Наручники времён Гражданской войны')).toBeTruthy();
+    expect(screen.getByText('Items not from hunting')).toBeTruthy();
+    expect(screen.getByText('Old Brass Compass')).toBeTruthy();
+    expect(screen.getByText('Vintage Civil War Handcuffs')).toBeTruthy();
   });
 
   it('trapper page has no non-hunting block', () => {
     render(<VendorScreen id="trapper" />);
-    expect(screen.queryByText('Вещи не с охоты')).toBeNull();
+    expect(screen.queryByText('Items not from hunting')).toBeNull();
   });
 
-  it('unknown id shows «Не найдено»', () => {
+  it('unknown id shows "Not found"', () => {
     render(<VendorScreen id="nobody" />);
-    expect(screen.getByText('Не найдено')).toBeTruthy();
+    expect(screen.getByText('Not found')).toBeTruthy();
   });
 });

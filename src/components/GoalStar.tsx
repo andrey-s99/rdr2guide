@@ -14,13 +14,13 @@ export interface GoalStarProps {
 export function GoalStar({ kind, id, name, class: cls }: GoalStarProps) {
   const on = kind === 'item' ? goalItemIds.value.has(id) : goalOutfitIds.value.has(id);
   const label =
-    name ?? (kind === 'item' ? itemsById.get(id)?.nameRu : outfitsById.get(id)?.nameRu) ?? id;
+    name ?? (kind === 'item' ? itemsById.get(id)?.nameEn : outfitsById.get(id)?.nameEn) ?? id;
   return (
     <button
       type="button"
       class={['hit', 'goal-btn', cls].filter(Boolean).join(' ')}
       aria-pressed={on}
-      aria-label={`Цель: ${label}`}
+      aria-label={`Goal: ${label}`}
       onClick={(e) => {
         e.stopPropagation();
         e.preventDefault();

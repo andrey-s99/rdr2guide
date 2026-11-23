@@ -9,6 +9,8 @@ export type RouteName =
   | 'fence-talismans'
   | 'animals'
   | 'summary'
+  | 'challenges'
+  | 'challenge'
   | 'item'
   | 'outfit'
   | 'animal'
@@ -16,7 +18,7 @@ export type RouteName =
   | 'search'
   | 'settings';
 
-export type SectionTab = 'trapper' | 'fence' | 'animals' | 'summary';
+export type SectionTab = 'trapper' | 'fence' | 'animals' | 'challenges' | 'summary';
 
 export interface Route {
   name: RouteName;
@@ -26,7 +28,7 @@ export interface Route {
   segments: string[];
   /** Query parameters (last value wins). */
   query: Record<string, string>;
-  /** Entity id for /item, /outfit, /animal, /vendor routes. */
+  /** Entity id for /item, /outfit, /animal, /vendor, /challenge routes. */
   id?: string;
   /** Unique key of this location (path + query), used for scroll restoration. */
   key: string;
@@ -41,6 +43,7 @@ const STATIC_ROUTES: Record<string, RouteName> = {
   '/fence/talismans': 'fence-talismans',
   '/animals': 'animals',
   '/summary': 'summary',
+  '/challenges': 'challenges',
   '/search': 'search',
   '/settings': 'settings',
 };
@@ -50,6 +53,7 @@ const ID_ROUTES: Record<string, RouteName> = {
   outfit: 'outfit',
   animal: 'animal',
   vendor: 'vendor',
+  challenge: 'challenge',
 };
 
 const SECTION_OF: Partial<Record<RouteName, SectionTab>> = {
@@ -58,6 +62,7 @@ const SECTION_OF: Partial<Record<RouteName, SectionTab>> = {
   'fence-trinkets': 'fence',
   'fence-talismans': 'fence',
   animals: 'animals',
+  challenges: 'challenges',
   summary: 'summary',
 };
 
@@ -65,6 +70,7 @@ export const SECTION_DEFAULT_PATH: Record<SectionTab, string> = {
   trapper: '/trapper/outfits',
   fence: '/fence/trinkets',
   animals: '/animals',
+  challenges: '/challenges',
   summary: '/summary',
 };
 
@@ -135,8 +141,12 @@ export const lastSection = signal<SectionTab>(sectionOf(currentRoute.value.name)
 /** Last visited path (with query) per section, so a tab returns to its sub-screen. */
 const lastPathBySection: Partial<Record<SectionTab, string>> = {};
 
+/** Cards that always belong to one tab, even when opened directly by link. */
+const CARD_TAB: Partial<Record<RouteName, SectionTab>> = { challenge: 'challenges' };
+
 export const activeTab = computed<SectionTab>(
-  () => sectionOf(currentRoute.value.name) ?? lastSection.value,
+  () =>
+    sectionOf(currentRoute.value.name) ?? CARD_TAB[currentRoute.value.name] ?? lastSection.value,
 );
 
 /** Where a bottom-nav tab should lead. */

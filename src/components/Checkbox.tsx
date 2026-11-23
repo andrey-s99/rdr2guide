@@ -6,12 +6,12 @@ import { state, toggleCrafted } from '../state/store';
 export interface CheckboxProps {
   checked: boolean;
   onChange: (checked: boolean) => void;
-  /** Accessible name, e.g. «Изготовлено: Шляпа из бобра». */
+  /** Accessible name, e.g. "Crafted: Beaver Hat". */
   label: string;
   class?: string;
 }
 
-/** «Изготовлено» checkbox: real input in a 44×44 hit area, pen-stroke check (SPEC 10.3). */
+/** "Crafted" checkbox: real input in a 44×44 hit area, pen-stroke check (SPEC 10.3). */
 export function Checkbox({ checked, onChange, label, class: cls }: CheckboxProps) {
   return (
     <label
@@ -39,12 +39,12 @@ export interface CraftCheckboxProps {
 /** Checkbox bound to an item's crafted state; toggles via the store (with undo toast). */
 export function CraftCheckbox({ itemId, class: cls }: CraftCheckboxProps) {
   const checked = isCrafted(itemId, state.value.crafted);
-  const name = itemsById.get(itemId)?.nameRu ?? itemId;
+  const name = itemsById.get(itemId)?.nameEn ?? itemId;
   return (
     <Checkbox
       class={cls}
       checked={checked}
-      label={`Изготовлено: ${name}`}
+      label={`Crafted: ${name}`}
       onChange={() => toggleCrafted(itemId)}
     />
   );

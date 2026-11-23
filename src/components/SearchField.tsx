@@ -37,8 +37,8 @@ export function SearchField({ q }: SearchFieldProps) {
         enterKeyHint="search"
         autocomplete="off"
         spellcheck={false}
-        aria-label="Поиск"
-        placeholder="Вещь, зверь или шкура"
+        aria-label="Search"
+        placeholder="Item, animal or pelt"
         value={value}
         onInput={(e) => update(e.currentTarget.value)}
       />
@@ -46,7 +46,7 @@ export function SearchField({ q }: SearchFieldProps) {
         <button
           type="button"
           class="icon-btn search-field__clear"
-          aria-label="Очистить"
+          aria-label="Clear"
           onClick={() => {
             update('');
             input.current?.focus();

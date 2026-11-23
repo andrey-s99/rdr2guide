@@ -11,7 +11,7 @@ export interface TopBarProps {
   goalsCount: number;
   /** Optional custom content replacing the title (e.g. a search field). */
   children?: ComponentChildren;
-  /** Hide the «Поиск» action (on the search screen itself). */
+  /** Hide the "Search" action (on the search screen itself). */
   hideSearch?: boolean;
 }
 
@@ -21,7 +21,7 @@ export function TopBar({ title, onBack, goalsCount, children, hideSearch }: TopB
       <div class={`app-header__inner column${onBack ? ' app-header__inner--back' : ''}`}>
         <div class="app-header__lead">
           {onBack && (
-            <button type="button" class="icon-btn" aria-label="Назад" onClick={onBack}>
+            <button type="button" class="icon-btn" aria-label="Back" onClick={onBack}>
               <BackIcon />
             </button>
           )}
@@ -32,12 +32,12 @@ export function TopBar({ title, onBack, goalsCount, children, hideSearch }: TopB
               <h1 class="app-header__title">{title}</h1>
             ))}
         </div>
-        <nav class="app-header__actions" aria-label="Быстрые действия">
+        <nav class="app-header__actions" aria-label="Quick actions">
           {!hideSearch && (
             <button
               type="button"
               class="icon-btn"
-              aria-label="Поиск"
+              aria-label="Search"
               onClick={() => navigate('/search')}
             >
               <SearchIcon />
@@ -46,7 +46,7 @@ export function TopBar({ title, onBack, goalsCount, children, hideSearch }: TopB
           <button
             type="button"
             class="icon-btn"
-            aria-label={goalsCount > 0 ? `Цели: ${goalsCount}` : 'Цели'}
+            aria-label={goalsCount > 0 ? `Goals: ${goalsCount}` : 'Goals'}
             onClick={() => navigate('/summary?scope=goals')}
           >
             <StarIcon filled={goalsCount > 0} class={goalsCount > 0 ? 'icon-brass' : undefined} />
@@ -59,7 +59,7 @@ export function TopBar({ title, onBack, goalsCount, children, hideSearch }: TopB
           <button
             type="button"
             class="icon-btn"
-            aria-label="Настройки"
+            aria-label="Settings"
             onClick={() => navigate('/settings')}
           >
             <SettingsIcon />

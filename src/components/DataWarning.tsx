@@ -5,13 +5,13 @@ import { WarningIcon } from '../icons';
 type Confidence = Item['dataConfidence'];
 
 const CONFIDENCE_TITLE: Record<Exclude<Confidence, 'high'>, string> = {
-  medium: 'Источники расходятся',
-  low: 'Данные из одного источника',
+  medium: 'Sources disagree',
+  low: 'Single source',
 };
 
 export interface DataWarningProps {
   confidence: Confidence;
-  /** Explanation (item.dataNoteRu). */
+  /** Explanation (item.dataNoteEn). */
   note: string;
   /** 'icon' — small warning button revealing the note; 'banner' — yellow plate (item card). */
   variant?: 'icon' | 'banner';
@@ -27,7 +27,7 @@ export function DataWarning({ confidence, note, variant = 'icon' }: DataWarningP
       <div class="notice data-warning-banner" role="note">
         <WarningIcon size={22} />
         <div>
-          <div class="notice__title">Данные спорные: {title.toLowerCase()}</div>
+          <div class="notice__title">Disputed data: {title.toLowerCase()}</div>
           {note && <p class="notice__text">{note}</p>}
         </div>
       </div>
@@ -38,7 +38,7 @@ export function DataWarning({ confidence, note, variant = 'icon' }: DataWarningP
       <button
         type="button"
         class="data-warning"
-        aria-label={`Данные спорные: ${title.toLowerCase()}`}
+        aria-label={`Disputed data: ${title.toLowerCase()}`}
         aria-expanded={open}
         onClick={(e) => {
           e.stopPropagation();

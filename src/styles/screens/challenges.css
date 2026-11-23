@@ -1,0 +1,98 @@
+/* Challenges tab and challenge category page. */
+
+.challenges-screen,
+.challenge-screen {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.challenges-intro {
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+/* Lists span the full screen width like the other lists. */
+.challenges-list,
+.challenge-ranks {
+  margin-inline: calc(-1 * var(--sp-4));
+  padding: 0;
+  list-style: none;
+}
+
+.challenge-row {
+  align-items: flex-start;
+  padding-top: var(--sp-3);
+  padding-bottom: var(--sp-3);
+}
+
+.challenge-row__progress {
+  margin-top: var(--sp-2);
+}
+
+.challenge-row__count {
+  align-self: center;
+  gap: 2px;
+  font-family: var(--font-ui);
+  color: var(--text-muted);
+}
+
+.challenge-card__block {
+  margin-top: var(--sp-4);
+  line-height: 1.45;
+}
+
+.challenge-card__heading {
+  font-family: var(--font-ui);
+  font-weight: 500;
+  font-size: var(--fs-sm);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--paper-brass-text);
+  margin-bottom: var(--sp-2);
+}
+
+.challenge-card__tips {
+  margin: 0;
+  padding-left: 1.2em;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  list-style: square;
+}
+
+.challenge-rank {
+  align-items: flex-start;
+  padding-top: var(--sp-3);
+  padding-bottom: var(--sp-3);
+}
+
+.challenge-rank--current {
+  box-shadow: inset 3px 0 0 var(--accent);
+}
+
+.challenge-rank__label {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-family: var(--font-ui);
+  font-size: var(--fs-sm);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--brass-text);
+}
+
+.challenge-rank__text {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: var(--fs-md);
+  line-height: 1.35;
+  color: var(--text);
+}
+
+.challenge-rank__guide {
+  margin-top: var(--sp-1);
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--text-muted);
+}

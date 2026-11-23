@@ -7,7 +7,7 @@ import { setStock, state } from '../state/store';
 export interface NumberStepperProps {
   value: number;
   onChange: (value: number) => void;
-  /** Subject for aria-labels, e.g. «Бобр» → «Убавить: Бобр». */
+  /** Subject for aria-labels, e.g. "Beaver" → "Decrease: Beaver". */
   label: string;
   min?: number;
   max?: number;
@@ -38,13 +38,13 @@ export function NumberStepper({
     <div
       class={cls ? `stepper ${cls}` : 'stepper'}
       role="group"
-      aria-label={`Запас: ${label}`}
+      aria-label={`Stock: ${label}`}
       onClick={(e) => e.stopPropagation()}
     >
       <button
         type="button"
         class="stepper__btn"
-        aria-label={`Убавить: ${label}`}
+        aria-label={`Decrease: ${label}`}
         disabled={value <= min}
         onClick={() => onChange(clamp(value - 1))}
       >
@@ -56,7 +56,7 @@ export function NumberStepper({
         inputMode="numeric"
         pattern="[0-9]*"
         maxLength={String(max).length}
-        aria-label={`Количество: ${label}`}
+        aria-label={`Amount: ${label}`}
         value={draft ?? String(value)}
         onFocus={(e) => (e.currentTarget as HTMLInputElement).select()}
         onInput={(e) => {
@@ -79,7 +79,7 @@ export function NumberStepper({
       <button
         type="button"
         class="stepper__btn"
-        aria-label={`Добавить: ${label}`}
+        aria-label={`Increase: ${label}`}
         disabled={value >= max}
         onClick={() => onChange(clamp(value + 1))}
       >

@@ -23,7 +23,8 @@ const progress: UserState = {
   },
   stock: { perfect_beaver: 3, perfect_cougar: 1 },
   goals: { items: ['boar_riding_gloves'], outfits: [] },
-  settings: { theme: 'paper', showEnglish: false },
+  challenges: { bandit: 2, herbalist: 10 },
+  settings: { theme: 'paper' },
 };
 
 let createdBlobs: Blob[] = [];
@@ -81,26 +82,25 @@ describe('Settings (9.13)', () => {
       applyTheme(state.value.settings.theme);
     });
     renderSettings();
-    fireEvent.click(screen.getByRole('tab', { name: 'Бумага' }));
+    fireEvent.click(screen.getByRole('tab', { name: 'Paper' }));
     expect(state.value.settings.theme).toBe('paper');
     expect(document.documentElement.dataset.theme).toBe('paper');
-    fireEvent.click(screen.getByRole('tab', { name: 'Ночь' }));
+    fireEvent.click(screen.getByRole('tab', { name: 'Night' }));
     expect(document.documentElement.dataset.theme).toBe('night');
     stop();
   });
 
-  it('English names switch changes the setting', () => {
+  it('has no language switch: the UI is English only', () => {
     renderSettings();
-    const sw = screen.getByRole('switch', { name: 'Показывать английские названия' });
-    fireEvent.click(sw);
-    expect(state.value.settings.showEnglish).toBe(false);
+    expect(screen.queryByRole('switch')).toBeNull();
+    expect(document.body.textContent).not.toMatch(/[А-Яа-яЁё]/);
   });
 
   it('export → reset → import restores the state completely (M7)', async () => {
     state.value = structuredClone(progress);
     renderSettings();
 
-    fireEvent.click(screen.getByRole('button', { name: 'Сохранить резервную копию' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Save backup' }));
     expect(createdBlobs).toHaveLength(1);
     const text = await readBlob(createdBlobs[0]);
 
@@ -111,7 +111,7 @@ describe('Settings (9.13)', () => {
     chooseFile(text);
     const dialog = await screen.findByRole('dialog', { name: IMPORT_CONFIRM_TITLE });
     expect(dialog).toBeTruthy();
-    fireEvent.click(screen.getByRole('button', { name: 'Заменить' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Replace' }));
 
     await screen.findByText(IMPORT_DONE);
     expect(state.value).toEqual(progress);
@@ -122,13 +122,15 @@ describe('Settings (9.13)', () => {
     renderSettings();
     chooseFile('{ not json');
     const alert = await screen.findByRole('alert');
-    expect(alert.textContent).toContain('Текущий прогресс не изменён');
+    expect(alert.textContent).toContain('Your current progress was not changed');
     expect(screen.queryByRole('dialog')).toBeNull();
     expect(state.value).toEqual(progress);
 
     chooseFile(JSON.stringify({ app: 'other', state: {} }));
     await waitFor(() =>
-      expect(screen.getByRole('alert').textContent).toContain('Это не резервная копия'),
+      expect(screen.getByRole('alert').textContent).toContain(
+        "This is not a Hunter's Journal backup",
+      ),
     );
     expect(state.value).toEqual(progress);
   });
@@ -136,9 +138,9 @@ describe('Settings (9.13)', () => {
   it('reset requires two confirmations', async () => {
     state.value = structuredClone(progress);
     renderSettings();
-    fireEvent.click(screen.getByRole('button', { name: 'Сбросить прогресс' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Reset progress' }));
     await screen.findByRole('dialog');
-    fireEvent.click(screen.getByRole('button', { name: 'Сбросить' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Reset' }));
     await screen.findByRole('button', { name: RESET_FINAL_LABEL });
     expect(state.value.stock).toEqual(progress.stock);
     fireEvent.click(screen.getByRole('button', { name: RESET_FINAL_LABEL }));
@@ -150,9 +152,9 @@ describe('Settings (9.13)', () => {
 
   it('shows data info and the disputed items list', () => {
     renderSettings();
-    expect(screen.getByText(/Версия данных/)).toBeTruthy();
-    expect(screen.getByText(/Версия приложения/)).toBeTruthy();
-    const toggle = screen.queryByRole('button', { name: 'Показать список' });
+    expect(screen.getByText(/Data version/)).toBeTruthy();
+    expect(screen.getByText(/App version/)).toBeTruthy();
+    const toggle = screen.queryByRole('button', { name: 'Show list' });
     if (toggle) {
       fireEvent.click(toggle);
       expect(toggle.getAttribute('aria-expanded')).toBe('true');

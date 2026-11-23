@@ -1,4 +1,4 @@
-// Search (SPEC 7.7).
+// Search (SPEC 7.7). Matches English names (shown in the UI) and, as a fallback, Russian ones.
 import { animals, items, materials, outfits } from '../data';
 import type { Animal, Item, Material, Outfit } from '../data/types';
 
@@ -52,10 +52,10 @@ function matchRank(name: string, q: string): number {
 function searchGroup<T extends Named>(list: readonly T[], q: string, limit: number): T[] {
   const hits: { x: T; rank: number }[] = [];
   for (const x of list) {
-    const rank = Math.max(matchRank(x.nameRu, q), matchRank(x.nameEn, q));
+    const rank = Math.max(matchRank(x.nameEn, q), matchRank(x.nameRu, q));
     if (rank > 0) hits.push({ x, rank });
   }
-  hits.sort((a, b) => b.rank - a.rank || a.x.nameRu.localeCompare(b.x.nameRu, 'ru'));
+  hits.sort((a, b) => b.rank - a.rank || a.x.nameEn.localeCompare(b.x.nameEn, 'en'));
   return hits.slice(0, limit).map((h) => h.x);
 }
 

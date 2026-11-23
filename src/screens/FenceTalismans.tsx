@@ -2,24 +2,24 @@ import { ItemRow } from '../components/ItemRow';
 import { itemsByCategory } from '../data';
 import { SummaryButton, VendorInfoLink, VendorListScreen } from './VendorList';
 
-/** Скупщик → Талисманы (SPEC 9.6). */
+/** Fence → Talismans (SPEC 9.6). */
 export function FenceTalismans() {
   const items = itemsByCategory.get('talisman') ?? [];
   return (
     <VendorListScreen
       screenKey="fence-talismans"
-      title="Талисманы"
+      title="Talismans"
       items={items}
       icon="talisman"
-      top={<VendorInfoLink vendorId="fence" label="Как работает Скупщик →" />}
+      top={<VendorInfoLink vendorId="fence" label="How the Fence works →" />}
       renderList={(list) => (
         <div class="list">
           {list.map((item) => (
-            <ItemRow key={item.id} item={item} note={item.effectRu} showPrice={false} />
+            <ItemRow key={item.id} item={item} note={item.effectEn} showPrice={false} />
           ))}
         </div>
       )}
-      bottom={<SummaryButton scope="fence" label="Сводка по Скупщику" />}
+      bottom={<SummaryButton scope="fence" label="Fence summary" />}
     />
   );
 }

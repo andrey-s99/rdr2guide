@@ -14,7 +14,7 @@ export function sessionSignal<T>(key: string, initial: T): Signal<T> {
   return s;
 }
 
-/** Status filter of a list screen, «Не сделано» by default. */
+/** Status filter of a list screen, "Not crafted" by default. */
 export function statusFilterSignal(screenKey: string): Signal<StatusFilter> {
   return sessionSignal<StatusFilter>(`status-filter:${screenKey}`, 'not_crafted');
 }

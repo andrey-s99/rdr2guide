@@ -1,9 +1,9 @@
 import { afterEach, beforeEach, describe, expect, it } from 'vitest';
-import { act, cleanup, fireEvent, render, screen } from '@testing-library/preact';
+import { cleanup, fireEvent, render, screen } from '@testing-library/preact';
 import { Search, SEARCH_HINT, SEARCH_NOTHING, materialTarget } from '../src/screens/Search';
 import { SearchField } from '../src/components/SearchField';
 import { materials } from '../src/data';
-import { resetStoreForTests, setSettings } from '../src/state/store';
+import { resetStoreForTests } from '../src/state/store';
 
 beforeEach(() => {
   resetStoreForTests();
@@ -16,30 +16,28 @@ afterEach(() => {
 
 describe('Search screen (9.12)', () => {
   it('shows the hint for queries shorter than 2 characters', () => {
-    render(<Search q="ч" />);
+    render(<Search q="b" />);
     expect(screen.getByText(SEARCH_HINT)).toBeTruthy();
     cleanup();
     render(<Search q="" />);
     expect(screen.getByText(SEARCH_HINT)).toBeTruthy();
   });
 
-  it('«чёрн» finds «Чёрный медведь» in the animals group, linking to its card', () => {
-    render(<Search q="чёрн" />);
-    const link = screen.getByRole('link', { name: /^Чёрный медведь/ });
+  it('"black b" finds "Black Bear" in the animals group, linking to its card', () => {
+    render(<Search q="black b" />);
+    const link = screen.getByRole('link', { name: /^Black Bear/ });
     expect(link.getAttribute('href')).toMatch(/^#\/animal\//);
-    expect(screen.getByRole('heading', { name: /Животные/ })).toBeTruthy();
+    expect(screen.getByRole('heading', { name: /Animals/ })).toBeTruthy();
   });
 
-  it('shows «Ничего не найдено» when nothing matches', () => {
+  it('shows "Nothing found" when nothing matches', () => {
     render(<Search q="zzqqxx" />);
     expect(screen.getByText(SEARCH_NOTHING)).toBeTruthy();
   });
 
-  it('English names follow the setting', () => {
+  it('a Russian query still finds the item, shown by its English name', () => {
     render(<Search q="чёрн" />);
     expect(screen.queryAllByText('Black Bear').length).toBeGreaterThan(0);
-    act(() => setSettings({ showEnglish: false }));
-    expect(screen.queryAllByText('Black Bear').length).toBe(0);
   });
 
   it('every material result has a target card', () => {
@@ -50,11 +48,11 @@ describe('Search screen (9.12)', () => {
 
   it('search field keeps the query in the URL and clears it', () => {
     render(<SearchField q="" />);
-    const input = screen.getByRole('searchbox', { name: 'Поиск' }) as HTMLInputElement;
+    const input = screen.getByRole('searchbox', { name: 'Search' }) as HTMLInputElement;
     expect(document.activeElement).toBe(input);
-    fireEvent.input(input, { target: { value: 'бобр' } });
-    expect(decodeURIComponent(location.hash)).toBe('#/search?q=бобр');
-    fireEvent.click(screen.getByRole('button', { name: 'Очистить' }));
+    fireEvent.input(input, { target: { value: 'beaver' } });
+    expect(decodeURIComponent(location.hash)).toBe('#/search?q=beaver');
+    fireEvent.click(screen.getByRole('button', { name: 'Clear' }));
     expect(location.hash).toBe('#/search');
     expect(input.value).toBe('');
   });

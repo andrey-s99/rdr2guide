@@ -6,11 +6,17 @@ import animalsJson from '@data/animals.json';
 import materialsJson from '@data/materials.json';
 import itemsJson from '@data/items.json';
 import outfitsJson from '@data/outfits.json';
+import enJson from './en.json';
+import challengesJson from './challenges.json';
 import type {
   Animal,
   Category,
   CategoryId,
+  ChallengeCategory,
+  ChallengeCategoryId,
+  EnglishTexts,
   Item,
+  Link,
   Material,
   Meta,
   Outfit,
@@ -24,14 +30,86 @@ import type { Dataset } from './dataset';
 export type * from './types';
 export type { Dataset } from './dataset';
 
-export const meta = metaJson as unknown as Meta;
-export const regions = regionsJson as unknown as Region[];
-export const vendors = vendorsJson as unknown as Vendor[];
-export const categories = categoriesJson as unknown as Category[];
-export const animals = animalsJson as unknown as Animal[];
-export const materials = materialsJson as unknown as Material[];
-export const items = itemsJson as unknown as Item[];
-export const outfits = outfitsJson as unknown as Outfit[];
+/** English texts for the game data (the original data/*.json descriptions are Russian). */
+export const english = enJson as EnglishTexts;
+
+type RawLink = Omit<Link, 'labelEn'>;
+
+function withLabels(links: RawLink[], labels: string[] | undefined): Link[] {
+  return links.map((l, i) => ({ ...l, labelEn: labels?.[i] ?? l.url }));
+}
+
+/** Merges src/data/en.json into the raw game data. Missing texts become ''. */
+export function localizeDataset(raw: Dataset, en: EnglishTexts): Dataset {
+  const rawMeta = raw.meta as Omit<Meta, 'notesEn' | 'globalMapLinks'> & {
+    globalMapLinks: RawLink[];
+  };
+  return {
+    meta: {
+      ...rawMeta,
+      notesEn: en.meta.notes,
+      globalMapLinks: withLabels(rawMeta.globalMapLinks, en.meta.globalMapLinks),
+    },
+    regions: raw.regions,
+    vendors: raw.vendors.map((v) => ({
+      ...v,
+      locationsEn: en.vendors[v.id]?.locations ?? [],
+      rulesEn: en.vendors[v.id]?.rules ?? [],
+    })),
+    categories: raw.categories.map((c) => ({ ...c, nameEn: en.categories[c.id] ?? c.id })),
+    animals: raw.animals.map((a) => {
+      const t = en.animals[a.id];
+      return {
+        ...a,
+        habitatEn: t?.habitat ?? '',
+        perfectKillEn: t?.perfectKill ?? '',
+        behaviorEn: t?.behavior ?? '',
+        ...(t?.unlock !== undefined ? { unlockEn: t.unlock } : {}),
+        availabilityNoteEn: t?.availabilityNote ?? '',
+        links: withLabels(a.links, t?.links),
+      };
+    }),
+    materials: raw.materials.map((m) => ({ ...m, sourceEn: en.materials[m.id] ?? '' })),
+    items: raw.items.map((i) => {
+      const t = en.items[i.id];
+      return {
+        ...i,
+        requirementEn: t?.requirement ?? '',
+        effectEn: t?.effect ?? '',
+        campSpotEn: '',
+        dataNoteEn: t?.dataNote ?? '',
+      };
+    }),
+    outfits: raw.outfits,
+  };
+}
+
+const rawDataset = {
+  meta: metaJson,
+  regions: regionsJson,
+  vendors: vendorsJson,
+  categories: categoriesJson,
+  animals: animalsJson,
+  materials: materialsJson,
+  items: itemsJson,
+  outfits: outfitsJson,
+} as unknown as Dataset;
+
+const localized = localizeDataset(rawDataset, english);
+
+export const meta: Meta = localized.meta;
+export const regions: Region[] = localized.regions;
+export const vendors: Vendor[] = localized.vendors;
+export const categories: Category[] = localized.categories;
+export const animals: Animal[] = localized.animals;
+export const materials: Material[] = localized.materials;
+export const items: Item[] = localized.items;
+export const outfits: Outfit[] = localized.outfits;
+
+/** The 9 challenge categories × 10 ranks (src/data/challenges.json). */
+export const challengeCategories = challengesJson as unknown as ChallengeCategory[];
+export const challengeCategoriesById: ReadonlyMap<ChallengeCategoryId, ChallengeCategory> =
+  new Map(challengeCategories.map((c) => [c.id, c]));
 
 export const dataset: Dataset = {
   meta,
@@ -119,41 +197,41 @@ export function materialAnimal(materialId: string): Animal | null {
 /** Items with disputed data (dataConfidence medium/low). */
 export const disputedItems: Item[] = items.filter((i) => i.dataConfidence !== 'high');
 
-export const qualityLabelRu: Record<Material['quality'], string> = {
-  perfect: 'идеальная',
-  any: 'любая',
-  legendary: 'легендарная',
+export const qualityLabel: Record<Material['quality'], string> = {
+  perfect: 'perfect',
+  any: 'any',
+  legendary: 'legendary',
 };
 
-export const animalTypeLabelRu: Record<Animal['type'], string> = {
-  regular: 'Обычное животное',
-  bird: 'Птица',
-  legendary: 'Легендарный зверь',
+export const animalTypeLabel: Record<Animal['type'], string> = {
+  regular: 'Animal',
+  bird: 'Bird',
+  legendary: 'Legendary animal',
 };
 
-export const sizeLabelRu: Record<Animal['size'], string> = {
-  small: 'мелкий',
-  medium: 'средний',
-  large: 'крупный',
+export const sizeLabel: Record<Animal['size'], string> = {
+  small: 'small',
+  medium: 'medium',
+  large: 'large',
 };
 
 /**
- * Short material name for chips and toasts, e.g. «Бобр», «Олень (туша)».
+ * Short material name for chips and toasts, e.g. "Beaver", "Deer (carcass)".
  * Skins use the animal name; carcasses/antlers add a hint; other kinds use the material name.
  */
 export function materialShortName(materialId: string): string {
   const m = materialsById.get(materialId);
   if (!m) return materialId;
   const animal = m.animalId ? animalsById.get(m.animalId) : undefined;
-  if (!animal) return m.nameRu;
+  if (!animal) return m.nameEn;
   switch (m.kind) {
     case 'skin':
-      return animal.nameRu;
+      return animal.nameEn;
     case 'carcass':
-      return `${animal.nameRu} (туша)`;
+      return `${animal.nameEn} (carcass)`;
     case 'antler':
-      return `${animal.nameRu} (рога)`;
+      return `${animal.nameEn} (antlers)`;
     default:
-      return m.nameRu;
+      return m.nameEn;
   }
 }

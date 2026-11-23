@@ -130,7 +130,7 @@
 
 .app-nav__list {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   height: var(--nav-h);
 }
 
@@ -294,7 +294,7 @@
   border-radius: var(--radius-sm);
   font-size: 14px;
   line-height: 1.15;
-  /* Long labels («Как в системе») wrap to a second line instead of being cut. */
+  /* Long labels ("System") wrap to a second line instead of being cut. */
   white-space: normal;
   overflow-wrap: break-word;
 }
@@ -536,7 +536,7 @@
   width: 100%;
 }
 
-/* Text link row like «Где найти Охотника →» */
+/* Text link row like "Where to find the Trapper →" */
 .link-row {
   display: flex;
   align-items: center;

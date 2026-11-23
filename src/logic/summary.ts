@@ -8,7 +8,7 @@ export type SummaryGroupMode = 'animal' | 'region' | 'flat';
 export const SUMMARY_GROUP_MODES: readonly SummaryGroupMode[] = ['animal', 'region', 'flat'];
 
 export const SPECIAL_GROUP_ID = 'special';
-export const SPECIAL_GROUP_TITLE = 'Особые предметы';
+export const SPECIAL_GROUP_TITLE = 'Special items';
 
 export function isSummaryGroupMode(x: unknown): x is SummaryGroupMode {
   return x === 'animal' || x === 'region' || x === 'flat';
@@ -19,7 +19,7 @@ export interface MaterialGroup {
   /** Animal id or SPECIAL_GROUP_ID. */
   id: string;
   animal: Animal | null;
-  titleRu: string;
+  title: string;
   rows: MaterialNeed[];
   /** Σ remaining of the group's rows. */
   remaining: number;
@@ -30,7 +30,7 @@ export interface RegionGroup {
   /** Region id or SPECIAL_GROUP_ID. */
   id: string;
   region: Region | null;
-  titleRu: string;
+  title: string;
   groups: MaterialGroup[];
   remaining: number;
 }
@@ -47,18 +47,18 @@ const defaultLookups: SummaryLookups = {
   regions: allRegions,
 };
 
-const collator = new Intl.Collator('ru');
+const collator = new Intl.Collator('en');
 
 function nameOf(id: string, lookups: SummaryLookups): string {
-  return lookups.material(id)?.nameRu ?? id;
+  return lookups.material(id)?.nameEn ?? id;
 }
 
-/** Rows shown on screen: need > 0, and remaining > 0 unless «Показывать собранное» is on. */
+/** Rows shown on screen: need > 0, and remaining > 0 unless "Show collected" is on. */
 export function visibleRows(rows: readonly MaterialNeed[], showCollected: boolean): MaterialNeed[] {
   return rows.filter((r) => r.need > 0 && (showCollected || r.remaining > 0));
 }
 
-/** Flat list: remaining desc, then material nameRu. */
+/** Flat list: remaining desc, then material nameEn. */
 export function sortFlat(
   rows: readonly MaterialNeed[],
   lookups: SummaryLookups = defaultLookups,
@@ -70,9 +70,9 @@ export function sortFlat(
   );
 }
 
-/** Group order: total remaining desc, then title (nameRu). */
-function compareGroups(a: { remaining: number; titleRu: string }, b: typeof a): number {
-  return b.remaining - a.remaining || collator.compare(a.titleRu, b.titleRu);
+/** Group order: total remaining desc, then title (nameEn). */
+function compareGroups(a: { remaining: number; title: string }, b: typeof a): number {
+  return b.remaining - a.remaining || collator.compare(a.title, b.title);
 }
 
 function sumRows(rows: readonly MaterialNeed[]): number {
@@ -123,7 +123,7 @@ function makeAnimalGroups(
     groups.push({
       id: animal.id,
       animal,
-      titleRu: animal.nameRu,
+      title: animal.nameEn,
       rows: inDataOrder(rows, order),
       remaining: sumRows(rows),
     });
@@ -135,15 +135,15 @@ function makeSpecialGroup(rows: MaterialNeed[], order: ReadonlyMap<string, numbe
   return {
     id: SPECIAL_GROUP_ID,
     animal: null,
-    titleRu: SPECIAL_GROUP_TITLE,
+    title: SPECIAL_GROUP_TITLE,
     rows: inDataOrder(rows, order),
     remaining: sumRows(rows),
   };
 }
 
 /**
- * «По зверям»: one group per animal plus «Особые предметы» (animalId = null).
- * Groups are sorted by Σ remaining desc, then nameRu; rows keep materials.json order.
+ * "By animal": one group per animal plus "Special items" (animalId = null).
+ * Groups are sorted by Σ remaining desc, then nameEn; rows keep materials.json order.
  */
 export function groupByAnimal(
   rows: readonly MaterialNeed[],
@@ -157,7 +157,7 @@ export function groupByAnimal(
 }
 
 /**
- * «По регионам»: groups by animal.regions[0] in regions.json order, animal groups inside
+ * "By region": groups by animal.regions[0] in regions.json order, animal groups inside
  * (sorted as in groupByAnimal); special materials form the last group.
  */
 export function groupByRegion(
@@ -176,7 +176,7 @@ export function groupByRegion(
     result.push({
       id: region.id,
       region,
-      titleRu: region.nameRu,
+      title: region.nameEn,
       groups,
       remaining: groups.reduce((s, g) => s + g.remaining, 0),
     });
@@ -186,7 +186,7 @@ export function groupByRegion(
     result.push({
       id: SPECIAL_GROUP_ID,
       region: null,
-      titleRu: SPECIAL_GROUP_TITLE,
+      title: SPECIAL_GROUP_TITLE,
       groups: [group],
       remaining: group.remaining,
     });
@@ -194,7 +194,7 @@ export function groupByRegion(
   return result;
 }
 
-/** Items of the current scope that use a material (for the «для чего» list). */
+/** Items of the current scope that use a material (for the "used for" list). */
 export function usedInScope(
   materialId: string,
   scopeItemIds: ReadonlySet<string>,
@@ -203,22 +203,17 @@ export function usedInScope(
   return (byMaterial.get(materialId) ?? []).filter((i) => scopeItemIds.has(i.id));
 }
 
-/** Russian plural: pluralRu(n, ['вид', 'вида', 'видов']). */
-export function pluralRu(n: number, forms: readonly [string, string, string]): string {
-  const mod10 = Math.abs(n) % 10;
-  const mod100 = Math.abs(n) % 100;
-  if (mod10 === 1 && mod100 !== 11) return forms[0];
-  if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) return forms[1];
-  return forms[2];
+/** English plural: plural(n, 'item', 'items'). */
+export function plural(n: number, one: string, many: string): string {
+  return Math.abs(n) === 1 ? one : many;
 }
 
-/** Word after a count: «110 видов материалов», «1 вид материала», «3 вида материалов». */
+/** Word after a count: "110 material types", "1 material type". */
 export function kindsWord(n: number): string {
-  return pluralRu(n, ['вид материала', 'вида материалов', 'видов материалов']);
+  return plural(n, 'material type', 'material types');
 }
 
-/** «Изготовлено X из Y предметов» (genitive after «из»: 1/21 → «предмета»). */
+/** "Crafted X of Y items". */
 export function craftedText(done: number, total: number): string {
-  const word = pluralRu(total, ['предмета', 'предметов', 'предметов']);
-  return `Изготовлено ${done} из ${total} ${word}`;
+  return `Crafted ${done} of ${total} ${plural(total, 'item', 'items')}`;
 }

@@ -1,0 +1,567 @@
+[
+  {
+    "id": "bandit",
+    "name": "Bandit",
+    "unlock": "Hold up a townsperson (aim at them and press Hold Up).",
+    "reward": "Ranks 1, 3, 7 and 10 each unlock a piece of the reinforced Bandit set (bandolier, holster, off-hand holster, gun belt) at the Trapper. Buying the full set raises the maximum level of your Stamina core.",
+    "tips": [
+      "Crimes add bounty. Wear a bandana (Satchel → Clothing → Bandana) so you are not recognised and it costs less.",
+      "Pay off bounties at any post office before the big ranks so lawmen are not hunting you all the time.",
+      "Save before risky ranks (9 and 10): the train rank fails if you die or get caught."
+    ],
+    "ranks": [
+      {
+        "rank": 1,
+        "text": "Hold up 5 townsfolk.",
+        "guide": "Ride a lonely road outside town, aim at a passer-by and hold up. Lone walkers on paths around Valentine or Rhodes are ideal. Wear a bandana and ride off afterwards — five in a row take a couple of minutes."
+      },
+      {
+        "rank": 2,
+        "text": "Rob 2 coaches or complete 2 coach robbery missions.",
+        "guide": "Stop a stagecoach on a country road (shoot or lasso the driver, or hold it up) and loot the strongbox or passengers. Coach robbery tips from Lenny or Sean at camp also count. Roads between Valentine and Strawberry have plenty of coaches."
+      },
+      {
+        "rank": 3,
+        "text": "Rob the cash register in any 4 shops in 1 day.",
+        "guide": "Go in, aim at the shopkeeper, then loot the register when they open it. Do Valentine → Strawberry (or Rhodes → Saint Denis) in one in-game day. Avoid Saint Denis police if you can: start in small towns and ride out fast. Sleep or wait in camp to reset the day if you run out of time."
+      },
+      {
+        "rank": 4,
+        "text": "Rob 3 coaches in 1 day.",
+        "guide": "Pick a busy road (Valentine–Strawberry–Blackwater or Rhodes–Saint Denis) and wait at a crossroads with your horse ready. Hold up or stop three coaches quickly. Wear a bandana, kill or hogtie witnesses, and keep moving between robberies."
+      },
+      {
+        "rank": 5,
+        "text": "Get a bounty of $250 or more in a single state.",
+        "guide": "The fastest way: rob a shop and a couple of passers-by without a bandana in one state, then let the bounty grow. Valentine is easy because the law arrives fast. Pay the bounty off at a post office afterwards."
+      },
+      {
+        "rank": 6,
+        "text": "Steal 3 horses and sell them to the horse fence at Clemens Cove.",
+        "guide": "Lasso and hogtie a rider (or take an unattended horse at a hitching post), mount it, calm it and ride to the horse fence at Clemens Cove, east of Clemens Point. Horses from the Rhodes area are closest. You can only sell one stolen horse per day, so this takes three in-game days — sleep in camp between sales."
+      },
+      {
+        "rank": 7,
+        "text": "Rob $50 worth of cash and valuables from townsfolk and travelers.",
+        "guide": "Holding people up and looting them both count. Coach passengers and Saint Denis residents carry the most. Robbing coaches and looting the passengers finishes it quickly; pick up the strongbox valuables too."
+      },
+      {
+        "rank": 8,
+        "text": "Steal 7 wagons and sell them to a fence.",
+        "guide": "Take wagons (stagecoaches and covered wagons work) and drive them to the wagon fence at Emerald Ranch; Clemens Cove also buys them. Only one wagon can be sold per in-game day, so do one each time you pass, or sleep in camp between sales."
+      },
+      {
+        "rank": 9,
+        "text": "Hogtie a lawman, place them on a railroad track and witness a train run them over.",
+        "guide": "Get a small bounty near a railroad (Valentine station, Rhodes or Emerald Station), lasso one lawman, hogtie him, carry him to the tracks and drop him there. Check the train timetable at the station or just wait nearby. Ride a bit away and watch. Kill the other lawmen first so they don't free him."
+      },
+      {
+        "rank": 10,
+        "text": "Complete 5 train robberies without dying or being caught.",
+        "guide": "Board a train (jump on from a horse or wait at a station), hold up the passengers car by car, then escape. Smaller passenger trains near Valentine, Emerald Station and Rhodes are easier than the Saint Denis line. Save before each one. If you die or get caught, the count resets — escape far out of the state before saving again."
+      }
+    ]
+  },
+  {
+    "id": "explorer",
+    "name": "Explorer",
+    "unlock": "Pick up any treasure map.",
+    "reward": "Ranks 1, 3, 7 and 10 each unlock a piece of the reinforced Explorer set at the Trapper. Buying the full set raises the maximum level of your Dead Eye core.",
+    "tips": [
+      "Ranks 2–10 are simply treasure finds: every chest or map location you reach on a treasure hunt counts as one find.",
+      "Only treasure found while the rank is active counts, so pick up a map first (rank 1) and then hunt.",
+      "The three treasure hunts — Jack Hall Gang, High Stakes and Poisonous Trail — are enough to finish the whole category. Each map shows a drawing of the place: open it from Satchel → Documents."
+    ],
+    "ranks": [
+      {
+        "rank": 1,
+        "text": "Find a treasure map.",
+        "guide": "Easiest: the Jack Hall Gang map. From Chapter 2 it can be picked up near Flatneck Station (south-east of Valentine). The High Stakes map is carried by a stranger riding between Valentine and Strawberry — if he escapes three times you can buy it from a Fence. The Poisonous Trail map is in Cairn Lodge at Cairn Lake (north-west Ambarino)."
+      },
+      {
+        "rank": 2,
+        "text": "Find a treasure.",
+        "guide": "Jack Hall Gang map 1 leads to Caliban's Seat, the big rock south of Valentine — the next map is in a crevice near the top. Reaching it counts as a treasure."
+      },
+      {
+        "rank": 3,
+        "text": "Find a treasure.",
+        "guide": "Jack Hall Gang map 2 leads to Cotorra Springs (geysers in Ambarino, north of Fort Wallace). Look in the rock pile between the hot springs."
+      },
+      {
+        "rank": 4,
+        "text": "Find a treasure.",
+        "guide": "Jack Hall Gang map 3: the small island in O'Creagh's Run lake (Ambarino, west of Annesburg). The gold bars are under a rock on the island."
+      },
+      {
+        "rank": 5,
+        "text": "Find a treasure.",
+        "guide": "Start the High Stakes hunt: its first map points to the cave behind the waterfall at Cumberland Falls (north of Valentine)."
+      },
+      {
+        "rank": 6,
+        "text": "Find a treasure.",
+        "guide": "Follow the next High Stakes map. Compare the drawing with the area and use Eagle Eye — the next map or chest glints when you are close."
+      },
+      {
+        "rank": 7,
+        "text": "Find a treasure.",
+        "guide": "Finish High Stakes (the final chest holds gold bars). If a location is hard to read, look up the map's drawing in a treasure guide."
+      },
+      {
+        "rank": 8,
+        "text": "Find a treasure.",
+        "guide": "Start the Poisonous Trail hunt from the map in Cairn Lodge (Cairn Lake). The next step is in the West Elizabeth / Ambarino highlands — follow the drawing."
+      },
+      {
+        "rank": 9,
+        "text": "Find a treasure.",
+        "guide": "Continue the Poisonous Trail. The last part is inside the cave at Face Rock (east of Fort Wallace); bring a lantern."
+      },
+      {
+        "rank": 10,
+        "text": "Find a treasure.",
+        "guide": "Finish the Poisonous Trail (gold bars in the cave). If you still need one more find, any other treasure map (e.g. Landmarks of Riches or the Elemental Trail) also counts."
+      }
+    ]
+  },
+  {
+    "id": "gambler",
+    "name": "Gambler",
+    "unlock": "Win a hand of poker (or another table game).",
+    "reward": "Ranks 1, 3, 7 and 10 each unlock a piece of the reinforced Gambler set at the Trapper. Buying the full set raises the maximum level of your Stamina core.",
+    "tips": [
+      "Save before a game and reload if you lose — the challenge only counts wins.",
+      "Poker: Valentine, Flatneck Station, Saint Denis, Blackwater/Tumbleweed (Epilogue) and camp. Blackjack and Dominoes are in a few saloons only (e.g. Saint Denis, Van Horn, Blackwater and Tumbleweed in the Epilogue). Five Finger Fillet is at camp and in some saloons/outposts.",
+      "Five Finger Fillet: watch the prompt sequence and press each button just as the knife reaches the gap; it gets faster, so start slow to keep your rhythm."
+    ],
+    "ranks": [
+      {
+        "rank": 1,
+        "text": "Win 5 hands of Poker.",
+        "guide": "Play poker at camp or in Valentine. Bet small and only play strong hands; fold the rest. Five winning hands, not whole games."
+      },
+      {
+        "rank": 2,
+        "text": "Double down and win 5 hands of Blackjack.",
+        "guide": "Blackjack tables: Saint Denis (Bastille Saloon) and Van Horn. Double down only on a total of 10 or 11 against a dealer showing 2–9. Save and reload after losses."
+      },
+      {
+        "rank": 3,
+        "text": "Win 3 games of Five Finger Fillet.",
+        "guide": "Play against a gang member at camp or a local in a saloon. Keep a steady rhythm rather than speed — a mistake costs a point, not the game."
+      },
+      {
+        "rank": 4,
+        "text": "Bust a poker table in 3 different locations.",
+        "guide": "\"Bust\" means taking all your opponents' chips. Tables in Valentine, Flatneck Station and Saint Denis are three easy picks. Play patiently and go all-in only with a strong hand; save before each game."
+      },
+      {
+        "rank": 5,
+        "text": "Win 3 rounds of Dominoes without drawing tiles against 2 or fewer opponents.",
+        "guide": "Pick a table with only one or two opponents (All Fives or Draw). Save before each round and reload if you have to draw from the boneyard."
+      },
+      {
+        "rank": 6,
+        "text": "Beat the Blackjack dealer in 2 locations.",
+        "guide": "Win a blackjack game in Saint Denis and in Van Horn (or Blackwater/Tumbleweed in the Epilogue). Winning a single game at each table is enough."
+      },
+      {
+        "rank": 7,
+        "text": "Beat the Five Finger Fillet opponent in 3 different locations.",
+        "guide": "Camp counts as one location; add saloons or outposts that host the game (look for the Five Finger Fillet icon on the map). Save before each match."
+      },
+      {
+        "rank": 8,
+        "text": "Win 3 hands of Blackjack by hitting 3 or more times.",
+        "guide": "Hit with small cards until you have taken three or more and then stand. Hands with low cards (2s, 3s, 4s) make this possible — save and reload until the cards cooperate."
+      },
+      {
+        "rank": 9,
+        "text": "Win 3 games of Dominoes in a row.",
+        "guide": "Play against one opponent only to raise your chances. Save after each win; reload if you lose so the streak is not broken."
+      },
+      {
+        "rank": 10,
+        "text": "Win 3 hands of Poker in a row.",
+        "guide": "At a table with few players, fold weak starting hands until you get a strong one (pairs, A-K). Save after each won hand and reload after a loss."
+      }
+    ]
+  },
+  {
+    "id": "herbalist",
+    "name": "Herbalist",
+    "unlock": "Pick a Yarrow plant.",
+    "reward": "Ranks 1, 3, 7 and 10 each unlock a piece of the reinforced Herbalist set at the Trapper. Buying the full set raises the maximum level of your Dead Eye core.",
+    "tips": [
+      "Plants picked before a rank becomes active do not count.",
+      "Eagle Eye highlights plants — use it while riding slowly through grassland and forest.",
+      "Upgrade your satchel (Pearson in the early chapters) so you can carry more herbs."
+    ],
+    "ranks": [
+      {
+        "rank": 1,
+        "text": "Pick 6 Yarrow.",
+        "guide": "Yarrow (small white flower clusters) is common in the Heartlands, around Horseshoe Overlook and near Valentine. Use Eagle Eye to spot it."
+      },
+      {
+        "rank": 2,
+        "text": "Pick and eat 4 berry species.",
+        "guide": "Blackberries (Lemoyne, Scarlett Meadows), Red Raspberries and Evergreen Huckleberries (north New Hanover / West Elizabeth woods) and Wintergreen Berries (snowy Ambarino). Eat each from the satchel right after picking."
+      },
+      {
+        "rank": 3,
+        "text": "Craft 7 items using Sage.",
+        "guide": "Pick Sage (Hummingbird Sage and Red Sage are common in the Heartlands, Big Valley and Scarlett Meadows), then open the crafting menu at a campfire and craft any recipe that uses it. Gather a dozen first so you can craft seven in one go."
+      },
+      {
+        "rank": 4,
+        "text": "Pick 5 mushrooms and feed them to your horse.",
+        "guide": "Any mushroom works and all five can be the same species — Parasol and Chanterelle mushrooms grow in the woods around Rhodes and in Lemoyne. Feed them from the horse's menu."
+      },
+      {
+        "rank": 5,
+        "text": "Craft 9 items using Indian Tobacco.",
+        "guide": "Indian Tobacco grows in Big Valley and around Strawberry. Pick plenty (it stacks), then craft recipes that use it in the crafting menu."
+      },
+      {
+        "rank": 6,
+        "text": "Pick 15 different herb species.",
+        "guide": "Ride from the Heartlands through Big Valley and down to Lemoyne: Yarrow, Sage, Milkweed, Burdock Root, Wild Carrot, Blackberries, Ginseng, Oregano, Wild Mint, Creeping Thyme, Violet Snowdrop and others. Check the Compendium for which ones you still need."
+      },
+      {
+        "rank": 7,
+        "text": "Craft and use 5 Special Miracle Tonics.",
+        "guide": "Check the recipe in the crafting menu (it needs Ginseng and a few common herbs). American Ginseng grows in Roanoke Ridge and around Annesburg. Craft five and drink them one after another."
+      },
+      {
+        "rank": 8,
+        "text": "Use Oleander to craft 6 poison weapons.",
+        "guide": "Oleander Sage grows in the Lemoyne bayou (Bayou Nwa, around Lagras). Craft Poison Arrows (Oleander + arrows + feather) or poison throwing knives six times."
+      },
+      {
+        "rank": 9,
+        "text": "Pick one of each herb species.",
+        "guide": "The hardest rank: all plant species in the game, including the New Austin ones (Desert Sage, Agarita, Prairie Poppy, Texas Bonnet…) which are only reachable in the Epilogue. Use the Compendium's plant list and a plant map; Ram Horn Trinket doubles some yields but is not required."
+      },
+      {
+        "rank": 10,
+        "text": "Season and cook all 11 types of meat.",
+        "guide": "Season with Wild Mint, Oregano or Creeping Thyme at a campfire. Only good/prime meat can be seasoned — low-quality meat doesn't count. Hunt a variety of animals (big game, game, bird, plump bird, venison, mutton, pork, herptile, flaky fish, succulent fish, stringy meat…) and cook each seasoned."
+      }
+    ]
+  },
+  {
+    "id": "horseman",
+    "name": "Horseman",
+    "unlock": "Kill a rabbit from horseback.",
+    "reward": "Ranks 1, 3, 7 and 10 each unlock a piece of the reinforced Horseman set at the Trapper. Buying the full set raises the maximum level of your Health core.",
+    "tips": [
+      "Timed rides: use a fast horse with full stamina, a good saddle, and plan the route on the map. Feed the horse and brush it beforehand.",
+      "Set a waypoint before starting a timed ride so the route line guides you; avoid towns and fences.",
+      "\"Without touching water\" includes small streams: cross by bridges."
+    ],
+    "ranks": [
+      {
+        "rank": 1,
+        "text": "Kill 5 rabbits from horseback.",
+        "guide": "Ride through fields near Valentine or Strawberry and shoot rabbits with a pistol or Varmint Rifle while mounted. Dead Eye makes it easy."
+      },
+      {
+        "rank": 2,
+        "text": "Jump over 3 obstacles in 15 seconds.",
+        "guide": "Find a row of fences (farm fields near Valentine or the Emerald Ranch area). Hold the jump button just before each fence and keep riding straight."
+      },
+      {
+        "rank": 3,
+        "text": "Ride from Valentine to Rhodes in under 5 minutes.",
+        "guide": "The timer starts as you leave Valentine. Take the main road south-east past Flatneck Station and Emerald Ranch, then the bridge to Rhodes. A good horse at full speed with stamina management does it easily."
+      },
+      {
+        "rank": 4,
+        "text": "Drag a victim for 3300 feet with your lasso while on horseback.",
+        "guide": "Lasso a person (or hogtie them first), keep holding the lasso and ride in a straight line along a road. Hogtied people stay attached longer. The distance shows on screen."
+      },
+      {
+        "rank": 5,
+        "text": "Trample 5 animals.",
+        "guide": "Ride straight at small animals — snakes, rabbits, rats and birds on the ground — so your horse runs them over. Swamps near Saint Denis and fields near Rhodes are full of them."
+      },
+      {
+        "rank": 6,
+        "text": "Ride from Strawberry to Saint Denis in under 9 minutes without touching water.",
+        "guide": "Set a waypoint to Saint Denis and follow the road via Valentine, Flatneck and Emerald Ranch, then cross the Dakota and Kamassa rivers only by bridges (the railroad bridge counts). Avoid the shortcut through shallow water."
+      },
+      {
+        "rank": 7,
+        "text": "Kill 7 enemies from horseback without dismounting.",
+        "guide": "Start a gang hideout or a bounty fight, or get a small bounty and fight lawmen while staying in the saddle. Dead Eye on horseback works well."
+      },
+      {
+        "rank": 8,
+        "text": "Kill 9 predators from horseback.",
+        "guide": "Wolves north of Hanging Dog Ranch and in Ambarino, or coyotes and alligators in Lemoyne. Wolves come in packs, so you can finish quickly — shoot from the saddle with a repeater."
+      },
+      {
+        "rank": 9,
+        "text": "Ride from Van Horn to Blackwater in under 17 minutes without touching water.",
+        "guide": "The longest ride: Van Horn → Annesburg road west → Valentine → Wallace Station area → the bridge over the Dakota → Blackwater. Use the waypoint line, cross rivers only on bridges, and carry Horse Reviver/stimulants for stamina."
+      },
+      {
+        "rank": 10,
+        "text": "Break in every wild horse breed.",
+        "guide": "Lasso and break one wild horse of each breed: e.g. Hungarian Halfbred (Big Valley), Kentucky Saddler and Morgan (Heartlands, Scarlett Meadows), Tennessee Walker (around Rhodes and Saint Denis), American Paint, Mustang, Nokota, Appaloosa, Andalusian, Arabian (white Arabian at Lake Isabella) and more. You don't have to keep them."
+      }
+    ]
+  },
+  {
+    "id": "master_hunter",
+    "name": "Master Hunter",
+    "unlock": "Skin a deer.",
+    "reward": "Ranks 1, 3, 7 and 10 each unlock a piece of the reinforced Master Hunter set at the Trapper. Buying the full set raises the maximum level of your Stamina core. Completing rank 9 also makes the Legendary Giaguaro Panther appear.",
+    "tips": [
+      "Hunting progress only counts while the rank is active — do ranks in order.",
+      "A clean kill means using the correct weapon for the animal (see the animal's card in this app).",
+      "Animal calls and baits are in the weapon wheel / satchel; buy bait from general stores."
+    ],
+    "ranks": [
+      {
+        "rank": 1,
+        "text": "Skin 3 deer.",
+        "guide": "Deer are everywhere in the Heartlands, around Valentine and in Lemoyne. Any quality is fine."
+      },
+      {
+        "rank": 2,
+        "text": "Collect 3 perfect rabbit pelts.",
+        "guide": "Study a rabbit with binoculars to see its quality, then kill only 3★ rabbits with Small Game Arrows or the Varmint Rifle. Fields around Valentine and Rhodes."
+      },
+      {
+        "rank": 3,
+        "text": "Track 10 different species of animals.",
+        "guide": "Study animals with binoculars (or press Track/Study once you've looked at them). Ten different species — birds, rabbits, deer and horses near Valentine are enough."
+      },
+      {
+        "rank": 4,
+        "text": "Call an animal and get a clean kill 5 times.",
+        "guide": "Approach a deer or buck unseen, use the animal call (lure) so it stops and looks at you, then kill it in one shot with a bow or rifle to the head. Repeat five times."
+      },
+      {
+        "rank": 5,
+        "text": "Skin 3 bears.",
+        "guide": "Black bears in Big Valley and north of Annesburg, grizzlies in the Grizzlies (Ambarino). Any quality counts. Use a high-powered rifle; Predator Bait helps."
+      },
+      {
+        "rank": 6,
+        "text": "Kill 5 cougars with a bow and skin them.",
+        "guide": "Cougars live south of Blackwater, at the western edge of West Elizabeth and in Gaptooth Ridge (Epilogue). They take several arrows — Poison Arrows make it much safer. Save before each fight."
+      },
+      {
+        "rank": 7,
+        "text": "Bait and kill a herbivore and a predator.",
+        "guide": "Place Herbivore Bait, hide and wait for a deer or similar animal to come, then kill it. Do the same with Predator Bait for a predator (coyote, fox, badger)."
+      },
+      {
+        "rank": 8,
+        "text": "Catch 3 small fish without a fishing rod.",
+        "guide": "Stand in shallow water and grab small fish with your hands — or easier: throw dynamite into a lake or river and then pick up the stunned small fish."
+      },
+      {
+        "rank": 9,
+        "text": "Kill an opossum while it is playing possum.",
+        "guide": "Find an opossum (north of Annesburg, Flat Iron Lake shores, mostly at night), scare it by walking up close or firing near it so it plays dead, then kill it while it lies still."
+      },
+      {
+        "rank": 10,
+        "text": "Track and kill the Legendary Giaguaro Panther.",
+        "guide": "After rank 9 the panther's area appears south of Rhodes (east of Braithwaite Manor). Find its clues with Eagle Eye, bring your best rifle with Express ammo, save beforehand and use Dead Eye when it charges."
+      }
+    ]
+  },
+  {
+    "id": "sharpshooter",
+    "name": "Sharpshooter",
+    "unlock": "Kill a bird in flight.",
+    "reward": "Ranks 1, 3, 7 and 10 each unlock a piece of the reinforced Sharpshooter set at the Trapper. Buying the full set raises the maximum level of your Health core.",
+    "tips": [
+      "Dead Eye and its higher levels (painting targets) make most ranks much easier — keep tonics on hand.",
+      "Sniper and Rolling Block/Springfield rifles with a long scope are needed for ranks 6 and 10."
+    ],
+    "ranks": [
+      {
+        "rank": 1,
+        "text": "Kill 3 birds in flight.",
+        "guide": "Shoot at flocks near water or crows/seagulls with a shotgun or repeater — a shotgun spread is easiest."
+      },
+      {
+        "rank": 2,
+        "text": "Kill 2 animals of different species in a single use of Dead Eye.",
+        "guide": "Find a spot with mixed wildlife (rabbits and birds in fields, ducks and herons by a lake), activate Dead Eye and paint/shoot two different species."
+      },
+      {
+        "rank": 3,
+        "text": "Kill 5 birds in flight from a moving train.",
+        "guide": "Buy a train ticket at a station or board a moving train, go to the end of a car and shoot birds with a shotgun. The stretch along the river near Saint Denis/Lagras has many birds."
+      },
+      {
+        "rank": 4,
+        "text": "Kill an enemy at 80 feet or more with a thrown tomahawk.",
+        "guide": "Buy tomahawks at a gunsmith. Hold up a target or lasso a hostile — the easiest is to throw at a hogtied or unaware enemy from a distance; arc the throw upwards a bit."
+      },
+      {
+        "rank": 5,
+        "text": "Kill 6 animals without reloading or switching weapons.",
+        "guide": "Use a weapon with a big magazine (e.g. Litchfield repeater) and shoot small animals or birds in a group — ducks on a lake or a flock of birds. Stop if you need to reload."
+      },
+      {
+        "rank": 6,
+        "text": "Kill an enemy from 660 feet or more using a long scope.",
+        "guide": "Equip a sniper rifle with a long scope. Shoot a bandit at a hideout or a lawman from a high spot; the distance shows after the kill. Go a little further than you think."
+      },
+      {
+        "rank": 7,
+        "text": "Get 7 headshots in a row.",
+        "guide": "Use Dead Eye on a group of enemies (a gang hideout) and aim each shot at the head. A miss or a body shot resets the count, so be careful."
+      },
+      {
+        "rank": 8,
+        "text": "Disarm 3 enemies without reloading or switching your weapon.",
+        "guide": "Shoot the gun out of enemies' hands (aim at the hand or the weapon). Use Dead Eye on a group of enemies to paint their weapons, then fire."
+      },
+      {
+        "rank": 9,
+        "text": "Shoot the hats off 3 people in a single use of Dead Eye.",
+        "guide": "In Dead Eye paint the hats (not heads) of three people standing together — lawmen, a gang group or town folk. Use a pistol and Dead Eye level 3+."
+      },
+      {
+        "rank": 10,
+        "text": "Kill 3 birds in a row with a long scope without missing.",
+        "guide": "Use a sniper rifle with a long scope on large perched or slow-flying birds — vultures in New Austin, herons and egrets in the bayou, or seagulls at the Saint Denis docks. Shoot birds on the ground; a miss resets the count."
+      }
+    ]
+  },
+  {
+    "id": "survivalist",
+    "name": "Survivalist",
+    "unlock": "Catch a fish.",
+    "reward": "Ranks 1, 3, 7 and 10 each unlock a piece of the reinforced Survivalist set at the Trapper. Buying the full set raises the maximum level of your Dead Eye core.",
+    "tips": [
+      "The fishing rod is received in the Chapter 2 mission \"A Fisher of Men\" (with Hosea). Buy lures at bait & tackle shops and general stores.",
+      "Fishing: cast, reel slowly, and let the line relax when the fish pulls hard."
+    ],
+    "ranks": [
+      {
+        "rank": 1,
+        "text": "Catch 3 Bluegill.",
+        "guide": "Bluegill bite on bread or corn baits in calm lakes and ponds — Flat Iron Lake, Owanjila or small ponds around Valentine."
+      },
+      {
+        "rank": 2,
+        "text": "Give 5 animals to Pearson at camp or sell them to a Trapper.",
+        "guide": "Hunt small animals (rabbits, deer carcasses) and donate them to the camp cook or sell carcasses/pelts at a Trapper. Five donations or sales total."
+      },
+      {
+        "rank": 3,
+        "text": "Kill 5 animals with a Varmint Rifle.",
+        "guide": "Buy the Varmint Rifle at a gunsmith (Valentine). Shoot rabbits, squirrels, birds or rats — any animal counts."
+      },
+      {
+        "rank": 4,
+        "text": "Craft 1 of each: Fire, Dynamite, Improved, Poison and Small Game Arrows.",
+        "guide": "Check each recipe in the crafting menu: Poison Arrows need Oleander Sage, Improved and Small Game Arrows need feathers. If a recipe is missing, buy its pamphlet from a Fence or gunsmith first, then craft one of each."
+      },
+      {
+        "rank": 5,
+        "text": "Catch a fish while in a boat in the bayou and a fish while on railroad tracks.",
+        "guide": "Take a rowing boat in the Lemoyne bayou (near Lagras) and catch any fish from it. Then stand on a railroad bridge (e.g. over the Kamassa or Dakota) and fish from it."
+      },
+      {
+        "rank": 6,
+        "text": "Kill a scavenger feeding on a corpse 5 times.",
+        "guide": "Leave a carcass in the open (kill a deer and wait nearby) and shoot vultures, crows or coyotes while they feed. Bayous and New Austin have lots of vultures."
+      },
+      {
+        "rank": 7,
+        "text": "Kill 8 small game animals in a row with Small Game Arrows.",
+        "guide": "Hunt rabbits, squirrels, birds near Valentine/Strawberry with Small Game Arrows only, and don't miss: hitting anything else or switching weapons resets the streak."
+      },
+      {
+        "rank": 8,
+        "text": "Craft an Improved Tomahawk, a Homing Tomahawk, Volatile Dynamite and a Volatile Fire Bottle.",
+        "guide": "You need the crafting pamphlets for these, sold by Fences (some unlock later in the story). Then craft one of each from the crafting menu."
+      },
+      {
+        "rank": 9,
+        "text": "Catch a fish over 19 lbs.",
+        "guide": "Use a special lure (from a bait & tackle shop) for large fish: Muskie in Elysian Pool, Longnose Gar in the Bayou Nwa, Lake Sturgeon or Channel Catfish in Flat Iron Lake and the Lannahechee River. Reel slowly and let the line relax when it pulls."
+      },
+      {
+        "rank": 10,
+        "text": "Catch one of each type of fish.",
+        "guide": "Bluegill, Bullhead Catfish, Chain Pickerel, Channel Catfish, Lake Sturgeon, Largemouth Bass, Longnose Gar, Muskie, Northern Pike, Perch, Redfin Pickerel, Rock Bass, Smallmouth Bass, Sockeye Salmon, Rainbow Trout and Steelhead Trout. Check the Compendium for which ones are missing. Some (like Steelhead in the Epilogue rivers) need specific areas."
+      }
+    ]
+  },
+  {
+    "id": "weapons_expert",
+    "name": "Weapons Expert",
+    "unlock": "Kill an enemy with your knife (melee, not a throwing knife).",
+    "reward": "Ranks 1, 3, 7 and 10 each unlock a piece of the reinforced Weapons Expert set at the Trapper. Buying the full set raises the maximum level of your Health core.",
+    "tips": [
+      "A gang hideout or a bandit camp is the best source of enemies for most ranks.",
+      "Throwing knives and tomahawks are sold at gunsmiths; pick them back up from bodies.",
+      "Hostile NPCs (bandits, O'Driscolls, Lemoyne Raiders) count as enemies; killing law adds a bounty."
+    ],
+    "ranks": [
+      {
+        "rank": 1,
+        "text": "Kill 3 enemies with a knife.",
+        "guide": "Sneak up on bandits at a camp and use a stealth kill, or fight in melee. Random ambushes on the roads also work."
+      },
+      {
+        "rank": 2,
+        "text": "Kill 3 enemies in 10 seconds using only throwing knives.",
+        "guide": "Use Dead Eye: activate it, paint three enemies, then throw. Groups of enemies at a gang hideout are ideal."
+      },
+      {
+        "rank": 3,
+        "text": "Kill 3 birds of prey using only a tomahawk.",
+        "guide": "Hawks, owls, eagles and vultures. Vultures feed on carcasses in New Austin and Lemoyne — throw a tomahawk while they are on the ground."
+      },
+      {
+        "rank": 4,
+        "text": "Kill 10 enemies with a shotgun using crafted ammo.",
+        "guide": "Craft shotgun shells from the crafting menu (e.g. Improved or Slug shells, recipes from the gunsmith's pamphlets) and use them at a gang hideout."
+      },
+      {
+        "rank": 5,
+        "text": "Kill 5 mounted enemies using throwing knives, one knife per kill.",
+        "guide": "Use Dead Eye on riders (Lemoyne Raiders on horseback, bounty hunters chasing you). A knife to the head or torso kills instantly."
+      },
+      {
+        "rank": 6,
+        "text": "Kill 4 enemies at once with a single stick of dynamite.",
+        "guide": "Lure enemies into a group — e.g. a bounty or a gang camp — and throw dynamite into the middle while they stand together. Volatile Dynamite has a bigger blast."
+      },
+      {
+        "rank": 7,
+        "text": "Kill 4 enemies in a row by throwing and retrieving the same tomahawk.",
+        "guide": "Carry only one tomahawk. Kill an enemy with it, pick it back up from the body, and repeat four times without switching weapons."
+      },
+      {
+        "rank": 8,
+        "text": "Kill 15 enemies with a long-barreled sidearm.",
+        "guide": "Revolvers/pistols with a long barrel upgrade from a gunsmith count. Go to a gang hideout or fight a posse."
+      },
+      {
+        "rank": 9,
+        "text": "Kill 9 unaware enemies from behind with the bow.",
+        "guide": "Sneak around a quiet enemy camp at night and shoot unaware enemies from behind, one at a time, so the others don't notice."
+      },
+      {
+        "rank": 10,
+        "text": "Kill a grizzly bear without taking damage, using only throwing knives.",
+        "guide": "Grizzlies live in Ambarino (The Grizzlies). Approach from a high rock, horse or a ledge it can't climb, use Dead Eye and throw knives at its head. Save beforehand."
+      }
+    ]
+  }
+]

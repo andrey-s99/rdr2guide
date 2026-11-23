@@ -33,10 +33,10 @@ export interface MultiChipsProps<T extends string> extends CommonProps<T> {
 export type FilterChipsProps<T extends string> = SingleChipsProps<T> | MultiChipsProps<T>;
 
 export const STATUS_FILTER_OPTIONS: ChipOption<StatusFilter>[] = [
-  { value: 'all', label: 'Все' },
-  { value: 'not_crafted', label: 'Не сделано' },
-  { value: 'ready', label: 'Готово к крафту' },
-  { value: 'crafted', label: 'Сделано' },
+  { value: 'all', label: 'All' },
+  { value: 'not_crafted', label: 'Not crafted' },
+  { value: 'ready', label: 'Ready to craft' },
+  { value: 'crafted', label: 'Crafted' },
 ];
 
 export const DEFAULT_STATUS_FILTER: StatusFilter = 'not_crafted';

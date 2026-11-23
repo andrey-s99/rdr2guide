@@ -5,7 +5,6 @@ import { ChevronIcon } from '../icons';
 import { itemStatus, shortfall, stockOf } from '../logic/calc';
 import { state } from '../state/store';
 import { AppLink } from './AppLink';
-import { EnName } from './EnName';
 import { StatusBadge } from './StatusBadge';
 import { Stepper } from './Stepper';
 
@@ -13,11 +12,11 @@ export interface MaterialRowProps {
   materialId: string;
   /** need(m) for the current scope (7.4); remaining = max(0, need − stock). */
   need: number;
-  /** Optional text under the name, e.g. material.sourceRu. */
+  /** Optional text under the name, e.g. material.sourceEn. */
   note?: string;
-  /** Show «Где добыть: <зверь> →» link (none for special materials). */
+  /** Show "Where to hunt: <animal> →" link (none for special materials). */
   showAnimalLink?: boolean;
-  /** Items using this material; when given, tapping the row expands «Для чего нужно». */
+  /** Items using this material; when given, tapping the row expands "Used for". */
   usedIn?: readonly Item[];
   defaultOpen?: boolean;
 }
@@ -42,10 +41,9 @@ export function MaterialRow({
 
   const info = (
     <>
-      <span class="material-row__name">{m?.nameRu ?? materialId}</span>
-      {m && <EnName text={m.nameEn} />}
+      <span class="material-row__name">{m?.nameEn ?? materialId}</span>
       <span class="material-row__counts num">
-        нужно {need} · есть {have}
+        need {need} · have {have}
       </span>
     </>
   );
@@ -63,7 +61,7 @@ export function MaterialRow({
           >
             {info}
             <span class="material-row__more">
-              Для чего нужно
+              Used for
               <ChevronIcon direction={open ? 'up' : 'down'} size={14} />
             </span>
           </button>
@@ -72,7 +70,7 @@ export function MaterialRow({
         )}
         <span
           class="material-row__remaining num"
-          aria-label={remaining > 0 ? `Осталось добыть: ${remaining}` : 'Собрано'}
+          aria-label={remaining > 0 ? `Still to collect: ${remaining}` : 'Collected'}
         >
           {remaining}
         </span>
@@ -81,7 +79,7 @@ export function MaterialRow({
       {note && <p class="material-row__note">{note}</p>}
       {animal && (
         <AppLink to={`/animal/${animal.id}`} class="material-row__animal">
-          Где добыть: {animal.nameRu}
+          Where to hunt: {animal.nameEn}
           <ChevronIcon size={14} />
         </AppLink>
       )}
@@ -99,9 +97,9 @@ export function MaterialRow({
                   class={status === 'crafted' ? 'use-row use-row--done' : 'use-row'}
                 >
                   <span class="use-row__main">
-                    <span class="use-row__name">{item.nameRu}</span>
+                    <span class="use-row__name">{item.nameEn}</span>
                     <span class="use-row__vendor">
-                      {vendorsById.get(item.vendorId)?.nameRu ?? item.vendorId} · ×{qty}
+                      {vendorsById.get(item.vendorId)?.nameEn ?? item.vendorId} · ×{qty}
                     </span>
                   </span>
                   <StatusBadge status={status} missing={shortfall(item, stock)} />

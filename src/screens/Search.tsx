@@ -3,7 +3,6 @@ import { useMemo } from 'preact/hooks';
 import { AnimalRow } from '../components/AnimalRow';
 import { AppLink } from '../components/AppLink';
 import { EmptyState } from '../components/EmptyState';
-import { EnName } from '../components/EnName';
 import { SectionHeader } from '../components/SectionHeader';
 import { animalsById, categoriesById, itemsByMaterial, materialAnimal } from '../data';
 import type { Item, Material, Outfit } from '../data/types';
@@ -16,27 +15,25 @@ export interface SearchProps {
   q: string;
 }
 
-export const SEARCH_HINT = 'Введите название вещи, зверя или шкуры';
-export const SEARCH_NOTHING = 'Ничего не найдено';
+export const SEARCH_HINT = 'Type the name of an item, animal or pelt';
+export const SEARCH_NOTHING = 'Nothing found';
 
 interface ResultRowProps {
   to: string | null;
   icon: string;
-  nameRu: string;
-  nameEn: string;
+  name: string;
   note?: ComponentChildren;
 }
 
 /** Generic search result row; the whole row opens the target card. */
-function ResultRow({ to, icon, nameRu, nameEn, note }: ResultRowProps) {
+function ResultRow({ to, icon, name, note }: ResultRowProps) {
   const body = (
     <>
       <span class="list-row__icon">
         <Icon name={icon} size={26} />
       </span>
       <span class="list-row__main">
-        <span class="list-row__title clamp-2">{nameRu}</span>
-        <EnName text={nameEn} />
+        <span class="list-row__title clamp-2">{name}</span>
         {note && <span class="search-row__kind">{note}</span>}
       </span>
     </>
@@ -55,22 +52,14 @@ function ResultRow({ to, icon, nameRu, nameEn, note }: ResultRowProps) {
  */
 export function materialTarget(m: Material): { to: string; label: string } | null {
   const animal = materialAnimal(m.id);
-  if (animal) return { to: `/animal/${animal.id}`, label: animal.nameRu };
+  if (animal) return { to: `/animal/${animal.id}`, label: animal.nameEn };
   const item = itemsByMaterial.get(m.id)?.[0];
-  if (item) return { to: `/item/${item.id}`, label: `Нужно для: ${item.nameRu}` };
+  if (item) return { to: `/item/${item.id}`, label: `Needed for: ${item.nameEn}` };
   return null;
 }
 
 function OutfitResult({ outfit }: { outfit: Outfit }) {
-  return (
-    <ResultRow
-      to={`/outfit/${outfit.id}`}
-      icon="coat"
-      nameRu={outfit.nameRu}
-      nameEn={outfit.nameEn}
-      note="Костюм"
-    />
-  );
+  return <ResultRow to={`/outfit/${outfit.id}`} icon="coat" name={outfit.nameEn} note="Outfit" />;
 }
 
 function ItemResult({ item }: { item: Item }) {
@@ -79,9 +68,8 @@ function ItemResult({ item }: { item: Item }) {
     <ResultRow
       to={`/item/${item.id}`}
       icon={category?.icon ?? 'trinket'}
-      nameRu={item.nameRu}
-      nameEn={item.nameEn}
-      note={category?.nameRu}
+      name={item.nameEn}
+      note={category?.nameEn}
     />
   );
 }
@@ -98,13 +86,7 @@ function MaterialResult({ material }: { material: Material }) {
           ? 'paw'
           : 'trinket';
   return (
-    <ResultRow
-      to={target?.to ?? null}
-      icon={icon}
-      nameRu={material.nameRu}
-      nameEn={material.nameEn}
-      note={target?.label}
-    />
+    <ResultRow to={target?.to ?? null} icon={icon} name={material.nameEn} note={target?.label} />
   );
 }
 
@@ -146,22 +128,22 @@ export function Search({ q }: SearchProps) {
   }
   return (
     <div class="screen screen--flush search-results" aria-live="polite">
-      <Group title="Костюмы" count={results.outfits.length}>
+      <Group title="Outfits" count={results.outfits.length}>
         {results.outfits.map((o) => (
           <OutfitResult key={o.id} outfit={o} />
         ))}
       </Group>
-      <Group title="Предметы" count={results.items.length}>
+      <Group title="Items" count={results.items.length}>
         {results.items.map((i) => (
           <ItemResult key={i.id} item={i} />
         ))}
       </Group>
-      <Group title="Животные" count={results.animals.length}>
+      <Group title="Animals" count={results.animals.length}>
         {results.animals.map((a) => (
           <AnimalRow key={a.id} animal={a} />
         ))}
       </Group>
-      <Group title="Материалы" count={results.materials.length}>
+      <Group title="Materials" count={results.materials.length}>
         {results.materials.map((m) => (
           <MaterialResult key={m.id} material={m} />
         ))}

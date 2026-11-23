@@ -7,17 +7,16 @@ import { state } from '../state/store';
 import { AppLink } from './AppLink';
 import { CraftCheckbox } from './Checkbox';
 import { DataWarning } from './DataWarning';
-import { EnName } from './EnName';
 import { GoalStar } from './GoalStar';
 import { LockBadge, StatusBadge } from './StatusBadge';
 
 export interface ItemRowProps {
   item: Item;
-  /** Second line under the name: requirementRu / effectRu / campSpotRu. Empty is hidden. */
+  /** Second line under the name: requirementEn / effectEn / campSpotEn. Empty is hidden. */
   note?: string;
   /** Extra content at the bottom of the main column. */
   extra?: ComponentChildren;
-  /** Recipe mini-chips «Бобр ×2» (default true). */
+  /** Recipe mini-chips "Beaver ×2" (default true). */
   showRecipe?: boolean;
   /** Outfit tags (default true; hide inside an outfit card). */
   showOutfits?: boolean;
@@ -41,7 +40,7 @@ export function ItemRow({
   const prereq = locked ? prerequisiteProgress(item, crafted) : null;
   const category = categoriesById.get(item.category);
   const outfitNames = showOutfits
-    ? item.outfitIds.map((id) => outfitsById.get(id)?.nameRu).filter((n): n is string => !!n)
+    ? item.outfitIds.map((id) => outfitsById.get(id)?.nameEn).filter((n): n is string => !!n)
     : [];
 
   return (
@@ -49,9 +48,8 @@ export function ItemRow({
       <span class="list-row__icon">{category && <Icon name={category.icon} size={26} />}</span>
       <div class="list-row__main">
         <AppLink to={`/item/${item.id}`} class="list-row__link list-row__title clamp-2">
-          {item.nameRu}
+          {item.nameEn}
         </AppLink>
-        <EnName text={item.nameEn} />
         {note && <p class="list-row__note">{note}</p>}
         <div class="list-row__meta">
           {showPrice && item.price !== null && <span class="price">${item.price}</span>}
@@ -62,10 +60,10 @@ export function ItemRow({
               {n}
             </span>
           ))}
-          <DataWarning confidence={item.dataConfidence} note={item.dataNoteRu} />
+          <DataWarning confidence={item.dataConfidence} note={item.dataNoteEn} />
         </div>
         {showRecipe && item.recipe.length > 0 && (
-          <ul class="tags item-row__recipe" aria-label="Рецепт">
+          <ul class="tags item-row__recipe" aria-label="Recipe">
             {item.recipe.map((e) => (
               <li
                 key={e.materialId}
@@ -79,7 +77,7 @@ export function ItemRow({
         {extra}
       </div>
       <div class="list-row__actions">
-        <GoalStar kind="item" id={item.id} name={item.nameRu} />
+        <GoalStar kind="item" id={item.id} name={item.nameEn} />
         <CraftCheckbox itemId={item.id} />
       </div>
     </div>

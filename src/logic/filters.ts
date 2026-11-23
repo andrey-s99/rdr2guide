@@ -1,4 +1,4 @@
-// Pure list filters used by the status chips (SPEC 9: «Все», «Не сделано», «Готово к крафту», «Сделано»).
+// Pure list filters used by the status chips (SPEC 9: All, Not crafted, Ready to craft, Crafted).
 import type { Item } from '../data/types';
 import { itemStatus, type Crafted, type ItemStatus, type Stock } from './calc';
 

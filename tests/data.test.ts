@@ -1,7 +1,9 @@
 import { describe, expect, it } from 'vitest';
 import {
   animals,
+  challengeCategories,
   dataset,
+  english,
   items,
   itemsByMaterial,
   itemsById,
@@ -12,7 +14,7 @@ import {
   regions,
 } from '../src/data';
 import type { Dataset } from '../src/data/dataset';
-import { validateDataset } from '../src/data/validate';
+import { validateChallenges, validateDataset, validateEnglish } from '../src/data/validate';
 
 const clone = (): Dataset => JSON.parse(JSON.stringify(dataset)) as Dataset;
 
@@ -45,7 +47,7 @@ describe('data integrity (SPEC 6.4)', () => {
     expect(itemsById.get('boar_riding_gloves')?.vendorId).toBe('trapper');
     for (const m of materials) expect(itemsByMaterial.get(m.id)?.length, m.id).toBeGreaterThan(0);
     for (const a of animals) expect(materialsByAnimal.get(a.id)?.length, a.id).toBeGreaterThan(0);
-    expect(materialShortName('perfect_beaver')).toBe('Бобр');
+    expect(materialShortName('perfect_beaver')).toBe('Beaver');
   });
 
   describe('validator detects errors', () => {
@@ -90,5 +92,60 @@ describe('data integrity (SPEC 6.4)', () => {
       expect(errors.some((e) => e.includes('"lonely" is not a source'))).toBe(true);
       expect(errors.some((e) => e.startsWith('materials: expected 103'))).toBe(true);
     });
+  });
+});
+
+describe('English texts (src/data/en.json)', () => {
+  it('cover every Russian description in the game data', () => {
+    expect(validateEnglish(dataset, english)).toEqual([]);
+  });
+
+  it('are merged into the data used by the UI', () => {
+    const fence = dataset.vendors.find((v) => v.id === 'fence');
+    expect(fence?.rulesEn).toHaveLength(fence?.rulesRu.length ?? -1);
+    for (const a of animals) {
+      expect(a.habitatEn, a.id).not.toBe('');
+      expect(
+        a.links.every((l) => l.labelEn !== ''),
+        a.id,
+      ).toBe(true);
+    }
+    for (const m of materials) expect(m.sourceEn, m.id).not.toBe('');
+    expect(itemsById.get('bear_claw_talisman')?.effectEn).toBe('Health core drains 10% slower.');
+  });
+
+  it('report missing translations', () => {
+    const en = JSON.parse(JSON.stringify(english)) as typeof english;
+    delete en.animals.alligator;
+    delete en.materials.perfect_beaver;
+    const errors = validateEnglish(dataset, en);
+    expect(errors.some((e) => e.includes('"alligator" is missing'))).toBe(true);
+    expect(errors.some((e) => e.includes('"perfect_beaver" source is empty'))).toBe(true);
+  });
+});
+
+describe('challenges (src/data/challenges.json)', () => {
+  it('has 9 categories × 10 ranks with text and a guide', () => {
+    expect(validateChallenges(challengeCategories)).toEqual([]);
+    expect(challengeCategories.map((c) => c.id)).toEqual([
+      'bandit',
+      'explorer',
+      'gambler',
+      'herbalist',
+      'horseman',
+      'master_hunter',
+      'sharpshooter',
+      'survivalist',
+      'weapons_expert',
+    ]);
+  });
+
+  it('detects broken categories', () => {
+    const list = JSON.parse(JSON.stringify(challengeCategories)) as typeof challengeCategories;
+    list[0].ranks.pop();
+    list[1].ranks[2].guide = '';
+    const errors = validateChallenges(list);
+    expect(errors.some((e) => e.includes('"bandit" must have 10 ranks'))).toBe(true);
+    expect(errors.some((e) => e.includes('"explorer" rank 3 has empty text'))).toBe(true);
   });
 });

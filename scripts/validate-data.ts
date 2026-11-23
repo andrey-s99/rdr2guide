@@ -7,8 +7,11 @@ import animals from '../data/animals.json';
 import materials from '../data/materials.json';
 import items from '../data/items.json';
 import outfits from '../data/outfits.json';
+import en from '../src/data/en.json';
+import challenges from '../src/data/challenges.json';
 import type { Dataset } from '../src/data/dataset';
-import { validateDataset } from '../src/data/validate';
+import type { ChallengeCategory, EnglishTexts } from '../src/data/types';
+import { validateChallenges, validateDataset, validateEnglish } from '../src/data/validate';
 
 const dataset = {
   meta,
@@ -21,7 +24,11 @@ const dataset = {
   outfits,
 } as unknown as Dataset;
 
-const errors = validateDataset(dataset);
+const errors = [
+  ...validateDataset(dataset),
+  ...validateEnglish(dataset, en as EnglishTexts),
+  ...validateChallenges(challenges as unknown as ChallengeCategory[]),
+];
 if (errors.length > 0) {
   console.error(`Data validation failed (${errors.length} error(s)):`);
   for (const e of errors) console.error(`  - ${e}`);
@@ -29,5 +36,6 @@ if (errors.length > 0) {
 }
 console.log(
   `Data OK: ${dataset.items.length} items, ${dataset.materials.length} materials, ` +
-    `${dataset.animals.length} animals, ${dataset.outfits.length} outfits.`,
+    `${dataset.animals.length} animals, ${dataset.outfits.length} outfits, ` +
+    `${challenges.length} challenge categories, English texts complete.`,
 );

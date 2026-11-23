@@ -6,6 +6,7 @@ import type { UserState } from '../src/data/types';
 import { outfitProgress } from '../src/logic/calc';
 import {
   BROKEN_KEY_PREFIX,
+  LEGACY_STATE_KEYS,
   STATE_KEY,
   UI_KEY,
   backupFileName,
@@ -20,6 +21,7 @@ import {
   type KeyValueStorage,
 } from '../src/state/persist';
 import {
+  challengeProgress,
   goalsCount,
   importState,
   initStore,
@@ -31,6 +33,7 @@ import {
   setStock,
   state,
   toggleGoalItem,
+  toggleChallengeRank,
   toggleGoalOutfit,
   unmarkCrafted,
 } from '../src/state/store';
@@ -78,8 +81,8 @@ describe('15.2 crafting via store', () => {
       perfect_boar: 1,
       perfect_rabbit: 1,
     });
-    expect(toast.value?.title).toBe(`Изготовлено: ${itemsById.get('boar_riding_gloves')?.nameRu}`);
-    expect(toast.value?.detail).toBe('Кабан −1, Кролик −1');
+    expect(toast.value?.title).toBe(`Crafted: ${itemsById.get('boar_riding_gloves')?.nameEn}`);
+    expect(toast.value?.detail).toBe('Boar −1, Rabbit −1');
   });
 
   it('4. undo returns exactly what was deducted', () => {
@@ -104,7 +107,7 @@ describe('15.2 crafting via store', () => {
     const deducted = markCrafted('legendary_bear_head_hat');
     expect(state.value.stock.legendary_bear_pelt).toBe(1);
     expect(deducted).toEqual({});
-    expect(toast.value?.detail).toBe('Ничего не списано');
+    expect(toast.value?.detail).toBe('Nothing deducted');
   });
 
   it('marking an already crafted item does nothing', () => {
@@ -120,8 +123,8 @@ describe('15.2 crafting via store', () => {
     expect(marked).toHaveLength(4);
     expect(Object.keys(state.value.crafted)).toHaveLength(4);
     expect(outfitProgress(outfit, state.value.crafted).complete).toBe(true);
-    expect(toast.value?.title).toBe(`Костюм: ${outfit.nameRu}, 4 части`);
-    expect(toast.value?.detail).toBe('Ничего не списано');
+    expect(toast.value?.title).toBe(`Outfit: ${outfit.nameEn}, 4 parts`);
+    expect(toast.value?.detail).toBe('Nothing deducted');
     undoToast();
     expect(Object.keys(state.value.crafted)).toHaveLength(0);
   });
@@ -163,7 +166,7 @@ describe('other actions', () => {
     resetAll();
     expect(state.value.stock).toEqual({});
     expect(state.value.goals.items).toEqual([]);
-    expect(state.value.settings).toEqual({ theme: 'paper', showEnglish: true });
+    expect(state.value.settings).toEqual({ theme: 'paper' });
   });
 
   it('importState cleans unknown ids', () => {
@@ -214,7 +217,7 @@ describe('persistence', () => {
 
   it('initStore shows a toast for a broken save', () => {
     initStore({ storage: memoryStorage({ [STATE_KEY]: '{oops' }), listenVisibility: false });
-    expect(toast.value?.title).toBe('Не удалось прочитать сохранение, начато с нуля');
+    expect(toast.value?.title).toBe('Could not read the save, starting from scratch');
     expect(toast.value?.undo).toBeUndefined();
   });
 
@@ -270,7 +273,8 @@ describe('backup', () => {
     crafted: { moccasins: { at: '2026-01-01T00:00:00.000Z', deducted: { perfect_deer: 1 } } },
     stock: { perfect_boar: 3 },
     goals: { items: ['moccasins'], outfits: ['wrangler'] },
-    settings: { theme: 'paper', showEnglish: false },
+    challenges: { bandit: 3 },
+    settings: { theme: 'paper' },
   };
 
   it('export -> parse roundtrip', () => {
@@ -292,12 +296,12 @@ describe('backup', () => {
     expect(state.value).toEqual(sample);
   });
 
-  it('rejects invalid files with Russian messages', () => {
+  it('rejects invalid files with readable messages', () => {
     const cases = [
       'not json',
       JSON.stringify({ app: 'other', state: sample }),
       JSON.stringify({ app: 'rdr2-hunter' }),
-      JSON.stringify({ app: 'rdr2-hunter', state: { ...sample, schemaVersion: 2 } }),
+      JSON.stringify({ app: 'rdr2-hunter', state: { ...sample, schemaVersion: 3 } }),
       JSON.stringify({ app: 'rdr2-hunter', state: { ...sample, stock: { a: 'x' } } }),
       JSON.stringify({ app: 'rdr2-hunter', state: { ...sample, goals: { items: [1] } } }),
       JSON.stringify({ app: 'rdr2-hunter', state: { ...sample, settings: { theme: 'pink' } } }),
@@ -305,7 +309,7 @@ describe('backup', () => {
     for (const c of cases) {
       const r = parseBackup(c);
       expect(r.ok, c).toBe(false);
-      if (!r.ok) expect(r.error).toMatch(/[а-я]/i);
+      if (!r.ok) expect(r.error).toMatch(/^[A-Z].+\./);
     }
   });
 
@@ -360,11 +364,77 @@ describe('toast', () => {
     state.value = withStock({ perfect_boar: 1, perfect_rabbit: 1 });
     render(h(Toast, null));
     markCrafted('boar_riding_gloves');
-    const btn = await screen.findByRole('button', { name: 'Отменить' });
-    expect(document.querySelector('.toast__title')?.textContent).toMatch(/^Изготовлено: /);
-    expect(document.querySelector('.toast__detail')?.textContent).toBe('Кабан −1, Кролик −1');
+    const btn = await screen.findByRole('button', { name: 'Undo' });
+    expect(document.querySelector('.toast__title')?.textContent).toMatch(/^Crafted: /);
+    expect(document.querySelector('.toast__detail')?.textContent).toBe('Boar −1, Rabbit −1');
     fireEvent.click(btn);
     expect(state.value.stock).toEqual({ perfect_boar: 1, perfect_rabbit: 1 });
     expect(state.value.crafted).toEqual({});
+  });
+});
+
+describe('one-time progress reset (state v2)', () => {
+  const v1 = {
+    schemaVersion: 1,
+    crafted: { moccasins: { at: '2026-01-01', deducted: {} } },
+    stock: { perfect_boar: 2 },
+    goals: { items: ['moccasins'], outfits: [] },
+    settings: { theme: 'paper', showEnglish: true },
+  };
+
+  it('ignores and removes the old v1 save, starting from scratch', () => {
+    const storage = memoryStorage({ [LEGACY_STATE_KEYS[0]]: JSON.stringify(v1) });
+    const { state: s, broken } = loadState(storage);
+    expect(broken).toBe(false);
+    expect(s).toEqual(createInitialState());
+    expect(storage.data[LEGACY_STATE_KEYS[0]]).toBeUndefined();
+    expect(STATE_KEY).not.toBe(LEGACY_STATE_KEYS[0]);
+  });
+
+  it('still imports a v1 backup file', () => {
+    const r = parseBackup(JSON.stringify({ app: 'rdr2-hunter', state: v1 }));
+    expect(r.ok).toBe(true);
+    if (r.ok) {
+      expect(r.state.schemaVersion).toBe(2);
+      expect(r.state.stock).toEqual({ perfect_boar: 2 });
+      expect(r.state.challenges).toEqual({});
+      expect(r.state.settings).toEqual({ theme: 'paper' });
+    }
+  });
+});
+
+describe('challenge progress', () => {
+  beforeEach(() => resetStoreForTests());
+
+  it('ticking a rank completes all ranks up to it; unticking steps back', () => {
+    expect(challengeProgress('bandit')).toBe(0);
+    toggleChallengeRank('bandit', 3);
+    expect(challengeProgress('bandit')).toBe(3);
+    toggleChallengeRank('bandit', 2);
+    expect(challengeProgress('bandit')).toBe(1);
+    toggleChallengeRank('bandit', 1);
+    expect(challengeProgress('bandit')).toBe(0);
+    expect(state.value.challenges).toEqual({});
+    toggleChallengeRank('bandit', 99);
+    expect(challengeProgress('bandit')).toBe(10);
+  });
+
+  it('is cleared by reset and cleaned on import', () => {
+    toggleChallengeRank('gambler', 4);
+    resetAll();
+    expect(state.value.challenges).toEqual({});
+    importState({
+      ...createInitialState(),
+      challenges: { herbalist: 12, nope: 3 } as UserState['challenges'],
+    });
+    expect(state.value.challenges).toEqual({ herbalist: 10 });
+  });
+
+  it('is saved and loaded', () => {
+    const storage = memoryStorage();
+    initStore({ storage, listenVisibility: false });
+    toggleChallengeRank('explorer', 5);
+    resetStoreForTests(); // flushes the pending save
+    expect(loadState(storage).state.challenges).toEqual({ explorer: 5 });
   });
 });

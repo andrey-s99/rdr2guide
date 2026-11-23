@@ -1,15 +1,20 @@
 // Persistence: localStorage, migrations, backup export/import (SPEC 11).
-import { itemsById, materialsById, meta, outfitsById } from '../data';
-import type { CraftRecord, UserState } from '../data/types';
+import { challengeCategoriesById, itemsById, materialsById, meta, outfitsById } from '../data';
+import type { ChallengeCategoryId, CraftRecord, UserState } from '../data/types';
 import { clampStock } from '../logic/calc';
 import { DEFAULT_SCOPE, GOALS_SCOPE, scopeExists } from '../logic/scopes';
 
-export const STATE_KEY = 'rdr2-hunter:state';
+/**
+ * v2 lives under a new key: switching to the English UI started everyone from scratch
+ * (the owner asked to wipe all progress). The old v1 value is removed on first load.
+ */
+export const STATE_KEY = 'rdr2-hunter:state-v2';
+export const LEGACY_STATE_KEYS = ['rdr2-hunter:state'];
 export const BROKEN_KEY_PREFIX = 'rdr2-hunter:state-broken-';
 export const UI_KEY = 'rdr2-hunter:ui';
 export const BACKUP_APP_ID = 'rdr2-hunter';
 export const SAVE_DEBOUNCE_MS = 300;
-export const BROKEN_STATE_MESSAGE = 'Не удалось прочитать сохранение, начато с нуля';
+export const BROKEN_STATE_MESSAGE = 'Could not read the save, starting from scratch';
 
 /** Minimal storage interface (subset of Web Storage) for testability. */
 export type KeyValueStorage = Pick<Storage, 'getItem' | 'setItem' | 'removeItem'>;
@@ -25,11 +30,12 @@ export function defaultStorage(): KeyValueStorage | null {
 
 export function createInitialState(): UserState {
   return {
-    schemaVersion: 1,
+    schemaVersion: 2,
     crafted: {},
     stock: {},
     goals: { items: [], outfits: [] },
-    settings: { theme: 'night', showEnglish: true },
+    challenges: {},
+    settings: { theme: 'night' },
   };
 }
 
@@ -50,7 +56,8 @@ function isCountRecord(x: unknown): x is Record<string, number> {
   return isRecord(x) && Object.values(x).every((v) => typeof v === 'number' && Number.isFinite(v));
 }
 
-function parseV1(raw: Record<string, unknown>): UserState {
+/** Parses the fields shared by v1 and v2; `challenges` is v2 only. */
+function parseCommon(raw: Record<string, unknown>): UserState {
   const { crafted, stock, goals, settings } = raw;
   if (!isRecord(crafted)) throw new StateFormatError('crafted');
   const craftedOut: Record<string, CraftRecord> = {};
@@ -66,18 +73,24 @@ function parseV1(raw: Record<string, unknown>): UserState {
   }
   if (
     !isRecord(settings) ||
-    (settings.theme !== 'night' && settings.theme !== 'paper' && settings.theme !== 'system') ||
-    typeof settings.showEnglish !== 'boolean'
+    (settings.theme !== 'night' && settings.theme !== 'paper' && settings.theme !== 'system')
   ) {
     throw new StateFormatError('settings');
   }
   return {
-    schemaVersion: 1,
+    schemaVersion: 2,
     crafted: craftedOut,
     stock: { ...stock },
     goals: { items: [...goals.items], outfits: [...goals.outfits] },
-    settings: { theme: settings.theme, showEnglish: settings.showEnglish },
+    challenges: {},
+    settings: { theme: settings.theme },
   };
+}
+
+function parseV2(raw: Record<string, unknown>): UserState {
+  const base = parseCommon(raw);
+  if (!isCountRecord(raw.challenges)) throw new StateFormatError('challenges');
+  return { ...base, challenges: { ...raw.challenges } };
 }
 
 /**
@@ -88,7 +101,10 @@ export function migrate(raw: unknown): UserState {
   if (!isRecord(raw)) throw new StateFormatError('not an object');
   switch (raw.schemaVersion) {
     case 1:
-      return parseV1(raw);
+      // v1 had settings.showEnglish and no challenges; both are dropped/defaulted.
+      return parseCommon(raw);
+    case 2:
+      return parseV2(raw);
     default:
       throw new StateFormatError(`unknown schemaVersion ${String(raw.schemaVersion)}`);
   }
@@ -112,15 +128,23 @@ export function cleanState(state: UserState): UserState {
     if (materialsById.has(m) && c > 0) stock[m] = c;
   }
   const uniq = (list: string[], known: (id: string) => boolean) => [...new Set(list)].filter(known);
+  const challenges: Partial<Record<ChallengeCategoryId, number>> = {};
+  for (const [id, v] of Object.entries(state.challenges)) {
+    const cat = challengeCategoriesById.get(id as ChallengeCategoryId);
+    if (!cat || typeof v !== 'number' || !Number.isFinite(v)) continue;
+    const n = Math.min(cat.ranks.length, Math.max(0, Math.trunc(v)));
+    if (n > 0) challenges[cat.id] = n;
+  }
   return {
-    schemaVersion: 1,
+    schemaVersion: 2,
     crafted,
     stock,
     goals: {
       items: uniq(state.goals.items, (id) => itemsById.has(id)),
       outfits: uniq(state.goals.outfits, (id) => outfitsById.has(id)),
     },
-    settings: { ...state.settings },
+    challenges,
+    settings: { theme: state.settings.theme },
   };
 }
 
@@ -140,6 +164,13 @@ export function loadState(
   now: Date = new Date(),
 ): LoadResult {
   if (!storage) return { state: createInitialState(), broken: false };
+  for (const key of LEGACY_STATE_KEYS) {
+    try {
+      storage.removeItem(key);
+    } catch {
+      // Ignore storage errors.
+    }
+  }
   let text: string | null;
   try {
     text = storage.getItem(STATE_KEY);
@@ -245,27 +276,27 @@ export function backupFileName(now: Date = new Date()): string {
 
 export type ParseBackupResult = { ok: true; state: UserState } | { ok: false; error: string };
 
-/** Validates a backup file's text. Errors are user-facing Russian messages. */
+/** Validates a backup file's text. Errors are user-facing messages. */
 export function parseBackup(text: string): ParseBackupResult {
   let raw: unknown;
   try {
     raw = JSON.parse(text);
   } catch {
-    return { ok: false, error: 'Файл не читается: это не JSON.' };
+    return { ok: false, error: 'The file cannot be read: it is not JSON.' };
   }
   if (!isRecord(raw) || raw.app !== BACKUP_APP_ID) {
-    return { ok: false, error: 'Это не резервная копия «Журнала охотника».' };
+    return { ok: false, error: "This is not a Hunter's Journal backup." };
   }
   if (!isRecord(raw.state)) {
-    return { ok: false, error: 'В файле нет сохранённого прогресса.' };
+    return { ok: false, error: 'The file contains no saved progress.' };
   }
-  if (raw.state.schemaVersion !== 1) {
-    return { ok: false, error: 'Резервная копия сделана в неподдерживаемой версии приложения.' };
+  if (raw.state.schemaVersion !== 1 && raw.state.schemaVersion !== 2) {
+    return { ok: false, error: 'The backup was made by an unsupported version of the app.' };
   }
   try {
     return { ok: true, state: cleanState(migrate(raw.state)) };
   } catch {
-    return { ok: false, error: 'Файл повреждён: данные прогресса в неверном формате.' };
+    return { ok: false, error: 'The file is damaged: the progress data has the wrong format.' };
   }
 }
 

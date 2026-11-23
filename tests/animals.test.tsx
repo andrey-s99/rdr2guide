@@ -56,7 +56,7 @@ describe('Animals list (9.7)', () => {
     render(<Animals tab="regular" />);
     const before = rowIds();
     expect(before).toContain('armadillo');
-    fireEvent.click(screen.getByRole('button', { name: 'Лемойн' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Lemoyne' }));
     const after = rowIds();
     expect(after.length).toBeLessThan(before.length);
     expect(after).not.toContain('armadillo');
@@ -64,21 +64,21 @@ describe('Animals list (9.7)', () => {
       expect(animals.find((a) => a.id === id)?.regions).toContain('lemoyne');
     }
     // Deselecting returns to «all regions».
-    fireEvent.click(screen.getByRole('button', { name: 'Лемойн' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Lemoyne' }));
     expect(rowIds()).toEqual(before);
   });
 
-  it('«Только нужные» hides an animal once its item is crafted', () => {
+  it('"Needed only" hides an animal once its item is crafted', () => {
     render(<Animals tab="regular" />);
     expect(rowIds()).toContain('armadillo');
     setState({ crafted: { billy_vest: { at: '2026-01-01T00:00:00.000Z', deducted: {} } } });
     expect(rowIds()).not.toContain('armadillo');
-    // Switch off → shown again with «хватает».
-    fireEvent.click(screen.getByRole('switch', { name: 'Только нужные' }));
+    // Switch off → shown again with "enough".
+    fireEvent.click(screen.getByRole('switch', { name: 'Needed only' }));
     expect(rowIds()).toContain('armadillo');
   });
 
-  it('«Только нужные» hides an animal once the stock suffices', () => {
+  it('"Needed only" hides an animal once the stock suffices', () => {
     render(<Animals tab="regular" />);
     expect(rowIds()).toContain('opossum');
     setState({ stock: { perfect_opossum: 4 } });
@@ -89,7 +89,7 @@ describe('Animals list (9.7)', () => {
     setState({ stock: Object.fromEntries(materials.map((m) => [m.id, 999])) });
     render(<Animals tab="birds" />);
     expect(rowIds()).toEqual([]);
-    expect(screen.getByText('Все звери из этого списка уже не нужны')).toBeTruthy();
+    expect(screen.getByText('Nothing more is needed from the animals in this list')).toBeTruthy();
   });
 
   it('legendary rows show pelt status', () => {
@@ -97,11 +97,11 @@ describe('Animals list (9.7)', () => {
     animalOnlyNeeded.value = false;
     render(<Animals tab="legendary" />);
     const bear = document.querySelector('a[href="#/animal/leg_bear"]');
-    expect(bear?.textContent).toContain('Шкура у Охотника');
+    expect(bear?.textContent).toContain('Pelt at Trapper');
     const ids = rowIds();
     // Obtained legendary animals go last.
     expect(ids[ids.length - 1]).toBe('leg_bear');
-    expect(screen.getAllByText('Не добыт').length).toBe(ids.length - 1);
+    expect(screen.getAllByText('Not taken').length).toBe(ids.length - 1);
   });
 });
 
@@ -109,9 +109,9 @@ describe('Animal card (9.8)', () => {
   it('renders links with target _blank and rel noopener', () => {
     render(<AnimalScreen id="leg_bear" />);
     const bear = animals.find((a) => a.id === 'leg_bear')!;
-    expect(screen.getByText(bear.nameRu)).toBeTruthy();
-    expect(screen.getByText('Тактика')).toBeTruthy();
-    expect(screen.getByText('Когда доступен')).toBeTruthy();
+    expect(screen.getByText(bear.nameEn)).toBeTruthy();
+    expect(screen.getByText('Tactics')).toBeTruthy();
+    expect(screen.getByText('When available')).toBeTruthy();
     const anchors = Array.from(document.querySelectorAll<HTMLAnchorElement>('a.ext-link'));
     const urls = new Set([...bear.links, ...meta.globalMapLinks].map((l) => l.url));
     expect(anchors.length).toBe(urls.size);
@@ -120,18 +120,18 @@ describe('Animal card (9.8)', () => {
       expect(a.getAttribute('target')).toBe('_blank');
       expect(a.getAttribute('rel')).toContain('noopener');
     }
-    expect(screen.getByText('Материалы с этого зверя')).toBeTruthy();
+    expect(screen.getByText('Materials from this animal')).toBeTruthy();
   });
 
-  it('lists materials and expands «Для чего нужно» with item links', () => {
+  it('lists materials and expands "Used for" with item links', () => {
     render(<AnimalScreen id="armadillo" />);
-    expect(screen.getByText('Чем убивать для идеальной шкуры')).toBeTruthy();
-    fireEvent.click(screen.getByRole('button', { name: /Для чего нужно/ }));
+    expect(screen.getByText('How to get a perfect pelt')).toBeTruthy();
+    fireEvent.click(screen.getByRole('button', { name: /Used for/ }));
     expect(document.querySelector('a[href="#/item/billy_vest"]')).toBeTruthy();
   });
 
-  it('unknown id shows «Не найдено»', () => {
+  it('unknown id shows "Not found"', () => {
     render(<AnimalScreen id="no_such_animal" />);
-    expect(screen.getByText('Не найдено')).toBeTruthy();
+    expect(screen.getByText('Not found')).toBeTruthy();
   });
 });

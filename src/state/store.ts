@@ -1,7 +1,7 @@
 // Application state (signals) and actions (SPEC 7.6, M2).
 import { batch, computed, effect, signal } from '@preact/signals';
-import { itemsById, materialShortName, outfitsById } from '../data';
-import type { UserState } from '../data/types';
+import { challengeCategoriesById, itemsById, materialShortName, outfitsById } from '../data';
+import type { ChallengeCategoryId, UserState } from '../data/types';
 import {
   applyMarkCrafted,
   applySetStock,
@@ -109,21 +109,17 @@ export function resetStoreForTests(initial: UserState = createInitialState()): v
 
 const MINUS = '−';
 
-/** «Бобр −2, Корова −1» or «Ничего не списано». */
+/** "Beaver −2, Cow −1" or "Nothing deducted". */
 export function formatDeducted(deducted: Record<string, number>): string {
   const parts = Object.entries(deducted)
     .filter(([, d]) => d > 0)
     .map(([m, d]) => `${materialShortName(m)} ${MINUS}${d}`);
-  return parts.length > 0 ? parts.join(', ') : 'Ничего не списано';
+  return parts.length > 0 ? parts.join(', ') : 'Nothing deducted';
 }
 
-/** Russian plural for «часть»: 1 часть, 2 части, 5 частей. */
+/** "1 part", "5 parts". */
 export function partsWord(n: number): string {
-  const mod10 = n % 10;
-  const mod100 = n % 100;
-  if (mod10 === 1 && mod100 !== 11) return 'часть';
-  if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) return 'части';
-  return 'частей';
+  return n === 1 ? 'part' : 'parts';
 }
 
 export interface ActionOptions {
@@ -145,7 +141,7 @@ export function markCrafted(
   if (options.toast !== false) {
     const item = itemsById.get(itemId);
     showToast({
-      title: `Изготовлено: ${item?.nameRu ?? itemId}`,
+      title: `Crafted: ${item?.nameEn ?? itemId}`,
       detail: formatDeducted(res.deducted),
       undo: () => unmarkCrafted(itemId),
     });
@@ -187,7 +183,7 @@ export function markOutfitCrafted(outfitId: string, options: ActionOptions = {})
   });
   if (marked.length > 0 && options.toast !== false) {
     showToast({
-      title: `Костюм: ${outfit.nameRu}, ${marked.length} ${partsWord(marked.length)}`,
+      title: `Outfit: ${outfit.nameEn}, ${marked.length} ${partsWord(marked.length)}`,
       detail: formatDeducted(total),
       undo: () =>
         batch(() => {
@@ -218,7 +214,31 @@ export function setSettings(patch: Partial<UserState['settings']>): void {
   state.value = { ...s, settings: { ...s.settings, ...patch } };
 }
 
-/** Resets progress (crafted, stock, goals). Settings are kept. */
+/** Completed ranks of a challenge category (0..10). */
+export function challengeProgress(
+  categoryId: ChallengeCategoryId,
+  s: UserState = state.value,
+): number {
+  return s.challenges[categoryId] ?? 0;
+}
+
+/**
+ * Challenges are done in order, so progress is "ranks completed".
+ * Ticking rank N marks ranks 1..N done; unticking rank N leaves ranks 1..N−1 done.
+ */
+export function toggleChallengeRank(categoryId: ChallengeCategoryId, rank: number): void {
+  const cat = challengeCategoriesById.get(categoryId);
+  if (!cat) return;
+  const s = state.value;
+  const done = s.challenges[categoryId] ?? 0;
+  const next = Math.min(cat.ranks.length, Math.max(0, rank <= done ? rank - 1 : rank));
+  const challenges = { ...s.challenges };
+  if (next > 0) challenges[categoryId] = next;
+  else delete challenges[categoryId];
+  state.value = { ...s, challenges };
+}
+
+/** Resets progress (crafted, stock, goals, challenges). Settings are kept. */
 export function resetAll(): void {
   state.value = { ...createInitialState(), settings: { ...state.value.settings } };
   flushSave();

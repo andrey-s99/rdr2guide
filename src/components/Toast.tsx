@@ -13,7 +13,7 @@ export function Toast() {
           </div>
           {t.undo && (
             <button type="button" class="toast__undo" onClick={undoToast}>
-              Отменить
+              Undo
             </button>
           )}
         </div>

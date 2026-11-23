@@ -87,7 +87,10 @@ describe('15.2 calculations', () => {
   });
 
   it('lock and outfit progress', () => {
-    const legend = { ...item('badger_mountain_hat'), prerequisiteItemIds: ['a', 'b', 'c', 'd', 'e', 'f'] };
+    const legend = {
+      ...item('badger_mountain_hat'),
+      prerequisiteItemIds: ['a', 'b', 'c', 'd', 'e', 'f'],
+    };
     expect(isLocked(legend, {})).toBe(true);
     expect(prerequisiteProgress(legend, {})).toEqual({ done: 0, total: 6 });
     const all = Object.fromEntries(
@@ -161,12 +164,7 @@ describe('scopes', () => {
   it('lists all scopes from 7.5', () => {
     expect(scopes.filter((s) => s.id.startsWith('outfit:'))).toHaveLength(16);
     expect(scopes.filter((s) => s.id.startsWith('trapper_cat:'))).toHaveLength(8);
-    expect(scopeGroups.map((g) => g.label)).toEqual([
-      'Общее',
-      'Охотник',
-      'Костюмы',
-      'Скупщик',
-    ]);
+    expect(scopeGroups.map((g) => g.label)).toEqual(['General', 'Trapper', 'Outfits', 'Fence']);
     for (const id of ['all', 'goals', 'trapper', 'fence', 'outfit:wrangler']) {
       expect(scopeExists(id)).toBe(true);
     }
@@ -193,6 +191,12 @@ describe('15.2.9 search', () => {
     expect(normalize('  Чёрный   МЕДВЕДЬ ')).toBe('черный медведь');
   });
 
+  it('finds English names (shown in the UI)', () => {
+    const r = search('black bear');
+    expect(r.animals.map((x) => x.id)).toContain('black_bear');
+    expect(search('Beaver').materials.map((x) => x.id)).toContain('perfect_beaver');
+  });
+
   it('ё and е give the same result', () => {
     const a = search('чёрн');
     const b = search('черн');
@@ -215,20 +219,24 @@ describe('15.2.9 search', () => {
   });
 
   it('sorts word-start matches first, then alphabetically', () => {
-    const r = search('медвед');
-    const names = r.animals.map((a) => a.nameRu);
-    // All animal names here match at a word start, so plain ru alphabetical order.
-    expect(names).toEqual([...names].sort((x, y) => x.localeCompare(y, 'ru')));
+    const r = search('bear');
+    const names = r.animals.map((a) => a.nameEn);
+    // All animal names here match at a word start, so plain alphabetical order.
+    expect(names).toEqual([...names].sort((x, y) => x.localeCompare(y, 'en')));
     const fake = {
       outfits: [],
       animals: [],
       materials: [],
       items: [
-        { nameRu: 'Абвгд', nameEn: '' },
-        { nameRu: 'Где-то', nameEn: '' },
-        { nameRu: 'Вот гдеты', nameEn: '' },
+        { nameRu: '', nameEn: 'Abhat' },
+        { nameRu: '', nameEn: 'Hat-like' },
+        { nameRu: '', nameEn: 'Old hatter' },
       ],
     } as unknown as Parameters<typeof search>[1];
-    expect(search('гд', fake).items.map((i) => i.nameRu)).toEqual(['Вот гдеты', 'Где-то', 'Абвгд']);
+    expect(search('hat', fake).items.map((i) => i.nameEn)).toEqual([
+      'Hat-like',
+      'Old hatter',
+      'Abhat',
+    ]);
   });
 });

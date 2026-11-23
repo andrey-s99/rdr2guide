@@ -36,13 +36,13 @@ function matches(status: OutfitStatus, filter: StatusFilter): boolean {
 }
 
 const EMPTY_TEXT: Record<StatusFilter, string> = {
-  all: 'Здесь пока пусто',
-  not_crafted: 'Здесь пока пусто — все костюмы собраны',
-  ready: 'Пока нет костюмов, для которых всё добыто',
-  crafted: 'Пока нет собранных костюмов',
+  all: 'Nothing here yet',
+  not_crafted: 'Nothing here — all outfits are complete',
+  ready: 'No outfits have all materials collected yet',
+  crafted: 'No complete outfits yet',
 };
 
-/** Охотник → Костюмы (SPEC 9.1). */
+/** Trapper → Outfits (SPEC 9.1). */
 export function TrapperOutfits() {
   const filter = statusFilterSignal('trapper-outfits');
   const s = state.value;
@@ -56,11 +56,11 @@ export function TrapperOutfits() {
   return (
     <div class="screen trapper-screen">
       <AppLink to="/vendor/trapper" class="link-row">
-        Где найти Охотника и как он работает
+        Where to find the Trapper and how he works
         <ChevronIcon size={18} />
       </AppLink>
       <FilterChips
-        ariaLabel="Фильтр костюмов"
+        ariaLabel="Outfit filter"
         scroll
         options={options}
         value={filter.value}
@@ -79,7 +79,7 @@ export function TrapperOutfits() {
         to="/summary?scope=trapper_outfits"
         class="btn btn--secondary btn--block trapper-summary-btn"
       >
-        Сводка по всем костюмам
+        Summary for all outfits
       </AppLink>
     </div>
   );

@@ -10,10 +10,10 @@ import { state } from '../state/store';
 import '../styles/screens/vendors.css';
 
 const EMPTY_TEXT: Record<StatusFilter, string> = {
-  all: 'Здесь пока пусто',
-  not_crafted: 'Здесь пока пусто — всё изготовлено',
-  ready: 'Пока ничего нельзя изготовить — не хватает материалов',
-  crafted: 'Пока ничего не изготовлено',
+  all: 'Nothing here yet',
+  not_crafted: 'Nothing here — everything is crafted',
+  ready: 'Nothing can be crafted yet — materials are missing',
+  crafted: 'Nothing crafted yet',
 };
 
 export interface VendorListScreenProps {
@@ -57,7 +57,7 @@ export function VendorListScreen({
         options={options}
         value={filter.value}
         onChange={(v) => (filter.value = v)}
-        ariaLabel="Фильтр по статусу"
+        ariaLabel="Status filter"
         scroll
       />
       {filtered.length === 0 ? (
@@ -75,7 +75,7 @@ export interface VendorInfoLinkProps {
   label: string;
 }
 
-/** «Как работает …» link row. */
+/** "How … works" link row. */
 export function VendorInfoLink({ vendorId, label }: VendorInfoLinkProps) {
   return (
     <AppLink to={`/vendor/${vendorId}`} class="link-row">

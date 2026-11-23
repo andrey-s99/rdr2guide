@@ -1,7 +1,6 @@
 import { AppLink } from '../components/AppLink';
 import { confirm } from '../components/ConfirmDialog';
 import { DataWarning } from '../components/DataWarning';
-import { EnName } from '../components/EnName';
 import { GoalStar } from '../components/GoalStar';
 import { PaperCard } from '../components/PaperCard';
 import { RecipeTable } from '../components/RecipeTable';
@@ -26,22 +25,22 @@ async function confirmUnmark(item: Item): Promise<void> {
   const ok =
     deducted.length > 0
       ? await confirm({
-          title: 'Вернуть списанные материалы в запасы?',
+          title: 'Return the deducted materials to your stock?',
           body: (
             <ul class="item-unmark-list">
               {deducted.map(([m, d]) => (
                 <li key={m}>
-                  {materialsById.get(m)?.nameRu ?? m}: <span class="num">+{d}</span>
+                  {materialsById.get(m)?.nameEn ?? m}: <span class="num">+{d}</span>
                 </li>
               ))}
             </ul>
           ),
-          confirmLabel: 'Снять отметку',
+          confirmLabel: 'Unmark',
         })
       : await confirm({
-          title: 'Снять отметку «изготовлено»?',
-          body: 'При изготовлении ничего не списывалось, в запасы ничего не вернётся.',
-          confirmLabel: 'Снять отметку',
+          title: 'Remove the "crafted" mark?',
+          body: 'Nothing was deducted when crafting, so nothing returns to your stock.',
+          confirmLabel: 'Unmark',
         });
   if (ok) unmarkCrafted(item.id);
 }
@@ -63,7 +62,7 @@ export function ItemScreen({ id }: ItemScreenProps) {
   const itemOutfits = item.outfitIds
     .map((oid) => outfitsById.get(oid))
     .filter((o): o is Outfit => o !== undefined);
-  const hasCondition = item.requirementRu !== '' || prereqs.length > 0;
+  const hasCondition = item.requirementEn !== '' || prereqs.length > 0;
 
   return (
     <div class="screen trapper-screen">
@@ -75,32 +74,31 @@ export function ItemScreen({ id }: ItemScreenProps) {
             </span>
           )}
           <h2 class="paper-card__title">
-            <span>{item.nameRu}</span>
+            <span>{item.nameEn}</span>
           </h2>
-          <EnName text={item.nameEn} class="paper-card__subtitle item-card__en" />
           <p class="item-card__vendor">
-            {[vendor?.nameRu, category?.nameRu].filter(Boolean).join(' · ')}
+            {[vendor?.nameEn, category?.nameEn].filter(Boolean).join(' · ')}
           </p>
           <div class="item-card__meta">
             {item.price !== null && <span class="price item-card__price">${item.price}</span>}
             <StatusBadge status={status} missing={shortfall(item, stock)} />
           </div>
           <div class="item-card__star">
-            <GoalStar kind="item" id={item.id} name={item.nameRu} />
+            <GoalStar kind="item" id={item.id} name={item.nameEn} />
           </div>
         </header>
 
-        <DataWarning confidence={item.dataConfidence} note={item.dataNoteRu} variant="banner" />
+        <DataWarning confidence={item.dataConfidence} note={item.dataNoteEn} variant="banner" />
 
         {hasCondition && (
           <section class="item-card__block">
-            <h3 class="item-card__label">Условие</h3>
-            {item.requirementRu && <p>{item.requirementRu}</p>}
+            <h3 class="item-card__label">Requirement</h3>
+            {item.requirementEn && <p>{item.requirementEn}</p>}
             {prereqs.length > 0 && (
               <div class="item-card__prereq">
                 <p class="item-card__prereq-title">
                   <LockIcon size={16} />
-                  Сначала изготовьте: {prereqProgress.done} из {prereqProgress.total}
+                  Craft these first: {prereqProgress.done} of {prereqProgress.total}
                 </p>
                 <ul class="item-card__links">
                   {prereqs.map((p) => {
@@ -116,9 +114,9 @@ export function ItemScreen({ id }: ItemScreenProps) {
                           <span class="item-card__link-mark" aria-hidden="true">
                             {pDone && <CheckIcon size={16} strokeWidth={2} />}
                           </span>
-                          <span class="item-card__link-text">{p.nameRu}</span>
+                          <span class="item-card__link-text">{p.nameEn}</span>
                           <span class="visually-hidden">
-                            {pDone ? ' (изготовлено)' : ' (не изготовлено)'}
+                            {pDone ? ' (crafted)' : ' (not crafted)'}
                           </span>
                           <ChevronIcon size={16} />
                         </AppLink>
@@ -131,35 +129,35 @@ export function ItemScreen({ id }: ItemScreenProps) {
           </section>
         )}
 
-        {item.effectRu && (
+        {item.effectEn && (
           <section class="item-card__block">
-            <h3 class="item-card__label">Эффект</h3>
-            <p>{item.effectRu}</p>
+            <h3 class="item-card__label">Effect</h3>
+            <p>{item.effectEn}</p>
           </section>
         )}
 
-        {item.campSpotRu && (
+        {item.campSpotEn && (
           <section class="item-card__block">
-            <h3 class="item-card__label">Место в лагере</h3>
-            <p>{item.campSpotRu}</p>
+            <h3 class="item-card__label">Camp spot</h3>
+            <p>{item.campSpotEn}</p>
           </section>
         )}
 
         {item.recipe.length > 0 && (
           <section class="item-card__block">
-            <h3 class="item-card__label">Рецепт</h3>
+            <h3 class="item-card__label">Recipe</h3>
             <RecipeTable item={item} />
           </section>
         )}
 
         {itemOutfits.length > 0 && (
           <section class="item-card__block">
-            <h3 class="item-card__label">Входит в костюмы</h3>
+            <h3 class="item-card__label">Part of outfits</h3>
             <ul class="item-card__links">
               {itemOutfits.map((o) => (
                 <li key={o.id}>
                   <AppLink to={`/outfit/${o.id}`} class="item-card__link">
-                    <span class="item-card__link-text">{o.nameRu}</span>
+                    <span class="item-card__link-text">{o.nameEn}</span>
                     <ChevronIcon size={16} />
                   </AppLink>
                 </li>
@@ -175,7 +173,7 @@ export function ItemScreen({ id }: ItemScreenProps) {
           class="btn btn--secondary btn--block item-card__action"
           onClick={() => void confirmUnmark(item)}
         >
-          Снять отметку
+          Unmark crafted
         </button>
       ) : (
         <button
@@ -183,7 +181,7 @@ export function ItemScreen({ id }: ItemScreenProps) {
           class="btn btn--primary btn--block item-card__action"
           onClick={() => markCrafted(item.id)}
         >
-          Отметить изготовленным
+          Mark as crafted
         </button>
       )}
     </div>

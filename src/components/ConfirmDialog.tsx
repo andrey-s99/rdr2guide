@@ -5,11 +5,11 @@ import { useEffect, useId, useRef } from 'preact/hooks';
 export interface ConfirmOptions {
   title: string;
   body?: ComponentChildren;
-  /** Default «Да». */
+  /** Default "Yes". */
   confirmLabel?: string;
-  /** Default «Отмена». */
+  /** Default "Cancel". */
   cancelLabel?: string;
-  /** Destructive action: red confirm button, initial focus on «Отмена». */
+  /** Destructive action: red confirm button, initial focus on "Cancel". */
   danger?: boolean;
 }
 
@@ -24,8 +24,8 @@ export function ConfirmDialog({
   title,
   body,
   children,
-  confirmLabel = 'Да',
-  cancelLabel = 'Отмена',
+  confirmLabel = 'Yes',
+  cancelLabel = 'Cancel',
   danger = false,
   onConfirm,
   onCancel,

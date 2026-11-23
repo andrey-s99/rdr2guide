@@ -1,4 +1,5 @@
 import type { Dataset } from './dataset';
+import type { ChallengeCategory, EnglishTexts } from './types';
 
 /** Expected counts from SPEC table 6.3 / 15.1. */
 export const EXPECTED_COUNTS = {
@@ -156,5 +157,73 @@ export function validateDataset(d: Dataset): string[] {
     if (actual !== expected) errors.push(`${name}: expected ${expected}, got ${actual}`);
   }
 
+  return errors;
+}
+
+/**
+ * Checks that src/data/en.json has an English text for every non-empty Russian one
+ * in the raw game data (the UI shows only English).
+ */
+export function validateEnglish(d: Dataset, en: EnglishTexts): string[] {
+  const errors: string[] = [];
+  const need = (cond: boolean, msg: string) => {
+    if (!cond) errors.push(`en.json: ${msg}`);
+  };
+  need(!!en.meta?.notes, 'meta.notes is empty');
+  need(
+    en.meta?.globalMapLinks?.length === d.meta.globalMapLinks.length,
+    'meta.globalMapLinks count differs',
+  );
+  for (const c of d.categories) need(!!en.categories?.[c.id], `category "${c.id}" has no name`);
+  for (const v of d.vendors) {
+    const t = en.vendors?.[v.id];
+    need(t?.locations?.length === v.locationsRu.length, `vendor "${v.id}" locations count differs`);
+    need(t?.rules?.length === v.rulesRu.length, `vendor "${v.id}" rules count differs`);
+  }
+  for (const a of d.animals) {
+    const t = en.animals?.[a.id];
+    if (!t) {
+      errors.push(`en.json: animal "${a.id}" is missing`);
+      continue;
+    }
+    need(!!t.habitat, `animal "${a.id}" habitat is empty`);
+    need(!!t.perfectKill, `animal "${a.id}" perfectKill is empty`);
+    need(!!t.behavior, `animal "${a.id}" behavior is empty`);
+    need(!a.unlockRu || !!t.unlock, `animal "${a.id}" unlock is empty`);
+    need(!a.availabilityNoteRu || !!t.availabilityNote, `animal "${a.id}" availabilityNote is empty`);
+    need(t.links?.length === a.links.length, `animal "${a.id}" links count differs`);
+  }
+  for (const m of d.materials) need(!!en.materials?.[m.id], `material "${m.id}" source is empty`);
+  for (const i of d.items) {
+    const t = en.items?.[i.id];
+    need(!i.requirementRu || !!t?.requirement, `item "${i.id}" requirement is empty`);
+    need(!i.effectRu || !!t?.effect, `item "${i.id}" effect is empty`);
+    need(!i.dataNoteRu || !!t?.dataNote, `item "${i.id}" dataNote is empty`);
+  }
+  return errors;
+}
+
+export const EXPECTED_CHALLENGE_CATEGORIES = 9;
+export const EXPECTED_CHALLENGE_RANKS = 10;
+
+/** Checks src/data/challenges.json: 9 categories with unique ids, ranks 1..10 with text and guide. */
+export function validateChallenges(list: ChallengeCategory[]): string[] {
+  const errors: string[] = [];
+  checkUniqueIds('challenges', list, errors);
+  if (list.length !== EXPECTED_CHALLENGE_CATEGORIES) {
+    errors.push(`challenges: expected ${EXPECTED_CHALLENGE_CATEGORIES}, got ${list.length}`);
+  }
+  for (const c of list) {
+    if (!c.name || !c.unlock || !c.reward) errors.push(`challenges: "${c.id}" has empty fields`);
+    if (!Array.isArray(c.tips)) errors.push(`challenges: "${c.id}" tips is not a list`);
+    if (!Array.isArray(c.ranks) || c.ranks.length !== EXPECTED_CHALLENGE_RANKS) {
+      errors.push(`challenges: "${c.id}" must have ${EXPECTED_CHALLENGE_RANKS} ranks`);
+      continue;
+    }
+    c.ranks.forEach((r, i) => {
+      if (r.rank !== i + 1) errors.push(`challenges: "${c.id}" rank #${i + 1} has rank ${r.rank}`);
+      if (!r.text || !r.guide) errors.push(`challenges: "${c.id}" rank ${r.rank} has empty text`);
+    });
+  }
   return errors;
 }

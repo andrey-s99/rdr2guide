@@ -21,7 +21,7 @@ export function ExternalLink({
     <a class={cls ? `${base} ${cls}` : base} href={href} target="_blank" rel="noopener">
       <span class="ext-link__text">{children}</span>
       <ExternalIcon size={16} />
-      <span class="visually-hidden"> (откроется в браузере)</span>
+      <span class="visually-hidden"> (opens in browser)</span>
     </a>
   );
 }

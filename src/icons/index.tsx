@@ -271,6 +271,15 @@ export const LedgerIcon = (p: IconProps) => (
   </Svg>
 );
 
+/** Medal on a ribbon (Challenges tab). */
+export const MedalIcon = (p: IconProps) => (
+  <Svg {...p}>
+    <path d="M8 2.5h3l1.5 5.2M16 2.5h-3l-1.5 5.2" />
+    <circle cx="12" cy="14.5" r="6" />
+    <path d="m12 11.2 1 2 2.2.3-1.6 1.5.4 2.2-2-1-2 1 .4-2.2-1.6-1.5 2.2-.3z" />
+  </Svg>
+);
+
 const CHEVRON_ROTATION: Record<ChevronDirection, number> = {
   right: 0,
   down: 90,
@@ -318,6 +327,7 @@ export const icons = {
   chevron: ChevronIcon,
   close: CloseIcon,
   ledger: LedgerIcon,
+  medal: MedalIcon,
 } satisfies Record<string, FunctionComponent<IconProps>>;
 
 export type IconName = keyof typeof icons;
