@@ -4,13 +4,13 @@ import type { ChallengeCategory, EnglishTexts } from './types';
 /** Expected counts from SPEC table 6.3 / 15.1. */
 export const EXPECTED_COUNTS = {
   regions: 5,
-  vendors: 2,
-  categories: 10,
+  vendors: 3,
+  categories: 11,
   animals: 77,
   materials: 103,
-  items: 141,
+  items: 148,
   outfits: 16,
-  itemsByVendor: { trapper: 123, fence: 18 },
+  itemsByVendor: { trapper: 123, pearson: 7, fence: 18 },
   animalsByType: { regular: 36, bird: 25, legendary: 16 },
 } as const;
 

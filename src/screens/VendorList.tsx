@@ -1,9 +1,10 @@
-// Shared building blocks of the Fence list screens (SPEC 9.5, 9.6).
+// Shared building blocks of the Pearson and Fence list screens (SPEC 9.5, 9.6).
 import type { ComponentChildren } from 'preact';
 import { AppLink } from '../components/AppLink';
 import { EmptyState } from '../components/EmptyState';
 import { FilterChips, STATUS_FILTER_OPTIONS } from '../components/FilterChips';
 import type { Item } from '../data/types';
+import { prerequisiteProgress } from '../logic/calc';
 import { filterByStatus, statusFilterCounts, type StatusFilter } from '../logic/filters';
 import { statusFilterSignal } from '../state/session';
 import { state } from '../state/store';
@@ -99,4 +100,20 @@ export function SummaryButton({ scope, label }: SummaryButtonProps) {
       {label}
     </AppLink>
   );
+}
+
+export interface PrerequisitesDoneProps {
+  item: Item;
+}
+
+/**
+ * Prerequisite progress after unlocking (e.g. "Required items crafted: 6/6").
+ * While locked, ItemRow already shows the lock marker with X/N.
+ */
+export function PrerequisitesDone({ item }: PrerequisitesDoneProps) {
+  const { crafted } = state.value;
+  if (item.prerequisiteItemIds.length === 0) return null;
+  const { done, total } = prerequisiteProgress(item, crafted);
+  if (done < total) return null;
+  return <p class="vendor-list__prereq-done">{`Required items crafted: ${done}/${total}`}</p>;
 }

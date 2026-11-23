@@ -110,18 +110,19 @@ describe('English UI', () => {
     expect(container.textContent).not.toMatch(/[А-Яа-яЁё]/);
   });
 
-  it('the bottom navigation has 5 tabs including Challenges', () => {
+  it('the bottom navigation has 6 tabs including Pearson and Challenges', () => {
     act(() => navigate('/challenges'));
     render(<App />);
     const nav = screen.getByRole('navigation', { name: 'Sections' });
     const tabs = within(nav).getAllByRole('link');
     expect(tabs.map((t) => t.textContent)).toEqual([
       'Trapper',
+      'Pearson',
       'Fence',
       'Animals',
       'Challenges',
       'Summary',
     ]);
-    expect(tabs[3].getAttribute('aria-current')).toBe('page');
+    expect(tabs[4].getAttribute('aria-current')).toBe('page');
   });
 });

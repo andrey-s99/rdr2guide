@@ -1,5 +1,5 @@
 export type RegionId = 'ambarino' | 'new_hanover' | 'lemoyne' | 'west_elizabeth' | 'new_austin';
-export type VendorId = 'trapper' | 'fence';
+export type VendorId = 'trapper' | 'pearson' | 'fence';
 export type CategoryId =
   | 'hat'
   | 'coat'
@@ -9,6 +9,7 @@ export type CategoryId =
   | 'chaps'
   | 'hat_accessory'
   | 'saddle'
+  | 'satchel'
   | 'trinket'
   | 'talisman';
 

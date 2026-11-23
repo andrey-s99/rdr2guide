@@ -9,7 +9,7 @@ import {
 } from '../data';
 import type { Item } from '../data/types';
 
-export type ScopeGroupLabel = 'General' | 'Trapper' | 'Outfits' | 'Fence';
+export type ScopeGroupLabel = 'General' | 'Trapper' | 'Outfits' | 'Pearson' | 'Fence';
 
 export interface ScopeDef {
   id: string;
@@ -41,6 +41,7 @@ export const scopes: readonly ScopeDef[] = [
     labelEn: `Outfit: ${o.nameEn}`,
     group: 'Outfits',
   })),
+  { id: 'pearson', labelEn: 'Pearson: satchels', group: 'Pearson' },
   { id: 'fence', labelEn: 'Fence: everything', group: 'Fence' },
 ];
 
@@ -50,6 +51,7 @@ export const scopeGroupOrder: readonly ScopeGroupLabel[] = [
   'General',
   'Trapper',
   'Outfits',
+  'Pearson',
   'Fence',
 ];
 
@@ -101,6 +103,8 @@ export function getScopeItems(scopeId: string, goals: Goals): Item[] {
       return items.filter((i) => i.vendorId === 'trapper');
     case 'trapper_outfits':
       return itemsInSet(outfitPartIds(outfits.map((o) => o.id)));
+    case 'pearson':
+      return items.filter((i) => i.vendorId === 'pearson');
     case 'fence':
       return items.filter((i) => i.vendorId === 'fence');
     case 'goals': {

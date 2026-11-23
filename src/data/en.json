@@ -17,6 +17,7 @@
     "chaps": "Chaps",
     "hat_accessory": "Hat Accessories",
     "saddle": "Saddles",
+    "satchel": "Satchels",
     "trinket": "Trinkets",
     "talisman": "Talismans"
   },
@@ -35,6 +36,17 @@
         "A legendary pelt is sold once and unlocks every item made from that animal.",
         "Besides pelts, every item costs money (the price is shown on the item card).",
         "Also available in the Epilogue."
+      ]
+    },
+    "pearson": {
+      "locations": [
+        "Gang camp — the cook's wagon (butcher icon on the minimap)."
+      ],
+      "rules": [
+        "First buy the Leather Working Tools in the camp ledger ($225; some guides say $180).",
+        "Pelts and carcasses are handed over at Pearson's wagon with the Donate action; he charges no money.",
+        "Pelts must be Perfect quality.",
+        "Available from Chapter 2 to Chapter 6; there is no gang camp in the Epilogue, so craft them before the finale."
       ]
     },
     "fence": {
@@ -1036,6 +1048,35 @@
     },
     "glorious_accessory": {
       "dataNote": "Most sources say 4 Woodpecker feathers, one (Vandal) says 3. Using 4."
+    },
+    "valuables_satchel": {
+      "requirement": "Leather Working Tools + donate $50 to the camp box.",
+      "effect": "Increases the capacity for valuables."
+    },
+    "materials_satchel": {
+      "requirement": "Leather Working Tools + craft 3 recipes at a campfire.",
+      "effect": "Increases the capacity for materials (mostly inedible ones)."
+    },
+    "provisions_satchel": {
+      "requirement": "Leather Working Tools + upgrade Pearson's wagon (Provisions) twice in the camp ledger.",
+      "effect": "Increases the capacity for provisions."
+    },
+    "kit_satchel": {
+      "requirement": "Leather Working Tools + donate 3 valuables to the camp box.",
+      "effect": "Increases the capacity for kit items."
+    },
+    "ingredients_satchel": {
+      "requirement": "Leather Working Tools + give Pearson 5 animal carcasses.",
+      "effect": "Increases the capacity for edible ingredients.",
+      "dataNote": "One source lists a Perfect Squirrel carcass instead of the pelt."
+    },
+    "tonics_satchel": {
+      "requirement": "Leather Working Tools + upgrade Strauss's wagon (Medicine) twice in the camp ledger.",
+      "effect": "Increases the capacity for tonics."
+    },
+    "legend_of_the_east_satchel": {
+      "requirement": "Leather Working Tools + craft all 6 other satchels.",
+      "effect": "Greatly increases the capacity for every item type."
     },
     "beaver_tooth_trinket": {
       "effect": "Permanently slows degradation for all weapons by 10%."

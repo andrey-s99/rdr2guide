@@ -1,9 +1,20 @@
-/* Fence lists (SPEC 9.5, 9.6) and the vendor page (SPEC 9.11). */
+/* Pearson / Fence lists (SPEC 9.5, 9.6) and the vendor page (SPEC 9.11). */
 
 .vendor-list__top {
   display: flex;
   flex-direction: column;
   gap: var(--sp-1);
+}
+
+.vendor-list__reminder {
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+}
+
+.vendor-list__prereq-done {
+  margin-top: var(--sp-1);
+  font-size: var(--fs-sm);
+  color: var(--ok-text);
 }
 
 /* Lists span the full screen width like the Trapper lists (more room for names at 360px). */

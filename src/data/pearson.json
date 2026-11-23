@@ -1,0 +1,237 @@
+{
+  "vendor": {
+    "id": "pearson",
+    "nameRu": "Пирсон",
+    "nameEn": "Pearson",
+    "locationsRu": [
+      "Лагерь банды — фургон повара (иконка мясника на мини-карте)."
+    ],
+    "rulesRu": [
+      "Сначала купите «Инструменты для обработки кожи» в журнале лагеря ($225; в части гайдов указано $180).",
+      "Шкуры и туши передаются Пирсону через действие «Пожертвовать» у его фургона; денег он не берёт.",
+      "Нужно качество «идеальная».",
+      "Работает с главы 2 по главу 6; в эпилоге лагеря нет — успейте до финала."
+    ],
+    "categories": [
+      "satchel"
+    ]
+  },
+  "category": {
+    "id": "satchel",
+    "nameRu": "Сумки",
+    "vendorId": "pearson",
+    "icon": "satchel"
+  },
+  "items": [
+    {
+      "id": "valuables_satchel",
+      "vendorId": "pearson",
+      "category": "satchel",
+      "nameRu": "Сумка для ценностей",
+      "nameEn": "Valuables Satchel",
+      "price": null,
+      "recipe": [
+        {
+          "materialId": "perfect_deer",
+          "qty": 1
+        },
+        {
+          "materialId": "perfect_beaver",
+          "qty": 1
+        },
+        {
+          "materialId": "perfect_rabbit",
+          "qty": 1
+        }
+      ],
+      "dataConfidence": "high",
+      "dataNoteRu": "",
+      "requirementRu": "Инструменты для обработки кожи + пожертвовать $50 в ящик лагеря.",
+      "effectRu": "Увеличивает вместимость ценностей.",
+      "campSpotRu": "",
+      "prerequisiteItemIds": [],
+      "outfitIds": []
+    },
+    {
+      "id": "materials_satchel",
+      "vendorId": "pearson",
+      "category": "satchel",
+      "nameRu": "Сумка для материалов",
+      "nameEn": "Materials Satchel",
+      "price": null,
+      "recipe": [
+        {
+          "materialId": "perfect_deer",
+          "qty": 1
+        },
+        {
+          "materialId": "perfect_boar",
+          "qty": 1
+        },
+        {
+          "materialId": "perfect_iguana",
+          "qty": 1
+        }
+      ],
+      "dataConfidence": "high",
+      "dataNoteRu": "",
+      "requirementRu": "Инструменты для обработки кожи + изготовить 3 рецепта у костра разведчика.",
+      "effectRu": "Увеличивает вместимость материалов (в основном несъедобных).",
+      "campSpotRu": "",
+      "prerequisiteItemIds": [],
+      "outfitIds": []
+    },
+    {
+      "id": "provisions_satchel",
+      "vendorId": "pearson",
+      "category": "satchel",
+      "nameRu": "Сумка для провизии",
+      "nameEn": "Provisions Satchel",
+      "price": null,
+      "recipe": [
+        {
+          "materialId": "perfect_deer",
+          "qty": 1
+        },
+        {
+          "materialId": "perfect_bison",
+          "qty": 1
+        },
+        {
+          "materialId": "perfect_raccoon",
+          "qty": 1
+        }
+      ],
+      "dataConfidence": "high",
+      "dataNoteRu": "",
+      "requirementRu": "Инструменты для обработки кожи + дважды улучшить фургон Пирсона (провизия) в журнале лагеря.",
+      "effectRu": "Увеличивает вместимость провизии.",
+      "campSpotRu": "",
+      "prerequisiteItemIds": [],
+      "outfitIds": []
+    },
+    {
+      "id": "kit_satchel",
+      "vendorId": "pearson",
+      "category": "satchel",
+      "nameRu": "Сумка для снаряжения",
+      "nameEn": "Kit Satchel",
+      "price": null,
+      "recipe": [
+        {
+          "materialId": "perfect_deer",
+          "qty": 1
+        },
+        {
+          "materialId": "perfect_elk",
+          "qty": 1
+        },
+        {
+          "materialId": "perfect_panther",
+          "qty": 1
+        }
+      ],
+      "dataConfidence": "high",
+      "dataNoteRu": "",
+      "requirementRu": "Инструменты для обработки кожи + пожертвовать 3 ценности в ящик лагеря.",
+      "effectRu": "Увеличивает вместимость снаряжения (наборов).",
+      "campSpotRu": "",
+      "prerequisiteItemIds": [],
+      "outfitIds": []
+    },
+    {
+      "id": "ingredients_satchel",
+      "vendorId": "pearson",
+      "category": "satchel",
+      "nameRu": "Сумка для ингредиентов",
+      "nameEn": "Ingredients Satchel",
+      "price": null,
+      "recipe": [
+        {
+          "materialId": "perfect_deer",
+          "qty": 1
+        },
+        {
+          "materialId": "perfect_badger",
+          "qty": 1
+        },
+        {
+          "materialId": "perfect_squirrel",
+          "qty": 1
+        }
+      ],
+      "dataConfidence": "medium",
+      "dataNoteRu": "Один источник указывает «идеальная тушка белки» вместо шкуры.",
+      "requirementRu": "Инструменты для обработки кожи + сдать Пирсону 5 туш животных.",
+      "effectRu": "Увеличивает вместимость съедобных ингредиентов.",
+      "campSpotRu": "",
+      "prerequisiteItemIds": [],
+      "outfitIds": []
+    },
+    {
+      "id": "tonics_satchel",
+      "vendorId": "pearson",
+      "category": "satchel",
+      "nameRu": "Сумка для тоников",
+      "nameEn": "Tonics Satchel",
+      "price": null,
+      "recipe": [
+        {
+          "materialId": "perfect_deer",
+          "qty": 1
+        },
+        {
+          "materialId": "perfect_buck",
+          "qty": 1
+        },
+        {
+          "materialId": "perfect_elk",
+          "qty": 1
+        }
+      ],
+      "dataConfidence": "high",
+      "dataNoteRu": "",
+      "requirementRu": "Инструменты для обработки кожи + дважды улучшить фургон Штрауса (медицина) в журнале лагеря.",
+      "effectRu": "Увеличивает вместимость тоников.",
+      "campSpotRu": "",
+      "prerequisiteItemIds": [],
+      "outfitIds": []
+    },
+    {
+      "id": "legend_of_the_east_satchel",
+      "vendorId": "pearson",
+      "category": "satchel",
+      "nameRu": "Сумка «Легенда Востока»",
+      "nameEn": "Legend of the East Satchel",
+      "price": null,
+      "recipe": [
+        {
+          "materialId": "perfect_deer",
+          "qty": 1
+        },
+        {
+          "materialId": "perfect_cougar",
+          "qty": 1
+        },
+        {
+          "materialId": "perfect_wolf",
+          "qty": 1
+        }
+      ],
+      "dataConfidence": "high",
+      "dataNoteRu": "",
+      "requirementRu": "Инструменты для обработки кожи + изготовить все 6 остальных сумок.",
+      "effectRu": "Значительно увеличивает вместимость всех типов предметов.",
+      "prerequisiteItemIds": [
+        "valuables_satchel",
+        "materials_satchel",
+        "provisions_satchel",
+        "kit_satchel",
+        "ingredients_satchel",
+        "tonics_satchel"
+      ],
+      "campSpotRu": "",
+      "outfitIds": []
+    }
+  ]
+}

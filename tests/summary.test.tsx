@@ -46,9 +46,10 @@ afterEach(() => {
 
 // SPEC 15.3 reference totals (empty progress and stock).
 const REFERENCE: [scope: string, distinct: number, units: number, itemsTotal: number | null][] = [
-  ['all', 103, 299, 141],
+  ['all', 103, 320, 148],
   ['trapper', 77, 273, 123],
   ['trapper_outfits', 50, 118, null],
+  ['pearson', 14, 21, 7],
   ['fence', 26, 26, 18],
   ['outfit:bear_hunter', 5, 6, 4],
   ['outfit:desperado', 9, 12, null],
@@ -74,12 +75,12 @@ describe('Summary screen: 15.3 totals on screen', () => {
   it('select has optgroups and all scopes (16 outfits, 8 trapper categories)', () => {
     open('/summary?scope=all');
     const groups = [...document.querySelectorAll('optgroup')].map((g) => g.label);
-    expect(groups).toEqual(['General', 'Trapper', 'Outfits', 'Fence']);
+    expect(groups).toEqual(['General', 'Trapper', 'Outfits', 'Pearson', 'Fence']);
     const values = [...document.querySelectorAll('option')].map((o) => o.value);
     expect(values.filter((v) => v.startsWith('outfit:'))).toHaveLength(16);
     expect(values.filter((v) => v.startsWith('trapper_cat:'))).toHaveLength(8);
     expect(values).toEqual(
-      expect.arrayContaining(['all', 'goals', 'trapper', 'trapper_outfits', 'fence']),
+      expect.arrayContaining(['all', 'goals', 'trapper', 'trapper_outfits', 'pearson', 'fence']),
     );
   });
 });
@@ -93,7 +94,7 @@ describe('Summary screen: grouping', () => {
     const first = heads[0] as HTMLAnchorElement;
     expect(first.getAttribute('href')).toMatch(/^#\/animal\//);
     expect(screen.getByText('Special items')).toBeTruthy();
-    expect(renderedRows()).toEqual({ count: 103, units: 299 });
+    expect(renderedRows()).toEqual({ count: 103, units: 320 });
     // Group badges are sorted by remaining desc.
     const badges = [...document.querySelectorAll('.summary-group__head .badge')].map((b) =>
       Number(b.textContent),
@@ -111,7 +112,7 @@ describe('Summary screen: grouping', () => {
     const regionNames = regions.map((r) => r.nameEn);
     expect(titles.at(-1)).toBe('Special items');
     expect(titles.slice(0, -1)).toEqual(regionNames.filter((n) => titles.includes(n)));
-    expect(renderedRows()).toEqual({ count: 103, units: 299 });
+    expect(renderedRows()).toEqual({ count: 103, units: 320 });
     expect(uiPrefs().summaryGroup).toBe('region');
   });
 
@@ -135,9 +136,9 @@ describe('Summary screen: grouping', () => {
       settings: { theme: 'night' },
     });
     open('/summary?scope=all&group=flat');
-    expect(renderedRows()).toEqual({ count: 102, units: 284 });
+    expect(renderedRows()).toEqual({ count: 102, units: 305 });
     fireEvent.click(screen.getByRole('switch', { name: 'Show collected' }));
-    expect(renderedRows()).toEqual({ count: 103, units: 284 });
+    expect(renderedRows()).toEqual({ count: 103, units: 305 });
   });
 });
 
@@ -167,7 +168,7 @@ describe('Summary screen: scope selection and persistence', () => {
   it('invalid scope in URL falls back to all', () => {
     open('/summary?scope=outfit:nope');
     expect(currentRoute.value.query.scope).toBe('all');
-    expect(totalsText()).toMatch(/^Still to collect: 299, 103 material types/);
+    expect(totalsText()).toMatch(/^Still to collect: 320, 103 material types/);
   });
 
   it('saved scope is used when no query; unknown saved scope → all', () => {

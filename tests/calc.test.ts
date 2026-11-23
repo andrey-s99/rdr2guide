@@ -121,8 +121,9 @@ describe('15.2 calculations', () => {
 
 describe('15.3 reference totals (empty progress)', () => {
   const refs: [string, number, number][] = [
-    ['all', 103, 299],
+    ['all', 103, 320],
     ['trapper', 77, 273],
+    ['pearson', 14, 21],
     ['trapper_outfits', 50, 118],
     ['fence', 26, 26],
     ['outfit:bear_hunter', 5, 6],
@@ -137,11 +138,11 @@ describe('15.3 reference totals (empty progress)', () => {
     const n = needs('all').byMaterial;
     const expected = {
       perfect_snake: 15,
-      perfect_boar: 10,
+      perfect_boar: 11,
       perfect_rat: 16,
       feather_raven: 13,
-      perfect_deer: 5,
-      perfect_beaver: 9,
+      perfect_deer: 12,
+      perfect_beaver: 10,
     };
     for (const [m, v] of Object.entries(expected)) expect(n.get(m)?.remaining, m).toBe(v);
   });
@@ -164,16 +165,23 @@ describe('scopes', () => {
   it('lists all scopes from 7.5', () => {
     expect(scopes.filter((s) => s.id.startsWith('outfit:'))).toHaveLength(16);
     expect(scopes.filter((s) => s.id.startsWith('trapper_cat:'))).toHaveLength(8);
-    expect(scopeGroups.map((g) => g.label)).toEqual(['General', 'Trapper', 'Outfits', 'Fence']);
-    for (const id of ['all', 'goals', 'trapper', 'fence', 'outfit:wrangler']) {
+    expect(scopeGroups.map((g) => g.label)).toEqual([
+      'General',
+      'Trapper',
+      'Outfits',
+      'Pearson',
+      'Fence',
+    ]);
+    for (const id of ['all', 'goals', 'trapper', 'pearson', 'fence', 'outfit:wrangler']) {
       expect(scopeExists(id)).toBe(true);
     }
     expect(scopeExists('outfit:nope')).toBe(false);
   });
 
   it('returns scope items', () => {
-    expect(getScopeItems('all', noGoals)).toHaveLength(141);
+    expect(getScopeItems('all', noGoals)).toHaveLength(148);
     expect(getScopeItems('trapper', noGoals)).toHaveLength(123);
+    expect(getScopeItems('pearson', noGoals)).toHaveLength(7);
     expect(getScopeItems('fence', noGoals)).toHaveLength(18);
     expect(getScopeItems('goals', noGoals)).toHaveLength(0);
     expect(getScopeItems('unknown', noGoals)).toHaveLength(0);

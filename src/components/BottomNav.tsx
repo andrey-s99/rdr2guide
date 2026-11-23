@@ -1,5 +1,13 @@
 import type { FunctionComponent } from 'preact';
-import { HatIcon, type IconProps, LedgerIcon, MedalIcon, PawIcon, TrinketIcon } from '../icons';
+import {
+  HatIcon,
+  type IconProps,
+  LedgerIcon,
+  MedalIcon,
+  PawIcon,
+  SatchelIcon,
+  TrinketIcon,
+} from '../icons';
 import { navigate, type SectionTab, tabPath } from '../router';
 
 interface TabDef {
@@ -10,6 +18,7 @@ interface TabDef {
 
 export const TABS: TabDef[] = [
   { id: 'trapper', label: 'Trapper', icon: HatIcon },
+  { id: 'pearson', label: 'Pearson', icon: SatchelIcon },
   { id: 'fence', label: 'Fence', icon: TrinketIcon },
   { id: 'animals', label: 'Animals', icon: PawIcon },
   { id: 'challenges', label: 'Challenges', icon: MedalIcon },

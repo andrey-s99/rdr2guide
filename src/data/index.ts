@@ -8,6 +8,8 @@ import itemsJson from '@data/items.json';
 import outfitsJson from '@data/outfits.json';
 import enJson from './en.json';
 import challengesJson from './challenges.json';
+import pearsonJson from './pearson.json';
+import { type PearsonData, withPearson } from './pearson';
 import type {
   Animal,
   Category,
@@ -84,7 +86,8 @@ export function localizeDataset(raw: Dataset, en: EnglishTexts): Dataset {
   };
 }
 
-const rawDataset = {
+const rawDataset = withPearson(
+  {
   meta: metaJson,
   regions: regionsJson,
   vendors: vendorsJson,
@@ -93,7 +96,9 @@ const rawDataset = {
   materials: materialsJson,
   items: itemsJson,
   outfits: outfitsJson,
-} as unknown as Dataset;
+  } as unknown as Dataset,
+  pearsonJson as unknown as PearsonData,
+);
 
 const localized = localizeDataset(rawDataset, english);
 

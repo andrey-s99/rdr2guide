@@ -24,8 +24,9 @@ describe('data integrity (SPEC 6.4)', () => {
   });
 
   it('has the expected counts (15.1)', () => {
-    expect(items).toHaveLength(141);
+    expect(items).toHaveLength(148);
     expect(items.filter((i) => i.vendorId === 'trapper')).toHaveLength(123);
+    expect(items.filter((i) => i.vendorId === 'pearson')).toHaveLength(7);
     expect(items.filter((i) => i.vendorId === 'fence')).toHaveLength(18);
     expect(materials).toHaveLength(103);
     expect(animals).toHaveLength(77);

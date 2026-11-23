@@ -9,20 +9,25 @@ import items from '../data/items.json';
 import outfits from '../data/outfits.json';
 import en from '../src/data/en.json';
 import challenges from '../src/data/challenges.json';
+import pearson from '../src/data/pearson.json';
 import type { Dataset } from '../src/data/dataset';
+import { type PearsonData, withPearson } from '../src/data/pearson';
 import type { ChallengeCategory, EnglishTexts } from '../src/data/types';
 import { validateChallenges, validateDataset, validateEnglish } from '../src/data/validate';
 
-const dataset = {
-  meta,
-  regions,
-  vendors,
-  categories,
-  animals,
-  materials,
-  items,
-  outfits,
-} as unknown as Dataset;
+const dataset = withPearson(
+  {
+    meta,
+    regions,
+    vendors,
+    categories,
+    animals,
+    materials,
+    items,
+    outfits,
+  } as unknown as Dataset,
+  pearson as unknown as PearsonData,
+);
 
 const errors = [
   ...validateDataset(dataset),

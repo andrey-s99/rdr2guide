@@ -19,6 +19,7 @@ import { TopBar } from './TopBar';
 
 export const SECTION_TITLES: Record<SectionTab, string> = {
   trapper: 'Trapper',
+  pearson: 'Pearson',
   fence: 'Fence',
   animals: 'Animals',
   challenges: 'Challenges',
@@ -66,6 +67,11 @@ const SUBNAV: Partial<Record<SectionTab, { label: string; options: SegmentOption
     ],
   },
 };
+
+/** Sections with a sub-section switcher under the top bar. */
+function hasSubNav(section: SectionTab): boolean {
+  return section === 'animals' || SUBNAV[section] !== undefined;
+}
 
 function SubNav({ route, section }: { route: Route; section: SectionTab }) {
   if (section === 'animals') {
@@ -118,7 +124,7 @@ export function AppShell({ route, goalsCount, toast, children }: AppShellProps) 
         {route.name === 'search' ? <SearchField q={route.query.q ?? ''} /> : undefined}
       </TopBar>
       <main class="app-main" id="main">
-        {section && section !== 'summary' && section !== 'challenges' && (
+        {section && hasSubNav(section) && (
           <div class="app-subnav">
             <div class="column">
               <SubNav route={route} section={section} />

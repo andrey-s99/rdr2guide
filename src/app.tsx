@@ -11,6 +11,7 @@ import { FenceTrinkets } from './screens/FenceTrinkets';
 import { ItemScreen } from './screens/ItemScreen';
 import { NotFound } from './screens/NotFound';
 import { OutfitScreen } from './screens/OutfitScreen';
+import { PearsonSatchels } from './screens/PearsonSatchels';
 import { Search } from './screens/Search';
 import { Settings } from './screens/Settings';
 import { Summary } from './screens/Summary';
@@ -29,6 +30,8 @@ function renderScreen(route: Route) {
       return <TrapperOutfits />;
     case 'trapper-items':
       return <TrapperItems />;
+    case 'pearson':
+      return <PearsonSatchels />;
     case 'fence-trinkets':
       return <FenceTrinkets />;
     case 'fence-talismans':

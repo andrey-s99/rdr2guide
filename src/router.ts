@@ -5,6 +5,7 @@ import { computed, signal } from '@preact/signals';
 export type RouteName =
   | 'trapper-outfits'
   | 'trapper-items'
+  | 'pearson'
   | 'fence-trinkets'
   | 'fence-talismans'
   | 'animals'
@@ -18,7 +19,7 @@ export type RouteName =
   | 'search'
   | 'settings';
 
-export type SectionTab = 'trapper' | 'fence' | 'animals' | 'challenges' | 'summary';
+export type SectionTab = 'trapper' | 'pearson' | 'fence' | 'animals' | 'challenges' | 'summary';
 
 export interface Route {
   name: RouteName;
@@ -39,6 +40,7 @@ export const DEFAULT_PATH = '/trapper/outfits';
 const STATIC_ROUTES: Record<string, RouteName> = {
   '/trapper/outfits': 'trapper-outfits',
   '/trapper/items': 'trapper-items',
+  '/pearson': 'pearson',
   '/fence/trinkets': 'fence-trinkets',
   '/fence/talismans': 'fence-talismans',
   '/animals': 'animals',
@@ -59,6 +61,7 @@ const ID_ROUTES: Record<string, RouteName> = {
 const SECTION_OF: Partial<Record<RouteName, SectionTab>> = {
   'trapper-outfits': 'trapper',
   'trapper-items': 'trapper',
+  pearson: 'pearson',
   'fence-trinkets': 'fence',
   'fence-talismans': 'fence',
   animals: 'animals',
@@ -68,6 +71,7 @@ const SECTION_OF: Partial<Record<RouteName, SectionTab>> = {
 
 export const SECTION_DEFAULT_PATH: Record<SectionTab, string> = {
   trapper: '/trapper/outfits',
+  pearson: '/pearson',
   fence: '/fence/trinkets',
   animals: '/animals',
   challenges: '/challenges',

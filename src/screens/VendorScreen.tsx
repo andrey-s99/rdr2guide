@@ -23,6 +23,7 @@ const SUB_LINKS: Record<VendorId, SubLink[]> = {
     { label: 'Outfits', to: '/trapper/outfits' },
     { label: 'Items', to: '/trapper/items' },
   ],
+  pearson: [{ label: 'Satchels', to: '/pearson' }],
   fence: [
     { label: 'Trinkets', to: '/fence/trinkets' },
     { label: 'Talismans', to: '/fence/talismans' },
