@@ -222,7 +222,9 @@ export function validateChallenges(list: ChallengeCategory[]): string[] {
     }
     c.ranks.forEach((r, i) => {
       if (r.rank !== i + 1) errors.push(`challenges: "${c.id}" rank #${i + 1} has rank ${r.rank}`);
-      if (!r.text || !r.guide) errors.push(`challenges: "${c.id}" rank ${r.rank} has empty text`);
+      if (!r.text || !r.guide || !r.reward) {
+        errors.push(`challenges: "${c.id}" rank ${r.rank} has empty text`);
+      }
     });
   }
   return errors;

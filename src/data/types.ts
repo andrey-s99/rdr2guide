@@ -159,6 +159,7 @@ export type ChallengeCategoryId =
 export interface ChallengeRank {
   rank: number; // 1..10
   text: string; // challenge description as shown in the game
+  reward: string; // item unlocked at the Trapper, or XP and cash
   guide: string; // how to do it quickly
 }
 
@@ -167,7 +168,7 @@ export interface ChallengeCategory {
   name: string;
   /** What starts the category (the first rank activates on this action). */
   unlock: string;
-  /** Reinforced equipment set and the attribute it raises. */
+  /** Reinforced equipment set, the attribute it raises and other category rewards. */
   reward: string;
   /** General tips for the whole category. */
   tips: string[];

@@ -33,6 +33,7 @@ describe('Challenges list', () => {
     expect(links.map((a) => a.textContent)).toEqual(challengeCategories.map((c) => c.name));
     expect(links[0].getAttribute('href')).toBe('#/challenge/bandit');
     expect(screen.getByText('Rank 1: Hold up 5 townsfolk.')).toBeTruthy();
+    expect(screen.getByText('Rank 1: Skin 3 deer.')).toBeTruthy();
     expect(screen.getByText('Completed 0 of 90 challenges')).toBeTruthy();
   });
 
@@ -59,6 +60,10 @@ describe('Challenge category card', () => {
       expect(screen.getByText(r.guide)).toBeTruthy();
     }
     expect(screen.getAllByRole('checkbox')).toHaveLength(10);
+    const rewards = [...document.querySelectorAll('.challenge-rank__reward')].map(
+      (el) => el.textContent,
+    );
+    expect(rewards).toEqual(cat.ranks.map((r) => `Reward: ${r.reward}`));
   });
 
   it('ticking a rank completes the earlier ones and moves "Current"', () => {

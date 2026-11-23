@@ -1038,58 +1038,58 @@
       "dataNote": "Most sources say 4 Woodpecker feathers, one (Vandal) says 3. Using 4."
     },
     "beaver_tooth_trinket": {
-      "effect": "Weapons degrade 10% slower."
+      "effect": "Permanently slows degradation for all weapons by 10%."
     },
     "buck_antler_trinket": {
-      "effect": "Improves the quality of animal parts when skinning."
+      "effect": "You receive higher quality skinned animal parts."
     },
     "cougar_fang_trinket": {
-      "effect": "10% increase to Stamina experience gained."
+      "effect": "Permanently increases your Stamina experience bonus by 10%."
     },
     "coyote_fang_trinket": {
-      "effect": "10% increase to Dead Eye experience gained."
+      "effect": "Permanently increases your Dead Eye experience bonus by 10%."
     },
     "elk_antler_trinket": {
-      "effect": "10% increase to money found when looting."
+      "effect": "Permanently increases the value of looted money by 10%."
     },
     "fox_claw_trinket": {
-      "effect": "Eagle Eye lasts 5 seconds longer."
+      "effect": "Permanently increases the time Eagle Eye can stay active by 5 seconds."
     },
     "lions_paw_trinket": {
-      "effect": "10% increase to Stamina experience gained."
+      "effect": "Permanently increases your Stamina experience bonus by 10%."
     },
     "moose_antler_trinket": {
-      "effect": "10% increase to Health experience gained."
+      "effect": "Permanently increases your Health experience bonus by 10%."
     },
     "panther_eye_trinket": {
-      "effect": "Dead Eye meter drains 10% slower for 3 seconds."
+      "effect": "Permanently decreases the speed that the Dead Eye bar drains by 10% for 3 seconds."
     },
     "pronghorn_horn_trinket": {
-      "effect": "Carcasses on your horse do not rot."
+      "effect": "Stops animals on horseback from spoiling."
     },
     "ram_horn_trinket": {
-      "effect": "Double yield when picking Oregano, Creeping Thyme and Wild Mint."
+      "effect": "Picking Creeping Thyme, Oregano and Wild Mint yields 2x more herbs."
     },
     "wolf_heart_trinket": {
-      "effect": "Doubles your tolerance to alcohol."
+      "effect": "You can drink 2x more alcohol before feeling the negative effects of being drunk."
     },
     "tatanka_bison_horn_trinket": {
-      "effect": "10% reduction in melee damage taken."
+      "effect": "Permanently decreases the melee damage you receive by 10%."
     },
     "alligator_tooth_talisman": {
-      "effect": "Dead Eye core drains 10% slower."
+      "effect": "Permanently decreases the speed that the Dead Eye core drains by 10%."
     },
     "bear_claw_talisman": {
-      "effect": "Health core drains 10% slower."
+      "effect": "Lowers the drain speed of your Health core by 10%."
     },
     "boar_tusk_talisman": {
-      "effect": "Horse Health and Stamina cores drain 10% slower."
+      "effect": "Permanently decreases the speed that the horse Health and Stamina cores drain by 10%."
     },
     "bison_horn_talisman": {
-      "effect": "Stamina core drains 10% slower."
+      "effect": "Permanently decreases the speed that the Stamina core drains by 10%."
     },
     "raven_claw_talisman": {
-      "effect": "Weapons degrade 20% slower."
+      "effect": "Permanently slows degradation for all weapons by 20%."
     }
   }
 }

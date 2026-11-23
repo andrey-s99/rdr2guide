@@ -111,7 +111,9 @@ describe('English texts (src/data/en.json)', () => {
       ).toBe(true);
     }
     for (const m of materials) expect(m.sourceEn, m.id).not.toBe('');
-    expect(itemsById.get('bear_claw_talisman')?.effectEn).toBe('Health core drains 10% slower.');
+    expect(itemsById.get('bear_claw_talisman')?.effectEn).toBe(
+      'Lowers the drain speed of your Health core by 10%.',
+    );
   });
 
   it('report missing translations', () => {

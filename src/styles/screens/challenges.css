@@ -90,6 +90,13 @@
   color: var(--text);
 }
 
+.challenge-rank__reward {
+  margin-top: 2px;
+  font-family: var(--font-ui);
+  font-size: var(--fs-sm);
+  color: var(--brass-text);
+}
+
 .challenge-rank__guide {
   margin-top: var(--sp-1);
   font-size: 14px;

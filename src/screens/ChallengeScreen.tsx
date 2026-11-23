@@ -65,6 +65,7 @@ export function ChallengeScreen({ id }: ChallengeScreenProps) {
                     {current && <span class="badge badge--accent">Current</span>}
                   </p>
                   <p class="challenge-rank__text">{r.text}</p>
+                  <p class="challenge-rank__reward">Reward: {r.reward}</p>
                   <p class="challenge-rank__guide">{r.guide}</p>
                 </div>
                 <div class="list-row__actions">
