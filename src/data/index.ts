@@ -154,6 +154,28 @@ export const itemsByMaterial: ReadonlyMap<string, Item[]> = (() => {
   return map;
 })();
 
+/** materialId -> vendors whose recipes use it (vendors.json order). */
+export const materialVendors: ReadonlyMap<string, VendorId[]> = new Map(
+  materials.map((m) => [
+    m.id,
+    vendors
+      .map((v) => v.id)
+      .filter((v) => (itemsByMaterial.get(m.id) ?? []).some((i) => i.vendorId === v)),
+  ]),
+);
+
+/** Whether more than one vendor uses a material (each keeps its own stock of it). */
+export function isSharedMaterial(materialId: string): boolean {
+  return (materialVendors.get(materialId)?.length ?? 0) > 1;
+}
+
+/** "Beaver", or "Beaver (Pearson)" when several vendors keep their own stock of it. */
+export function stockLabel(vendorId: VendorId, materialId: string): string {
+  const name = materialShortName(materialId);
+  if (!isSharedMaterial(materialId)) return name;
+  return `${name} (${vendorsById.get(vendorId)?.nameEn ?? vendorId})`;
+}
+
 /** animalId -> materials obtained from it (in materials.json order). */
 export const materialsByAnimal: ReadonlyMap<string, Material[]> = (() => {
   const map = new Map<string, Material[]>(animals.map((a) => [a.id, []]));

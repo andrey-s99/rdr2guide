@@ -9,11 +9,13 @@ import {
   animalsById,
   itemsByMaterial,
   materialsByAnimal,
+  materialVendors,
   meta,
   regionsById,
   sizeLabel,
 } from '../data';
 import type { Link } from '../data/types';
+import { needOf } from '../logic/calc';
 import { needsForScope, state } from '../state/store';
 import { NotFound } from './NotFound';
 import '../styles/screens/animals.css';
@@ -117,15 +119,19 @@ export function AnimalScreen({ id }: AnimalScreenProps) {
         <section class="animal-materials">
           <SectionHeader title="Materials from this animal" />
           <div class="animal-materials__list">
-            {mats.map((m) => (
-              <MaterialRow
-                key={m.id}
-                materialId={m.id}
-                need={needs.byMaterial.get(m.id)?.need ?? 0}
-                note={m.sourceEn}
-                usedIn={itemsByMaterial.get(m.id) ?? []}
-              />
-            ))}
+            {mats.flatMap((m) =>
+              // One row per vendor: the Trapper and Pearson each keep their own pelts.
+              (materialVendors.get(m.id) ?? []).map((vendorId) => (
+                <MaterialRow
+                  key={`${vendorId}:${m.id}`}
+                  vendorId={vendorId}
+                  materialId={m.id}
+                  need={needOf(needs, vendorId, m.id)?.need ?? 0}
+                  note={m.sourceEn}
+                  usedIn={itemsByMaterial.get(m.id) ?? []}
+                />
+              )),
+            )}
           </div>
         </section>
       )}

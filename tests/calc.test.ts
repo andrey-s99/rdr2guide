@@ -7,11 +7,14 @@ import {
   applyUnmarkCrafted,
   clampStock,
   computeNeeds,
+  emptyStocks,
   isLocked,
   itemStatus,
   outfitProgress,
   prerequisiteProgress,
   shortfall,
+  sumRemaining,
+  type Stocks,
 } from '../src/logic/calc';
 import { getScopeItems, scopeExists, scopeGroups, scopes } from '../src/logic/scopes';
 import { normalize, search } from '../src/logic/search';
@@ -23,10 +26,15 @@ const item = (id: string) => {
   if (!i) throw new Error(`no item ${id}`);
   return i;
 };
-const needs = (scopeId: string, stock = {}, crafted = {}, goals = noGoals) =>
+/** Trapper stock only (most tests use Trapper items). */
+const trapper = (stock: Record<string, number>): Stocks => ({ ...emptyStocks(), trapper: stock });
+const needs = (scopeId: string, stock: Stocks = emptyStocks(), crafted = {}, goals = noGoals) =>
   computeNeeds(getScopeItems(scopeId, goals), stock, crafted);
+/** Row of a Trapper material in a needs result. */
+const trapperRow = (n: ReturnType<typeof needs>, materialId: string) =>
+  n.byKey.get(`trapper:${materialId}`);
 const needOf = (scopeId: string, materialId: string) =>
-  needs(scopeId).byMaterial.get(materialId)?.need;
+  trapperRow(needs(scopeId), materialId)?.need;
 
 describe('15.2 calculations', () => {
   it('1. legendary pelt counts once', () => {
@@ -38,40 +46,43 @@ describe('15.2 calculations', () => {
 
   it('2. status and shortfall', () => {
     const gloves = item('boar_riding_gloves');
-    expect(itemStatus(gloves, { perfect_boar: 1, perfect_rabbit: 2 }, {})).toBe('ready');
-    expect(itemStatus(gloves, { perfect_boar: 1, perfect_rabbit: 1 }, {})).toBe('missing');
-    expect(shortfall(gloves, { perfect_boar: 1, perfect_rabbit: 1 })).toBe(1);
-    expect(itemStatus(gloves, {}, { boar_riding_gloves: { at: '', deducted: {} } })).toBe(
-      'crafted',
-    );
+    expect(itemStatus(gloves, trapper({ perfect_boar: 1, perfect_rabbit: 2 }), {})).toBe('ready');
+    expect(itemStatus(gloves, trapper({ perfect_boar: 1, perfect_rabbit: 1 }), {})).toBe('missing');
+    expect(shortfall(gloves, trapper({ perfect_boar: 1, perfect_rabbit: 1 }))).toBe(1);
+    expect(
+      itemStatus(gloves, emptyStocks(), { boar_riding_gloves: { at: '', deducted: {} } }),
+    ).toBe('crafted');
   });
 
   it('3/4/5. pure craft transitions', () => {
-    const s: UserState = { ...createInitialState(), stock: { perfect_boar: 1, perfect_rabbit: 1 } };
+    const s: UserState = {
+      ...createInitialState(),
+      stock: trapper({ perfect_boar: 1, perfect_rabbit: 1 }),
+    };
     const r = applyMarkCrafted(s, 'boar_riding_gloves', '2026-01-01T00:00:00.000Z');
     expect(r.changed).toBe(true);
-    expect(r.state.stock).toEqual({ perfect_boar: 0, perfect_rabbit: 0 });
+    expect(r.state.stock.trapper).toEqual({ perfect_boar: 0, perfect_rabbit: 0 });
     expect(r.deducted).toEqual({ perfect_boar: 1, perfect_rabbit: 1 });
-    expect(s.stock).toEqual({ perfect_boar: 1, perfect_rabbit: 1 }); // input untouched
+    expect(s.stock.trapper).toEqual({ perfect_boar: 1, perfect_rabbit: 1 }); // input untouched
     expect(applyMarkCrafted(r.state, 'boar_riding_gloves', 'x').changed).toBe(false);
     const u = applyUnmarkCrafted(r.state, 'boar_riding_gloves');
-    expect(u.state.stock).toEqual({ perfect_boar: 1, perfect_rabbit: 1 });
+    expect(u.state.stock.trapper).toEqual({ perfect_boar: 1, perfect_rabbit: 1 });
     expect(u.state.crafted).toEqual({});
 
-    const s2: UserState = { ...createInitialState(), stock: { legendary_bear_pelt: 1 } };
+    const s2: UserState = { ...createInitialState(), stock: trapper({ legendary_bear_pelt: 1 }) };
     const r2 = applyMarkCrafted(s2, 'legendary_bear_head_hat', 'now');
-    expect(r2.state.stock.legendary_bear_pelt).toBe(1);
+    expect(r2.state.stock.trapper.legendary_bear_pelt).toBe(1);
     expect(r2.deducted).toEqual({});
   });
 
   it('6. crafted items are not counted', () => {
-    const s: UserState = { ...createInitialState(), stock: { legendary_bear_pelt: 1 } };
+    const s: UserState = { ...createInitialState(), stock: trapper({ legendary_bear_pelt: 1 }) };
     const after = applyMarkCrafted(s, 'legendary_bear_head_hat', 'now').state;
     const n = needs('outfit:bear_hunter', after.stock, after.crafted);
-    expect(n.byMaterial.get('legendary_bear_pelt')?.remaining).toBe(0);
-    expect(n.byMaterial.get('legendary_bear_pelt')?.have).toBe(1);
-    expect(n.byMaterial.get('perfect_bison')?.need).toBe(1);
-    expect(n.byMaterial.get('perfect_bull')?.need).toBe(1);
+    expect(trapperRow(n, 'legendary_bear_pelt')?.remaining).toBe(0);
+    expect(trapperRow(n, 'legendary_bear_pelt')?.have).toBe(1);
+    expect(trapperRow(n, 'perfect_bison')?.need).toBe(1);
+    expect(trapperRow(n, 'perfect_bull')?.need).toBe(1);
   });
 
   it('8. goals scope', () => {
@@ -107,15 +118,57 @@ describe('15.2 calculations', () => {
     expect(clampStock(1200)).toBe(999);
     expect(clampStock(2.7)).toBe(2);
     expect(clampStock(Number.NaN)).toBe(0);
-    const s = applySetStock(createInitialState(), 'perfect_boar', 5);
-    expect(s.stock).toEqual({ perfect_boar: 5 });
-    expect(applySetStock(s, 'perfect_boar', 0).stock).toEqual({});
+    const s = applySetStock(createInitialState(), 'trapper', 'perfect_boar', 5);
+    expect(s.stock).toEqual({ ...emptyStocks(), trapper: { perfect_boar: 5 } });
+    expect(applySetStock(s, 'trapper', 'perfect_boar', 0).stock).toEqual(emptyStocks());
+    // Pearson keeps his own stock.
+    const p = applySetStock(s, 'pearson', 'perfect_boar', 2);
+    expect(p.stock.trapper).toEqual({ perfect_boar: 5 });
+    expect(p.stock.pearson).toEqual({ perfect_boar: 2 });
   });
 
   it('extra stock never yields negative remaining', () => {
-    const n = needs('outfit:bear_hunter', { perfect_rabbit: 50 });
-    expect(n.byMaterial.get('perfect_rabbit')?.remaining).toBe(0);
+    const n = needs('outfit:bear_hunter', trapper({ perfect_rabbit: 50 }));
+    expect(trapperRow(n, 'perfect_rabbit')?.remaining).toBe(0);
     expect(n.totals).toEqual({ distinct: 4, units: 4 });
+  });
+});
+
+describe('separate Trapper and Pearson stock', () => {
+  // Pearson's Valuables Satchel and the Trapper's Beaver Drifter Hat both use beaver pelts.
+  const satchel = item('valuables_satchel');
+  const hat = item('beaver_drifter_hat');
+
+  it('a pelt given to Pearson does not count at the Trapper and vice versa', () => {
+    const atPearson: Stocks = { ...emptyStocks(), pearson: { perfect_beaver: 5 } };
+    expect(shortfall(hat, atPearson)).toBe(2);
+    expect(itemStatus(hat, atPearson, {})).toBe('missing');
+    const atTrapper = trapper({ perfect_beaver: 5 });
+    expect(satchel.recipe.some((e) => e.materialId === 'perfect_beaver')).toBe(true);
+    expect(itemStatus(satchel, atTrapper, {})).toBe('missing');
+    expect(itemStatus(hat, atTrapper, {})).toBe('ready');
+  });
+
+  it('needs list each vendor separately', () => {
+    const n = needs('all', { ...emptyStocks(), pearson: { perfect_beaver: 1 } });
+    const trapperBeaver = n.byKey.get('trapper:perfect_beaver');
+    const pearsonBeaver = n.byKey.get('pearson:perfect_beaver');
+    expect(trapperBeaver).toMatchObject({ have: 0 });
+    expect(pearsonBeaver).toMatchObject({ need: 1, have: 1, remaining: 0 });
+    expect(sumRemaining(n, ['perfect_beaver'])).toBe(trapperBeaver!.remaining);
+  });
+
+  it('crafting deducts from and returns to the item vendor only', () => {
+    const s: UserState = {
+      ...createInitialState(),
+      stock: { trapper: { perfect_beaver: 3 }, pearson: { perfect_beaver: 1 }, fence: {} },
+    };
+    const r = applyMarkCrafted(s, satchel.id, 'now');
+    expect(r.state.stock.pearson.perfect_beaver).toBe(0);
+    expect(r.state.stock.trapper.perfect_beaver).toBe(3);
+    const u = applyUnmarkCrafted(r.state, satchel.id);
+    expect(u.state.stock.pearson.perfect_beaver).toBe(1);
+    expect(u.state.stock.trapper.perfect_beaver).toBe(3);
   });
 });
 
@@ -134,8 +187,8 @@ describe('15.3 reference totals (empty progress)', () => {
     expect(needs(scopeId).totals).toEqual({ distinct, units });
   });
 
-  it('per-material values for all', () => {
-    const n = needs('all').byMaterial;
+  it('per-material values for all (Trapper and Pearson together)', () => {
+    const n = needs('all');
     const expected = {
       perfect_snake: 15,
       perfect_boar: 11,
@@ -144,11 +197,11 @@ describe('15.3 reference totals (empty progress)', () => {
       perfect_deer: 12,
       perfect_beaver: 10,
     };
-    for (const [m, v] of Object.entries(expected)) expect(n.get(m)?.remaining, m).toBe(v);
+    for (const [m, v] of Object.entries(expected)) expect(sumRemaining(n, [m]), m).toBe(v);
   });
 
   it('per-material values for outfit:bear_hunter', () => {
-    const n = needs('outfit:bear_hunter').byMaterial;
+    const n = needs('outfit:bear_hunter').byKey;
     const expected = {
       perfect_rabbit: 2,
       legendary_bear_pelt: 1,
@@ -157,7 +210,9 @@ describe('15.3 reference totals (empty progress)', () => {
       perfect_bull: 1,
     };
     expect(n.size).toBe(5);
-    for (const [m, v] of Object.entries(expected)) expect(n.get(m)?.remaining, m).toBe(v);
+    for (const [m, v] of Object.entries(expected)) {
+      expect(n.get(`trapper:${m}`)?.remaining, m).toBe(v);
+    }
   });
 });
 

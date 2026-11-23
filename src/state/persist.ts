@@ -1,12 +1,20 @@
 // Persistence: localStorage, migrations, backup export/import (SPEC 11).
-import { challengeCategoriesById, itemsById, materialsById, meta, outfitsById } from '../data';
-import type { ChallengeCategoryId, CraftRecord, UserState } from '../data/types';
-import { clampStock } from '../logic/calc';
+import {
+  challengeCategoriesById,
+  itemsById,
+  materialsById,
+  materialVendors,
+  meta,
+  outfitsById,
+} from '../data';
+import type { ChallengeCategoryId, CraftRecord, UserState, VendorStocks } from '../data/types';
+import { clampStock, emptyStocks, VENDOR_IDS } from '../logic/calc';
 import { DEFAULT_SCOPE, GOALS_SCOPE, scopeExists } from '../logic/scopes';
 
 /**
  * v2 lives under a new key: switching to the English UI started everyone from scratch
  * (the owner asked to wipe all progress). The old v1 value is removed on first load.
+ * v3 (separate stock per vendor) stays under the same key and migrates in place.
  */
 export const STATE_KEY = 'rdr2-hunter:state-v2';
 export const LEGACY_STATE_KEYS = ['rdr2-hunter:state'];
@@ -30,9 +38,9 @@ export function defaultStorage(): KeyValueStorage | null {
 
 export function createInitialState(): UserState {
   return {
-    schemaVersion: 2,
+    schemaVersion: 3,
     crafted: {},
-    stock: {},
+    stock: emptyStocks(),
     goals: { items: [], outfits: [] },
     challenges: {},
     settings: { theme: 'night' },
@@ -56,9 +64,34 @@ function isCountRecord(x: unknown): x is Record<string, number> {
   return isRecord(x) && Object.values(x).every((v) => typeof v === 'number' && Number.isFinite(v));
 }
 
-/** Parses the fields shared by v1 and v2; `challenges` is v2 only. */
-function parseCommon(raw: Record<string, unknown>): UserState {
-  const { crafted, stock, goals, settings } = raw;
+/**
+ * v1/v2 kept one stock shared by all vendors. Each amount goes to the first vendor
+ * that uses the material (the Trapper for pelts Pearson also uses).
+ */
+function splitFlatStock(flat: Record<string, number>): VendorStocks {
+  const stocks = emptyStocks();
+  for (const [m, v] of Object.entries(flat)) {
+    const vendorId = materialVendors.get(m)?.[0];
+    if (vendorId) stocks[vendorId][m] = v;
+  }
+  return stocks;
+}
+
+function parseVendorStocks(x: unknown): VendorStocks {
+  if (!isRecord(x)) throw new StateFormatError('stock');
+  const stocks = emptyStocks();
+  for (const [vendorId, rec] of Object.entries(x)) {
+    if (!isCountRecord(rec)) throw new StateFormatError(`stock.${vendorId}`);
+    if ((VENDOR_IDS as readonly string[]).includes(vendorId)) {
+      stocks[vendorId as keyof VendorStocks] = { ...rec };
+    }
+  }
+  return stocks;
+}
+
+/** Parses the fields shared by all versions; stock and challenges differ by version. */
+function parseCommon(raw: Record<string, unknown>): Omit<UserState, 'stock'> {
+  const { crafted, goals, settings } = raw;
   if (!isRecord(crafted)) throw new StateFormatError('crafted');
   const craftedOut: Record<string, CraftRecord> = {};
   for (const [id, rec] of Object.entries(crafted)) {
@@ -67,7 +100,6 @@ function parseCommon(raw: Record<string, unknown>): UserState {
     }
     craftedOut[id] = { at: rec.at, deducted: { ...rec.deducted } };
   }
-  if (!isCountRecord(stock)) throw new StateFormatError('stock');
   if (!isRecord(goals) || !isStringArray(goals.items) || !isStringArray(goals.outfits)) {
     throw new StateFormatError('goals');
   }
@@ -78,19 +110,22 @@ function parseCommon(raw: Record<string, unknown>): UserState {
     throw new StateFormatError('settings');
   }
   return {
-    schemaVersion: 2,
+    schemaVersion: 3,
     crafted: craftedOut,
-    stock: { ...stock },
     goals: { items: [...goals.items], outfits: [...goals.outfits] },
     challenges: {},
     settings: { theme: settings.theme },
   };
 }
 
-function parseV2(raw: Record<string, unknown>): UserState {
-  const base = parseCommon(raw);
+function parseFlatStock(raw: Record<string, unknown>): VendorStocks {
+  if (!isCountRecord(raw.stock)) throw new StateFormatError('stock');
+  return splitFlatStock(raw.stock);
+}
+
+function parseChallenges(raw: Record<string, unknown>): UserState['challenges'] {
   if (!isCountRecord(raw.challenges)) throw new StateFormatError('challenges');
-  return { ...base, challenges: { ...raw.challenges } };
+  return { ...raw.challenges };
 }
 
 /**
@@ -102,9 +137,19 @@ export function migrate(raw: unknown): UserState {
   switch (raw.schemaVersion) {
     case 1:
       // v1 had settings.showEnglish and no challenges; both are dropped/defaulted.
-      return parseCommon(raw);
+      return { ...parseCommon(raw), stock: parseFlatStock(raw) };
     case 2:
-      return parseV2(raw);
+      return {
+        ...parseCommon(raw),
+        stock: parseFlatStock(raw),
+        challenges: parseChallenges(raw),
+      };
+    case 3:
+      return {
+        ...parseCommon(raw),
+        stock: parseVendorStocks(raw.stock),
+        challenges: parseChallenges(raw),
+      };
     default:
       throw new StateFormatError(`unknown schemaVersion ${String(raw.schemaVersion)}`);
   }
@@ -122,10 +167,13 @@ export function cleanState(state: UserState): UserState {
     }
     crafted[id] = { at: rec.at, deducted };
   }
-  const stock: Record<string, number> = {};
-  for (const [m, v] of Object.entries(state.stock)) {
-    const c = clampStock(v);
-    if (materialsById.has(m) && c > 0) stock[m] = c;
+  // Keep only materials the vendor actually uses.
+  const stock = emptyStocks();
+  for (const vendorId of VENDOR_IDS) {
+    for (const [m, v] of Object.entries(state.stock[vendorId] ?? {})) {
+      const c = clampStock(v);
+      if (c > 0 && materialVendors.get(m)?.includes(vendorId)) stock[vendorId][m] = c;
+    }
   }
   const uniq = (list: string[], known: (id: string) => boolean) => [...new Set(list)].filter(known);
   const challenges: Partial<Record<ChallengeCategoryId, number>> = {};
@@ -136,7 +184,7 @@ export function cleanState(state: UserState): UserState {
     if (n > 0) challenges[cat.id] = n;
   }
   return {
-    schemaVersion: 2,
+    schemaVersion: 3,
     crafted,
     stock,
     goals: {
@@ -290,7 +338,7 @@ export function parseBackup(text: string): ParseBackupResult {
   if (!isRecord(raw.state)) {
     return { ok: false, error: 'The file contains no saved progress.' };
   }
-  if (raw.state.schemaVersion !== 1 && raw.state.schemaVersion !== 2) {
+  if (![1, 2, 3].includes(raw.state.schemaVersion as number)) {
     return { ok: false, error: 'The backup was made by an unsupported version of the app.' };
   }
   try {

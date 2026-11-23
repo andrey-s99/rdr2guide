@@ -1,13 +1,14 @@
 import { describe, expect, it } from 'vitest';
 import { itemsById } from '../src/data';
 import type { Item } from '../src/data/types';
+import { emptyStocks } from '../src/logic/calc';
 import { filterByStatus, matchesStatusFilter, statusFilterCounts } from '../src/logic/filters';
 
 const gloves = itemsById.get('boar_riding_gloves') as Item;
 const others = [...itemsById.values()].filter((i) => i.id !== gloves.id).slice(0, 3);
 const list = [gloves, ...others];
 const crafted = { [others[0].id]: { at: '2026-01-01T00:00:00Z', deducted: {} } };
-const stock = { perfect_boar: 1, perfect_rabbit: 2 };
+const stock = { ...emptyStocks(), trapper: { perfect_boar: 1, perfect_rabbit: 2 } };
 
 describe('status filters', () => {
   it('matchesStatusFilter', () => {
@@ -28,7 +29,7 @@ describe('status filters', () => {
       others[2],
     ]);
     expect(filterByStatus(list, 'ready', stock, crafted).map((i) => i.id)).toContain(gloves.id);
-    expect(filterByStatus(list, 'ready', {}, crafted)).toEqual([]);
+    expect(filterByStatus(list, 'ready', emptyStocks(), crafted)).toEqual([]);
   });
 
   it('statusFilterCounts', () => {

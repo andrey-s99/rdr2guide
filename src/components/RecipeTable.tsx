@@ -1,7 +1,7 @@
 import { materialAnimal, materialsById, qualityLabel } from '../data';
 import type { Item } from '../data/types';
 import { ChevronIcon } from '../icons';
-import { hasEnough } from '../logic/calc';
+import { hasEnough, vendorStock } from '../logic/calc';
 import { state } from '../state/store';
 import { AppLink } from './AppLink';
 import { Stepper } from './Stepper';
@@ -12,7 +12,8 @@ export interface RecipeTableProps {
 
 /** Recipe block of the item card (SPEC 9.4 block 5). */
 export function RecipeTable({ item }: RecipeTableProps) {
-  const stock = state.value.stock;
+  // The vendor crafts only from its own stock (pelts sold to the Trapper / given to Pearson).
+  const stock = vendorStock(state.value.stock, item.vendorId);
   return (
     <ul class="recipe-table">
       {item.recipe.map((entry) => {
@@ -39,7 +40,7 @@ export function RecipeTable({ item }: RecipeTableProps) {
               </span>
               <span class="recipe-row__have">
                 <span class="muted">have</span>
-                <Stepper materialId={entry.materialId} />
+                <Stepper vendorId={item.vendorId} materialId={entry.materialId} />
               </span>
             </div>
             {m?.kind === 'special' && m.sourceEn && (

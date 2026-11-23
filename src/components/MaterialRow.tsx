@@ -1,14 +1,16 @@
 import { useId, useState } from 'preact/hooks';
-import { materialAnimal, materialsById, vendorsById } from '../data';
-import type { Item } from '../data/types';
+import { isSharedMaterial, materialAnimal, materialsById, vendorsById } from '../data';
+import type { Item, VendorId } from '../data/types';
 import { ChevronIcon } from '../icons';
-import { itemStatus, shortfall, stockOf } from '../logic/calc';
+import { itemStatus, shortfall, stockOf, vendorStock } from '../logic/calc';
 import { state } from '../state/store';
 import { AppLink } from './AppLink';
 import { StatusBadge } from './StatusBadge';
 import { Stepper } from './Stepper';
 
 export interface MaterialRowProps {
+  /** Whose stock the row counts (the Trapper and Pearson each keep their own pelts). */
+  vendorId: VendorId;
   materialId: string;
   /** need(m) for the current scope (7.4); remaining = max(0, need − stock). */
   need: number;
@@ -16,13 +18,14 @@ export interface MaterialRowProps {
   note?: string;
   /** Show "Where to hunt: <animal> →" link (none for special materials). */
   showAnimalLink?: boolean;
-  /** Items using this material; when given, tapping the row expands "Used for". */
+  /** Items using this material; only this vendor's are listed under "Used for". */
   usedIn?: readonly Item[];
   defaultOpen?: boolean;
 }
 
 /** Material line for summary / outfit / animal screens (SPEC 9.2, 9.8, 9.9). */
 export function MaterialRow({
+  vendorId,
   materialId,
   need,
   note,
@@ -34,15 +37,20 @@ export function MaterialRow({
   const listId = useId();
   const { stock, crafted } = state.value;
   const m = materialsById.get(materialId);
-  const have = stockOf(stock, materialId);
+  const have = stockOf(vendorStock(stock, vendorId), materialId);
   const remaining = Math.max(0, need - have);
   const animal = showAnimalLink ? materialAnimal(materialId) : null;
-  const expandable = !!usedIn && usedIn.length > 0;
+  const uses = usedIn?.filter((i) => i.vendorId === vendorId) ?? [];
+  const expandable = uses.length > 0;
+  const vendorName = isSharedMaterial(materialId)
+    ? (vendorsById.get(vendorId)?.nameEn ?? vendorId)
+    : null;
 
   const info = (
     <>
       <span class="material-row__name">{m?.nameEn ?? materialId}</span>
       <span class="material-row__counts num">
+        {vendorName && <span class="material-row__vendor">at {vendorName} · </span>}
         need {need} · have {have}
       </span>
     </>
@@ -74,7 +82,7 @@ export function MaterialRow({
         >
           {remaining}
         </span>
-        <Stepper materialId={materialId} />
+        <Stepper vendorId={vendorId} materialId={materialId} />
       </div>
       {note && <p class="material-row__note">{note}</p>}
       {animal && (
@@ -85,7 +93,7 @@ export function MaterialRow({
       )}
       {expandable && open && (
         <ul class="material-row__uses" id={listId}>
-          {usedIn.map((item) => {
+          {uses.map((item) => {
             const status = itemStatus(item, stock, crafted);
             const qty = item.recipe
               .filter((e) => e.materialId === materialId)

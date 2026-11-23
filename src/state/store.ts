@@ -1,7 +1,7 @@
 // Application state (signals) and actions (SPEC 7.6, M2).
 import { batch, computed, effect, signal } from '@preact/signals';
 import { challengeCategoriesById, itemsById, materialShortName, outfitsById } from '../data';
-import type { ChallengeCategoryId, UserState } from '../data/types';
+import type { ChallengeCategoryId, UserState, VendorId } from '../data/types';
 import {
   applyMarkCrafted,
   applySetStock,
@@ -194,9 +194,9 @@ export function markOutfitCrafted(outfitId: string, options: ActionOptions = {})
   return marked;
 }
 
-/** Sets stock to an integer 0..999. */
-export function setStock(materialId: string, value: number): void {
-  state.value = applySetStock(state.value, materialId, value);
+/** Sets a vendor's stock of a material to an integer 0..999. */
+export function setStock(vendorId: VendorId, materialId: string, value: number): void {
+  state.value = applySetStock(state.value, vendorId, materialId, value);
 }
 
 export function toggleGoalItem(itemId: string): void {

@@ -5,7 +5,7 @@ import { currentRoute, navigate } from '../src/router';
 import { Summary } from '../src/screens/Summary';
 import { UI_KEY } from '../src/state/persist';
 import { resetSessionForTests } from '../src/state/session';
-import { resetStoreForTests, toggleGoalOutfit } from '../src/state/store';
+import { resetStoreForTests, state, toggleGoalOutfit } from '../src/state/store';
 
 /** Renders Summary from the current route, like src/app.tsx does. */
 function Harness() {
@@ -62,8 +62,9 @@ describe('Summary screen: 15.3 totals on screen', () => {
       open(`/summary?scope=${encodeURIComponent(scope)}&group=flat`);
       const text = totalsText();
       expect(text).toMatch(new RegExp(`^Still to collect: ${units}, ${distinct} material type`));
-      // The list itself shows the same numbers.
-      expect(renderedRows()).toEqual({ count: distinct, units });
+      // The list itself shows the same numbers; in "all" the 14 pelts used by both
+      // the Trapper and Pearson get a row per vendor (separate stocks).
+      expect(renderedRows()).toEqual({ count: distinct + (scope === 'all' ? 14 : 0), units });
       if (itemsTotal !== null) {
         expect(screen.getByText(new RegExp(`^Crafted 0 of ${itemsTotal} `))).toBeTruthy();
       }
@@ -94,7 +95,7 @@ describe('Summary screen: grouping', () => {
     const first = heads[0] as HTMLAnchorElement;
     expect(first.getAttribute('href')).toMatch(/^#\/animal\//);
     expect(screen.getByText('Special items')).toBeTruthy();
-    expect(renderedRows()).toEqual({ count: 103, units: 320 });
+    expect(renderedRows()).toEqual({ count: 117, units: 320 });
     // Group badges are sorted by remaining desc.
     const badges = [...document.querySelectorAll('.summary-group__head .badge')].map((b) =>
       Number(b.textContent),
@@ -112,7 +113,7 @@ describe('Summary screen: grouping', () => {
     const regionNames = regions.map((r) => r.nameEn);
     expect(titles.at(-1)).toBe('Special items');
     expect(titles.slice(0, -1)).toEqual(regionNames.filter((n) => titles.includes(n)));
-    expect(renderedRows()).toEqual({ count: 103, units: 320 });
+    expect(renderedRows()).toEqual({ count: 117, units: 320 });
     expect(uiPrefs().summaryGroup).toBe('region');
   });
 
@@ -128,17 +129,36 @@ describe('Summary screen: grouping', () => {
 
   it('"Show collected" reveals rows with remaining = 0', () => {
     resetStoreForTests({
-      schemaVersion: 2,
+      schemaVersion: 3,
       crafted: {},
-      stock: { perfect_snake: 30 },
+      stock: { trapper: { perfect_snake: 30 }, pearson: {}, fence: {} },
       goals: { items: [], outfits: [] },
       challenges: {},
       settings: { theme: 'night' },
     });
     open('/summary?scope=all&group=flat');
-    expect(renderedRows()).toEqual({ count: 102, units: 305 });
+    expect(renderedRows()).toEqual({ count: 116, units: 305 });
     fireEvent.click(screen.getByRole('switch', { name: 'Show collected' }));
-    expect(renderedRows()).toEqual({ count: 103, units: 305 });
+    expect(renderedRows()).toEqual({ count: 117, units: 305 });
+  });
+
+  it('a pelt shared by the Trapper and Pearson has a row and a stepper per vendor', () => {
+    open('/summary?scope=all&group=flat');
+    const beaver = [...document.querySelectorAll('.material-row')].filter((el) =>
+      el.querySelector('.material-row__name')?.textContent?.startsWith('Perfect Beaver'),
+    );
+    expect(beaver.map((el) => el.querySelector('.material-row__vendor')?.textContent)).toEqual([
+      'at Trapper · ',
+      'at Pearson · ',
+    ]);
+    fireEvent.click(screen.getByRole('button', { name: 'Increase: Beaver (Pearson)' }));
+    expect(state.value.stock.pearson.perfect_beaver).toBe(1);
+    expect(state.value.stock.trapper.perfect_beaver).toBeUndefined();
+    // Pearson needs one beaver pelt: his row is collected (hidden), the Trapper's stays.
+    const left = [...document.querySelectorAll('.material-row__vendor')]
+      .filter((el) => el.closest('.material-row')?.textContent?.includes('Perfect Beaver'))
+      .map((el) => el.textContent);
+    expect(left).toEqual(['at Trapper · ']);
   });
 });
 

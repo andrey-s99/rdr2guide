@@ -13,9 +13,10 @@ import { OutfitScreen } from '../src/screens/OutfitScreen';
 import { TrapperItems } from '../src/screens/TrapperItems';
 import { TrapperOutfits } from '../src/screens/TrapperOutfits';
 
+/** State with a Trapper stock (these tests use Trapper items). */
 const withStock = (stock: Record<string, number>): UserState => ({
   ...createInitialState(),
-  stock,
+  stock: { ...createInitialState().stock, trapper: stock },
 });
 
 beforeEach(() => {
@@ -91,7 +92,7 @@ describe('ItemScreen (9.4)', () => {
 
     fireEvent.click(screen.getByRole('button', { name: 'Mark as crafted' }));
     expect(state.value.crafted[gloves.id]).toBeDefined();
-    expect(state.value.stock).toEqual({ perfect_boar: 0, perfect_rabbit: 0 });
+    expect(state.value.stock.trapper).toEqual({ perfect_boar: 0, perfect_rabbit: 0 });
     expect(document.querySelector('.toast__detail')?.textContent).toBe('Boar −1, Rabbit −2');
 
     fireEvent.click(screen.getByRole('button', { name: 'Unmark crafted' }));
@@ -101,7 +102,7 @@ describe('ItemScreen (9.4)', () => {
       fireEvent.click(screen.getAllByRole('button', { name: 'Unmark' }).at(-1)!);
     });
     await waitFor(() => expect(state.value.crafted[gloves.id]).toBeUndefined());
-    expect(state.value.stock).toEqual({ perfect_boar: 1, perfect_rabbit: 2 });
+    expect(state.value.stock.trapper).toEqual({ perfect_boar: 1, perfect_rabbit: 2 });
     expect(screen.getByRole('button', { name: 'Mark as crafted' })).toBeTruthy();
   });
 
