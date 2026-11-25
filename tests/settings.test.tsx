@@ -9,6 +9,7 @@ import {
   Settings,
 } from '../src/screens/Settings';
 import type { UserState } from '../src/data/types';
+import { emptyStocks } from '../src/logic/calc';
 import { createInitialState } from '../src/state/persist';
 import { resetAll, resetStoreForTests, state } from '../src/state/store';
 import { applyTheme } from '../src/theme';
@@ -21,7 +22,7 @@ const progress: UserState = {
       deducted: { perfect_boar: 1, perfect_rabbit: 2 },
     },
   },
-  stock: { perfect_beaver: 3, perfect_cougar: 1 },
+  stock: { trapper: { perfect_beaver: 3 }, pearson: { perfect_cougar: 1 }, fence: {} },
   goals: { items: ['boar_riding_gloves'], outfits: [] },
   challenges: { bandit: 2, herbalist: 10 },
   settings: { theme: 'paper' },
@@ -106,7 +107,7 @@ describe('Settings (9.13)', () => {
 
     act(() => resetAll());
     expect(state.value.crafted).toEqual({});
-    expect(state.value.stock).toEqual({});
+    expect(state.value.stock).toEqual(emptyStocks());
 
     chooseFile(text);
     const dialog = await screen.findByRole('dialog', { name: IMPORT_CONFIRM_TITLE });
@@ -144,7 +145,7 @@ describe('Settings (9.13)', () => {
     await screen.findByRole('button', { name: RESET_FINAL_LABEL });
     expect(state.value.stock).toEqual(progress.stock);
     fireEvent.click(screen.getByRole('button', { name: RESET_FINAL_LABEL }));
-    await waitFor(() => expect(state.value.stock).toEqual({}));
+    await waitFor(() => expect(state.value.stock).toEqual(emptyStocks()));
     expect(state.value.crafted).toEqual({});
     expect(state.value.goals).toEqual({ items: [], outfits: [] });
     expect(state.value.settings).toEqual(progress.settings);

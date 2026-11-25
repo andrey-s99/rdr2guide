@@ -2,6 +2,7 @@ import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 import { act, cleanup, fireEvent, render, screen } from '@testing-library/preact';
 import { animals, materials, meta } from '../src/data';
 import type { UserState } from '../src/data/types';
+import { emptyStocks } from '../src/logic/calc';
 import { createInitialState } from '../src/state/persist';
 import { resetSessionForTests } from '../src/state/session';
 import { resetStoreForTests, state } from '../src/state/store';
@@ -81,19 +82,20 @@ describe('Animals list (9.7)', () => {
   it('"Needed only" hides an animal once the stock suffices', () => {
     render(<Animals tab="regular" />);
     expect(rowIds()).toContain('opossum');
-    setState({ stock: { perfect_opossum: 4 } });
+    setState({ stock: { ...emptyStocks(), trapper: { perfect_opossum: 4 } } });
     expect(rowIds()).not.toContain('opossum');
   });
 
   it('shows an empty state when nothing is needed', () => {
-    setState({ stock: Object.fromEntries(materials.map((m) => [m.id, 999])) });
+    const all = Object.fromEntries(materials.map((m) => [m.id, 999]));
+    setState({ stock: { trapper: all, pearson: all, fence: all } });
     render(<Animals tab="birds" />);
     expect(rowIds()).toEqual([]);
     expect(screen.getByText('Nothing more is needed from the animals in this list')).toBeTruthy();
   });
 
   it('legendary rows show pelt status', () => {
-    setState({ stock: { legendary_bear_pelt: 1 } });
+    setState({ stock: { ...emptyStocks(), trapper: { legendary_bear_pelt: 1 } } });
     animalOnlyNeeded.value = false;
     render(<Animals tab="legendary" />);
     const bear = document.querySelector('a[href="#/animal/leg_bear"]');
@@ -128,6 +130,19 @@ describe('Animal card (9.8)', () => {
     expect(screen.getByText('How to get a perfect pelt')).toBeTruthy();
     fireEvent.click(screen.getByRole('button', { name: /Used for/ }));
     expect(document.querySelector('a[href="#/item/billy_vest"]')).toBeTruthy();
+  });
+
+  it('a pelt used by the Trapper and Pearson has a row per vendor', () => {
+    render(<AnimalScreen id="beaver" />);
+    const vendors = [...document.querySelectorAll('.material-row__vendor')].map(
+      (el) => el.textContent,
+    );
+    expect(vendors).toEqual(['at Trapper · ', 'at Pearson · ']);
+    const buttons = screen.getAllByRole('button', { name: /Used for/ });
+    fireEvent.click(buttons[1]);
+    // Pearson's row lists only Pearson's satchel.
+    expect(document.querySelector('a[href="#/item/valuables_satchel"]')).toBeTruthy();
+    expect(document.querySelector('a[href="#/item/beaver_drifter_hat"]')).toBeNull();
   });
 
   it('unknown id shows "Not found"', () => {

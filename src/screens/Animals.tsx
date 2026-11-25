@@ -5,7 +5,7 @@ import { EmptyState } from '../components/EmptyState';
 import { FilterChips, type ChipOption } from '../components/FilterChips';
 import { animals, materialsByAnimal, regions } from '../data';
 import type { Animal, RegionId } from '../data/types';
-import { stockOf, sumRemaining } from '../logic/calc';
+import { stockOf, sumRemaining, vendorStock } from '../logic/calc';
 import { sessionSignal } from '../state/session';
 import { needsForScope, state } from '../state/store';
 import '../styles/screens/animals.css';
@@ -52,7 +52,8 @@ export function Animals({ tab }: AnimalsProps) {
 
   // Needs of the "all" scope, computed once per state change.
   const needs = useComputed(() => needsForScope('all', state.value));
-  const stock = state.value.stock;
+  // Legendary pelts are sold to the Trapper.
+  const trapperStock = vendorStock(state.value.stock, 'trapper');
 
   const inRegions = animals.filter(
     (a) =>
@@ -68,7 +69,7 @@ export function Animals({ tab }: AnimalsProps) {
     );
     if (animal.type !== 'legendary') return { animal, need };
     const pelt = mats.find((m) => m.kind === 'legendary_pelt');
-    return { animal, need, peltInStock: pelt ? stockOf(stock, pelt.id) >= 1 : false };
+    return { animal, need, peltInStock: pelt ? stockOf(trapperStock, pelt.id) >= 1 : false };
   });
 
   const visible = onlyNeeded ? entries.filter((e) => e.need > 0) : entries;

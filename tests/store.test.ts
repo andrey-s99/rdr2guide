@@ -3,7 +3,7 @@ import { render, fireEvent, screen } from '@testing-library/preact';
 import { h } from 'preact';
 import { itemsById, outfitsById } from '../src/data';
 import type { UserState } from '../src/data/types';
-import { outfitProgress } from '../src/logic/calc';
+import { emptyStocks, outfitProgress } from '../src/logic/calc';
 import {
   BROKEN_KEY_PREFIX,
   LEGACY_STATE_KEYS,
@@ -56,9 +56,14 @@ function memoryStorage(initial: Record<string, string> = {}): KeyValueStorage & 
   };
 }
 
+/** State with a Trapper stock (the tests craft Trapper items). */
+const trapper = (stock: Record<string, number>): UserState['stock'] => ({
+  ...emptyStocks(),
+  trapper: stock,
+});
 const withStock = (stock: Record<string, number>): UserState => ({
   ...createInitialState(),
-  stock,
+  stock: trapper(stock),
 });
 
 beforeEach(() => {
@@ -74,8 +79,8 @@ describe('15.2 crafting via store', () => {
   it('3. deduction never goes negative', () => {
     state.value = withStock({ perfect_boar: 1, perfect_rabbit: 1 });
     const deducted = markCrafted('boar_riding_gloves');
-    expect(state.value.stock.perfect_boar).toBe(0);
-    expect(state.value.stock.perfect_rabbit).toBe(0);
+    expect(state.value.stock.trapper.perfect_boar).toBe(0);
+    expect(state.value.stock.trapper.perfect_rabbit).toBe(0);
     expect(deducted).toEqual({ perfect_boar: 1, perfect_rabbit: 1 });
     expect(state.value.crafted.boar_riding_gloves.deducted).toEqual({
       perfect_boar: 1,
@@ -89,7 +94,7 @@ describe('15.2 crafting via store', () => {
     state.value = withStock({ perfect_boar: 1, perfect_rabbit: 1 });
     markCrafted('boar_riding_gloves');
     unmarkCrafted('boar_riding_gloves');
-    expect(state.value.stock).toEqual({ perfect_boar: 1, perfect_rabbit: 1 });
+    expect(state.value.stock.trapper).toEqual({ perfect_boar: 1, perfect_rabbit: 1 });
     expect(state.value.crafted).toEqual({});
   });
 
@@ -97,7 +102,7 @@ describe('15.2 crafting via store', () => {
     state.value = withStock({ perfect_boar: 1, perfect_rabbit: 1 });
     markCrafted('boar_riding_gloves');
     undoToast();
-    expect(state.value.stock).toEqual({ perfect_boar: 1, perfect_rabbit: 1 });
+    expect(state.value.stock.trapper).toEqual({ perfect_boar: 1, perfect_rabbit: 1 });
     expect(state.value.crafted).toEqual({});
     expect(toast.value).toBeNull();
   });
@@ -105,7 +110,7 @@ describe('15.2 crafting via store', () => {
   it('5. non-consumable is not deducted', () => {
     state.value = withStock({ legendary_bear_pelt: 1 });
     const deducted = markCrafted('legendary_bear_head_hat');
-    expect(state.value.stock.legendary_bear_pelt).toBe(1);
+    expect(state.value.stock.trapper.legendary_bear_pelt).toBe(1);
     expect(deducted).toEqual({});
     expect(toast.value?.detail).toBe('Nothing deducted');
   });
@@ -136,18 +141,22 @@ describe('15.2 crafting via store', () => {
     expect(marked).toHaveLength(3);
     undoToast();
     expect(Object.keys(state.value.crafted)).toEqual(['boar_riding_gloves']);
-    expect(state.value.stock).toEqual({ perfect_boar: 0, perfect_rabbit: 0, perfect_bison: 1 });
+    expect(state.value.stock.trapper).toEqual({
+      perfect_boar: 0,
+      perfect_rabbit: 0,
+      perfect_bison: 1,
+    });
   });
 });
 
 describe('other actions', () => {
   it('setStock clamps to 0..999', () => {
-    setStock('perfect_boar', 5.8);
-    expect(state.value.stock.perfect_boar).toBe(5);
-    setStock('perfect_boar', 5000);
-    expect(state.value.stock.perfect_boar).toBe(999);
-    setStock('perfect_boar', -1);
-    expect(state.value.stock.perfect_boar).toBeUndefined();
+    setStock('trapper', 'perfect_boar', 5.8);
+    expect(state.value.stock.trapper.perfect_boar).toBe(5);
+    setStock('trapper', 'perfect_boar', 5000);
+    expect(state.value.stock.trapper.perfect_boar).toBe(999);
+    setStock('trapper', 'perfect_boar', -1);
+    expect(state.value.stock.trapper.perfect_boar).toBeUndefined();
   });
 
   it('goals toggle and count', () => {
@@ -161,10 +170,10 @@ describe('other actions', () => {
 
   it('settings and reset keeps settings', () => {
     setSettings({ theme: 'paper' });
-    setStock('perfect_boar', 3);
+    setStock('trapper', 'perfect_boar', 3);
     toggleGoalItem('moccasins');
     resetAll();
-    expect(state.value.stock).toEqual({});
+    expect(state.value.stock).toEqual(emptyStocks());
     expect(state.value.goals.items).toEqual([]);
     expect(state.value.settings).toEqual({ theme: 'paper' });
   });
@@ -173,10 +182,10 @@ describe('other actions', () => {
     importState({
       ...createInitialState(),
       crafted: { unknown_item: { at: 'x', deducted: {} } },
-      stock: { perfect_boar: 2, nope: 4 },
+      stock: { ...emptyStocks(), trapper: { perfect_boar: 2, nope: 4 } },
     });
     expect(state.value.crafted).toEqual({});
-    expect(state.value.stock).toEqual({ perfect_boar: 2 });
+    expect(state.value.stock).toEqual(trapper({ perfect_boar: 2 }));
   });
 });
 
@@ -188,7 +197,7 @@ describe('persistence', () => {
         unknown_item: { at: '2026-01-01', deducted: { perfect_boar: 1 } },
         moccasins: { at: '2026-01-01', deducted: { gone_material: 1 } },
       },
-      stock: { gone_material: 3, perfect_boar: 1 },
+      stock: { ...emptyStocks(), trapper: { gone_material: 3, perfect_boar: 1 } },
       goals: { items: ['moccasins', 'ghost'], outfits: ['wrangler', 'ghost_outfit'] },
     };
     const storage = memoryStorage({ [STATE_KEY]: JSON.stringify(saved) });
@@ -196,7 +205,7 @@ describe('persistence', () => {
     expect(broken).toBe(false);
     expect(s.crafted).toEqual({ moccasins: { at: '2026-01-01', deducted: {} } });
     expect('unknown_item' in s.crafted).toBe(false);
-    expect(s.stock).toEqual({ perfect_boar: 1 });
+    expect(s.stock).toEqual(trapper({ perfect_boar: 1 }));
     expect(s.goals).toEqual({ items: ['moccasins'], outfits: ['wrangler'] });
   });
 
@@ -225,7 +234,7 @@ describe('persistence', () => {
     vi.useFakeTimers();
     const storage = memoryStorage();
     initStore({ storage, listenVisibility: false });
-    setStock('perfect_boar', 4);
+    setStock('trapper', 'perfect_boar', 4);
     markCrafted('moccasins');
     toggleGoalOutfit('wrangler');
     expect(storage.data[STATE_KEY]).toBeUndefined();
@@ -243,12 +252,12 @@ describe('persistence', () => {
     vi.useFakeTimers();
     const storage = memoryStorage();
     initStore({ storage, listenVisibility: true });
-    setStock('perfect_boar', 2);
+    setStock('trapper', 'perfect_boar', 2);
     expect(storage.data[STATE_KEY]).toBeUndefined();
     const spy = vi.spyOn(document, 'visibilityState', 'get').mockReturnValue('hidden');
     document.dispatchEvent(new Event('visibilitychange'));
     spy.mockRestore();
-    expect(JSON.parse(storage.data[STATE_KEY]).stock).toEqual({ perfect_boar: 2 });
+    expect(JSON.parse(storage.data[STATE_KEY]).stock).toEqual(trapper({ perfect_boar: 2 }));
     resetStoreForTests();
   });
 
@@ -257,7 +266,7 @@ describe('persistence', () => {
     const storage = memoryStorage();
     let n = 0;
     const saver = createSaver(
-      () => ({ ...createInitialState(), stock: { perfect_boar: ++n } }),
+      () => ({ ...createInitialState(), stock: trapper({ perfect_boar: ++n }) }),
       storage,
     );
     saver.schedule();
@@ -271,7 +280,7 @@ describe('backup', () => {
   const sample: UserState = {
     ...createInitialState(),
     crafted: { moccasins: { at: '2026-01-01T00:00:00.000Z', deducted: { perfect_deer: 1 } } },
-    stock: { perfect_boar: 3 },
+    stock: { trapper: { perfect_boar: 3 }, pearson: { perfect_boar: 1 }, fence: {} },
     goals: { items: ['moccasins'], outfits: ['wrangler'] },
     challenges: { bandit: 3 },
     settings: { theme: 'paper' },
@@ -301,8 +310,8 @@ describe('backup', () => {
       'not json',
       JSON.stringify({ app: 'other', state: sample }),
       JSON.stringify({ app: 'rdr2-hunter' }),
-      JSON.stringify({ app: 'rdr2-hunter', state: { ...sample, schemaVersion: 3 } }),
-      JSON.stringify({ app: 'rdr2-hunter', state: { ...sample, stock: { a: 'x' } } }),
+      JSON.stringify({ app: 'rdr2-hunter', state: { ...sample, schemaVersion: 4 } }),
+      JSON.stringify({ app: 'rdr2-hunter', state: { ...sample, stock: { trapper: { a: 'x' } } } }),
       JSON.stringify({ app: 'rdr2-hunter', state: { ...sample, goals: { items: [1] } } }),
       JSON.stringify({ app: 'rdr2-hunter', state: { ...sample, settings: { theme: 'pink' } } }),
     ];
@@ -368,7 +377,7 @@ describe('toast', () => {
     expect(document.querySelector('.toast__title')?.textContent).toMatch(/^Crafted: /);
     expect(document.querySelector('.toast__detail')?.textContent).toBe('Boar −1, Rabbit −1');
     fireEvent.click(btn);
-    expect(state.value.stock).toEqual({ perfect_boar: 1, perfect_rabbit: 1 });
+    expect(state.value.stock.trapper).toEqual({ perfect_boar: 1, perfect_rabbit: 1 });
     expect(state.value.crafted).toEqual({});
   });
 });
@@ -395,11 +404,49 @@ describe('one-time progress reset (state v2)', () => {
     const r = parseBackup(JSON.stringify({ app: 'rdr2-hunter', state: v1 }));
     expect(r.ok).toBe(true);
     if (r.ok) {
-      expect(r.state.schemaVersion).toBe(2);
-      expect(r.state.stock).toEqual({ perfect_boar: 2 });
+      expect(r.state.schemaVersion).toBe(3);
+      expect(r.state.stock).toEqual(trapper({ perfect_boar: 2 }));
       expect(r.state.challenges).toEqual({});
       expect(r.state.settings).toEqual({ theme: 'paper' });
     }
+  });
+});
+
+describe('separate vendor stock (state v3)', () => {
+  it('migrates a v2 save in place: shared stock goes to the first vendor using it', () => {
+    const v2 = {
+      schemaVersion: 2,
+      crafted: {},
+      // beaver: Trapper + Pearson; bear claw: Fence only; snake: Trapper only.
+      stock: { perfect_beaver: 4, legendary_bear_claw: 1, perfect_snake: 2 },
+      goals: { items: [], outfits: [] },
+      challenges: { bandit: 1 },
+      settings: { theme: 'night' },
+    };
+    const { state: s, broken } = loadState(memoryStorage({ [STATE_KEY]: JSON.stringify(v2) }));
+    expect(broken).toBe(false);
+    expect(s.schemaVersion).toBe(3);
+    expect(s.stock).toEqual({
+      trapper: { perfect_beaver: 4, perfect_snake: 2 },
+      pearson: {},
+      fence: { legendary_bear_claw: 1 },
+    });
+    expect(s.challenges).toEqual({ bandit: 1 });
+  });
+
+  it('drops materials a vendor does not use', () => {
+    importState({
+      ...createInitialState(),
+      stock: { trapper: { legendary_bear_claw: 1 }, pearson: { perfect_snake: 3 }, fence: {} },
+    });
+    expect(state.value.stock).toEqual(emptyStocks());
+  });
+
+  it('setStock for Pearson leaves the Trapper stock alone', () => {
+    setStock('trapper', 'perfect_beaver', 2);
+    setStock('pearson', 'perfect_beaver', 1);
+    expect(state.value.stock.trapper).toEqual({ perfect_beaver: 2 });
+    expect(state.value.stock.pearson).toEqual({ perfect_beaver: 1 });
   });
 });
 

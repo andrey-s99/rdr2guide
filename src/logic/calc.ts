@@ -1,8 +1,11 @@
 // Pure calculation functions (SPEC section 7). Nothing here mutates its inputs.
 import { itemsById, materialsById } from '../data';
-import type { CraftRecord, Item, Material, Outfit, UserState } from '../data/types';
+import type { CraftRecord, Item, Material, Outfit, UserState, VendorId } from '../data/types';
 
+/** Stock of one vendor: materialId -> amount. */
 export type Stock = Readonly<Record<string, number>>;
+/** Separate stock per vendor (Trapper and Pearson never share pelts). */
+export type Stocks = Readonly<Record<VendorId, Stock>>;
 export type Crafted = Readonly<Record<string, CraftRecord>>;
 export type ItemStatus = 'crafted' | 'ready' | 'missing';
 export type MaterialLookup = (materialId: string) => Material | undefined;
@@ -11,6 +14,20 @@ export const STOCK_MIN = 0;
 export const STOCK_MAX = 999;
 
 const defaultLookup: MaterialLookup = (id) => materialsById.get(id);
+
+export const VENDOR_IDS: readonly VendorId[] = ['trapper', 'pearson', 'fence'];
+
+const EMPTY_STOCK: Stock = Object.freeze({});
+
+/** Empty stock for every vendor. */
+export function emptyStocks(): Record<VendorId, Record<string, number>> {
+  return { trapper: {}, pearson: {}, fence: {} };
+}
+
+/** Stock of one vendor (missing = empty). */
+export function vendorStock(stocks: Stocks, vendorId: VendorId): Stock {
+  return stocks[vendorId] ?? EMPTY_STOCK;
+}
 
 /** Stock amount of a material (missing key = 0). */
 export function stockOf(stock: Stock, materialId: string): number {
@@ -28,13 +45,15 @@ export function isCrafted(itemId: string, crafted: Crafted): boolean {
 }
 
 /** 7.2: crafted / ready / missing. */
-export function itemStatus(item: Item, stock: Stock, crafted: Crafted): ItemStatus {
+export function itemStatus(item: Item, stocks: Stocks, crafted: Crafted): ItemStatus {
   if (isCrafted(item.id, crafted)) return 'crafted';
+  const stock = vendorStock(stocks, item.vendorId);
   return item.recipe.every((e) => stockOf(stock, e.materialId) >= e.qty) ? 'ready' : 'missing';
 }
 
-/** 7.2: Σ max(0, qty − stock). */
-export function shortfall(item: Item, stock: Stock): number {
+/** 7.2: Σ max(0, qty − stock of the item's vendor). */
+export function shortfall(item: Item, stocks: Stocks): number {
+  const stock = vendorStock(stocks, item.vendorId);
   return item.recipe.reduce((sum, e) => sum + Math.max(0, e.qty - stockOf(stock, e.materialId)), 0);
 }
 
@@ -79,6 +98,8 @@ export function craftedProgress(list: readonly Item[], crafted: Crafted): Progre
 }
 
 export interface MaterialNeed {
+  /** Whose stock this row counts: the same pelt is needed separately for each vendor. */
+  vendorId: VendorId;
   materialId: string;
   need: number;
   have: number;
@@ -86,59 +107,80 @@ export interface MaterialNeed {
 }
 
 export interface NeedsTotals {
-  /** Materials with remaining > 0. */
+  /** Distinct materials with remaining > 0 (for any vendor). */
   distinct: number;
   /** Σ remaining. */
   units: number;
 }
 
 export interface NeedsResult {
-  /** Materials with need > 0, in first-appearance order across scope recipes. */
+  /** (vendor, material) pairs with need > 0, in first-appearance order across scope recipes. */
   rows: MaterialNeed[];
-  byMaterial: ReadonlyMap<string, MaterialNeed>;
+  /** Key: needKey(vendorId, materialId). */
+  byKey: ReadonlyMap<string, MaterialNeed>;
   totals: NeedsTotals;
 }
 
-/** 7.4: material needs for a scope. */
+/** Key of a needs row: one per vendor and material. */
+export function needKey(vendorId: VendorId, materialId: string): string {
+  return `${vendorId}:${materialId}`;
+}
+
+/** Needs row of a material for one vendor, if the scope needs it there. */
+export function needOf(
+  needs: NeedsResult,
+  vendorId: VendorId,
+  materialId: string,
+): MaterialNeed | undefined {
+  return needs.byKey.get(needKey(vendorId, materialId));
+}
+
+/**
+ * 7.4: material needs for a scope. Each vendor keeps its own stock, so a pelt needed
+ * by both the Trapper and Pearson gives two rows, each compared with that vendor's stock.
+ */
 export function computeNeeds(
   scopeItems: readonly Item[],
-  stock: Stock,
+  stocks: Stocks,
   crafted: Crafted,
   lookup: MaterialLookup = defaultLookup,
 ): NeedsResult {
-  const need = new Map<string, number>();
+  const need = new Map<string, { vendorId: VendorId; materialId: string; n: number }>();
   for (const item of scopeItems) {
     if (isCrafted(item.id, crafted)) continue;
     for (const e of item.recipe) {
       const m = lookup(e.materialId);
       // Unknown materials are treated as consumable.
       const consumed = m ? m.consumedOnCraft : true;
-      if (consumed) need.set(e.materialId, (need.get(e.materialId) ?? 0) + e.qty);
-      else need.set(e.materialId, 1);
+      const key = needKey(item.vendorId, e.materialId);
+      const entry = need.get(key) ?? { vendorId: item.vendorId, materialId: e.materialId, n: 0 };
+      entry.n = consumed ? entry.n + e.qty : 1;
+      need.set(key, entry);
     }
   }
   const rows: MaterialNeed[] = [];
-  const byMaterial = new Map<string, MaterialNeed>();
-  let distinct = 0;
+  const byKey = new Map<string, MaterialNeed>();
+  const missing = new Set<string>();
   let units = 0;
-  for (const [materialId, n] of need) {
+  for (const [key, { vendorId, materialId, n }] of need) {
     if (n <= 0) continue;
-    const have = stockOf(stock, materialId);
+    const have = stockOf(vendorStock(stocks, vendorId), materialId);
     const remaining = Math.max(0, n - have);
-    const row = { materialId, need: n, have, remaining };
+    const row = { vendorId, materialId, need: n, have, remaining };
     rows.push(row);
-    byMaterial.set(materialId, row);
+    byKey.set(key, row);
     if (remaining > 0) {
-      distinct += 1;
+      missing.add(materialId);
       units += remaining;
     }
   }
-  return { rows, byMaterial, totals: { distinct, units } };
+  return { rows, byKey, totals: { distinct: missing.size, units } };
 }
 
-/** Σ remaining of the given materials in a needs result (e.g. per animal). */
+/** Σ remaining of the given materials for all vendors (e.g. per animal). */
 export function sumRemaining(needs: NeedsResult, materialIds: readonly string[]): number {
-  return materialIds.reduce((s, id) => s + (needs.byMaterial.get(id)?.remaining ?? 0), 0);
+  const ids = new Set(materialIds);
+  return needs.rows.reduce((s, r) => s + (ids.has(r.materialId) ? r.remaining : 0), 0);
 }
 
 export interface CraftResult {
@@ -159,7 +201,7 @@ export function applyMarkCrafted(
 ): CraftResult {
   const item = getItem(itemId);
   if (!item || isCrafted(itemId, state.crafted)) return { state, deducted: {}, changed: false };
-  const stock = { ...state.stock };
+  const stock = { ...vendorStock(state.stock, item.vendorId) };
   const deducted: Record<string, number> = {};
   for (const e of item.recipe) {
     const m = lookup(e.materialId);
@@ -173,7 +215,7 @@ export function applyMarkCrafted(
   return {
     state: {
       ...state,
-      stock,
+      stock: { ...state.stock, [item.vendorId]: stock },
       crafted: { ...state.crafted, [itemId]: { at: now, deducted } },
     },
     deducted,
@@ -188,31 +230,46 @@ export interface UncraftResult {
   changed: boolean;
 }
 
-/** 7.6 unmarkCrafted as a pure state transition. */
-export function applyUnmarkCrafted(state: UserState, itemId: string): UncraftResult {
+/** 7.6 unmarkCrafted as a pure state transition; materials go back to the item's vendor. */
+export function applyUnmarkCrafted(
+  state: UserState,
+  itemId: string,
+  getItem: (id: string) => Item | undefined = (id) => itemsById.get(id),
+): UncraftResult {
   const record = state.crafted[itemId];
-  if (!record || !isCrafted(itemId, state.crafted)) {
+  const item = getItem(itemId);
+  if (!record || !item || !isCrafted(itemId, state.crafted)) {
     return { state, returned: {}, changed: false };
   }
-  const stock = { ...state.stock };
+  const stock = { ...vendorStock(state.stock, item.vendorId) };
   for (const [m, d] of Object.entries(record.deducted)) {
     stock[m] = clampStock(stockOf(stock, m) + d);
   }
   const crafted = { ...state.crafted };
   delete crafted[itemId];
-  return { state: { ...state, stock, crafted }, returned: { ...record.deducted }, changed: true };
+  return {
+    state: { ...state, stock: { ...state.stock, [item.vendorId]: stock }, crafted },
+    returned: { ...record.deducted },
+    changed: true,
+  };
 }
 
-/** Sets a stock value (clamped to 0..999). Zero removes the key. */
-export function applySetStock(state: UserState, materialId: string, value: number): UserState {
+/** Sets a vendor's stock of a material (clamped to 0..999). Zero removes the key. */
+export function applySetStock(
+  state: UserState,
+  vendorId: VendorId,
+  materialId: string,
+  value: number,
+): UserState {
   const v = clampStock(value);
-  if (stockOf(state.stock, materialId) === v && (v !== 0 || !(materialId in state.stock))) {
+  const current = vendorStock(state.stock, vendorId);
+  if (stockOf(current, materialId) === v && (v !== 0 || !(materialId in current))) {
     return state;
   }
-  const stock = { ...state.stock };
+  const stock = { ...current };
   if (v === 0) delete stock[materialId];
   else stock[materialId] = v;
-  return { ...state, stock };
+  return { ...state, stock: { ...state.stock, [vendorId]: stock } };
 }
 
 /** Adds or removes an id in a list (immutably). */

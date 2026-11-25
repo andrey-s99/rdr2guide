@@ -2,7 +2,14 @@ import type { ComponentChildren } from 'preact';
 import { categoriesById, materialShortName, outfitsById } from '../data';
 import type { Item } from '../data/types';
 import { Icon } from '../icons';
-import { hasEnough, isLocked, itemStatus, prerequisiteProgress, shortfall } from '../logic/calc';
+import {
+  hasEnough,
+  isLocked,
+  itemStatus,
+  prerequisiteProgress,
+  shortfall,
+  vendorStock,
+} from '../logic/calc';
 import { state } from '../state/store';
 import { AppLink } from './AppLink';
 import { CraftCheckbox } from './Checkbox';
@@ -67,7 +74,11 @@ export function ItemRow({
             {item.recipe.map((e) => (
               <li
                 key={e.materialId}
-                class={!done && hasEnough(e.materialId, e.qty, stock) ? 'tag tag--ok' : 'tag'}
+                class={
+                  !done && hasEnough(e.materialId, e.qty, vendorStock(stock, item.vendorId))
+                    ? 'tag tag--ok'
+                    : 'tag'
+                }
               >
                 {materialShortName(e.materialId)} ×{e.qty}
               </li>

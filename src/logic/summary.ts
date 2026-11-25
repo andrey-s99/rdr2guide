@@ -1,7 +1,7 @@
 // Summary screen grouping and sorting (SPEC 9.9). Pure functions.
 import { animalsById, itemsByMaterial, materialsById, regions as allRegions } from '../data';
-import type { Animal, Item, Material, Region } from '../data/types';
-import type { MaterialNeed } from './calc';
+import type { Animal, Item, Material, Region, VendorId } from '../data/types';
+import { VENDOR_IDS, type MaterialNeed } from './calc';
 
 export type SummaryGroupMode = 'animal' | 'region' | 'flat';
 
@@ -49,6 +49,11 @@ const defaultLookups: SummaryLookups = {
 
 const collator = new Intl.Collator('en');
 
+/** Same material for several vendors: Trapper, then Pearson, then Fence. */
+function compareVendors(a: MaterialNeed, b: MaterialNeed): number {
+  return VENDOR_IDS.indexOf(a.vendorId) - VENDOR_IDS.indexOf(b.vendorId);
+}
+
 function nameOf(id: string, lookups: SummaryLookups): string {
   return lookups.material(id)?.nameEn ?? id;
 }
@@ -66,7 +71,8 @@ export function sortFlat(
   return [...rows].sort(
     (a, b) =>
       b.remaining - a.remaining ||
-      collator.compare(nameOf(a.materialId, lookups), nameOf(b.materialId, lookups)),
+      collator.compare(nameOf(a.materialId, lookups), nameOf(b.materialId, lookups)) ||
+      compareVendors(a, b),
   );
 }
 
@@ -82,7 +88,9 @@ function sumRows(rows: readonly MaterialNeed[]): number {
 /** Rows in materials.json order (stable data order inside a group). */
 function inDataOrder(rows: MaterialNeed[], order: ReadonlyMap<string, number>): MaterialNeed[] {
   return rows.sort(
-    (a, b) => (order.get(a.materialId) ?? Infinity) - (order.get(b.materialId) ?? Infinity),
+    (a, b) =>
+      (order.get(a.materialId) ?? Infinity) - (order.get(b.materialId) ?? Infinity) ||
+      compareVendors(a, b),
   );
 }
 
@@ -194,13 +202,16 @@ export function groupByRegion(
   return result;
 }
 
-/** Items of the current scope that use a material (for the "used for" list). */
+/** Items of the current scope that use a material (for the "used for" list), optionally of one vendor. */
 export function usedInScope(
   materialId: string,
   scopeItemIds: ReadonlySet<string>,
+  vendorId?: VendorId,
   byMaterial: ReadonlyMap<string, readonly Item[]> = itemsByMaterial,
 ): Item[] {
-  return (byMaterial.get(materialId) ?? []).filter((i) => scopeItemIds.has(i.id));
+  return (byMaterial.get(materialId) ?? []).filter(
+    (i) => scopeItemIds.has(i.id) && (vendorId === undefined || i.vendorId === vendorId),
+  );
 }
 
 /** English plural: plural(n, 'item', 'items'). */

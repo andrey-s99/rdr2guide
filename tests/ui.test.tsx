@@ -17,9 +17,10 @@ import { applyTheme } from '../src/theme';
 
 const gloves = itemsById.get('boar_riding_gloves') as Item;
 
+/** State with a Trapper stock (these tests use Trapper items). */
 const withStock = (stock: Record<string, number>): UserState => ({
   ...createInitialState(),
-  stock,
+  stock: { ...createInitialState().stock, trapper: stock },
 });
 
 beforeEach(() => {
@@ -58,7 +59,7 @@ describe('15.4 UI', () => {
     fireEvent.click(screen.getByRole('button', { name: 'Undo' }));
 
     expect(state.value.crafted).toEqual({});
-    expect(state.value.stock).toEqual({ perfect_boar: 1, perfect_rabbit: 2 });
+    expect(state.value.stock.trapper).toEqual({ perfect_boar: 1, perfect_rabbit: 2 });
     expect(checkbox.checked).toBe(false);
     expect(screen.getByText('Ready to craft')).toBeTruthy();
     expect(document.querySelector('.toast')).toBeNull();
@@ -92,16 +93,16 @@ describe('components', () => {
   });
 
   it('Stepper changes stock with buttons and typed input (clamped)', () => {
-    render(<Stepper materialId="perfect_boar" label="Boar" />);
+    render(<Stepper vendorId="trapper" materialId="perfect_boar" label="Boar" />);
     const input = screen.getByRole('textbox', { name: 'Amount: Boar' }) as HTMLInputElement;
     fireEvent.click(screen.getByRole('button', { name: 'Increase: Boar' }));
-    expect(state.value.stock.perfect_boar).toBe(1);
+    expect(state.value.stock.trapper.perfect_boar).toBe(1);
     expect(input.value).toBe('1');
     fireEvent.input(input, { target: { value: '5000' } });
     fireEvent.blur(input);
-    expect(state.value.stock.perfect_boar).toBe(999);
+    expect(state.value.stock.trapper.perfect_boar).toBe(999);
     fireEvent.click(screen.getByRole('button', { name: 'Decrease: Boar' }));
-    expect(state.value.stock.perfect_boar).toBe(998);
+    expect(state.value.stock.trapper.perfect_boar).toBe(998);
   });
 
   it('GoalStar toggles goals with aria-pressed', () => {

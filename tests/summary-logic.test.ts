@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { itemsById, materialsById, regions } from '../src/data';
 import type { Animal, Material, Region } from '../src/data/types';
-import { computeNeeds, type MaterialNeed } from '../src/logic/calc';
+import { computeNeeds, emptyStocks, type MaterialNeed } from '../src/logic/calc';
 import { getScopeItems } from '../src/logic/scopes';
 import {
   SPECIAL_GROUP_ID,
@@ -18,7 +18,7 @@ import {
 const noGoals = { items: [], outfits: [] };
 
 function row(materialId: string, need: number, have = 0): MaterialNeed {
-  return { materialId, need, have, remaining: Math.max(0, need - have) };
+  return { vendorId: 'trapper', materialId, need, have, remaining: Math.max(0, need - have) };
 }
 
 // Small synthetic dataset for precise ordering checks.
@@ -102,13 +102,15 @@ describe('summary grouping (pure)', () => {
 });
 
 describe('summary grouping on real data', () => {
-  const needs = computeNeeds(getScopeItems('all', noGoals), {}, {});
+  const needs = computeNeeds(getScopeItems('all', noGoals), emptyStocks(), {});
 
   it('animal groups cover every row exactly once and are sorted', () => {
     const groups = groupByAnimal(needs.rows);
-    const ids = groups.flatMap((g) => g.rows.map((r) => r.materialId));
-    expect(ids).toHaveLength(103);
-    expect(new Set(ids).size).toBe(103);
+    const keys = groups.flatMap((g) => g.rows.map((r) => `${r.vendorId}:${r.materialId}`));
+    // 103 materials; the 14 pelts used by both the Trapper and Pearson get a row each.
+    expect(keys).toHaveLength(117);
+    expect(new Set(keys).size).toBe(117);
+    expect(new Set(groups.flatMap((g) => g.rows.map((r) => r.materialId))).size).toBe(103);
     expect(groups.reduce((s, g) => s + g.remaining, 0)).toBe(320);
     for (let i = 1; i < groups.length; i++) {
       expect(groups[i - 1].remaining).toBeGreaterThanOrEqual(groups[i].remaining);
@@ -143,6 +145,19 @@ describe('summary grouping on real data', () => {
     expect(used.length).toBeGreaterThan(0);
     expect(used.every((i) => scope.has(i.id) && itemsById.has(i.id))).toBe(true);
     expect(usedInScope('perfect_snake', scope)).toEqual([]);
+  });
+
+  it('shared pelts: Trapper row before Pearson row, usedInScope by vendor', () => {
+    const beaver = groupByAnimal(needs.rows)
+      .flatMap((g) => g.rows)
+      .filter((r) => r.materialId === 'perfect_beaver');
+    expect(beaver.map((r) => r.vendorId)).toEqual(['trapper', 'pearson']);
+    const all = new Set(getScopeItems('all', noGoals).map((i) => i.id));
+    const forPearson = usedInScope('perfect_beaver', all, 'pearson');
+    expect(forPearson.map((i) => i.id)).toEqual(['valuables_satchel']);
+    expect(
+      usedInScope('perfect_beaver', all, 'trapper').every((i) => i.vendorId === 'trapper'),
+    ).toBe(true);
   });
 });
 

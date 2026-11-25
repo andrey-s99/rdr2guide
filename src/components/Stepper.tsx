@@ -1,7 +1,8 @@
 import { useState } from 'preact/hooks';
-import { materialShortName } from '../data';
+import { stockLabel } from '../data';
+import type { VendorId } from '../data/types';
 import { MinusIcon, PlusIcon } from '../icons';
-import { clampStock, STOCK_MAX, STOCK_MIN, stockOf } from '../logic/calc';
+import { clampStock, STOCK_MAX, STOCK_MIN, stockOf, vendorStock } from '../logic/calc';
 import { setStock, state } from '../state/store';
 
 export interface NumberStepperProps {
@@ -90,21 +91,23 @@ export function NumberStepper({
 }
 
 export interface StepperProps {
+  /** Whose stock: what was sold to the Trapper, donated to Pearson, or kept for the Fence. */
+  vendorId: VendorId;
   materialId: string;
-  /** Name for aria-labels; defaults to the short material name. */
+  /** Name for aria-labels; defaults to the short material name (plus vendor if shared). */
   label?: string;
   class?: string;
 }
 
-/** Stock stepper for a material (0..999), bound to the store. */
-export function Stepper({ materialId, label, class: cls }: StepperProps) {
-  const value = stockOf(state.value.stock, materialId);
+/** Stock stepper for a material of one vendor (0..999), bound to the store. */
+export function Stepper({ vendorId, materialId, label, class: cls }: StepperProps) {
+  const value = stockOf(vendorStock(state.value.stock, vendorId), materialId);
   return (
     <NumberStepper
       class={cls}
       value={value}
-      label={label ?? materialShortName(materialId)}
-      onChange={(v) => setStock(materialId, clampStock(v))}
+      label={label ?? stockLabel(vendorId, materialId)}
+      onChange={(v) => setStock(vendorId, materialId, clampStock(v))}
     />
   );
 }

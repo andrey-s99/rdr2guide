@@ -80,11 +80,12 @@ function MaterialRows({ rows, scopeItemIds }: RowsProps) {
     <div class="summary-rows">
       {rows.map((r) => (
         <MaterialRow
-          key={r.materialId}
+          key={`${r.vendorId}:${r.materialId}`}
+          vendorId={r.vendorId}
           materialId={r.materialId}
           need={r.need}
           note={materialNote(r.materialId)}
-          usedIn={usedInScope(r.materialId, scopeItemIds)}
+          usedIn={usedInScope(r.materialId, scopeItemIds, r.vendorId)}
         />
       ))}
     </div>

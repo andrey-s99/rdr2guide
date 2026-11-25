@@ -182,10 +182,17 @@ export interface CraftRecord {
   deducted: Record<string, number>; // how much was actually deducted
 }
 
+/**
+ * Materials held by each vendor. The Trapper crafts only from pelts sold to him and
+ * Pearson only from pelts donated to him, so the two never share a pelt.
+ * Key: vendor id, then material.id; missing key = 0.
+ */
+export type VendorStocks = Record<VendorId, Record<string, number>>;
+
 export interface UserState {
-  schemaVersion: 2;
-  crafted: Record<string, CraftRecord>; // key: item.id
-  stock: Record<string, number>; // key: material.id; missing key = 0
+  schemaVersion: 3;
+  crafted: Record<string, CraftRecord>; // key: item.id; deducted from the item's vendor stock
+  stock: VendorStocks;
   goals: { items: string[]; outfits: string[] };
   /** Completed challenge ranks per category (0..10); challenges are done in order. */
   challenges: Partial<Record<ChallengeCategoryId, number>>;

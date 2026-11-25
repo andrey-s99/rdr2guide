@@ -1,6 +1,6 @@
 // Pure list filters used by the status chips (SPEC 9: All, Not crafted, Ready to craft, Crafted).
 import type { Item } from '../data/types';
-import { itemStatus, type Crafted, type ItemStatus, type Stock } from './calc';
+import { itemStatus, type Crafted, type ItemStatus, type Stocks } from './calc';
 
 export type StatusFilter = 'all' | 'not_crafted' | 'ready' | 'crafted';
 
@@ -22,7 +22,7 @@ export function matchesStatusFilter(status: ItemStatus, filter: StatusFilter): b
 export function filterByStatus<T extends Item>(
   list: readonly T[],
   filter: StatusFilter,
-  stock: Stock,
+  stock: Stocks,
   crafted: Crafted,
 ): T[] {
   if (filter === 'all') return [...list];
@@ -32,7 +32,7 @@ export function filterByStatus<T extends Item>(
 /** Counts per filter value (for chip counters). */
 export function statusFilterCounts(
   list: readonly Item[],
-  stock: Stock,
+  stock: Stocks,
   crafted: Crafted,
 ): Record<StatusFilter, number> {
   const counts: Record<StatusFilter, number> = { all: 0, not_crafted: 0, ready: 0, crafted: 0 };

@@ -92,7 +92,8 @@ export function OutfitScreen({ id }: OutfitScreenProps) {
             <div class="list trapper-bleed">
               {needs.rows.map((row) => (
                 <MaterialRow
-                  key={row.materialId}
+                  key={`${row.vendorId}:${row.materialId}`}
+                  vendorId={row.vendorId}
                   materialId={row.materialId}
                   need={row.need}
                   showAnimalLink
